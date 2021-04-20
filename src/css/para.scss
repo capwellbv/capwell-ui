@@ -1,0 +1,32 @@
+@import './_variables';
+.para-wrapper {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  color: $secondary;
+}
+.para-1{
+  font-weight: 100;
+  font-size: 90px;
+  line-height: 90px;
+}
+.para-2 {
+  font-weight: 100;
+  font-size: 60px;
+  line-height: 60px;
+}
+.para-3 {
+  font-size: 24px;
+  line-height: 44px;
+}
+.para-4 {
+  font-size: 20px;
+  line-height: 36px;
+}
+.para-5 {
+  font-size: 20px;
+  line-height: 32px;
+}
+.para-6 {
+  font-size: 18px;
+  line-height: 28px;
+}
