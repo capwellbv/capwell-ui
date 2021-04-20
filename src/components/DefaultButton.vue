@@ -1,9 +1,51 @@
 <template>
-  <Button>Default Button</Button>
+	<Button
+		class="c-btn"
+		:class="[
+			`${varient}-btn`,
+			size === 'xl'
+				? 'btn-xl'
+				: size === 'lg'
+				? 'btn-lg'
+				: size === 'md'
+				? 'btn-md'
+				: 'btn-sm',
+				{'muted': muted}
+		]"
+		@click="clickHandler"
+	>
+		<slot/>
+		<div class="icon">
+			<slot name="icon"></slot>
+		</div>
+	</Button>
 </template>
 
 <script>
 export default {
-  name: "DefaultButton",
+	name: 'DefaultButton',
+	data() {
+		return {};
+	},
+	props: {
+		varient: {
+			type: String,
+			default: 'default',
+		},
+		size: {
+			type: String,
+			default: 'sm',
+		},
+		muted: { default: false }
+	},
+	methods: {
+		clickHandler(evt) {
+			this.$emit('click', evt);
+		},
+	},
 };
 </script>
+
+<style scoped lang="scss">
+@import '../css/defaultButton.scss';
+</style>
