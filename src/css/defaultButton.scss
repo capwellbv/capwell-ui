@@ -61,6 +61,7 @@
     box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
     border: 2px solid $primary-dark;
   }
+
   &:focus {
     border-radius: 30px;
     box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
@@ -74,7 +75,14 @@
   color: $dark-bronze;
 }
 
-.selected-btn {
+.muted {
+  &:hover  {
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border: 0px;
+  }
+}
+
+.icon-btn {
   border: 1px solid $medium-bronze;
   background-color: $white;
   display: flex;
@@ -83,6 +91,7 @@
 
   &:hover  {
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border: 2px solid $primary-dark;
 
     .icon {
       color: $primary-dark;
@@ -94,26 +103,7 @@
     margin-left: $ml-2;
   }
 }
-.unselected-btn {
-  border: 1px solid $medium-bronze;
-  background-color: $white;
-  display: flex;
-  align-items: center;
 
-  &:hover  {
-    border: 2px solid $primary-dark;
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-
-    .icon {
-      color: $primary-dark;
-    }
-  }
-
-  .icon {
-    color: $primary-dark;
-    margin-left: $ml-2;
-  }
-}
 .circle-btn {
   border-radius: 100%;
   padding: 0;

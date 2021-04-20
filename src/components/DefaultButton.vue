@@ -10,26 +10,23 @@
 				: size === 'md'
 				? 'btn-md'
 				: 'btn-sm',
+				{'muted': muted}
 		]"
 		@click="clickHandler"
 	>
-		<slot></slot>
-    <plus-icon v-if="varient === 'selected'" size="1.2x" class="icon"></plus-icon>
-    <x-icon v-if="varient === 'unselected'" size="1.2x" class="icon"></x-icon>
+		<slot/>
+		<div class="icon">
+			<slot name="icon"></slot>
+		</div>
 	</Button>
 </template>
 
 <script>
-import { PlusIcon, XIcon } from 'vue-feather-icons'
 export default {
 	name: 'DefaultButton',
 	data() {
 		return {};
 	},
-  components: {
-    PlusIcon,
-    XIcon
-  },
 	props: {
 		varient: {
 			type: String,
@@ -39,6 +36,7 @@ export default {
 			type: String,
 			default: 'sm',
 		},
+		muted: { default: false }
 	},
 	methods: {
 		clickHandler(evt) {
