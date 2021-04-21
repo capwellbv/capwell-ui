@@ -1,35 +1,8 @@
 @import './variables';
 
-.cap-card-medium {
-	width: 347px;
-	min-height: 244px;
-	min-width: 347px;
-	.card-body {
-		.title {
-			margin-top: 1rem;
-		}
-		.text {
-			margin-top: 10px;
-		}
-	}
-	
-}
-.cap-card-small {
-	width: 270px;
-	min-height: 168px;
-	min-width: 270px;
+$card-ring-color: $capwell-blue;
 
-	.card-body {
-		.title {
-			margin-top: 12px;
-		}
-		.text {
-			margin-top: 8px;
-		}
-	}
-	
-}
-.cap-card {
+@mixin card {
 	border-radius: 6px;
 	background-color: $white;
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
@@ -40,53 +13,46 @@
 	padding: $p-4;
 	transition: ease-in-out 0.1s border;
 
-	&:hover {
-		border: 2px solid $capwell-blue;
-		.footer {
-			.icon {
-				color: $capwell-blue;
-			}
-		}
-	}
-	&:focus {
-		border: 2px solid $capwell-blue;
-		.footer {
-			.icon {
-				color: $capwell-blue;
-			}
-		}
+	@content;
+
+	&.bordered:hover, &.bordered:focus {
+		border: 2px solid $card-ring-color;
 	}
 
-	img {
+	&.image {
 		border-radius: 10px;
 		max-height: 200px;
 	}
 
 	.card-body {
 		margin-top: 1rem;
-
-		.subtitle {
-			color: $capwell-blue;
-		}
 	}
+
 	.footer {
 		width: 100%;
 		display: flex;
 		justify-content: flex-end;
 		margin-top: 1rem;
-
-		.icon {
-			cursor: pointer;
-			font-size: 20px;
-		}
 	}
 }
 
-.cap-card.active {
-	border: 2px solid $capwell-blue;
-	.footer {
-		.icon {
-			color: $capwell-blue;
-		}
+.cap-card {
+	@include card;
+}
+
+.cap-card-medium {
+	@include card {
+		width: 347px;
+		min-height: 244px;
+		min-width: 347px;
+	}
+	
+}
+
+.cap-card-small {
+	@include card {
+		width: 270px;
+		min-height: 168px;
+		min-width: 270px;
 	}
 }

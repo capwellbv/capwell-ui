@@ -1,9 +1,5 @@
 # Modals
 
-## Base modal
-
-Basic modal example:
-
 <Modal></Modal>
 
 ::: details Preview the code
