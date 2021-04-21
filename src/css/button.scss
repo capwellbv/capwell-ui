@@ -1,7 +1,7 @@
 @import './_variables';
 
 
-.c-btn {
+.cap-btn {
   border: none;
   outline: none;
   font-weight: bold;
@@ -36,8 +36,8 @@
   font-size: 13px;
   line-height: 13px;
 }
-.primary-btn {
-  background: linear-gradient(176.69deg, $primary-light 0%, $primary-dark 100%);
+.cap-primary-btn {
+  background: linear-gradient(176.69deg, $primary-light 0%, $capwell-blue 100%);
   box-shadow: 0 3px 10px 0 rgba(0,148,205,0.2);
   color: $white;  
   transition: ease-in-out 0.4s all;
@@ -51,7 +51,7 @@
   }
 }
 
-.secondary-btn {
+.cap-secondary-btn {
   background-color: $white;
   border: 1px solid $medium-bronze;
   box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
@@ -59,7 +59,7 @@
 
   &:hover {
     box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-    border: 2px solid $primary-dark;
+    border: 2px solid $capwell-blue;
   }
 
   &:focus {
@@ -68,19 +68,14 @@
   }
 }
 
-.disabled-btn {
+.cap-disabled-btn {
   background-color: $white;
   border:1px solid $medium-bronze;
   cursor: not-allowed;
   color: $dark-bronze;
 }
 
-.muted {
-  &:hover  {
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-    border: 0px;
-  }
-}
+
 
 .icon-btn {
   border: 1px solid $medium-bronze;
@@ -91,10 +86,10 @@
 
   &:hover  {
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-    border: 2px solid $primary-dark;
+    border: 2px solid $capwell-blue;
 
     .icon {
-      color: $primary-dark;
+      color: $capwell-blue;
     }
   }
 
@@ -104,7 +99,7 @@
   }
 }
 
-.circle-btn {
+.cap-circle-btn {
   border-radius: 100%;
   padding: 0;
   box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
@@ -112,32 +107,41 @@
   background-color: $white;
   transition: ease-in-out 0.1s all;
   &:hover {
-    border: 2px solid $primary-dark;
+    border: 2px solid $capwell-blue;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05), 0 15px 45px 0 rgba(0,0,0,0.15);
   }
   &:focus {
-    border: 2px solid $primary-dark;
+    border: 2px solid $capwell-blue;
     box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
   }
   .icon {
-    color: $primary-dark;
+    color: $capwell-blue;
   }
 }
-.circle-btn.btn-sm{
+.cap-circle-btn.btn-sm{
   width: 40px;
   height: 40px;
   
 }
-.circle-btn.btn-md{
+.cap-circle-btn.btn-md{
   width: 45px;
   height: 45px;
 }
-.circle-btn.btn-lg{
+.cap-circle-btn.btn-lg{
   width: 50px;
   height: 50px;
 }
-.circle-btn.btn-xl{
+.cap-circle-btn.btn-xl{
   width: 60px;
   height: 60px;
 
+}
+.cap-muted {
+  &:hover  {
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border: 0px;
+    .icon{
+      color: $dark-bronze;
+    }
+  }
 }

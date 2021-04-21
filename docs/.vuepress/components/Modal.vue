@@ -1,6 +1,6 @@
 <template>
     <div>
-        <DefaultButton varient="secondary" size="xl" @click="show = true">Show modal</DefaultButton>
+        <CapButton varient="secondary" size="xl" @click="show = true">Show modal</CapButton>
         <CapModal :show="show" @close="show = false">
             <h1>Demo modal...</h1>
         </CapModal>

@@ -1,4 +1,5 @@
-export { default as DefaultButton } from "./button/Button";
-export { default as DefaultButton } from "./DefaultButton";
-export { default as Title } from "./Title";
-export { default as Para } from "./Para";
+export { default as CapButton } from "./CapButton";
+export { default as CapTitle } from "./CapTitle";
+export { default as CapText } from "./CapText";
+export { default as CapCard } from "./CapCard";
+export { default as CapBox } from "./CapBox";

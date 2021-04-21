@@ -1,54 +1,54 @@
 @import './_variables';
 
-.heading-wrapper {
+.cap-heading-wrapper {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: $secondary;
 }
 
-.heading-1{
+.cap-heading-1{
   font-size: 72px;
   line-height: 72px;
 }
-.heading-2{
+.cap-heading-2{
   font-size: 52px;
   line-height: 56px;
 }
-.heading-3{
+.cap-heading-3{
   font-size: 42px;
   line-height: 48px;
 }
-.tille-4 {
+.cap-heading-4 {
   font-size: 32px;
   line-height: 36px;
 }
-.heading-6{
-  font-size: 24px;
-  line-height: 32px;
-}
-.heading-5 {
+.cap-heading-5 {
   font-size: 28px;
   line-height: 32px;
 }
-.heading-7{
+.cap-heading-6{
+  font-size: 24px;
+  line-height: 32px;
+}
+.cap-heading-7{
   font-size: 20px;
   line-height: 28px;
 }
-.heading-8 {
+.cap-heading-8 {
   font-size: 18px;
   line-height: 24px;
 }
-.subheading-1{
+.subcap-heading-1{
   text-transform: uppercase;
   font-size: 16px;
   line-height: 20px;
 }
-.subheading-2{
+.subcap-heading-2{
   text-transform: uppercase;
   font-size: 12px;
   line-height:16px;
 }
-.subheading-3{
+.subcap-heading-3{
   text-transform: uppercase;
   font-size: 10px;
   line-height: 12px;
