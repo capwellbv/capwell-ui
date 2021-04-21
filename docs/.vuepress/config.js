@@ -30,7 +30,9 @@ module.exports = {
         children: [
           '/buttons/',
           '/typography/',
-          '/modals/'
+          '/modals/',
+          '/card/',
+          '/box/'
         ]
       }
     ]

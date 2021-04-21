@@ -1,16 +1,19 @@
 <template>
-  <default-button varient="icon">
+  <cap-button :varient="`${muted? muted: ''} icon`">
       Icon Button
       <template #icon>
           <plus-icon size="1.2x"></plus-icon>
       </template>
-  </default-button>
+  </cap-button>
 </template>
 
 <script>
 import { PlusIcon } from 'vue-feather-icons'
 
 export default {
+    props: {
+        muted: String
+    },
     components: {
         PlusIcon,
     },

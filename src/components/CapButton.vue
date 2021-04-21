@@ -1,8 +1,8 @@
 <template>
 	<Button
-		class="c-btn"
+		class="cap-btn"
 		:class="[
-			`${varient}-btn`,
+			`cap-${varient}-btn`,
 			size === 'xl'
 				? 'btn-xl'
 				: size === 'lg'
@@ -23,7 +23,7 @@
 
 <script>
 export default {
-	name: 'DefaultButton',
+	name: 'CapButton',
 	data() {
 		return {};
 	},
@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../css/defaultButton.scss';
+@import '../css/button.scss';
 </style>
