@@ -1,10 +1,10 @@
 @import './variables';
 
-.search-dropdown {
+.cap-input {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   
-  &-input-container {
+  &-container {
     display: flex;
     align-items: center;
     border-radius: 6px;
@@ -43,7 +43,7 @@
         color: $medium-bronze;
       }
     }
-    .search-dropdown-input {
+    .input-value {
       outline: none;
 
       &:disabled {

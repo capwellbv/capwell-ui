@@ -1,4 +1,6 @@
 @import './font.scss';
+@import './responsive';
+
 $secondary: #000000;
 $dark-blue: #002C3D;
 $yellow: #FFBB16;
@@ -20,7 +22,8 @@ $spacing3: 60px;
 $spacing4: 40px;
 $spacing5: 30px;
 $spacing6: 20px;
-$spacing7: 10px;
+$spacing7: 15px;
+$spacing8: 10px;
 $p-1: 5px;
 $p-2: 10px;
 $p-3: 15px;

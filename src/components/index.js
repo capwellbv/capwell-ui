@@ -4,3 +4,4 @@ export { default as CapText } from "./CapText";
 export { default as CapCard } from "./CapCard";
 export { default as CapBox } from "./CapBox";
 export { default as CapInput } from "./CapInput";
+export { default as CapSelect } from "./CapSelect";

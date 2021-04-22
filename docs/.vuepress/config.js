@@ -33,7 +33,8 @@ module.exports = {
           '/modals/',
           '/card/',
           '/box/',
-          '/input/'  
+          '/input/',
+          '/select/'
         ]
       }
     ]

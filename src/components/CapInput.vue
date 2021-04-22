@@ -1,12 +1,12 @@
 <template>
-    <div class="search-dropdown">
-      <div class="search-dropdown-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
+    <div class="cap-input">
+      <div class="cap-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
         <input
           @input="handleInput"
           type="text"
           :value="value"
           :disabled="disabled"
-          class="search-dropdown-input"
+          class="input-value"
           ref="input"
           :placeholder="placeholder"
         />

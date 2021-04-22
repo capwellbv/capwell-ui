@@ -1,0 +1,169 @@
+@import './variables';
+
+.cap-select {
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+
+  button {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid $medium-bronze;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border-radius: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+    position: relative;
+    background-color: $white;
+
+    &.large {
+      padding: $spacing6;
+    }
+    &.medium {
+      padding: $spacing7 $spacing6;
+    }
+    &.small {
+      padding: $spacing8 $spacing6;
+    }
+    &:focus {
+      border: 1px solid $capwell-blue;
+      box-shadow: 0 0 0 1px $capwell-blue, 0 5px 12px 0 rgba(0,0,0,0.08);
+
+      @include forMobile() {
+        box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+        border: 1px solid $capwell-blue;
+      }
+    }
+
+    @include forMobile() {
+      padding: $spacing5 $spacing6 14px $spacing6;
+    }
+
+    .label {
+      display: none;
+
+      @include forMobile() {
+        display: initial;
+        position: absolute;
+        font-size: 12px;
+        line-height: 12px;
+        top: 14px;
+        left: $spacing6;
+        z-index: 1;
+        width: max-content;
+        margin-bottom: 5px;
+        color: $dark-bronze;
+      }
+    }
+
+    .text {
+      font-size: 1rem;
+      line-height: 1rem;
+
+      &.chosen {
+        color: $dark-blue;
+      }
+
+      @include forMobile() {
+        font-size: 15px;
+        line-height: 15px;
+        margin-top: -6px;
+        padding-bottom: 6px;
+
+        &.chosen {
+          margin-top: 0;
+          margin-bottom: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    .icon {
+      color: $capwell-blue !important;
+      font-size: 20px !important;
+      line-height: 20px !important;
+      
+      @include forMobile() {
+        margin-top: -12px;
+      }
+    }
+  }
+
+  ul {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid $capwell-blue;
+    background-color: $white;
+    width: calc(100% - 4px);
+    border-radius: 6px;
+    margin-bottom: $spacing4;
+    background-color: $white !important;
+    z-index: 1005;
+    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+
+    @include forMobile() {
+      border: 1px solid $capwell-blue;
+      width: calc(100% - 2px);
+    }
+
+    li {
+      all: unset;
+      padding: $spacing6;
+      color: $dark-blue;
+      font-size: 1rem;
+      line-height: 1rem;
+      font-weight: normal;
+      cursor: pointer;
+
+      &.selected {
+        color: $secondary;
+        background-color: rgba(245,242,237,0.5);
+      }
+
+      @include forMobile() {
+        font-size: 15px;
+        line-height: 15px;
+        padding: 15px $spacing6;
+      }
+
+      &:hover {
+        background-color: rgba(245,242,237,0.5);
+      }
+
+      &:nth-child(1) {
+        cursor: auto;
+        color: $dark-bronze;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 6px;
+        font-weight: normal;
+        padding: 0;
+        padding-left: $spacing6;
+
+        .icon {
+          color: $capwell-blue !important;
+          font-size: 20px !important;
+          line-height: 20px !important;
+          margin-right: 1px;
+          cursor: pointer;
+          padding: $spacing6;
+
+          @include forMobile() {
+            padding: 15px $spacing6;
+          }
+        }
+
+        &:hover {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
