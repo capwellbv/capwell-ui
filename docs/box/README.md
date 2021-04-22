@@ -1,7 +1,5 @@
 # Box
 
-## Box
-
 Different size of boxes
 
 <template>

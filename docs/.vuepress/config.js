@@ -32,7 +32,10 @@ module.exports = {
           '/typography/',
           '/modals/',
           '/card/',
-          '/box/'
+          '/box/',
+          '/input/',
+          '/select/',
+          '/dropdown/'
         ]
       }
     ]

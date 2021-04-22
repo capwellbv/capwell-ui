@@ -51,6 +51,7 @@
 import { ArrowRightIcon } from 'vue-feather-icons';
 
 export default {
+    name: 'Cards',
     components: {
         ArrowRightIcon
     }
