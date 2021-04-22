@@ -19,7 +19,7 @@ export default {
         XIcon,
   },
 
-  created() {
+  mounted() {
     const escapeHandler = e => {
       if (e.key === "Escape" && this.show) {
         this.dismiss();
