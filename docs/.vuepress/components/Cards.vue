@@ -1,6 +1,6 @@
 <template>
     <div>
-        <cap-card size="small">
+        <cap-card size="small" max-height="700px">
             <template #body>
                 <cap-title type="heading" size="6">small Card</cap-title>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aliquam quod repudiandae omnis exercitationem aspernatur odio reprehenderit velit ducimus cupiditate? Optio nemo dolores odit officiis distinctio velit soluta consequuntur blanditiis!</p>
@@ -8,6 +8,13 @@
         </cap-card>
 
         <cap-card style="margin-top: 20px">
+            <template #body>
+                <cap-title type="heading" size="6">Medium Card</cap-title>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aliquam quod repudiandae omnis exercitationem aspernatur odio reprehenderit velit ducimus cupiditate? Optio nemo dolores odit officiis distinctio velit soluta consequuntur blanditiis!</p>
+            </template>
+        </cap-card>
+        
+        <cap-card style="margin-top: 20px" :nopadding="true">
             <template #body>
                 <cap-title type="heading" size="6">Medium Card</cap-title>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aliquam quod repudiandae omnis exercitationem aspernatur odio reprehenderit velit ducimus cupiditate? Optio nemo dolores odit officiis distinctio velit soluta consequuntur blanditiis!</p>

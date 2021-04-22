@@ -28,6 +28,12 @@ $card-ring-color: $capwell-blue;
 		margin-top: 1rem;
 	}
 
+	&.nopadding {
+		> .card-body {
+		  padding: 0;
+		}
+	}
+
 	.footer {
 		width: 100%;
 		display: flex;

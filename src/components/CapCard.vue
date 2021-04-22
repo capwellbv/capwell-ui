@@ -1,5 +1,5 @@
 <template>
-	<div :class="['cap-card', `cap-card-${size}`, {'bordered': bordered}]">
+	<div :class="['cap-card', `cap-card-${size}`, {'bordered': bordered, 'nopadding': nopadding}]">
 		<div class="image" v-if="$slots.image">
 			<slot name="image"></slot>
 		</div>
@@ -20,7 +20,8 @@ export default {
 			type: String,
 			default: 'medium'
 		},
-		bordered: {type: Boolean, default: false}
+		bordered: {type: Boolean, default: false},
+		nopadding: {type: Boolean, default: false},
 	}
 };
 </script>
