@@ -29,8 +29,9 @@ $card-ring-color: $capwell-blue;
 	}
 
 	&.nopadding {
-		> .card-body {
-		  padding: 0;
+		padding: 0;
+		.card-body {
+			margin-top: 0;
 		}
 	}
 

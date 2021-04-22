@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'Modal',
     data() {
         return {
             show: false
