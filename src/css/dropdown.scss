@@ -1,0 +1,42 @@
+@import './variables';
+
+.cap-dropdown{
+  position: relative;
+  .btn-wrapper {
+    height: 40px;
+    width: 150px;
+    background: $primary-light;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    justify-content: space-between;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $white;
+  }
+  .content-wrapper {
+    position: absolute;
+    background: $white;
+    border-radius: 5px;
+    top: 40px;
+    z-index: 5;
+    min-width: 200px;
+   border: 1px solid $primary-light;
+   background-color: $white;
+
+   ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+
+    li {
+      padding: 5px 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $light-bronze;
+      }
+    }
+   }
+  }
+}

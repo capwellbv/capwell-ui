@@ -34,7 +34,8 @@ module.exports = {
           '/card/',
           '/box/',
           '/input/',
-          '/select/'
+          '/select/',
+          '/dropdown/'
         ]
       }
     ]
