@@ -2,7 +2,7 @@
 
 .cap-dropdown{
   position: relative;
-  .btn-wrapper {
+  .cap-dropdown-trigger {
     height: 40px;
     width: 150px;
     background: $primary-light;
@@ -14,20 +14,23 @@
     cursor: pointer;
     color: $white;
   }
-  .content-wrapper {
+  .cap-dropdown-content {
     position: absolute;
     background: $white;
-    border-radius: 5px;
-    top: 40px;
+    border-radius: 8px;
+    top: 42px;
     z-index: 5;
     min-width: 200px;
-   border: 1px solid $primary-light;
-   background-color: $white;
+    border: 1px solid $primary-light;
+    background-color: $white;
+    overflow: hidden;
+
 
    ul {
     margin: 0;
     list-style: none;
     padding-left: 0;
+
 
     li {
       padding: 5px 1rem;

@@ -2,11 +2,12 @@
     <div class="cap-input">
       <div class="cap-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
         <input
-          @input="handleInput"
+          @input="$emit('input', event.target.value)"
           type="text"
           :value="value"
           :disabled="disabled"
-          class="input-value"
+          class="input-field"
+          v-bind="$attrs"
           ref="input"
           :placeholder="placeholder"
         />
@@ -18,13 +19,8 @@
 <script>
 
 export default {
-  
   name: "CapInput",
-  data() {
-    return {
-    inputValue: "",
-    }
-  },
+  inheritAttrs: false,
   props: {
     placeholder: {
       type: String,
@@ -46,12 +42,6 @@ export default {
       type: String,
       default: ''
     },
-
-  },
-  methods: {
-    handleInput(event) {
-      this.$emit('input', event.target.value)
-    }
   }
 };
 </script>

@@ -6,31 +6,36 @@
 
 ```vue
 <template>
-	<div>
-		<cap-select
-			v-model="selectdValue"
-			:items="items"
-			placeholder="Search skills"
-			label="Search skills"
-		>
-		</cap-select>
-	</div>
+  <div>
+    <cap-dropdown text="dropdown" :show="showMenu" @toggle="(value) => showMenu = value">
+      <cap-dropdown-item
+        v-for="(item, index) in items"
+        :key="index"
+        :value="item.text"
+      >
+      </cap-dropdown-item>
+    </cap-dropdown>
+  </div>
 </template>
 
 <script>
+import { CapDropdown, CapDropdownItem } from "capwell-ui";
 export default {
+  name: "Dropdown",
+  components: {
+	CapDropdown,
+	CapDropdownItem
+  },
   data() {
-    return: {
-      selectdValue: '',
-			items: [
-      'Dot NET ontwikkelaars',
-      'Biztalk Consultants',
-      'Ruby On Rails Developers',
-      'Javascript Specialisten',
-      'Vue Specialistens',
-		  ],
-    }
-  }
+    return {
+      showMenu: false,
+      items: [
+        { text: "item one" },
+        { text: "item two" },
+        { text: "item three" },
+      ],
+    };
+  },
 };
 </script>
 ```

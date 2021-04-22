@@ -1,45 +1,38 @@
 <template>
   <div class="cap-dropdown">
-    <div class="btn-wrapper" @click="handleDropdown" >
-      <span>{{text}}</span>
-       <chevron-down-icon size="1.5x" class="custom-class"></chevron-down-icon>
+    <div class="cap-dropdown-trigger" @click="$emit('toggle', !show)">
+      <slot name="trigger">
+        <span>{{ text }}</span>
+        <chevron-up-icon v-if="show" size="1.5x"></chevron-up-icon>
+        <chevron-down-icon v-else size="1.5x"></chevron-down-icon>
+      </slot>
     </div>
-    <div v-if="menu" class="content-wrapper">
-      <slot name="menu"></slot>
+    <div v-show="show" class="cap-dropdown-content">
+      <ul>
+        <slot />
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
-import { ChevronDownIcon } from 'vue-feather-icons'
+import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
 export default {
-  name: 'CapDropdown',
-  data() {
-    return {
-      showMenu: false
-    }
-  },
+  name: "CapDropdown",
   props: {
     text: {
       type: String,
-      require: true
+      require: true,
     },
-    menu: {
-      type: Boolean,
-      default: false
-    }
+    show: { default: true, type: Boolean },
   },
   components: {
-    ChevronDownIcon
-  },
-  methods: {
-    handleDropdown() {
-      this.$emit('handle-menu', !this.menu)
-    }
+    ChevronUpIcon,
+    ChevronDownIcon,
   }
-}
+};
 </script>
 
 <style scoped lang="scss">
-@import '../css/dropdown.scss'
+@import "../css/dropdown.scss";
 </style>

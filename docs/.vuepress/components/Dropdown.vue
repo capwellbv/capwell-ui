@@ -1,38 +1,28 @@
 <template>
-	<div>
-		<cap-dropdown text="dropdown" :menu="closeMenu" @handle-menu="handleMenu">
-			<template #menu>
-				<ul>
-					<li
-						v-for="(item, index) in items"
-						:key="index"
-						@click="closeMenu = false"
-					>
-						<span>{{ item.text }}</span>
-					</li>
-				</ul>
-			</template>
-		</cap-dropdown>
-	</div>
+  <div>
+    <cap-dropdown text="dropdown" :show="showMenu" @toggle="(value) => showMenu = value">
+      <cap-dropdown-item
+        v-for="(item, index) in items"
+        :key="index"
+        :value="item.text"
+      >
+      </cap-dropdown-item>
+    </cap-dropdown>
+  </div>
 </template>
 
 <script>
 export default {
-	name: 'Dropdown',
-	data() {
-		return {
-			closeMenu: false,
-			items: [
-				{ text: 'item one' },
-				{ text: 'item two' },
-				{ text: 'item three' },
-			],
-		};
-	},
-	methods: {
-		handleMenu(value) {
-			this.closeMenu = value;
-		},
-	},
+  name: "Dropdown",
+  data() {
+    return {
+      showMenu: false,
+      items: [
+        { text: "item one" },
+        { text: "item two" },
+        { text: "item three" },
+      ],
+    };
+  },
 };
 </script>

@@ -1,6 +1,7 @@
 <template>
 	<div>
         <p>Large input</p>
+
 		<cap-input  style="margin-top: 20px" placeholder="Search value" size="large" >
 			<template #icon>
 				<search-icon size="1.2x" class="icon"></search-icon>
@@ -18,6 +19,7 @@
 		</cap-input>
 
         <p>Medium input</p>
+		
 		<cap-input style="margin-top: 20px" placeholder="Username">
 			<template #icon>
 				<user-icon size="1.2x" class="icon"></user-icon>

@@ -7,6 +7,7 @@ import CapBox from '../../src/components/CapBox'
 import CapInput from '../../src/components/CapInput'
 import CapSelect from '../../src/components/CapSelect'
 import CapDropdown from '../../src/components/CapDropdown'
+import CapDropdownItem from '../../src/components/CapDropdownItem'
 
 export default ({
     Vue, // the version of Vue being used in the VuePress app
@@ -20,4 +21,5 @@ export default ({
     Vue.component('CapInput', CapInput),
     Vue.component('CapSelect', CapSelect),
     Vue.component('CapDropdown', CapDropdown)
+    Vue.component('CapDropdownItem', CapDropdownItem)
   }

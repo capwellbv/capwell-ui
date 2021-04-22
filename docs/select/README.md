@@ -18,7 +18,9 @@
 </template>
 
 <script>
+import { CapSelect } from "capwell-ui";
 export default {
+  components: {CapSelect},
   data() {
     return: {
       selectdValue: '',
