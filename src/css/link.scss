@@ -5,6 +5,7 @@
 	align-items: center;
 	color: $capwell-blue;
 	font-family: 'Mulish', sans-serif;
+	cursor: pointer;
 
 	.link {
 		color: $capwell-blue;
@@ -31,6 +32,6 @@
 		}
 	}
 	.link-icon {
-		margin-left: $p-2;
+		margin-left: $p-1;
 	}
 }

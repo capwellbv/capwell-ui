@@ -1,10 +1,3 @@
-# Links
-
-<Links />
-
-::: details Preview the code
-
-```vue
 <template>
 	<div>
 		<cap-link size="small" src="#">
@@ -27,16 +20,11 @@
 </template>
 
 <script>
-import { CapLink } from 'capwell-ui';
 import { ArrowRightIcon } from 'vue-feather-icons';
 export default {
+	name: 'Links',
 	components: {
-		CapLink,
 		ArrowRightIcon,
 	},
 };
 </script>
-
-```
-
-:::
