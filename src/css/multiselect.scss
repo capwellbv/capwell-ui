@@ -1,6 +1,6 @@
 @import './variables';
 
-.cap-select {
+.cap-multi-select {
   position: relative;
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
@@ -36,13 +36,31 @@
         border: 1px solid $capwell-blue;
       }
     }
-
     @include forMobile() {
       padding: $spacing5 $spacing6 14px $spacing6;
     }
 
     .label {
-      display: none;
+      display: flex;
+      flex-wrap: wrap;
+
+      .select-item {
+        padding: 4px 10px;
+        border-radius: 18px;
+        background-color: $dark-bronze;
+        margin: 0 5px 5px 0;
+        display: flex;
+        align-items: center;
+
+        .cross-icon {
+          margin-left: 4px;
+          cursor: pointer;
+
+          &:hover {
+            color: $c-blue-alt;
+          }
+        }
+      }
 
       @include forMobile() {
         display: initial;
@@ -61,6 +79,10 @@
     .text {
       font-size: 1rem;
       line-height: 1rem;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      border: none;
 
       &.chosen {
         color: $dark-blue;
@@ -96,8 +118,6 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 0;
-    left: 0;
     border: 2px solid $capwell-blue;
     background-color: $white;
     width: calc(100% - 4px);
@@ -106,12 +126,13 @@
     background-color: $white !important;
     z-index: 1005;
     box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+    margin-top: 5px;
 
     @include forMobile() {
       border: 1px solid $capwell-blue;
       width: calc(100% - 2px);
     }
-
+    
     li {
       all: unset;
       padding: $spacing6;
@@ -121,6 +142,7 @@
       font-weight: normal;
       cursor: pointer;
 
+      
       &.selected {
         color: $secondary;
         background-color: rgba(245,242,237,0.5);

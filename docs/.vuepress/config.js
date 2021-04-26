@@ -35,6 +35,7 @@ module.exports = {
           '/box/',
           '/input/',
           '/select/',
+          '/multiSelect/',
           '/dropdown/',
           '/link/'
         ]

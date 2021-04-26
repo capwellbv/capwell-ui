@@ -6,6 +6,7 @@ import CapCard from '../../src/components/CapCard';
 import CapBox from '../../src/components/CapBox';
 import CapInput from '../../src/components/CapInput';
 import CapSelect from '../../src/components/CapSelect';
+import CapMultiSelect from '../../src/components/CapMultiSelect';
 import CapDropdown from '../../src/components/CapDropdown';
 import CapDropdownItem from '../../src/components/CapDropdownItem';
 import CapLink from '../../src/components/CapLink';
@@ -21,6 +22,7 @@ export default ({
 	Vue.component('CapBox', CapBox);
 	Vue.component('CapInput', CapInput);
 	Vue.component('CapSelect', CapSelect);
+	Vue.component('CapMultiSelect', CapMultiSelect);
 	Vue.component('CapDropdown', CapDropdown);
 	Vue.component('CapDropdownItem', CapDropdownItem);
 	Vue.component('CapLink', CapLink);

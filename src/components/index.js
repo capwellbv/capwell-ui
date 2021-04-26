@@ -5,5 +5,6 @@ export { default as CapCard } from "./CapCard";
 export { default as CapBox } from "./CapBox";
 export { default as CapInput } from "./CapInput";
 export { default as CapSelect } from "./CapSelect";
+export { default as CapMultiSelect } from "./CapMultiSelect";
 export { default as CapDropdown } from "./CapDropdown";
 export { default as CapLink } from "./CapLink";

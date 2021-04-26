@@ -9,24 +9,23 @@
         @keydown.tab="hide"
         @keyup.esc="hide"
       >
-       <span v-if="typeof this.buttonText === 'string'" :class="{ chosen: selectedValue }" class="text">{{buttonText}}</span>
-        <div class="label" v-else >
-          <span class="text" v-if="buttonText.length == 0">{{placeholder}}</span>
-          <span class="select-item" v-for="(item, index) in this.buttonText" :key="index">{{item}}  <x-icon @click="select(item)" size="1x" class="cross-icon"></x-icon></span>
-        </div>
-        <chevron-up-icon v-if="showOptions" size="1.5x" class="icon"></chevron-up-icon>
-        <chevron-down-icon v-else  size="1.5x" class="icon"></chevron-down-icon>
+        <span v-if="selectedValue" class="label">{{ this.label }}</span>
+        <span :class="{ chosen: selectedValue }" class="text">
+          {{ this.buttonText }}
+        </span>
+        <chevron-down-icon size="1.5x" class="icon"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li>
+          <span>{{ this.placeholder }}</span>
+          <chevron-up-icon size="1.5x" class="icon"></chevron-up-icon>
         </li>
         <li
-          @keyup.enter="select(option)"
+          @keyup.enter="select(i)"
           v-for="(option, i) in options"
           :key="i"
-          @click="select(option)"
+          @click="select(i)"
           role="option"
-          :class="{'selected': selectedValue == option && !multiple}"
         >
           {{ option }}
         </li>
@@ -37,17 +36,9 @@
 
 <script>
 import CapOnClickAway from "./CapOnClickAway";
-import { ChevronDownIcon, ChevronUpIcon , XIcon} from "vue-feather-icons";
-
+import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
 export default {
-  name: "CapMulti",
-  data() {
-    return {
-      selectedValue: null,
-      showOptions: false,
-      selectedValueArr: []
-    };
-  },
+  name: "CapSelect",
   model: {
     prop: "value",
     event: "change",
@@ -57,16 +48,13 @@ export default {
       type: Array,
       required: true,
     },
-
     value: {
       default: null,
     },
-
     placeholder: {
       type: String,
       default: "Select option",
     },
-
     label: {
       type: String,
       required: true,
@@ -75,53 +63,48 @@ export default {
       type: String,
       default: "medium",
     },
-    multiple: {
-      type: [Boolean,String],
-      default: false
-    }
+  },
+  data() {
+    return {
+      selectedValue: null,
+      showOptions: false,
+    };
   },
   components: {
     ChevronUpIcon,
     ChevronDownIcon,
     CapOnClickAway,
-    XIcon
   },
-
+  mounted() {
+    if (this.value !== null) {
+      this.selectedValue = this.options[this.value];
+      this.$el.querySelectorAll("li")[this.value + 1].classList.add("selected");
+    }
+  },
   computed: {
-    buttonText(){
-      if (this.selectedValue && this.multiple) {
-        return this.selectedValueArr;
-      } else if (this.selectedValue && !this.multiple) {
-        return this.selectedValue
+    buttonText() {
+      if (this.selectedValue) {
+        return this.selectedValue;
       }
       return this.placeholder;
     },
   },
-
   methods: {
     show() {
       this.showOptions = true;
     },
-
     hide() {
       this.showOptions = false;
     },
-
-    select(option) {  
-      this.selectedValue = option;
-      if(this.multiple) {
-        if(!this.selectedValueArr.includes(this.selectedValue)) {
-          this.selectedValueArr.push(this.selectedValue)   
-        } else {
-          let index = this.selectedValueArr.indexOf(this.selectedValue)
-          this.selectedValueArr.splice(index, 1)
-        }
-        this.$emit("change", this.selectedValueArr);
-      } else {
-         this.$emit("change", this.selectedValue);
-         this.hide()
+    select(i) {
+      this.selectedValue = this.options[i];
+      if (this.$el.querySelector(".selected")) {
+        this.$el.querySelector(".selected").classList.remove("selected");
       }
-    }
+      this.$el.querySelectorAll("li")[i + 1].classList.add("selected");
+      this.$emit("change", this.selectedValue);
+      this.hide();
+    },
   },
 };
 </script>
