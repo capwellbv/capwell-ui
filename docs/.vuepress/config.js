@@ -40,6 +40,7 @@ module.exports = {
           '/link/',
           '/searchAbleSelect/',
           '/radio/',
+          '/dialog/',
         ]
       }
     ]

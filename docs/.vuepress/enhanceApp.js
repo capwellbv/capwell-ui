@@ -12,6 +12,7 @@ import CapDropdownItem from '../../src/components/CapDropdownItem';
 import CapLink from '../../src/components/CapLink';
 import CapSearchAbleSelect from '../../src/components/CapSearchAbleSelect';
 import CapRadio from '../../src/components/CapRadio';
+import CapDialog from '../../src/components/CapRadio';
 
 export default ({
 	Vue, // the version of Vue being used in the VuePress app
@@ -30,4 +31,5 @@ export default ({
 	Vue.component('CapLink', CapLink);
 	Vue.component('CapSearchAbleSelect', CapSearchAbleSelect);
 	Vue.component('CapRadio', CapRadio);
+	Vue.component('CapDialog', CapDialog);
 };
