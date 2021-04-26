@@ -37,7 +37,8 @@ module.exports = {
           '/select/',
           '/multiSelect/',
           '/dropdown/',
-          '/link/'
+          '/link/',
+          '/searchAbleSelect/',
         ]
       }
     ]
