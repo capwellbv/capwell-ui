@@ -9,3 +9,4 @@ export { default as CapMultiSelect } from "./CapMultiSelect";
 export { default as CapDropdown } from "./CapDropdown";
 export { default as CapLink } from "./CapLink";
 export { default as CapSearchAbleSelect } from "./CapSearchAbleSelect";
+export { default as CapRadio } from "./CapRadio";
