@@ -9,24 +9,25 @@
         @keydown.tab="hide"
         @keyup.esc="hide"
       >
-       <span v-if="typeof this.buttonText === 'string'" :class="{ chosen: selectedValue }" class="text">{{buttonText}}</span>
-        <div class="label" v-else >
-          <span class="text" v-if="buttonText.length == 0">{{placeholder}}</span>
-          <span class="select-item" v-for="(item, index) in this.buttonText" :key="index">{{item}}  <x-icon @click="select(item)" size="1x" class="cross-icon"></x-icon></span>
+        <div class="label">
+          <span class="text" v-if="!values.length">{{placeholder}}</span>
+          <span class="select-item" v-for="(item, index) in values" :key="index">
+            {{item}}
+            <x-icon @click="select(item)" size="1x" class="cross-icon"></x-icon>
+          </span>
         </div>
         <chevron-up-icon v-if="showOptions" size="1.5x" class="icon"></chevron-up-icon>
         <chevron-down-icon v-else  size="1.5x" class="icon"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
-        <li>
-        </li>
+        <li></li>
         <li
           @keyup.enter="select(option)"
           v-for="(option, i) in options"
-          :key="i"
+          :key="`${option}-${i}`"
           @click="select(option)"
           role="option"
-          :class="{'selected': selectedValueArr.includes(option)}"
+          :class="{'selected': values.includes(option)}"
         >
           {{ option }}
         </li>
@@ -43,9 +44,9 @@ export default {
   name: "CapMulti",
   data() {
     return {
-      selectedValue: null,
+      currentValue: null,
       showOptions: false,
-      selectedValueArr: []
+      values: []
     };
   },
   model: {
@@ -59,7 +60,8 @@ export default {
     },
 
     value: {
-      default: null,
+      type: Array,
+      default: [],
     },
 
     placeholder: {
@@ -83,12 +85,28 @@ export default {
     XIcon
   },
 
+  created() {
+    this.values = this.values;
+  },
+
+  mounted() {
+		const escapeHandler = (e) => {
+			if (e.key === 'Escape' && this.showOptions) {
+				this.hide();
+			}
+		};
+		document.addEventListener('keydown', escapeHandler);
+		this.$once('hook:destroyed', () => {
+			document.removeEventListener('keydown', escapeHandler);
+		});
+	},
+
   computed: {
-    buttonText(){
-      if (this.selectedValue) {
-        return this.selectedValueArr;
-      } else if (this.selectedValue) {
-        return this.selectedValue
+    buttonText() {
+      if (this.currentValue) {
+        return this.values;
+      } else if (this.currentValue) {
+        return this.currentValue
       }
       return this.placeholder;
     }
@@ -104,14 +122,14 @@ export default {
     },
 
     select(option) {  
-      this.selectedValue = option;
-        if(!this.selectedValueArr.includes(this.selectedValue)) {
-          this.selectedValueArr.push(this.selectedValue)   
-        } else {
-          let index = this.selectedValueArr.indexOf(this.selectedValue)
-          this.selectedValueArr.splice(index, 1)
-        }
-        this.$emit("change", this.selectedValueArr);
+      this.currentValue = option;
+      if(!this.values.includes(this.currentValue)) {
+        this.values.push(this.currentValue)   
+      } else {
+        const index = this.values.indexOf(this.currentValue)
+        this.values.splice(index, 1)
+      }
+      this.$emit("change", this.values);
     },
     
   },

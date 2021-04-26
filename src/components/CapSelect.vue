@@ -80,6 +80,16 @@ export default {
       this.selectedValue = this.options[this.value];
       this.$el.querySelectorAll("li")[this.value + 1].classList.add("selected");
     }
+
+		const escapeHandler = (e) => {
+			if (e.key === 'Escape' && this.showOptions) {
+				this.hide();
+			}
+		};
+		document.addEventListener('keydown', escapeHandler);
+		this.$once('hook:destroyed', () => {
+			document.removeEventListener('keydown', escapeHandler);
+		});
   },
   computed: {
     buttonText() {

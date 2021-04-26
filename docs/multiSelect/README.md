@@ -8,7 +8,7 @@
 <template>
 	<div>
 		<cap-multi-select
-			v-model="selectdValue"
+			v-model="skills"
 			:items="items"
 			placeholder="Search skills"
 			label="Search skills"
@@ -23,7 +23,7 @@ export default {
   components: {CapMultiSelect},
   data() {
     return: {
-      selectdValue: '',
+      skills: '',
 			items: [
       'Dot NET ontwikkelaars',
       'Biztalk Consultants',

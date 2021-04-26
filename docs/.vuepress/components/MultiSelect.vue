@@ -2,7 +2,7 @@
   <div>
     <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
       size="large"
@@ -11,7 +11,7 @@
 
     <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
     >
@@ -19,7 +19,7 @@
 
     <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
       size="small"
@@ -33,7 +33,7 @@ export default {
   name: "MultiSelect",
   data() {
     return {
-      selectdValue: "",
+      skills: [],
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",
