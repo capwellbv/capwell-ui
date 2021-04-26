@@ -11,6 +11,7 @@ import CapDropdown from '../../src/components/CapDropdown';
 import CapDropdownItem from '../../src/components/CapDropdownItem';
 import CapLink from '../../src/components/CapLink';
 import CapSearchAbleSelect from '../../src/components/CapSearchAbleSelect';
+import CapSearchAbleMultiSelect from '../../src/components/CapSearchAbleMultiSelect';
 import CapRadio from '../../src/components/CapRadio';
 import CapDialog from '../../src/components/CapRadio';
 
@@ -30,6 +31,7 @@ export default ({
 	Vue.component('CapDropdownItem', CapDropdownItem);
 	Vue.component('CapLink', CapLink);
 	Vue.component('CapSearchAbleSelect', CapSearchAbleSelect);
+	Vue.component('CapSearchAbleMultiSelect', CapSearchAbleMultiSelect);
 	Vue.component('CapRadio', CapRadio);
 	Vue.component('CapDialog', CapDialog);
 };
