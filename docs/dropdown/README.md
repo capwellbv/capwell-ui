@@ -21,10 +21,9 @@
 <script>
 import { CapDropdown, CapDropdownItem } from "capwell-ui";
 export default {
-  name: "Dropdown",
   components: {
-	CapDropdown,
-	CapDropdownItem
+    CapDropdown,
+    CapDropdownItem
   },
   data() {
     return {

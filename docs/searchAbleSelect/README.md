@@ -1,26 +1,26 @@
-#  Select
-
-<Select />
+#  Search Able Select
+<SearchAbleSelect />
 
 ::: details Preview the code
 
 ```vue
 <template>
 	<div>
-		<cap-select
+		<cap-search-able-select
 			v-model="selectdValue"
-			:items="items"
-			placeholder="Search skills"
-			label="Search skills"
+			:options="items"
+      placeholder="Search skills"
+      size=""
+      rounded=""
 		>
-		</cap-select>
+		</cap-search-able-select>
 	</div>
 </template>
 
 <script>
-import { CapSelect } from "capwell-ui";
+import { CapSearchAbleSelect } from "capwell-ui";
 export default {
-  components: {CapSelect},
+  components: {CapSearchAbleSelect},
   data() {
     return: {
       selectdValue: '',

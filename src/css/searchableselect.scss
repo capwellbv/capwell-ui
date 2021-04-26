@@ -1,0 +1,114 @@
+@import './variables';
+
+.cap-search-able-select {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+
+	@include forMobile() {
+		width: 100%;
+	}
+
+	.select-container {
+		display: flex;
+		align-items: center;
+		border-radius: 6px;
+		padding: 0 1rem;
+		box-shadow: 0 0 0 1px $medium-bronze, 0 4px 11px 0 rgba(0, 0, 0, 0.08);
+
+		&:focus-within {
+			box-shadow: 0 0 0 2px $capwell-blue, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
+				0 17px 47px 0 rgba(0, 0, 0, 0.15);
+
+			.icon {
+				color: $capwell-blue;
+			}
+		}
+		&.large {
+			height: 60px;
+		}
+		&.medium {
+			height: 50px;
+		}
+		&.small {
+			height: 40px;
+		}
+		&.rounded {
+			border-radius: 30px;
+		}
+
+		input {
+			width: 100%;
+			height: auto;
+			z-index: 1000;
+			border: none;
+			background-color: transparent;
+			height: 100%;
+			font-size: 1rem;
+
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+	&.error {
+		.input {
+			box-shadow: 0 0 0 1px $red-color !important;
+
+			@include forMobile() {
+				box-shadow: none !important;
+				border: 1px solid $red-color !important;
+			}
+		}
+	}
+}
+
+.error {
+	color: $red-color;
+	font-size: 1rem;
+	line-height: 1rem;
+	margin-top: 5px;
+}
+
+ul {
+	all: unset;
+	display: flex;
+	flex-direction: column;
+	background-color: $white;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	border-radius: 6px;
+	margin-bottom: $spacing4;
+	background-color: $white !important;
+	z-index: 100;
+	box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
+		0 15px 45px 0 rgba(0, 0, 0, 0.15);
+	margin-top: 5px;
+	z-index: 10001;
+
+	li {
+		all: unset;
+		padding: $spacing6;
+		color: $dark-blue;
+		font-size: rem(18px);
+		line-height: rem(20px);
+		font-weight: normal;
+		cursor: pointer;
+
+		@include forMobile() {
+			font-size: rem(15px);
+			line-height: rem(15px);
+			padding: 15px;
+		}
+
+		&:hover {
+			background-color: rgba(245, 242, 237, 0.5);
+		}
+
+		&:nth-child(1) {
+			margin-top: 8px;
+		}
+	}
+}

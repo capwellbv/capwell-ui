@@ -37,7 +37,6 @@
 <script>
 import CapOnClickAway from "./CapOnClickAway";
 import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
-
 export default {
   name: "CapSelect",
   model: {
@@ -49,16 +48,13 @@ export default {
       type: Array,
       required: true,
     },
-
     value: {
       default: null,
     },
-
     placeholder: {
       type: String,
       default: "Select option",
     },
-
     label: {
       type: String,
       required: true,
@@ -79,33 +75,37 @@ export default {
     ChevronDownIcon,
     CapOnClickAway,
   },
-
   mounted() {
     if (this.value !== null) {
       this.selectedValue = this.options[this.value];
       this.$el.querySelectorAll("li")[this.value + 1].classList.add("selected");
     }
-  },
 
+		const escapeHandler = (e) => {
+			if (e.key === 'Escape' && this.showOptions) {
+				this.hide();
+			}
+		};
+		document.addEventListener('keydown', escapeHandler);
+		this.$once('hook:destroyed', () => {
+			document.removeEventListener('keydown', escapeHandler);
+		});
+  },
   computed: {
     buttonText() {
       if (this.selectedValue) {
         return this.selectedValue;
       }
-
       return this.placeholder;
     },
   },
-
   methods: {
     show() {
       this.showOptions = true;
     },
-
     hide() {
       this.showOptions = false;
     },
-
     select(i) {
       this.selectedValue = this.options[i];
       if (this.$el.querySelector(".selected")) {

@@ -1,26 +1,26 @@
-#  Select
-
-<Select />
+#  Select Able Multi Select
+<SearchAbleMultiSelect />
 
 ::: details Preview the code
 
 ```vue
 <template>
 	<div>
-		<cap-select
+		<cap-search-able-multi-select
 			v-model="selectdValue"
-			:items="items"
-			placeholder="Search skills"
-			label="Search skills"
+			:options="items"
+      placeholder="Search skills"
+      size=""
+      rounded=""
 		>
-		</cap-select>
+		</cap-search-able-multi-select>
 	</div>
 </template>
 
 <script>
-import { CapSelect } from "capwell-ui";
+import { CapSearchAbleMultiSelect } from "capwell-ui";
 export default {
-  components: {CapSelect},
+  components: {CapSearchAbleMultiSelect},
   data() {
     return: {
       selectdValue: '',

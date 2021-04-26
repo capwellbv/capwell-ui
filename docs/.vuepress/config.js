@@ -35,7 +35,13 @@ module.exports = {
           '/box/',
           '/input/',
           '/select/',
-          '/dropdown/'
+          '/multiSelect/',
+          '/dropdown/',
+          '/link/',
+          '/searchAbleSelect/',
+          '/searchAbleMultiSelect/',
+          '/radio/',
+          '/dialog/',
         ]
       }
     ]
