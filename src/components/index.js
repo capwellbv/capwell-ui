@@ -12,3 +12,4 @@ export { default as CapSearchAbleSelect } from "./CapSearchAbleSelect";
 export { default as CapSearchAbleMultiSelect } from "./CapSearchAbleMultiSelect";
 export { default as CapRadio } from "./CapRadio";
 export { default as CapDialog } from "./CapDialog";
+export { default as CapHeader } from "./CapHeader";
