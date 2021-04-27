@@ -89,29 +89,6 @@ export default {
     this.values = this.values;
   },
 
-  mounted() {
-		const escapeHandler = (e) => {
-			if (e.key === 'Escape' && this.showOptions) {
-				this.hide();
-			}
-		};
-		document.addEventListener('keydown', escapeHandler);
-		this.$once('hook:destroyed', () => {
-			document.removeEventListener('keydown', escapeHandler);
-		});
-	},
-
-  computed: {
-    buttonText() {
-      if (this.currentValue) {
-        return this.values;
-      } else if (this.currentValue) {
-        return this.currentValue
-      }
-      return this.placeholder;
-    }
-  },
-
   methods: {
     show() {
       this.showOptions = true;
