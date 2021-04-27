@@ -43,6 +43,7 @@ module.exports = {
           '/radio/',
           '/dialog/',
           '/header/',
+          '/footer/',
         ]
       }
     ]
