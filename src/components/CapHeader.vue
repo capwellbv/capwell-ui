@@ -8,9 +8,8 @@
           <x-icon size="1.3x" v-else @click.prevent="toggleMenu" class="close-icon"></x-icon>
         </div>
         <ul class="cap-nav-item-list" :class="{ shown: !closed }">
-         <slot name="listMenu"></slot>
+         <slot />
         </ul>
-        <slot v-if="!closed" name="action"></slot>
       </nav>
     </div>
   </div>
@@ -40,12 +39,6 @@ export default {
     window.addEventListener("scroll", this.showNavbar);
   },
 
-  mounted() {
-    document.querySelectorAll(".cap-nav-item-list li a").forEach(link => {
-      link.addEventListener("click", this.toggleMenu);
-    });
-  },
-
   methods: {
     toggleMenu() {
       this.closed = !this.closed;
@@ -62,13 +55,6 @@ export default {
         this.prevScrollTop = 85;
       }
     },
-
-    // registerPerson() {
-    //   this.toggleMenu();
-    //   if (this.$route.name !== "Register") {
-    //     this.$router.push({ name: "Register" });
-    //   }
-    // },
 
     showNavbar() {
       const scrollTop =

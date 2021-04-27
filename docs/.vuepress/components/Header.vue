@@ -1,18 +1,13 @@
 <template>
   <div>
     <cap-header>
-      <cap-navbar-brand>logo</cap-navbar-brand>
       <template #logo>
         <cap-navbar-brand>logo</cap-navbar-brand>
       </template>
-      <template #listMenu>
-        <cap-nav-item  v-for="(item, index) in items" :key="index">
-          <a :href="item.slug" class="link">{{item.name}}</a>
-        </cap-nav-item>
-      </template>
-       <template #action>
-        <cap-button varient="primary">Registered</cap-button>
-      </template>
+      <cap-nav-item  v-for="(item, index) in items" :key="index">
+        <a :href="item.slug" class="link">{{item.name}}</a>
+      </cap-nav-item>
+      <cap-button varient="primary">Registered</cap-button>
     </cap-header>
   </div>
 </template>

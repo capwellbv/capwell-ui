@@ -2,7 +2,7 @@
   <div>
     <cap-search-able-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       placeholder="Search skills"
       size="large"
@@ -11,7 +11,7 @@
 
     <cap-search-able-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       placeholder="Search skills"
       rounded="true"
@@ -20,7 +20,7 @@
 
     <cap-search-able-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="preSelectedSkills"
       :options="items"
       placeholder="Search skills"
       size="small"
@@ -34,7 +34,8 @@ export default {
   name: "SearchAbleMultiSelect",
   data() {
     return {
-      selectdValue: "",
+      skills: [],
+      preSelectedSkills: ['Dot NET ontwikkelaars', 'Biztalk Consultants'],
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

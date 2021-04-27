@@ -9,8 +9,8 @@
         @keydown.tab="hide"
         @keyup.esc="hide"
       >
-        <span v-if="selectedValue" class="label">{{ this.label }}</span>
-        <span :class="{ chosen: selectedValue }" class="text">
+        <span v-if="currentValue" class="label">{{ this.label }}</span>
+        <span :class="{ chosen: currentValue }" class="text">
           {{ this.buttonText }}
         </span>
         <chevron-down-icon size="1.5x" class="icon"></chevron-down-icon>
@@ -66,7 +66,7 @@ export default {
   },
   data() {
     return {
-      selectedValue: null,
+      currentValue: null,
       showOptions: false,
     };
   },
@@ -77,24 +77,14 @@ export default {
   },
   mounted() {
     if (this.value !== null) {
-      this.selectedValue = this.options[this.value];
+      this.currentValue = this.options[this.value];
       this.$el.querySelectorAll("li")[this.value + 1].classList.add("selected");
     }
-
-		const escapeHandler = (e) => {
-			if (e.key === 'Escape' && this.showOptions) {
-				this.hide();
-			}
-		};
-		document.addEventListener('keydown', escapeHandler);
-		this.$once('hook:destroyed', () => {
-			document.removeEventListener('keydown', escapeHandler);
-		});
   },
   computed: {
     buttonText() {
-      if (this.selectedValue) {
-        return this.selectedValue;
+      if (this.currentValue) {
+        return this.currentValue;
       }
       return this.placeholder;
     },
@@ -107,12 +97,12 @@ export default {
       this.showOptions = false;
     },
     select(i) {
-      this.selectedValue = this.options[i];
+      this.currentValue = this.options[i];
       if (this.$el.querySelector(".selected")) {
         this.$el.querySelector(".selected").classList.remove("selected");
       }
       this.$el.querySelectorAll("li")[i + 1].classList.add("selected");
-      this.$emit("change", this.selectedValue);
+      this.$emit("change", this.currentValue);
       this.hide();
     },
   },
