@@ -14,3 +14,4 @@ export { default as CapRadio } from "./CapRadio";
 export { default as CapDialog } from "./CapDialog";
 export { default as CapHeader } from "./CapHeader";
 export { default as CapFooter } from "./CapFooter";
+export { default as CapSlider } from "./CapSlider";
