@@ -33,7 +33,7 @@ export default {
     XIcon
   },
 
-  created() {
+  mounted() {
     this.checkMedia();
     window.onresize = this.checkMedia;
     window.addEventListener("scroll", this.showNavbar);
