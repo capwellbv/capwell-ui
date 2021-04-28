@@ -44,6 +44,7 @@ module.exports = {
           '/dialog/',
           '/header/',
           '/footer/',
+          '/slider/',
         ]
       }
     ]
