@@ -2,7 +2,7 @@
 @import './_functions';
 @import './_responsive';
 
-.modal {
+.cap-modal {
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -13,10 +13,10 @@
 	flex-direction: column;
 	justify-content: start;
 	align-items: center;
-	// background-color: rgba(51 51 49 / 38%);
-	background-color: rgba(245, 242, 237, 0.9);
+	background: rgba(0,0,0,0.6);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-y: scroll;
 
 	&.modal-hide {
 		display: none;
@@ -26,42 +26,62 @@
 		display: flex;
 	}
 
-	.modal-content {
+	.cap-model-inner {
 		position: relative;
 		background-color: $white;
 		display: flex;
 		flex-direction: column;
-		margin: 15% 1rem;
+		margin: 5% 1rem;
 		border-radius: $p-1;
-		min-width: 300px;
-		max-width: 700px;
 
-		.header {
+		&.lg {
+			width: 80%;
+
+			@include forMobile() {
+				width: 90%;
+			}
+		}
+		&.md {
+			width: 60%;
+
+			@include forIpadPro() {
+				width: 70%;
+			}
+
+			@include forMobile() {
+				width: 90%;
+			}
+		}
+		&.sm {
+			width: 300px;
+
+			@include forSmall() {
+				width: 95%;
+			}
+
+		}
+
+		.cap-model-header {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
 			padding: 0.6rem 1rem;
-			background-color: $off-black;
-			color: $white;
 			.close-icon {
-				border: 1px solid $white;
+				border: 2px solid transparent;
 				border-radius: 100%;
 				padding: $p-1;
 				cursor: pointer;
+				background-color: $medium-bronze;
+				color: $off-black;
 
 				&:hover {
-					background-color: $capwell-blue;
+					border: 2px solid $capwell-blue;
+					color: $capwell-blue;
 				}
 			}
 		}
-		.model-body {
-			padding: 0 1rem;
-		}
-		.model-footer {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-			padding: 1rem;
+		.cap-model-body {
+			padding: 0px 1rem 1rem 1rem;
 		}
 	}
 }

@@ -15,3 +15,5 @@ export { default as CapDialog } from "./CapDialog";
 export { default as CapHeader } from "./CapHeader";
 export { default as CapFooter } from "./CapFooter";
 export { default as CapSlider } from "./CapSlider";
+export { default as CapForm } from "./CapForm";
+export { default as CapFormRow } from "./CapFormRow";
