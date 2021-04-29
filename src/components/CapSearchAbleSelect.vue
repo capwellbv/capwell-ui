@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-search-able-select">
+  <div class="cap-ui cap-search-able-select">
     <cap-on-click-away :do="hide">
       <div class="searchable-select" :class="{ active: showOptions }">
         <div class="select-container" :class="[size, { rounded }]">
