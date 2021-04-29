@@ -16,7 +16,7 @@
 	background: rgba(0,0,0,0.6);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	overflow-y: scroll;
+	
 
 	&.modal-hide {
 		display: none;
@@ -33,6 +33,7 @@
 		flex-direction: column;
 		margin: 5% 1rem;
 		border-radius: $p-1;
+		overflow-y: auto;
 
 		&.lg {
 			width: 80%;

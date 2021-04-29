@@ -102,6 +102,15 @@
             >
             </cap-select>
           </cap-form-row>
+          <cap-form-row>
+            <cap-title type="subheading" size="3">Remarks</cap-title>
+            <cap-textarea
+              style="width: 57%"
+              v-model="textarea"
+              placeholder="Explain a question?"
+            >
+            </cap-textarea>
+          </cap-form-row>
           <cap-form-row style="justify-content: flex-end">
             <cap-button @click="handleSubmit" varient="secondary" size="md"
               >Submit</cap-button
@@ -119,6 +128,7 @@ export default {
   name: "Modal",
   data() {
     return {
+      textarea: '',
       show: false,
       smShowModel: false,
       mdShowModel: false,

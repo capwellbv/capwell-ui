@@ -9,7 +9,8 @@
     align-items: center;
     border-radius: 6px;
     background-color: $white;
-    box-shadow: 0 0 0 1px $dark-bronze;
+    border: 1px solid $medium-bronze;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
     z-index: 100000;
     position: relative;
     padding: 0 1rem;
