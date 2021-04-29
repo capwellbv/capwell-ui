@@ -1,6 +1,6 @@
 <template>
 	<Button
-		class="cap-btn"
+		class="cap-ui cap-btn"
 		:class="[
 			`cap-${varient}-btn`,
 			size === 'xl'
@@ -47,5 +47,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../css/button.scss';
+// @import '../css/button.scss';
 </style>

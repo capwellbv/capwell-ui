@@ -21,6 +21,8 @@ import CapForm from '../../src/components/CapForm';
 import CapFormRow from '../../src/components/CapFormRow';
 import CapTextarea from '../../src/components/CapTextarea';
 
+import '../../src/css/index.scss'
+
 export default ({
 	Vue, // the version of Vue being used in the VuePress app
 }) => {
