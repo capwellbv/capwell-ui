@@ -1,147 +1,146 @@
 @import './_variables';
 
-
-.cap-btn {
-  border: none;
-  outline: none;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: 'Mulish', sans-serif;
-}
-.btn-xl {
-  height: 60px;
-  border-radius: 30px;
-  padding: 0px 40px;
-  font-size: 18px;
-  line-height: 18px;
-}
-.btn-lg {
-  height: 50px;
-  border-radius: 25px;
-  padding: 0px 30px;
-  font-size: 15px;
-  line-height: 15px;
-}
-.btn-md {
-  height: 40px;
-  border-radius: 20px;
-  padding: 0px 20px;
-  font-size: 14px;
-  line-height: 14px;
-}
-.btn-sm {
-  height: 35px;
-  border-radius: 18px;
-  padding: 0px 15px;
-  font-size: 13px;
-  line-height: 13px;
-}
-.cap-primary-btn {
-  background: linear-gradient(176.69deg, $primary-light 0%, $capwell-blue 100%);
-  box-shadow: 0 3px 10px 0 rgba(0,148,205,0.2);
-  color: $white;  
-  transition: ease-in-out 0.4s all;
-
-  &:hover {
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.1), 0 10px 30px 0 rgba(0,148,205,0.4);
+.#{$scss-prefix} {
+  &.cap-btn {
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Mulish', sans-serif;
   }
-  &:focus {
-    background-color: $c-blue-alt;
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
-  }
-}
-
-.cap-secondary-btn {
-  background-color: $white;
-  border: 1px solid $medium-bronze;
-  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-  transition: ease-in 0.1s all;
-
-  &:hover {
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-    border: 2px solid $capwell-blue;
-  }
-
-  &:focus {
+  &.btn-xl {
+    height: 60px;
     border-radius: 30px;
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
+    padding: 0px 40px;
+    font-size: 18px;
+    line-height: 18px;
   }
-}
-
-.cap-disabled-btn {
-  background-color: $white;
-  border:1px solid $medium-bronze;
-  cursor: not-allowed;
-  color: $dark-bronze;
-}
-
-
-
-.icon-btn {
-  border: 1px solid $medium-bronze;
-  background-color: $white;
-  display: flex;
-  align-items: center;
-  transition: ease-in-out 0.1s all;
-
-  &:hover  {
+  &.btn-lg {
+    height: 50px;
+    border-radius: 25px;
+    padding: 0px 30px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+  &.btn-md {
+    height: 40px;
+    border-radius: 20px;
+    padding: 0px 20px;
+    font-size: 14px;
+    line-height: 14px;
+  }
+  &.btn-sm {
+    height: 35px;
+    border-radius: 18px;
+    padding: 0px 15px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+  &.cap-primary-btn {
+    background: linear-gradient(176.69deg, $primary-light 0%, $capwell-blue 100%);
+    box-shadow: 0 3px 10px 0 rgba(0,148,205,0.2);
+    color: $white;  
+    transition: ease-in-out 0.4s all;
+  
+    &:hover {
+      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.1), 0 10px 30px 0 rgba(0,148,205,0.4);
+    }
+    &:focus {
+      background-color: $c-blue-alt;
+      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
+    }
+  }
+  
+  &.cap-secondary-btn {
+    background-color: $white;
+    border: 1px solid $medium-bronze;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-    border: 2px solid $capwell-blue;
+    transition: ease-in 0.1s all;
+  
+    &:hover {
+      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+      border: 2px solid $capwell-blue;
+    }
+  
+    &:focus {
+      border-radius: 30px;
+      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
+    }
+  }
+  
+  &.cap-disabled-btn {
+    background-color: $white;
+    border:1px solid $medium-bronze;
+    cursor: not-allowed;
+    color: $dark-bronze;
+  }
 
+  &.icon-btn {
+    border: 1px solid $medium-bronze;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    transition: ease-in-out 0.1s all;
+  
+    &:hover  {
+      box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+      border: 2px solid $capwell-blue;
+  
+      .icon {
+        color: $capwell-blue;
+      }
+    }
+  
+    .icon {
+      color: $dark-bronze;
+      margin-left: $ml-2;
+    }
+  }
+  
+  &.cap-circle-btn {
+    border-radius: 100%;
+    padding: 0;
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border: 1px solid $medium-bronze;
+    background-color: $white;
+    transition: ease-in-out 0.1s all;
+    &:hover {
+      border: 2px solid $capwell-blue;
+      box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05), 0 15px 45px 0 rgba(0,0,0,0.15);
+    }
+    &:focus {
+      border: 2px solid $capwell-blue;
+      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
+    }
     .icon {
       color: $capwell-blue;
     }
   }
-
-  .icon {
-    color: $dark-bronze;
-    margin-left: $ml-2;
+  &.cap-circle-btn.btn-sm{
+    width: 40px;
+    height: 40px;
+    
   }
-}
-
-.cap-circle-btn {
-  border-radius: 100%;
-  padding: 0;
-  box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-  border: 1px solid $medium-bronze;
-  background-color: $white;
-  transition: ease-in-out 0.1s all;
-  &:hover {
-    border: 2px solid $capwell-blue;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05), 0 15px 45px 0 rgba(0,0,0,0.15);
+  &.cap-circle-btn.btn-md{
+    width: 45px;
+    height: 45px;
   }
-  &:focus {
-    border: 2px solid $capwell-blue;
-    box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
+  &.cap-circle-btn.btn-lg{
+    width: 50px;
+    height: 50px;
   }
-  .icon {
-    color: $capwell-blue;
-  }
-}
-.cap-circle-btn.btn-sm{
-  width: 40px;
-  height: 40px;
+  &.cap-circle-btn.btn-xl{
+    width: 60px;
+    height: 60px;
   
-}
-.cap-circle-btn.btn-md{
-  width: 45px;
-  height: 45px;
-}
-.cap-circle-btn.btn-lg{
-  width: 50px;
-  height: 50px;
-}
-.cap-circle-btn.btn-xl{
-  width: 60px;
-  height: 60px;
-
-}
-.cap-muted {
-  &:hover  {
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-    border: 0px;
-    .icon{
-      color: $dark-bronze;
+  }
+  &.cap-muted {
+    &:hover  {
+      box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+      border: 0px;
+      .icon{
+        color: $dark-bronze;
+      }
     }
   }
 }

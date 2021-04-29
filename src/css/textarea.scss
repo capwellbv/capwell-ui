@@ -1,0 +1,29 @@
+@import "./variables";
+
+.cap-textarea {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  outline: none;
+  border-radius: 6px;
+  background-color: $white;
+  border: 1px solid $medium-bronze;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  font-size: 1rem;
+ 
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px $capwell-blue, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
+      0 17px 47px 0 rgba(0, 0, 0, 0.15);
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+    border: 1px solid $medium-bronze;
+  }
+  &::placeholder {
+    color: $dark-bronze;
+    font-weight: normal;
+  }
+}

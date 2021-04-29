@@ -17,6 +17,9 @@ import CapDialog from '../../src/components/CapRadio';
 import CapHeader from '../../src/components/CapHeader';
 import CapFooter from '../../src/components/CapFooter';
 import CapSlider from '../../src/components/CapSlider';
+import CapForm from '../../src/components/CapForm';
+import CapFormRow from '../../src/components/CapFormRow';
+import CapTextarea from '../../src/components/CapTextarea';
 
 export default ({
 	Vue, // the version of Vue being used in the VuePress app
@@ -40,4 +43,7 @@ export default ({
 	Vue.component('CapHeader', CapHeader);
 	Vue.component('CapFooter', CapFooter);
 	Vue.component('CapSlider', CapSlider);
+	Vue.component('CapForm', CapForm);
+	Vue.component('CapFormRow', CapFormRow);
+	Vue.component('CapTextarea', CapTextarea);
 };
