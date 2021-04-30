@@ -1,6 +1,6 @@
 # Radio buttons
 
-<Radio />
+<demo-radio></demo-radio>
 
 ::: details Preview the code
 

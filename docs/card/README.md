@@ -1,6 +1,6 @@
 # Card
 
-<Cards />
+<demo-cards></demo-cards>
 
 ::: details Preview the code
 ```vue

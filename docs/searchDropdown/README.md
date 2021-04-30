@@ -1,6 +1,6 @@
 # Search Dropdown
 
-<SearchDropdown />
+<demo-search-dropdown></demo-search-dropdown>
 
 ::: details Preview the code
 

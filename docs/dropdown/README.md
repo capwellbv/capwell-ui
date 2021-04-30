@@ -1,6 +1,6 @@
 # Dropdown
 
-<Dropdown />
+<demo-dropdown></demo-dropdown>
 
 ::: details Preview the code
 

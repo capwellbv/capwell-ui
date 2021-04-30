@@ -1,6 +1,6 @@
 # Links
 
-<Links />
+<demo-links></demo-links>
 
 ::: details Preview the code
 

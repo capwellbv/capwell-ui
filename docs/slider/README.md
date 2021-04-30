@@ -1,6 +1,6 @@
 # Slider
 
-<Slider />
+<demo-slider></demo-slider>
 
 ::: details Preview the code
 
@@ -14,7 +14,7 @@
 <script>
  data() {
 	return {
-     items: [
+     items: [r
        {slug: '#', title: '', description: ''},
        {slug: '#', title: '', description: ''},
        {slug: '#', title: '', description: ''},

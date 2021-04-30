@@ -1,6 +1,6 @@
 # Multi Select
 
-<MultiSelect />
+<demo-multi-select></demo-multi-select>
 
 ::: details Preview the code
 

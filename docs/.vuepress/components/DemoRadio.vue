@@ -10,7 +10,7 @@
 
 <script>
 export default {
-	name: 'Radio',
+	name: 'DemoRadio',
 	data() {
 		return {
 			checked: '',

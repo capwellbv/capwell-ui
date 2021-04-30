@@ -48,7 +48,7 @@ import CapSubFooter from '../../../src/components/CapSubFooter.vue';
 import CapSeprator from '../../../src/components/CapSeprator.vue';
 
 export default {
-	name: 'Footer',
+	name: 'DemoFooter',
 	data() {
 		return {
 			items: [

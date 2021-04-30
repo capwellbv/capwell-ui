@@ -1,6 +1,6 @@
 # Header
 
-<Header />
+<demo-header></demo-header>
 
 ::: details Preview the code
 

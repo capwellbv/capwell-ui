@@ -1,5 +1,5 @@
 #  Multi Search Dropdown
-<MultiSearchDropdown />
+<demo-multi-search-dropdown></demo-multi-search-dropdown >
 
 ::: details Preview the code
 

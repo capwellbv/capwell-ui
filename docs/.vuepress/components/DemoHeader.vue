@@ -18,7 +18,7 @@ import CapNavbarBrand from '../../../src/components/CapNavbarBrand.vue';
 import CapNavItem from '../../../src/components/CapNavItem.vue';
 import CapNavBarNav from '../../../src/components/CapNavBarNav.vue';
 export default {
-  name: 'Header',
+  name: 'DemoHeader',
   components: {
     CapButton,
     CapNavbarBrand,

@@ -1,6 +1,6 @@
 # Modals
 
-<Modal></Modal>
+<demo-modal></demo-modal>
 
 ::: details Preview the code
 

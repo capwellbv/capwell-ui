@@ -1,6 +1,6 @@
 # Input
 
- <Input />
+ <demo-input></demo-input>
 
 ::: details Preview the code
 

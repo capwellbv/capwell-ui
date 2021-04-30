@@ -1,6 +1,6 @@
 #  Select
 
-<Select />
+<demo-select></demo-select>
 
 ::: details Preview the code
 

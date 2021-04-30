@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "Select",
+  name: "DemoSelect",
   data() {
     return {
       selectdValue: "",

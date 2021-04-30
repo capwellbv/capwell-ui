@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: "Dropdown",
+  name: "DemoDropdown",
   data() {
     return {
       showMenu: false,

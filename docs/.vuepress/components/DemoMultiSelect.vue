@@ -30,7 +30,7 @@
 
 <script>
 export default {
-  name: "MultiSelect",
+  name: "DemoMultiSelect",
   data() {
     return {
       skills: [],

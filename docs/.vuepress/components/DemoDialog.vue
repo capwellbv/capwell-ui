@@ -22,6 +22,6 @@
 import CapDialog from '../../../src/components/CapDialog.vue'
 export default {
   components: { CapDialog },
-  name: 'Dialog'
+  name: 'DemoDialog'
 }
 </script>
