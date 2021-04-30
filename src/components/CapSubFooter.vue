@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-sub-footer">
+	<div class="cap-ui cap-sub-footer">
 		<slot></slot>
 	</div>
 </template>
@@ -9,7 +9,3 @@ export default {
 	name: 'CapSubFooter',
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/subfooter.scss';
-</style>

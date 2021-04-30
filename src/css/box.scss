@@ -1,34 +1,36 @@
 @import './variables';
 
-  .cap-box {
+.#{$scss-prefix} {
+  &.cap-box {
     background-color: $medium-bronze;
     display: inline-block;
   }
-  .box-1 {
+  &.box-1 {
     width: 120px;
     height: 120px;
   }
-  .box-2 {
+  &.box-2 {
     width: 80px;
     height: 80px;
   }
-  .box-3 {
+  &.box-3 {
     width: 60px;
     height: 60px;
   }
-  .box-4 {
+  &.box-4 {
     width: 40px;
     height: 40px;
   }
-  .box-5 {
+  &.box-5 {
     width: 30px;
     height: 30px;
   }
-  .box-6 {
+  &.box-6 {
     width: 20px;
     height: 20px;
   }
-  .box-7 {
+  &.box-7 {
     width: 10px;
     height: 10px;
   }
+}

@@ -1,6 +1,6 @@
 # Footer
 
-<Footer />
+<demo-footer></demo-footer>
 
 ::: details Preview the code
 

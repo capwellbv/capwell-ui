@@ -1,30 +1,32 @@
-@import './variables';
+@import "./variables";
 
-.cap-column {
-	display: inline-block;
-	padding: 1rem;
-	width: 45%;
-	font-family: 'Mulish', sans-serif;
-	font-weight: 500;
+.#{$scss-prefix} {
+  &.cap-column {
+    display: inline-block;
+    padding: 1rem;
+    width: 45%;
+    font-family: "Mulish", sans-serif;
+    font-weight: 500;
 
-	.cap-text {
-		font-size: 1rem;
-	}
+    .cap-text {
+      font-size: 1rem;
+    }
 
-	@include forIpadPro() {
-		width: 100%;
-		&.col {
-			justify-content: flex-start;
-			padding-top: 0;
+    @include forIpadPro() {
+      width: 100%;
+      &.col {
+        justify-content: flex-start;
+        padding-top: 0;
 
-			.cap-footer-list {
-				width: 100%;
-			}
-		}
-	}
-	@include forMobile() {
-		&.col {
-			flex-direction: column;
-		}
-	}
+        .cap-footer-list {
+          width: 100%;
+        }
+      }
+    }
+    @include forMobile() {
+      &.col {
+        flex-direction: column;
+      }
+    }
+  }
 }

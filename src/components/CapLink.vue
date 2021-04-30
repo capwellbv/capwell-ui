@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-link">
+	<div class="cap-ui cap-link">
 		<a :class="size" v-bind="$attrs" class="link">
 			<slot />
 		</a>
@@ -26,7 +26,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped lang="scss">
-@import '../css/link.scss';
-</style>

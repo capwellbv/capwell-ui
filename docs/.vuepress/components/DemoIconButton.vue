@@ -11,7 +11,7 @@
 import { PlusIcon } from 'vue-feather-icons'
 
 export default {
-    name: 'CapIconButton',
+    name: 'DemoIconButton',
     props: {
         muted: String
     },

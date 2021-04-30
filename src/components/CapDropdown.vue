@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-dropdown">
+  <div class="cap-ui cap-dropdown">
     <div class="cap-dropdown-trigger" @click="$emit('toggle', !show)">
       <slot name="trigger">
         <span>{{ text }}</span>
@@ -7,7 +7,7 @@
         <chevron-down-icon v-else size="1.5x"></chevron-down-icon>
       </slot>
     </div>
-    <div v-show="show" class="cap-dropdown-content">
+    <div v-if="show" class="cap-dropdown-content">
       <ul>
         <slot />
       </ul>
@@ -32,7 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/dropdown.scss";
-</style>

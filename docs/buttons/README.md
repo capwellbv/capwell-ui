@@ -4,11 +4,13 @@
 
 Examples:
 
-<cap-button varient="primary" size="xl">Primary</cap-button>
+<demo-button></demo-button>
+
+<!-- <cap-button varient="primary" size="xl">Primary</cap-button>
 <cap-button varient="secondary" size="xl">Secondary</cap-button>
 <cap-button varient="disabled" size="lg">disabled</cap-button>
 <cap-button varient="disabled" size="md">disabled</cap-button>
-<cap-button varient="disabled" size="sm">disabled</cap-button>
+<cap-button varient="disabled" size="sm">disabled</cap-button> -->
 
 ::: details Preview the code
 ```vue
@@ -25,7 +27,7 @@ Examples:
 
 Examples:
 
-<cap-icon-button ></cap-icon-button>
+<demo-icon-button ></demo-icon-button>
 
 for icons please refer to following [library](https://vue-feather-icons.egoist.sh/)
 
@@ -58,7 +60,7 @@ export default {
 
 Examples:
 
-<cap-icon-button muted="muted" ></cap-icon-button>
+<demo-icon-button muted="muted" ></demo-icon-button>
 
 ## Circle buttons
 

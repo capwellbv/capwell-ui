@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-footer-brand">
+  <div class="cap-ui cap-footer-brand">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,3 @@ export default {
   name: 'CapFooterBrand'
 }
 </script>
-
-<style lang="scss" scoped>
-  @import '../css/footer.scss';
-</style>

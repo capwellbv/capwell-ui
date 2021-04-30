@@ -1,39 +1,41 @@
 <template>
   <div>
-    <cap-multi-select
+    <cap-multi-search-dropdown
       style="margin-top: 20px"
       v-model="skills"
       :options="items"
-      label="Search skills"
+      placeholder="Search skills"
       size="large"
     >
-    </cap-multi-select>
+    </cap-multi-search-dropdown>
 
-    <cap-multi-select
+    <cap-multi-search-dropdown
       style="margin-top: 20px"
       v-model="skills"
       :options="items"
-      label="Search skills"
+      placeholder="Search skills"
+      rounded="true"
     >
-    </cap-multi-select>
+    </cap-multi-search-dropdown>
 
-    <cap-multi-select
+    <cap-multi-search-dropdown
       style="margin-top: 20px"
-      v-model="skills"
+      v-model="preSelectedSkills"
       :options="items"
-      label="Search skills"
+      placeholder="Search skills"
       size="small"
     >
-    </cap-multi-select>
+    </cap-multi-search-dropdown>
   </div>
 </template>
 
 <script>
 export default {
-  name: "MultiSelect",
+  name: "DemoMultiSearchDropdown",
   data() {
     return {
       skills: [],
+      preSelectedSkills: ['Dot NET ontwikkelaars', 'Biztalk Consultants'],
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

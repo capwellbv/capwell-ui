@@ -1,39 +1,39 @@
 <template>
   <div>
-    <cap-select
+    <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
       size="large"
     >
-    </cap-select>
+    </cap-multi-select>
 
-    <cap-select
+    <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
     >
-    </cap-select>
+    </cap-multi-select>
 
-    <cap-select
+    <cap-multi-select
       style="margin-top: 20px"
-      v-model="selectdValue"
+      v-model="skills"
       :options="items"
       label="Search skills"
       size="small"
     >
-    </cap-select>
+    </cap-multi-select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Select",
+  name: "DemoMultiSelect",
   data() {
     return {
-      selectdValue: "",
+      skills: [],
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

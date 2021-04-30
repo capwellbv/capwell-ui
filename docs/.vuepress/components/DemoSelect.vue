@@ -1,41 +1,39 @@
 <template>
   <div>
-    <cap-search-able-select
+    <cap-select
       style="margin-top: 20px"
-      v-model="skill"
+      v-model="selectdValue"
       :options="items"
-      placeholder="Search skills"
+      label="Search skills"
       size="large"
     >
-    </cap-search-able-select>
+    </cap-select>
 
-    <cap-search-able-select
+    <cap-select
       style="margin-top: 20px"
-      v-model="skill"
+      v-model="selectdValue"
       :options="items"
-      placeholder="Search skills"
-      rounded="true"
+      label="Search skills"
     >
-    </cap-search-able-select>
+    </cap-select>
 
-    <cap-search-able-select
+    <cap-select
       style="margin-top: 20px"
-      v-model="selectdSkill"
+      v-model="selectdValue"
       :options="items"
-      placeholder="Search skills"
+      label="Search skills"
       size="small"
     >
-    </cap-search-able-select>
+    </cap-select>
   </div>
 </template>
 
 <script>
 export default {
-  name: "SearchAbleSelect",
+  name: "DemoSelect",
   data() {
     return {
-      skill: "",
-      selectdSkill: "Dot NET ontwikkelaars",
+      selectdValue: "",
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

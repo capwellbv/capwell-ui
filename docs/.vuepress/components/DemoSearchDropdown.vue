@@ -1,41 +1,43 @@
 <template>
   <div>
-    <cap-search-able-multi-select
+    <cap-search-dropdown
       style="margin-top: 20px"
-      v-model="skills"
+      v-model="skill"
       :options="items"
       placeholder="Search skills"
       size="large"
     >
-    </cap-search-able-multi-select>
+    </cap-search-dropdown>
 
-    <cap-search-able-multi-select
+    <cap-search-dropdown
       style="margin-top: 20px"
-      v-model="skills"
+      v-model="skill"
       :options="items"
       placeholder="Search skills"
       rounded="true"
     >
-    </cap-search-able-multi-select>
+    </cap-search-dropdown>
 
-    <cap-search-able-multi-select
+    <cap-search-dropdown
       style="margin-top: 20px"
-      v-model="preSelectedSkills"
+      v-model="selectdSkill"
       :options="items"
       placeholder="Search skills"
       size="small"
     >
-    </cap-search-able-multi-select>
+    </cap-search-dropdown>
   </div>
 </template>
 
 <script>
+import CapSearchDropdown from '../../../src/components/CapSearchDropdown.vue';
 export default {
-  name: "SearchAbleMultiSelect",
+  components: { CapSearchDropdown },
+  name: "DemoSearchDropdown",
   data() {
     return {
-      skills: [],
-      preSelectedSkills: ['Dot NET ontwikkelaars', 'Biztalk Consultants'],
+      skill: "",
+      selectdSkill: "Dot NET ontwikkelaars",
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

@@ -22,7 +22,7 @@
 <script>
 import { ArrowRightIcon } from 'vue-feather-icons';
 export default {
-	name: 'Links',
+	name: 'DemoLinks',
 	components: {
 		ArrowRightIcon,
 	},

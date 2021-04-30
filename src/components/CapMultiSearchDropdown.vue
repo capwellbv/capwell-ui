@@ -1,19 +1,25 @@
 <template>
-  <div class="cap-ui cap-search-able-select">
+  <div class="cap-ui cap-multi-search-dropdown">
     <cap-on-click-away :do="hide">
       <div class="searchable-select" :class="{ active: showOptions }">
         <div class="select-container" :class="[size, { rounded }]">
-          <input
-            type="text"
-            v-model="searchQuery"
-            :placeholder="placeholder"
-            class="input"
-            aria-haspopup="listbox"
-            @click="show"
-            @keyup.tab="show"
-            @keydown.tab="hide"
-            @keyup.esc="hide"
-          />
+          <div class="select-items">
+            <span v-for="value in values" :key="value"
+              >{{ value }}
+              <x-icon @click="select(value)" size="1.2x" class="icon"></x-icon
+            ></span>
+            <input
+              type="text"
+              v-model="searchQuery"
+              :placeholder="placeholder"
+              class="input"
+              aria-haspopup="listbox"
+              @click="show"
+              @keyup.tab="show"
+              @keydown.tab="hide"
+              @keyup.esc="hide"
+            />
+          </div>
           <chevron-down-icon
             v-if="!showOptions"
             @click="showOptions != showOptions"
@@ -43,23 +49,32 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
+import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
 import CapOnClickAway from "./CapOnClickAway.vue";
 
 export default {
-  name: "CapSearchAbleSelect",
+  name: "CapMultiSearchDropdown",
   components: {
     ChevronDownIcon,
     ChevronUpIcon,
     CapOnClickAway,
+    XIcon,
   },
-
+  model: {
+    prop: "value",
+    event: "change",
+  },
   props: {
     options: {
       type: Array,
       required: true,
     },
-    value: String,
+
+    value: {
+      type: Array,
+      default: [],
+    },
+
     placeholder: {
       type: String,
       required: true,
@@ -78,13 +93,16 @@ export default {
     return {
       searchQuery: null,
       showOptions: false,
+      values: [],
     };
   },
 
   created() {
-    if (this.value) {
-      const item = this.options.find((option) => option === this.value);
-      if (item) this.searchQuery = item;
+    if (this.value.length) {
+      this.value.forEach((val) => {
+        const item = this.options.find((option) => option === val);
+        if (item) this.addSelected(item)
+      });
     }
   },
 
@@ -120,14 +138,19 @@ export default {
     },
 
     select(option) {
-      this.searchQuery = option;
-      this.$emit("input", option.value);
-      this.hide();
+      this.addSelected(option);
+      this.$emit("change", this.values);
+    },
+
+    addSelected(value) {
+      if (!this.values.includes(value)) {
+        this.values.push(value);
+		return;
+      }
+
+	  let index = this.values.indexOf(value);
+	  this.values.splice(index, 1);
     },
   },
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/searchableselect.scss";
-</style>

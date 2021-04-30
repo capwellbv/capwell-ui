@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-dialog">
+	<div class="cap-ui cap-dialog">
     <cap-button @click="showDialog = true" varient="secondary" size="lg">{{buttonText}}</cap-button>
 		<transition name="fade" appear>
 			<div
@@ -42,7 +42,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import '../css/dialog.scss';
-</style>

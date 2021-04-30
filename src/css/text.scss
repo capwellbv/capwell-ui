@@ -1,32 +1,35 @@
 @import './_variables';
-.cap-text-wrapper {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
-  color: $secondary;
-}
-.cap-text-1{
-  font-weight: 100;
-  font-size: 90px;
-  line-height: 90px;
-}
-.cap-text-2 {
-  font-weight: 100;
-  font-size: 60px;
-  line-height: 60px;
-}
-.cap-text-3 {
-  font-size: 24px;
-  line-height: 44px;
-}
-.cap-text-4 {
-  font-size: 20px;
-  line-height: 36px;
-}
-.cap-text-5 {
-  font-size: 20px;
-  line-height: 32px;
-}
-.cap-text-6 {
-  font-size: 18px;
-  line-height: 28px;
+
+.#{$scss-prefix} {
+  &.cap-text-wrapper {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    color: $secondary;
+  }
+  &.cap-text-1{
+    font-weight: 100;
+    font-size: 90px;
+    line-height: 90px;
+  }
+  &.cap-text-2 {
+    font-weight: 100;
+    font-size: 60px;
+    line-height: 60px;
+  }
+  &.cap-text-3 {
+    font-size: 24px;
+    line-height: 44px;
+  }
+  &.cap-text-4 {
+    font-size: 20px;
+    line-height: 36px;
+  }
+  &.cap-text-5 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+  &.cap-text-6 {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }

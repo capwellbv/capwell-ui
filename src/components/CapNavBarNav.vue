@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-nav-bar-nav">
+	<div class="cap-nav-bar-nav cap-ui">
 		<slot></slot>
 	</div>
 </template>
@@ -9,7 +9,3 @@ export default {
 	name: 'CapNavBarNav',
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/header.scss';
-</style>

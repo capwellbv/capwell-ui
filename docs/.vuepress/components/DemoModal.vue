@@ -125,7 +125,7 @@
 <script>
 import { SearchIcon } from "vue-feather-icons";
 export default {
-  name: "Modal",
+  name: "DemoModal",
   data() {
     return {
       textarea: '',

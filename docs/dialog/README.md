@@ -1,6 +1,6 @@
 # Dialog
 
-<Dialog></Dialog>
+<demo-dialog></demo-dialog>
 
 ::: details Preview the code
 

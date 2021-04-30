@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-header" :class="{ down: hasScrolled, shadow: showShadow }">
+  <div class="cap-ui cap-header" :class="{ down: hasScrolled, shadow: showShadow }">
     <div class="cap-grid-container">
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
@@ -84,7 +84,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss" >
-@import '../css/header.scss';
-</style>

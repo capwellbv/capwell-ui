@@ -1,5 +1,5 @@
 <template>
-    <div class="cap-input">
+    <div class="cap-ui cap-input">
       <div class="cap-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
         <input
           @input="$emit('input', event.target.value)"
@@ -45,7 +45,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/input.scss"
-</style>

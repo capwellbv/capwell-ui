@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-slider">
+  <div class="cap-ui cap-slider">
     <button
       v-if="items.length > 3"
       @click="slideLeft"
@@ -132,7 +132,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../css/slider.scss";
-</style>

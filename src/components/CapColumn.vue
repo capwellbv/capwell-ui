@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-column">
+	<div class="cap-ui cap-column">
 		<slot></slot>
 	</div>
 </template>
@@ -15,7 +15,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/column.scss';
-</style>

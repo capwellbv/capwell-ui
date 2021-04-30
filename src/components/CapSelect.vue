@@ -1,6 +1,6 @@
 <template>
   <cap-on-click-away :do="hide">
-    <div class="cap-select">
+    <div class="cap-ui cap-select">
       <button
         :class="size"
         @click="show"
@@ -108,7 +108,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/select.scss";
-</style>

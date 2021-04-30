@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-form-row">
+  <div class="cap-ui cap-form-row">
     <slot></slot>
   </div>
 </template>
@@ -9,7 +9,3 @@ export default {
   name: "CapFormRow",
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../css/formrow.scss";
-</style>

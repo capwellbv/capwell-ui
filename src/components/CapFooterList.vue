@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-footer-list">
+	<div class="cap-ui cap-footer-list">
 		<span class="cap-title">{{ title }}</span>
 		<slot></slot>
 	</div>
@@ -16,7 +16,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/footerlist.scss';
-</style>
