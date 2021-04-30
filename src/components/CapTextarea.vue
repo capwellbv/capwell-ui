@@ -34,7 +34,3 @@ export default {
   },
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/textarea.scss";
-</style>

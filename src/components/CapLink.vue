@@ -26,7 +26,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped lang="scss">
-@import '../css/link.scss';
-</style>

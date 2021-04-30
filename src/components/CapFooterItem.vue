@@ -9,7 +9,3 @@ export default {
 	name: 'CapFooterItem',
 };
 </script>
-
-<style scoped lang="scss">
-@import '../css/footeritem.scss';
-</style>

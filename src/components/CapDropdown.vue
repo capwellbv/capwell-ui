@@ -32,7 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss">
-@import "../css/dropdown.scss";
-</style>

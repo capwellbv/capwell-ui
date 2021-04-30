@@ -9,7 +9,3 @@ export default {
   name: 'CapFooterBrand'
 }
 </script>
-
-<style lang="scss" scoped>
-  @import '../css/footer.scss';
-</style>

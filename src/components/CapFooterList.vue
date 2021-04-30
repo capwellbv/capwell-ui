@@ -16,7 +16,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/footerlist.scss';
-</style>

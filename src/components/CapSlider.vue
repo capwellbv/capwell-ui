@@ -132,7 +132,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../css/slider.scss";
-</style>

@@ -9,7 +9,3 @@ export default {
 	name: 'CapNavbarBrand',
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/header.scss';
-</style>

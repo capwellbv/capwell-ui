@@ -9,7 +9,3 @@ export default {
   name: "CapFormRow",
 };
 </script>
-
-<style lang="scss" scoped>
-@import "../css/formrow.scss";
-</style>

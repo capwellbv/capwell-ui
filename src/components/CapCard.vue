@@ -25,7 +25,3 @@ export default {
 	}
 };
 </script>
-
-<style scoped lang="scss">
-@import '../css/card.scss';
-</style>

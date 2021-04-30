@@ -9,7 +9,3 @@ export default {
 	name: 'CapSubFooter',
 };
 </script>
-
-<style lang="scss" scoped>
-@import '../css/subfooter.scss';
-</style>
