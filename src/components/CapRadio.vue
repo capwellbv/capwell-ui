@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-radio" :class="mode">
+	<div class="cap-ui cap-radio" :class="mode">
 		<div v-for="(item, index) in items" :key="index" class="cap-radio-wrapper">
 			<input
 				type="radio"

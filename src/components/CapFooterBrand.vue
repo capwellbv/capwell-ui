@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-footer-brand">
+  <div class="cap-ui cap-footer-brand">
     <slot></slot>
   </div>
 </template>

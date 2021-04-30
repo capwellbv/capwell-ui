@@ -1,170 +1,172 @@
 @import "./variables";
 
-.cap-slider {
-  position: relative;
-
-  .cap-panel-slider {
-    grid-column: 1/-1;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    display: flex;
-    gap: $spacing5;
-    padding-bottom: 3rem;
-    scroll-snap-type: x mandatory;
-    background-color: transparent;
-    scroll-padding: $spacing5 - 1;
-    margin-left: -30px;
-    width: calc(100% + 60px);
-    pointer-events: none;
-
-    &::before {
-      content: "";
-      border-right: $spacing5 solid transparent;
-    }
-
-    &::after {
-      content: "";
-      border-right: 1px solid transparent;
-    }
-
-    .panel {
-      pointer-events: auto;
-      flex: calc(25% - 37px) 1 0;
-      scroll-snap-align: start;
-
-      @media (max-width: 1900px) {
-        flex: calc(33% - 35px) 1 0;
-
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background: $white;
-        border: 2px solid transparent;
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
-        border-radius: 6px;
-        color: $black;
-        padding: 1rem;
-        min-height: 200px;
-        width: 300px;
-        cursor: pointer;
-        opacity: 1;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          border: 2px solid $capwell-blue;
-          box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
-            0 15px 45px 0 rgba(0, 0, 0, 0.15);
-
-          .actions {
-            a {
-              .next-arrow {
-                color: $capwell-blue;
+.#{$scss-prefix} {
+  &.cap-slider {
+    position: relative;
+  
+    .cap-panel-slider {
+      grid-column: 1/-1;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      display: flex;
+      gap: $spacing5;
+      padding-bottom: 3rem;
+      scroll-snap-type: x mandatory;
+      background-color: transparent;
+      scroll-padding: $spacing5 - 1;
+      margin-left: -30px;
+      width: calc(100% + 60px);
+      pointer-events: none;
+  
+      &::before {
+        content: "";
+        border-right: $spacing5 solid transparent;
+      }
+  
+      &::after {
+        content: "";
+        border-right: 1px solid transparent;
+      }
+  
+      .panel {
+        pointer-events: auto;
+        flex: calc(25% - 37px) 1 0;
+        scroll-snap-align: start;
+  
+        @media (max-width: 1900px) {
+          flex: calc(33% - 35px) 1 0;
+  
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          background: $white;
+          border: 2px solid transparent;
+          box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+          border-radius: 6px;
+          color: $black;
+          padding: 1rem;
+          min-height: 200px;
+          width: 300px;
+          cursor: pointer;
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+  
+          &:hover {
+            border: 2px solid $capwell-blue;
+            box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
+              0 15px 45px 0 rgba(0, 0, 0, 0.15);
+  
+            .actions {
+              a {
+                .next-arrow {
+                  color: $capwell-blue;
+                }
               }
             }
           }
-        }
-
-        .actions {
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          width: 50px;
-          height: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          a {
-            color: $dark-bronze;
+  
+          .actions {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+  
+            a {
+              color: $dark-bronze;
+            }
           }
         }
       }
     }
-  }
-
-  .btn {
-    min-width: 275px;
-    max-width: 500px;
-    cursor: pointer;
-
-    &.circle {
-      border-radius: 50%;
-      padding: 0px;
-      min-width: 40px;
-      height: 40px;
-      color: $capwell-blue !important;
-      border: 1px solid $dark-bronze !important;
-      background-color: $white !important;
-    }
-  }
-  .btn[disabled] {
-    opacity: 1;
-    border: none !important;
-    color: $medium-bronze !important;
-    box-shadow: 0 0 0 1px $medium-bronze !important;
-    transition: all 0.3s ease-in-out;
-    cursor: not-allowed;
-  }
-  .left {
-    position: absolute;
-    top: calc(50% - 40px);
-    left: -5rem;
-    transform: translate(0, -50%);
-    z-index: 1;
-  }
-
-  .right {
-    position: absolute;
-    top: calc(50% - 40px);
-    right: -5rem;
-    transform: translate(0, -50%);
-    z-index: 1;
-  }
-
-  @media (max-width: 1300px) {
-    margin: 0;
-
-    .cap-panel-slider {
-      width: 100%;
-      margin-left: 0;
-      scroll-padding: $spacing6;
-      pointer-events: auto;
-      overflow-x: auto;
-
-      &::before {
-        content: "";
-        border-right: $spacing6 solid transparent;
-      }
-      &::after {
-        content: "";
-        border-left: $spacing6 solid transparent;
-      }
-
-      .panel {
-        flex: unset;
-        flex-shrink: 0;
-        scroll-snap-align: center;
-      }
-    }
-
+  
     .btn {
-      display: none;
+      min-width: 275px;
+      max-width: 500px;
+      cursor: pointer;
+  
+      &.circle {
+        border-radius: 50%;
+        padding: 0px;
+        min-width: 40px;
+        height: 40px;
+        color: $capwell-blue !important;
+        border: 1px solid $dark-bronze !important;
+        background-color: $white !important;
+      }
     }
-
-    &::before,
-    &::after {
-      all: unset;
+    .btn[disabled] {
+      opacity: 1;
+      border: none !important;
+      color: $medium-bronze !important;
+      box-shadow: 0 0 0 1px $medium-bronze !important;
+      transition: all 0.3s ease-in-out;
+      cursor: not-allowed;
     }
-  }
-
-  @include forMobile() {
-    .cap-panel-slider {
-      padding-bottom: $spacing5;
-      gap: 0;
-
-      .panel {
-        flex-shrink: 0;
-        margin-right: $spacing6;
+    .left {
+      position: absolute;
+      top: calc(50% - 40px);
+      left: -5rem;
+      transform: translate(0, -50%);
+      z-index: 1;
+    }
+  
+    .right {
+      position: absolute;
+      top: calc(50% - 40px);
+      right: -5rem;
+      transform: translate(0, -50%);
+      z-index: 1;
+    }
+  
+    @media (max-width: 1300px) {
+      margin: 0;
+  
+      .cap-panel-slider {
+        width: 100%;
+        margin-left: 0;
+        scroll-padding: $spacing6;
+        pointer-events: auto;
+        overflow-x: auto;
+  
+        &::before {
+          content: "";
+          border-right: $spacing6 solid transparent;
+        }
+        &::after {
+          content: "";
+          border-left: $spacing6 solid transparent;
+        }
+  
+        .panel {
+          flex: unset;
+          flex-shrink: 0;
+          scroll-snap-align: center;
+        }
+      }
+  
+      .btn {
+        display: none;
+      }
+  
+      &::before,
+      &::after {
+        all: unset;
+      }
+    }
+  
+    @include forMobile() {
+      .cap-panel-slider {
+        padding-bottom: $spacing5;
+        gap: 0;
+  
+        .panel {
+          flex-shrink: 0;
+          margin-right: $spacing6;
+        }
       }
     }
   }

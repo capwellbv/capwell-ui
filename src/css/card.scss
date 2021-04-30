@@ -1,65 +1,66 @@
-@import './variables';
+@import "./variables";
 
 $card-ring-color: $capwell-blue;
 
 @mixin card {
-	border-radius: 6px;
-	background-color: $white;
-	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: space-between;
-	padding: $p-4;
-	transition: ease-in-out 0.1s border;
+  border-radius: 6px;
+  background-color: $white;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: $p-4;
+  transition: ease-in-out 0.1s border;
 
-	@content;
+  @content;
 
-	&.bordered:hover, &.bordered:focus {
-		border: 2px solid $card-ring-color;
-	}
+  &.bordered:hover,
+  &.bordered:focus {
+    border: 2px solid $card-ring-color;
+  }
 
-	&.image {
-		border-radius: 10px;
-		max-height: 200px;
-	}
+  &.image {
+    border-radius: 10px;
+    max-height: 200px;
+  }
 
-	.card-body {
-		margin-top: 1rem;
-	}
+  .card-body {
+    margin-top: 1rem;
+  }
 
-	&.nopadding {
-		padding: 0;
-		.card-body {
-			margin-top: 0;
-		}
-	}
+  &.nopadding {
+    padding: 0;
+    .card-body {
+      margin-top: 0;
+    }
+  }
 
-	.footer {
-		width: 100%;
-		display: flex;
-		justify-content: flex-end;
-		margin-top: 1rem;
-	}
+  .footer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
 }
+.#{$scss-prefix} {
+  &.cap-card {
+    @include card;
+  }
 
-.cap-card {
-	@include card;
-}
+  &.cap-card-medium {
+    @include card {
+      width: 347px;
+      min-height: 244px;
+      min-width: 347px;
+    }
+  }
 
-.cap-card-medium {
-	@include card {
-		width: 347px;
-		min-height: 244px;
-		min-width: 347px;
-	}
-	
-}
-
-.cap-card-small {
-	@include card {
-		width: 270px;
-		min-height: 168px;
-		min-width: 270px;
-	}
+  &.cap-card-small {
+    @include card {
+      width: 270px;
+      min-height: 168px;
+      min-width: 270px;
+    }
+  }
 }

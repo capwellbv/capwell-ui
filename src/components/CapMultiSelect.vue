@@ -1,6 +1,6 @@
 <template>
   <cap-on-click-away :do="hide">
-    <div class="cap-multi-select">
+    <div class="cap-multi-select cap-ui">
       <button
         :class="size"
         @click="show"

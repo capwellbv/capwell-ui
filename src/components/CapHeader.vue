@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-header" :class="{ down: hasScrolled, shadow: showShadow }">
+  <div class="cap-ui cap-header" :class="{ down: hasScrolled, shadow: showShadow }">
     <div class="cap-grid-container">
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">

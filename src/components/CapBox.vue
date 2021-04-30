@@ -1,5 +1,5 @@
 <template>
-	<div :class="`box-${size}`" class="cap-box"></div>
+	<div :class="`box-${size}`" class="cap-ui cap-box"></div>
 </template>
 
 <script>

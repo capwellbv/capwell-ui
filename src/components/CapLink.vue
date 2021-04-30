@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-link">
+	<div class="cap-ui cap-link">
 		<a :class="size" v-bind="$attrs" class="link">
 			<slot />
 		</a>

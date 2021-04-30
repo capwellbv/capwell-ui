@@ -4,7 +4,7 @@
     :placeholder="placeholder"
     rows="6"
     @input="handleInput"
-    class="cap-textarea"
+    class="cap-ui cap-textarea"
     :class="[{ disabled: disabled}]"
   ></textarea>
 </template>

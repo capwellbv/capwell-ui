@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-heading-wrapper" :class="`cap-${type}-${size}`" >
+  <div class="cap-ui cap-heading-wrapper" :class="`cap-${type}-${size}`" >
     <slot></slot>
   </div>
 </template>

@@ -1,12 +1,14 @@
-@import './variables';
+@import "./variables";
 
-.cap-footer {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 500;
-	display: flex;
-	align-items: flex-start;
-	flex-wrap: wrap;
-	background-color: $dark-blue;
-	color: $white;
-	padding-bottom: 1rem;
+.#{$scss-prefix} {
+  &.cap-footer {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    background-color: $dark-blue;
+    color: $white;
+    padding-bottom: 1rem;
+  }
 }

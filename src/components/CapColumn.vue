@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-column">
+	<div class="cap-ui cap-column">
 		<slot></slot>
 	</div>
 </template>

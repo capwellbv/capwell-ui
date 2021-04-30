@@ -1,6 +1,6 @@
 <template>
 	<!-- <cap-on-click-away :do="hide"> -->
-		<div :class="['cap-modal', { 'modal-hide': !show, 'modal-show': show }]">
+		<div :class="['cap-modal', { 'modal-hide': !show, 'modal-show': show }]" class="cap-ui">
 			<div class="cap-model-inner" :class="size">
 				<div class="cap-model-header">
 					<span>{{ title }}</span>

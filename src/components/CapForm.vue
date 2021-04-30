@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-form">
+  <div class="cap-ui cap-form">
     <slot></slot>
   </div>
 </template>

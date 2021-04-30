@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-seprator"></div>
+	<div class="cap-ui cap-seprator"></div>
 </template>
 
 <script>

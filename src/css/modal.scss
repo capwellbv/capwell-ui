@@ -2,87 +2,89 @@
 @import './_functions';
 @import './_responsive';
 
-.cap-modal {
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 100000;
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	align-items: center;
-	background: rgba(0,0,0,0.6);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	
-
-	&.modal-hide {
-		display: none;
-	}
-
-	&.modal-show {
-		display: flex;
-	}
-
-	.cap-model-inner {
-		position: relative;
-		background-color: $white;
+.#{$scss-prefix} {
+	&.cap-modal {
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100000;
 		display: flex;
 		flex-direction: column;
-		margin: 5% 1rem;
-		border-radius: $p-1;
-		overflow-y: auto;
-
-		&.lg {
-			width: 80%;
-
-			@include forMobile() {
-				width: 90%;
-			}
+		justify-content: start;
+		align-items: center;
+		background: rgba(0,0,0,0.6);
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		
+	
+		&.modal-hide {
+			display: none;
 		}
-		&.md {
-			width: 60%;
-
-			@include forIpadPro() {
-				width: 70%;
-			}
-
-			@include forMobile() {
-				width: 90%;
-			}
-		}
-		&.sm {
-			width: 300px;
-
-			@include forSmall() {
-				width: 95%;
-			}
-
-		}
-
-		.cap-model-header {
+	
+		&.modal-show {
 			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 0.6rem 1rem;
-			.close-icon {
-				border: 2px solid transparent;
-				border-radius: 100%;
-				padding: $p-1;
-				cursor: pointer;
-				background-color: $medium-bronze;
-				color: $off-black;
-
-				&:hover {
-					border: 2px solid $capwell-blue;
-					color: $capwell-blue;
+		}
+	
+		.cap-model-inner {
+			position: relative;
+			background-color: $white;
+			display: flex;
+			flex-direction: column;
+			margin: 5% 1rem;
+			border-radius: $p-1;
+			overflow-y: auto;
+	
+			&.lg {
+				width: 80%;
+	
+				@include forMobile() {
+					width: 90%;
 				}
 			}
+			&.md {
+				width: 60%;
+	
+				@include forIpadPro() {
+					width: 70%;
+				}
+	
+				@include forMobile() {
+					width: 90%;
+				}
+			}
+			&.sm {
+				width: 300px;
+	
+				@include forSmall() {
+					width: 95%;
+				}
+	
+			}
+	
+			.cap-model-header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				padding: 0.6rem 1rem;
+				.close-icon {
+					border: 2px solid transparent;
+					border-radius: 100%;
+					padding: $p-1;
+					cursor: pointer;
+					background-color: $medium-bronze;
+					color: $off-black;
+	
+					&:hover {
+						border: 2px solid $capwell-blue;
+						color: $capwell-blue;
+					}
+				}
+			}
+			.cap-model-body {
+				padding: 0px 1rem 1rem 1rem;
+			}
 		}
-		.cap-model-body {
-			padding: 0px 1rem 1rem 1rem;
-		}
-	}
+	}	
 }
