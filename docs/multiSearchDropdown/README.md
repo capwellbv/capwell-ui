@@ -1,26 +1,26 @@
-#  Select Able Multi Select
-<SearchAbleMultiSelect />
+#  Multi Search Dropdown
+<MultiSearchDropdown />
 
 ::: details Preview the code
 
 ```vue
 <template>
 	<div>
-		<cap-search-able-multi-select
+		<cap-multi-search-dropdown
 			v-model="selectdValue"
 			:options="items"
       placeholder="Search skills"
       size=""
       rounded=""
 		>
-		</cap-search-able-multi-select>
+		</cap-multi-search-dropdown>
 	</div>
 </template>
 
 <script>
-import { CapSearchAbleMultiSelect } from "capwell-ui";
+import { CapMultiSearchDropdown } from "capwell-ui";
 export default {
-  components: {CapSearchAbleMultiSelect},
+  components: {CapMultiSearchDropdown},
   data() {
     return: {
       selectdValue: '',

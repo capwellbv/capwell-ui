@@ -1,7 +1,7 @@
 @import './variables';
 
 .#{$scss-prefix} {
-	&.cap-search-able-select {
+	&.cap-search-dropdown{
 		position: relative;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 300;
