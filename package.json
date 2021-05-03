@@ -46,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "ggit://github.com/capwellbv/capwell-ui.git"
+    "url": "git://github.com/capwellbv/capwell-ui.git"
   }
 }
