@@ -1,25 +1,23 @@
 <template>
-	<!-- <cap-on-click-away :do="hide"> -->
-		<div :class="['cap-modal', { 'modal-hide': !show, 'modal-show': show }]" class="cap-ui">
-			<div class="cap-model-inner" :class="size">
-				<div class="cap-model-header">
-					<span>{{ title }}</span>
-					<x-icon @click="dismiss" size="1x" class="close-icon"></x-icon>
-				</div>
-				<div class="cap-model-body">
-					<slot></slot>
-				</div>
+	<div :class="['cap-modal', { 'modal-hide': !show, 'modal-show': show }]" class="cap-ui">
+		<div class="cap-model-inner" :class="size">
+			<div class="cap-model-header">
+				<span>{{ title }}</span>
+				<x-icon @click="dismiss" size="1x" class="close-icon"></x-icon>
+			</div>
+			<div class="cap-model-body">
+				<slot></slot>
 			</div>
 		</div>
-	<!-- </cap-on-click-away> -->
+	</div>
 </template>
 
 <script>
 import CapButton from './CapButton';
-// import CapOnClickAway from "./CapOnClickAway";
 import { XIcon } from 'vue-feather-icons';
 
 export default {
+	name: 'CapModal',
 	props: {
 		show: { default: false },
 		title: {
@@ -35,7 +33,6 @@ export default {
 	components: {
 		CapButton,
 		XIcon,
-		// CapOnClickAway
 	},
 
 	mounted() {

@@ -41,7 +41,7 @@ import CapOnClickAway from "./CapOnClickAway";
 import { ChevronDownIcon, ChevronUpIcon , XIcon} from "vue-feather-icons";
 
 export default {
-  name: "CapMulti",
+  name: "CapMultiSelect",
   data() {
     return {
       currentValue: null,

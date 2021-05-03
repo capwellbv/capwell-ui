@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Para',
+  name: 'CapText',
   props: {
     size: {
       type: String,

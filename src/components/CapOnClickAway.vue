@@ -1,5 +1,7 @@
 <script>
 export default {
+  name: 'CapOnClickAway',
+  
   props: {
     do: {
       type: Function,

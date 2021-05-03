@@ -59,7 +59,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../../../src/css/card.scss';
 .footer {
     .icon {
         cursor: pointer;
@@ -68,7 +67,7 @@ export default {
 
     &:hover {
         .icon {
-            color: $capwell-blue;
+            color: #0094cd;
         }
     }
 }

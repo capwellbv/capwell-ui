@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'Title',
+  name: 'CapTitle',
   props: {
     type:{
       type: String,
@@ -17,6 +17,5 @@ export default {
       default: '1'
     }
   }
-
 }
 </script>
