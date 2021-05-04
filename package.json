@@ -1,6 +1,6 @@
 {
   "name": "@capwellbv/capwell-ui",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Capwell ui components library.",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -41,9 +41,6 @@
     "library"
   ],
   "license": "CAWWELL-IT",
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/capwellbv/capwell-ui.git"

@@ -1,21 +1,15 @@
 # Installation
 
-Add `@capwellbv/capwell-ui@0.1.0` package as a dependency inside your `package.json` file.
+Add `"@capwellbv/capwell-ui": "^0.1.0"` package as a dependency inside your `package.json` file.
 
 ```json
 "dependencies": {
-    "@capwellbv/capwell-ui@0.1.0"
+    "@capwellbv/capwell-ui": "^0.1.0"
   }
 ```
 Run install.
 
 <code-group>
-<code-block title="YARN">
-```bash
-yarn
-```
-</code-block>
-
 <code-block title="NPM">
 ```bash
 npm install
