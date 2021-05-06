@@ -1,9 +1,10 @@
 <template>
   <div
+    :style="style"
     :class="[
       'cap-card',
       `cap-card-${size}`,
-      { bordered: bordered, nopadding: nopadding },
+      { bordered: bordered, nopadding: nopadding, fluid: fluid, clickable: clickable },
     ]"
     class="cap-ui"
   >
@@ -27,8 +28,21 @@ export default {
       type: String,
       default: "medium",
     },
+    maxHeight: { type: String },
+    fluid: { type: Boolean, default: false},
+    clickable: { type: Boolean, default: false },
     bordered: { type: Boolean, default: false },
     nopadding: { type: Boolean, default: false },
   },
+
+  computed: {
+    style() {
+      if (this.maxHeight) {
+          return `max-height: ${this.maxHeight}; overflow: auto;`
+        }
+
+        return ''
+    }
+  }
 };
 </script>

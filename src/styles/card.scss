@@ -29,6 +29,14 @@ $card-ring-color: $capwell-blue;
     margin-top: 1rem;
   }
 
+  &.fluid {
+    width: 100%;
+  }
+
+  &.clickable {
+    cursor: pointer;
+  }
+
   &.nopadding {
     padding: 0;
     .card-body {

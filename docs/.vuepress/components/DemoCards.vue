@@ -35,9 +35,19 @@
             </template>
         </cap-card>
 
-        <cap-card style="margin-top: 20px" :bordered="true">
+        <cap-card style="margin-top: 20px" :bordered="true" :clickable="true">
             <template #body>
                 <cap-title type="heading" size="6">Icon Card</cap-title>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aperiam perspiciatis sequi aut doloribus ipsa nemo saepe nobis libero culpa.</p>
+            </template>
+            <template #footer>
+                <arrow-right-icon size="1.2x" class="icon"></arrow-right-icon>
+            </template>
+        </cap-card>
+
+        <cap-card style="margin-top: 20px" :bordered="true" :fluid="true">
+            <template #body>
+                <cap-title type="heading" size="6">Fluid Card</cap-title>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aperiam perspiciatis sequi aut doloribus ipsa nemo saepe nobis libero culpa.</p>
             </template>
             <template #footer>
