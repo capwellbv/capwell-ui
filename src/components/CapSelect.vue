@@ -18,7 +18,7 @@
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li>
           <span>{{ this.placeholder }}</span>
-          <chevron-up-icon size="1.5x" class="icon"></chevron-up-icon>
+          <chevron-up-icon @click="hide" size="1.5x" class="icon"></chevron-up-icon>
         </li>
         <li
           @keyup.enter="select(i)"
