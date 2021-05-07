@@ -1,5 +1,3 @@
-@import "./variables";
-
 .#{$scss-prefix} {
   &.cap-slider {
     position: relative;
@@ -39,11 +37,11 @@
           position: relative;
           display: flex;
           flex-direction: column;
-          background: $white;
+          background: $secondary-color-1;
           border: 2px solid transparent;
           box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
           border-radius: 6px;
-          color: $black;
+          color: $darkest-color;
           padding: 1rem;
           min-height: 200px;
           width: 300px;
@@ -52,14 +50,14 @@
           transition: all 0.3s ease-in-out;
   
           &:hover {
-            border: 2px solid $capwell-blue;
+            border: 2px solid $primary-color-2;
             box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
               0 15px 45px 0 rgba(0, 0, 0, 0.15);
   
             .actions {
               a {
                 .next-arrow {
-                  color: $capwell-blue;
+                  color: $primary-color-2;
                 }
               }
             }
@@ -76,7 +74,7 @@
             align-items: center;
   
             a {
-              color: $dark-bronze;
+              color: $secondary-color-4;
             }
           }
         }
@@ -93,16 +91,16 @@
         padding: 0px;
         min-width: 40px;
         height: 40px;
-        color: $capwell-blue !important;
-        border: 1px solid $dark-bronze !important;
-        background-color: $white !important;
+        color: $primary-color-2 !important;
+        border: 1px solid $secondary-color-4 !important;
+        background-color: $secondary-color-1 !important;
       }
     }
     .btn[disabled] {
       opacity: 1;
       border: none !important;
-      color: $medium-bronze !important;
-      box-shadow: 0 0 0 1px $medium-bronze !important;
+      color: $secondary-color-3 !important;
+      box-shadow: 0 0 0 1px $secondary-color-3 !important;
       transition: all 0.3s ease-in-out;
       cursor: not-allowed;
     }

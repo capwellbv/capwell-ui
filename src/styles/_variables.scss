@@ -1,32 +1,35 @@
-@import './font.scss';
-@import './responsive';
+$scss-prefix: 'cap-ui' !default;
 
-$scss-prefix: 'cap-ui';
-$secondary: #000000;
-$dark-blue: #002c3d;
-$yellow: #ffbb16;
-$capwell-blue: #0094cd;
-$c-blue-alt: #0076a4;
-$black: #000000;
-$off-black: #4c4c4c;
-$dark-bronze: #aba195;
-$medium-bronze: #e1ddd0;
-$light-bronze: #f5f2ed;
-$white: #ffffff;
-$primary-light: #47b4d0;
-$red-color: #b90000;
-$light-grey: #2c3e50;
-$ml-1: 5px;
-$ml-2: 10px;
-$spacing1: 120px;
-$spacing2: 80px;
-$spacing3: 60px;
-$spacing4: 40px;
-$spacing5: 30px;
-$spacing6: 20px;
-$spacing7: 15px;
-$spacing8: 10px;
-$p-1: 5px;
-$p-2: 10px;
-$p-3: 15px;
-$p-4: 20px;
+$darkest-color: #000000 !default;
+
+$theme-color-1: #ffbb16;
+$theme-color-2: #b90000;
+
+$primary-color-1: #47b4d0 !default;
+$primary-color-2: #0094cd !default;
+$primary-color-3: #0076a4 !default;
+$primary-color-4: #002c3d !default;
+
+$secondary-color-1: #ffffff !default;
+$secondary-color-2: #f5f2ed !default;
+$secondary-color-3: #e1ddd0 !default;
+$secondary-color-4: #aba195 !default;
+$secondary-color-5: #4c4c4c !default;
+$secondary-color-6: #2c3e50 !default;
+
+$ml-1: 5px !default;
+$ml-2: 10px !default;
+
+$spacing1: 120px !default;
+$spacing2: 80px !default;
+$spacing3: 60px !default;
+$spacing4: 40px !default;
+$spacing5: 30px !default;
+$spacing6: 20px !default;
+$spacing7: 15px !default;
+$spacing8: 10px !default;
+
+$p-1: 5px !default;
+$p-2: 10px !default;
+$p-3: 15px !default;
+$p-4: 20px !default;

@@ -1,10 +1,6 @@
-@import "./variables";
-
-$card-ring-color: $capwell-blue;
-
 @mixin card {
   border-radius: 6px;
-  background-color: $white;
+  background-color: $secondary-color-1;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
@@ -17,7 +13,7 @@ $card-ring-color: $capwell-blue;
 
   &.bordered:hover,
   &.bordered:focus {
-    border: 2px solid $card-ring-color;
+    border: 2px solid $primary-color-2;
   }
 
   &.image {
@@ -51,6 +47,7 @@ $card-ring-color: $capwell-blue;
     margin-top: 1rem;
   }
 }
+
 .#{$scss-prefix} {
   &.cap-card {
     @include card;

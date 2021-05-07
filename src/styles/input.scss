@@ -1,5 +1,3 @@
-@import './variables';
-
 .#{$scss-prefix} {
   &.cap-input {
     font-family: 'Montserrat', sans-serif;
@@ -9,18 +7,18 @@
       display: flex;
       align-items: center;
       border-radius: 6px;
-      background-color: $white;
-      border: 1px solid $medium-bronze;
+      background-color: $secondary-color-1;
+      border: 1px solid $secondary-color-3;
       box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
       z-index: 100000;
       position: relative;
       padding: 0 1rem;
   
       &:focus-within {
-        box-shadow: 0 0 0 2px $capwell-blue, 0 4px 7px 0 rgba(0,148,205,0.2), 0 17px 47px 0 rgba(0,0,0,0.15);
+        box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0,148,205,0.2), 0 17px 47px 0 rgba(0,0,0,0.15);
   
         .icon {
-          color: $capwell-blue;
+          color: $primary-color-2;
         }
       }
   
@@ -39,10 +37,10 @@
       &.disabled {
         cursor: not-allowed;
         box-shadow: none;
-        border: 1px solid $medium-bronze;
+        border: 1px solid $secondary-color-3;
   
         .icon {
-          color: $medium-bronze;
+          color: $secondary-color-3;
         }
       }
       .input-field {
@@ -63,7 +61,7 @@
         background: transparent;
   
         &::placeholder {
-          color: $dark-bronze;
+          color: $secondary-color-4;
           font-weight: normal;
           font-size: 1rem;
         }

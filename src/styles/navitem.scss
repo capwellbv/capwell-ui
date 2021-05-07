@@ -1,9 +1,7 @@
-@import './variables';
-
 .#{$scss-prefix} {
 	&.cap-nav-item {
 		a {
-			color: $black;
+			color: $darkest-color;
 			&:hover {
 				text-decoration: none;
 			}

@@ -1,8 +1,6 @@
-@import './variables';
-
 .#{$scss-prefix} {
   &.cap-box {
-    background-color: $medium-bronze;
+    background-color: $secondary-color-3;
     display: inline-block;
   }
   &.box-1 {

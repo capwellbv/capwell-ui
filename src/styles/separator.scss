@@ -1,9 +1,7 @@
-@import './_variables';
-
 .#{$scss-prefix} {
 	&.cap-seprator {
 		margin: 0 1rem $p-3 1rem;
-		border: 3px solid $light-grey;
+		border: 3px solid $secondary-color-6;
 		width: 100%;
 		border-radius: 5px;
 	}

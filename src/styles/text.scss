@@ -1,10 +1,8 @@
-@import './_variables';
-
 .#{$scss-prefix} {
   &.cap-text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    color: $secondary;
+    color: $darkest-color;
   }
   &.cap-text-1{
     font-weight: 100;

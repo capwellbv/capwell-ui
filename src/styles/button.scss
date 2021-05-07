@@ -37,29 +37,29 @@
     line-height: 13px;
   }
   &.cap-primary-btn {
-    background: linear-gradient(176.69deg, $primary-light 0%, $capwell-blue 100%);
+    background: linear-gradient(176.69deg, $primary-color-1 0%, $primary-color-2 100%);
     box-shadow: 0 3px 10px 0 rgba(0,148,205,0.2);
-    color: $white;  
+    color: $secondary-color-1;  
     transition: ease-in-out 0.4s all;
   
     &:hover {
       box-shadow: 0 2px 5px 0 rgba(0,148,205,0.1), 0 10px 30px 0 rgba(0,148,205,0.4);
     }
     &:focus {
-      background-color: $c-blue-alt;
+      background-color: $primary-color-3;
       box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
     }
   }
   
   &.cap-secondary-btn {
-    background-color: $white;
-    border: 1px solid $medium-bronze;
+    background-color: $secondary-color-1;
+    border: 1px solid $secondary-color-3;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
     transition: ease-in 0.1s all;
   
     &:hover {
       box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-      border: 2px solid $capwell-blue;
+      border: 2px solid $primary-color-2;
     }
   
     &:focus {
@@ -69,30 +69,30 @@
   }
   
   &.cap-disabled-btn {
-    background-color: $white;
-    border:1px solid $medium-bronze;
+    background-color: $secondary-color-1;
+    border:1px solid $secondary-color-3;
     cursor: not-allowed;
-    color: $dark-bronze;
+    color: $secondary-color-4;
   }
 
   &.icon-btn {
-    border: 1px solid $medium-bronze;
-    background-color: $white;
+    border: 1px solid $secondary-color-3;
+    background-color: $secondary-color-1;
     display: flex;
     align-items: center;
     transition: ease-in-out 0.1s all;
   
     &:hover  {
       box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-      border: 2px solid $capwell-blue;
+      border: 2px solid $primary-color-2;
   
       .icon {
-        color: $capwell-blue;
+        color: $primary-color-2;
       }
     }
   
     .icon {
-      color: $dark-bronze;
+      color: $secondary-color-4;
       margin-left: $ml-2;
     }
   }
@@ -101,19 +101,19 @@
     border-radius: 100%;
     padding: 0;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
-    border: 1px solid $medium-bronze;
-    background-color: $white;
+    border: 1px solid $secondary-color-3;
+    background-color: $secondary-color-1;
     transition: ease-in-out 0.1s all;
     &:hover {
-      border: 2px solid $capwell-blue;
+      border: 2px solid $primary-color-2;
       box-shadow: 0 2px 5px 0 rgba(0,0,0,0.05), 0 15px 45px 0 rgba(0,0,0,0.15);
     }
     &:focus {
-      border: 2px solid $capwell-blue;
+      border: 2px solid $primary-color-2;
       box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2);
     }
     .icon {
-      color: $capwell-blue;
+      color: $primary-color-2;
     }
   }
   &.cap-circle-btn.btn-sm{
@@ -139,7 +139,7 @@
       box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
       border: 0px;
       .icon{
-        color: $dark-bronze;
+        color: $secondary-color-4;
       }
     }
   }
