@@ -1,33 +1,43 @@
 .#{$scss-prefix} {
   &.cap-text-wrapper {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 300;
     color: $darkest-color;
   }
   &.cap-text-1{
     font-weight: 100;
-    font-size: 90px;
-    line-height: 90px;
+    font-size: $font-size-1;
+    line-height: $line-height-1;
   }
   &.cap-text-2 {
     font-weight: 100;
-    font-size: 60px;
-    line-height: 60px;
+    font-size: $font-size-3;
+    line-height: $line-height-3;
   }
   &.cap-text-3 {
-    font-size: 24px;
-    line-height: 44px;
+    font-size: $font-size-8;
+    line-height: $line-height-6;
+    letter-spacing: 0;
   }
   &.cap-text-4 {
-    font-size: 20px;
-    line-height: 36px;
+    font-size: $font-size-9;
+    line-height: $line-height-7;
   }
   &.cap-text-5 {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: $font-size-9;
+    line-height: $line-height-8;
   }
   &.cap-text-6 {
-    font-size: 18px;
-    line-height: 28px;
+    font-size: $font-size-10;
+    line-height: $line-height-9;
+  }
+  &.capitalize {
+    text-transform: capitalize;
+  }
+  &.lowercase {
+    text-transform: lowercase;
+  }
+  &.uppercase {
+    text-transform: uppercase;
   }
 }

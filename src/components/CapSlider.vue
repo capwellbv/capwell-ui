@@ -11,15 +11,22 @@
       <chevron-left-icon size="1.5x" class=""></chevron-left-icon>
     </button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
-      <div :id="'p' + i" v-for="(item, i) in items" :key="i" class="panel">
-        <cap-title type="subtitle" size="3">{{ item.title }}</cap-title>
-        <cap-text size="6">{{ item.description }}</cap-text>
-        <div class="actions">
-          <a href="#">
-            <arrow-right-icon size="1.5x" class="next-arrow"></arrow-right-icon>
-          </a>
-        </div>
-      </div>
+      <cap-card
+        :bordered="true"
+        size="small"
+        class="panel"
+        :id="'p' + i"
+        v-for="(item, i) in items"
+        :key="i"
+      >
+        <template #body>
+          <cap-title style="color: #0076a4" type="subheading" size="3" transform="uppercase">{{item.title}}</cap-title>
+          <cap-title type="heading" size="8">{{item.description}}</cap-title>
+        </template>
+        <template #footer>
+          <arrow-right-icon size="1.2x" class="icon"></arrow-right-icon>
+        </template>
+      </cap-card>
     </div>
     <button
       v-if="items.length > 3"
@@ -41,6 +48,7 @@ import {
 } from "vue-feather-icons";
 import CapText from "./CapText.vue";
 import CapTitle from "./CapTitle.vue";
+import CapCard from "./CapCard.vue";
 export default {
   name: "CapSlider",
   props: {
@@ -63,6 +71,7 @@ export default {
     ArrowRightIcon,
     CapTitle,
     CapText,
+    CapCard,
   },
   mounted() {
     if (this.checkMedia()) {
