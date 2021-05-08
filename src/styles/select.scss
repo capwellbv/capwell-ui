@@ -1,7 +1,7 @@
 .#{$scss-prefix} {
   &.cap-select {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $base-fontfamily;
     font-weight: 300;
   
     button {
@@ -10,7 +10,7 @@
       justify-content: space-between;
       align-items: center;
       border: 1px solid $secondary-color-3;
-      box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+      box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
       border-radius: 6px;
       white-space: nowrap;
       cursor: pointer;
@@ -28,10 +28,10 @@
       }
       &:focus {
         border: 1px solid $primary-color-2;
-        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba(0,0,0,0.08);
+        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba($darkest-color, 0.08);
   
         @include forMobile() {
-          box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+          box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
           border: 1px solid $primary-color-2;
         }
       }
@@ -58,11 +58,13 @@
       }
   
       .text {
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 1.125rem;
+        line-height: 1.25rem;
+        color: $secondary-color-4;
   
         &.chosen {
           color: $primary-color-4;
+          font-weight: 700;
         }
   
         @include forMobile() {
@@ -81,8 +83,8 @@
   
       .icon {
         color: $primary-color-2 !important;
-        font-size: 20px !important;
-        line-height: 20px !important;
+        font-size: 16px !important;
+        line-height: 16px !important;
         
         @include forMobile() {
           margin-top: -12px;
@@ -104,7 +106,7 @@
       margin-bottom: $spacing4;
       background-color: $secondary-color-1 !important;
       z-index: 1005;
-      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
   
       @include forMobile() {
         border: 1px solid $primary-color-2;
@@ -115,14 +117,14 @@
         all: unset;
         padding: $spacing6;
         color: $primary-color-4;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
         font-weight: normal;
         cursor: pointer;
   
         &.selected {
           color: $darkest-color;
-          background-color: rgba(245,242,237,0.5);
+          background-color: rgba($secondary-color-2, 0.5);
         }
   
         @include forMobile() {
@@ -132,7 +134,7 @@
         }
   
         &:hover {
-          background-color: rgba(245,242,237,0.5);
+          background-color: rgba($secondary-color-2, 0.5);
         }
   
         &:nth-child(1) {
@@ -148,14 +150,15 @@
   
           .icon {
             color: $primary-color-2 !important;
-            font-size: 20px !important;
-            line-height: 20px !important;
-            margin-right: 1px;
+            font-size: 16px !important;
+            line-height: 16px !important;
+            margin-right: $spacing8;
+            margin-bottom: $spacing8;
             cursor: pointer;
-            padding: $spacing6;
+            padding: $spacing8;
   
             @include forMobile() {
-              padding: 15px $spacing6;
+              padding: $spacing7 $spacing6;
             }
           }
   

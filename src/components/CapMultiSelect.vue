@@ -3,7 +3,7 @@
     <div class="cap-multi-select cap-ui">
       <button
         :class="size"
-        @click="show"
+        @click="toggle"
         aria-haspopup="listbox"
         @keyup.tab="show"
         @keydown.tab="hide"
@@ -13,7 +13,7 @@
           <span class="text" v-if="!values.length">{{placeholder}}</span>
           <span class="select-item" v-for="(item, index) in values" :key="index">
             {{item}}
-            <x-icon @click="select(item)" size="1x" class="cross-icon"></x-icon>
+            <x-icon @click="select(item)" size="14" class="cross-icon"></x-icon>
           </span>
         </div>
         <chevron-up-icon v-if="showOptions" size="1.5x" class="icon"></chevron-up-icon>
@@ -96,6 +96,10 @@ export default {
 
     hide() {
       this.showOptions = false;
+    },
+    toggle() {
+      this.showOptions = !this.showOptions
+
     },
 
     select(option) {  
