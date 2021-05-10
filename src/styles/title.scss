@@ -3,8 +3,26 @@
 .#{$scss-prefix} {
   &.cap-heading-wrapper {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
     color: $darkest-color;
+
+    &.capitalize {
+      text-transform: capitalize;
+    }
+    &.lowercase {
+      text-transform: lowercase;
+    }
+    &.uppercase {
+      text-transform: uppercase;
+    }
+    &.normal {
+      font-weight: $font-normal;
+    }
+    &.medium {
+      font-weight: $font-medium;
+    }
+    &.bold {
+      font-weight: $font-bold;
+    }
   }
   
   &.cap-heading-1{
@@ -40,27 +58,23 @@
     line-height: $line-height-10;
   }
   &.cap-subheading-1{
-    font-family: 'Mulish', sans-serif;
+    letter-spacing: 1px;
     font-size: $font-size-11;
     line-height: $line-height-11;
   }
   &.cap-subheading-2{
-    font-family: 'Mulish', sans-serif;
+    letter-spacing: 1px;
     font-size: $font-size-12;
-    line-height: $line-height-12;
+    line-height: $line-height-14;
   }
   &.cap-subheading-3{
-    font-family: 'Mulish', sans-serif;
-    font-size: $font-size-13;
+    letter-spacing: 1px;
+    font-size: $font-size-12;
     line-height: $line-height-13;
   }
-  &.capitalize {
-    text-transform: capitalize;
-  }
-  &.lowercase {
-    text-transform: lowercase;
-  }
-  &.uppercase {
-    text-transform: uppercase;
+  &.cap-subheading-4{
+    letter-spacing: 1px;
+    font-size: $font-size-13;
+    line-height: $line-height-14;
   }
 }

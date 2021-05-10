@@ -10,7 +10,9 @@
 				: size === 'md'
 				? 'btn-md'
 				: 'btn-sm',
-				{'muted': muted}
+				{'muted': muted},
+				`${transform}`,
+				`${font}`
 		]"
 		@click="clickHandler"
 	>
@@ -36,7 +38,15 @@ export default {
 			type: String,
 			default: 'sm',
 		},
-		muted: { default: false }
+		muted: { default: false },
+		transform: {
+      type: String,
+      default: 'initial'
+    },
+		font: {
+			type: String,
+			default: 'bold'
+		}
 	},
 	methods: {
 		clickHandler(evt) {

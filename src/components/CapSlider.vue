@@ -20,8 +20,8 @@
         :key="i"
       >
         <template #body>
-          <cap-title style="color: #0076a4" type="subheading" size="3" transform="uppercase">{{item.title}}</cap-title>
-          <cap-title type="heading" size="8">{{item.description}}</cap-title>
+          <cap-title style="color: #0076a4" type="subheading" size="3" transform="uppercase" font="bold">{{item.title}}</cap-title>
+          <cap-title type="heading" size="6" style="margin-top: 8px" font="medium">{{item.description}}</cap-title>
         </template>
         <template #footer>
           <arrow-right-icon size="1.2x" class="icon"></arrow-right-icon>

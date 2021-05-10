@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-ui cap-heading-wrapper" :class="[`cap-${type}-${size}`, `${transform}`]" >
+  <div class="cap-ui cap-heading-wrapper" :class="[`cap-${type}-${size}`, `${transform}`, `${font}`]" >
     <slot></slot>
   </div>
 </template>
@@ -19,6 +19,10 @@ export default {
     transform: {
       type: String,
       default: 'initial'
+    },
+    font: {
+      type: String,
+      default: 'medium'
     }
   }
 }
