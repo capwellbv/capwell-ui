@@ -20,18 +20,20 @@
               @keyup.esc="hide"
             />
           </div>
-          <chevron-down-icon
-            v-if="!showOptions"
-            @click="showOptions != showOptions"
-            size="1.5x"
-            class="icon"
-          ></chevron-down-icon>
-          <chevron-up-icon
-            v-if="showOptions"
-            @click="showOptions != showOptions"
-            size="1.5x"
-            class="icon"
-          ></chevron-up-icon>
+          <div>
+            <chevron-down-icon
+              v-if="!showOptions"
+              @click="show"
+              size="20"
+              class="icon-feather"
+            ></chevron-down-icon>
+            <chevron-up-icon
+              v-if="showOptions"
+              @click="hide"
+              size="20"
+              class="icon-feather"
+            ></chevron-up-icon>
+          </div>
         </div>
         <ul role="listbox" tabindex="-1" v-if="showOptions">
           <li
@@ -39,6 +41,7 @@
             @click="select(option)"
             v-for="(option, i) in filteredOptions"
             :key="i"
+            :class="{'selected': values.includes(option)}"
           >
             {{ option }}
           </li>

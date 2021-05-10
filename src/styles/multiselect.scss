@@ -1,7 +1,7 @@
 .#{$scss-prefix} {
   &.cap-multi-select {
     position: relative;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $base-fontfamily;
     font-weight: 300;
     height: max-content;
   
@@ -11,7 +11,7 @@
       justify-content: space-between;
       align-items: center;
       border: 1px solid $secondary-color-3;
-      box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+      box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
       border-radius: 6px;
       white-space: nowrap;
       cursor: pointer;
@@ -59,10 +59,10 @@
       }
       &:focus {
         border: 1px solid $primary-color-2;
-        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba(0,0,0,0.08);
+        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba($darkest-color, 0.08);
   
         @include forMobile() {
-          box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+          box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
           border: 1px solid $primary-color-2;
         }
       }
@@ -131,7 +131,7 @@
       margin-bottom: $spacing4;
       background-color: $secondary-color-1 !important;
       z-index: 1005;
-      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
       margin-top: 5px;
   
       @include forMobile() {
@@ -150,7 +150,7 @@
   
         
         &.selected {
-          background-color: rgba(245,242,237,0.5);
+          background-color: rgba($secondary-color-2, 0.5);
           font-weight: 700;
         }
   
@@ -161,7 +161,7 @@
         }
   
         &:hover {
-          background-color: rgba(245,242,237,0.5);
+          background-color: rgba($secondary-color-2, 0.5);
         }
   
         &:nth-child(1) {
