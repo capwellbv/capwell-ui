@@ -8,25 +8,10 @@
       class="btn circle left"
       style="margin-left: auto"
     >
-      <chevron-left-icon size="1.5x" class=""></chevron-left-icon>
+      <chevron-left-icon size="2x" class=""></chevron-left-icon>
     </button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
-      <cap-card
-        :bordered="true"
-        size="small"
-        class="panel"
-        :id="'p' + i"
-        v-for="(item, i) in items"
-        :key="i"
-      >
-        <template #body>
-          <cap-title style="color: #0076a4" type="subheading" size="3" transform="uppercase" font="bold">{{item.title}}</cap-title>
-          <cap-title type="heading" size="6" style="margin-top: 8px" font="medium">{{item.description}}</cap-title>
-        </template>
-        <template #footer>
-          <arrow-right-icon size="1.2x" class="icon"></arrow-right-icon>
-        </template>
-      </cap-card>
+      <slot></slot>
     </div>
     <button
       v-if="items.length > 3"
@@ -35,7 +20,7 @@
       type="button"
       class="btn circle right"
     >
-      <chevron-right-icon size="1.5x" class=""></chevron-right-icon>
+      <chevron-right-icon size="2x" class=""></chevron-right-icon>
     </button>
   </div>
 </template>
