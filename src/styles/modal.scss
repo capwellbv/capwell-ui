@@ -10,11 +10,8 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
-		background: rgba(0,0,0,0.6);
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		background: rgba($secondary-color-2, 0.6);
 		
-	
 		&.modal-hide {
 			display: none;
 		}
@@ -26,10 +23,11 @@
 		.cap-model-inner {
 			position: relative;
 			background-color: $secondary-color-1;
+			box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
 			display: flex;
 			flex-direction: column;
 			margin: 5% 1rem;
-			border-radius: $p-1;
+			border-radius: 6px;
 			overflow-y: auto;
 	
 			&.lg {
@@ -60,22 +58,46 @@
 			}
 	
 			.cap-model-header {
+				position: relative;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				padding: 0.6rem 1rem;
+
+				.icon-circle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					right: 6px;
+					top: 6px;
+					min-width: 50px;
+					height: 50px;
+					background-color: $secondary-color-2;
+					color: $secondary-color-4;
+					border: 2px solid $secondary-color-2;
+					border-radius: 100%;
+					&:hover {
+						border: 2px solid $primary-color-2;
+						background-color: $secondary-color-1;
+						box-shadow: 0 2px 5px 0 rgba($darkest-color, 0.05), 0 15px 45px 0 rgba($darkest-color, 0.15);
+					
+					}
+					
+				}
+				
 				.close-icon {
+					font-size: 20px;
 					border: 2px solid transparent;
 					border-radius: 100%;
 					padding: $p-1;
 					cursor: pointer;
-					background-color: $secondary-color-3;
-					color: $secondary-color-5;
-	
+					background-color: inherit;
+					color: $secondary-color-4;
 					&:hover {
-						border: 2px solid $primary-color-2;
 						color: $primary-color-2;
 					}
+					
 				}
 			}
 			.cap-model-body {
