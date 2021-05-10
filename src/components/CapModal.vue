@@ -3,7 +3,9 @@
 		<div class="cap-model-inner" :class="size">
 			<div class="cap-model-header">
 				<span>{{ title }}</span>
-				<x-icon @click="dismiss" size="1x" class="close-icon"></x-icon>
+				<div @click="dismiss" class="icon-circle">
+					<x-icon  size="1x" class="close-icon"></x-icon>
+				</div>
 			</div>
 			<div class="cap-model-body">
 				<slot></slot>
