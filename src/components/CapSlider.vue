@@ -8,18 +8,10 @@
       class="btn circle left"
       style="margin-left: auto"
     >
-      <chevron-left-icon size="1.5x" class=""></chevron-left-icon>
+      <chevron-left-icon size="2x" class=""></chevron-left-icon>
     </button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
-      <div :id="'p' + i" v-for="(item, i) in items" :key="i" class="panel">
-        <cap-title type="subtitle" size="3">{{ item.title }}</cap-title>
-        <cap-text size="6">{{ item.description }}</cap-text>
-        <div class="actions">
-          <a href="#">
-            <arrow-right-icon size="1.5x" class="next-arrow"></arrow-right-icon>
-          </a>
-        </div>
-      </div>
+      <slot></slot>
     </div>
     <button
       v-if="items.length > 3"
@@ -28,7 +20,7 @@
       type="button"
       class="btn circle right"
     >
-      <chevron-right-icon size="1.5x" class=""></chevron-right-icon>
+      <chevron-right-icon size="2x" class=""></chevron-right-icon>
     </button>
   </div>
 </template>
@@ -41,6 +33,7 @@ import {
 } from "vue-feather-icons";
 import CapText from "./CapText.vue";
 import CapTitle from "./CapTitle.vue";
+import CapCard from "./CapCard.vue";
 export default {
   name: "CapSlider",
   props: {
@@ -63,6 +56,7 @@ export default {
     ArrowRightIcon,
     CapTitle,
     CapText,
+    CapCard,
   },
   mounted() {
     if (this.checkMedia()) {

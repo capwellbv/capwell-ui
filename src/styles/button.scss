@@ -4,37 +4,58 @@
   &.cap-btn {
     border: none;
     outline: none;
-    font-weight: bold;
     cursor: pointer;
     font-family: 'Mulish', sans-serif;
+
+    &.capitalize {
+      text-transform: capitalize;
+    }
+    &.lowercase {
+      text-transform: lowercase;
+    }
+    &.uppercase {
+      text-transform: uppercase;
+    }
+    &.thin {
+      font-weight: $font-thin;
+    }
+    &.normal {
+      font-weight: $font-normal;
+    }
+    &.medium {
+      font-weight: $font-medium;
+    }
+    &.bold {
+      font-weight: $font-bold;
+    }
   }
   &.btn-xl {
     height: 60px;
     border-radius: 30px;
     padding: 0px 40px;
-    font-size: 18px;
-    line-height: 18px;
+    font-size: $font-size-10;
+    line-height: $line-height-12;
   }
   &.btn-lg {
     height: 50px;
     border-radius: 25px;
     padding: 0px 30px;
-    font-size: 15px;
-    line-height: 15px;
+    font-size: $font-size-10;
+    line-height: $line-height-12;
   }
   &.btn-md {
     height: 40px;
     border-radius: 20px;
     padding: 0px 20px;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: $font-size-11;
+    line-height: $line-height-13;
   }
   &.btn-sm {
     height: 35px;
     border-radius: 18px;
     padding: 0px 15px;
-    font-size: 13px;
-    line-height: 13px;
+    font-size: $font-size-12;
+    line-height: $line-height-14;
   }
   &.cap-primary-btn {
     background: linear-gradient(176.69deg, $primary-color-1 0%, $primary-color-2 100%);
@@ -55,6 +76,7 @@
     background-color: $secondary-color-1;
     border: 1px solid $secondary-color-3;
     box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    color: $secondary-color-5;
     transition: ease-in 0.1s all;
   
     &:hover {
