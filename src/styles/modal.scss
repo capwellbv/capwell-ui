@@ -32,6 +32,17 @@
 	
 			&.lg {
 				width: 80%;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 50px;
+						height: 50px;
+						.close-icon {
+						border: 2px solid transparent;
+						font-size: 20px;
+
+						}
+					}
+				}
 	
 				@include forMobile() {
 					width: 90%;
@@ -39,6 +50,17 @@
 			}
 			&.md {
 				width: 60%;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 40px;
+						height: 40px;
+						.close-icon {
+							border: 2px solid transparent;
+							font-size: 18px;
+		
+								}
+					}
+				}
 	
 				@include forIpadPro() {
 					width: 70%;
@@ -50,6 +72,17 @@
 			}
 			&.sm {
 				width: 300px;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 30px;
+						height: 30px;
+						.close-icon {
+							border:none;
+							font-size: 16px;
+								}
+					}
+				}
+
 	
 				@include forSmall() {
 					width: 95%;
@@ -69,10 +102,8 @@
 					align-items: center;
 					justify-content: center;
 					position: absolute;
-					right: 6px;
-					top: 6px;
-					min-width: 50px;
-					height: 50px;
+					right: 8px;
+					top: 8px;
 					background-color: $secondary-color-2;
 					color: $secondary-color-4;
 					border: 2px solid $secondary-color-2;
@@ -87,8 +118,6 @@
 				}
 				
 				.close-icon {
-					font-size: 20px;
-					border: 2px solid transparent;
 					border-radius: 100%;
 					padding: $p-1;
 					cursor: pointer;
