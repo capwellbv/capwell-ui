@@ -39,15 +39,39 @@
     letter-spacing: 0;
   }
   &.cap-text-4 {
-    font-size: $font-size-9;
+    font-size: $font-size-8;
     line-height: $line-height-7;
   }
   &.cap-text-5 {
     font-size: $font-size-9;
-    line-height: $line-height-8;
+    line-height: $line-height-7;
   }
   &.cap-text-6 {
+    font-size: $font-size-9;
+    line-height: $line-height-8;
+  }
+  &.cap-text-7 {
     font-size: $font-size-10;
     line-height: $line-height-9;
+  }
+  &.cap-text-8{
+    font-size: $font-size-11;
+    line-height: $line-height-10;
+  }
+  &.cap-text-9 {
+    font-size: $font-size-11;
+    line-height: $line-height-11;
+  }
+  &.font-text-10 {
+    font-size: $font-size-13;
+    list-style: $line-height-12;
+  }
+  &.font-text-11 {
+    font-size: $font-size-13;
+    line-height: $line-height-13;
+  }
+  &.font-text-12 {
+    font-size: $font-size-14;
+    line-height: $line-height-13;
   }
 }
