@@ -119,6 +119,21 @@
         </cap-form>
       </CapModal>
     </div>
+    <div>
+      <p>Form Wizard</p>
+      <CapButton varient="secondary" size="xl" @click="showWizard = true"
+        >Show Form Wizard</CapButton
+      >
+       <CapModal
+        :show="showWizard"
+        @close="showWizard = false"
+        title="model title"
+        size="md"
+      >
+       <p>hello peeps !</p>
+      </CapModal>
+
+    </div>
   </div>
 </template>
 
@@ -133,6 +148,7 @@ export default {
       smShowModel: false,
       mdShowModel: false,
       lgShowModel: false,
+      showWizard: false,
       selectdValue: "",
       items: [
         "Dot NET ontwikkelaars",

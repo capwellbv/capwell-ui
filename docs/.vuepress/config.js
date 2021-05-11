@@ -45,6 +45,7 @@ module.exports = {
           '/header/',
           '/footer/',
           '/slider/',
+          '/tabs/',
         ]
       }
     ]

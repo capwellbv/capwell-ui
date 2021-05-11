@@ -30,6 +30,8 @@ import CapInput from './components/CapInput.vue'
 import CapTitle from './components/CapTitle.vue'
 import CapLink from './components/CapLink.vue'
 import CapModal from './components/CapModal.vue'
+import CapTabs from './components/CapTabs.vue'
+import CapTabPane from './components/CapTabPane.vue'
 
 const components = {
     CapBox,
@@ -63,7 +65,9 @@ const components = {
     CapInput,
     CapTitle,
     CapLink,
-    CapModal
+    CapModal,
+    CapTabs,
+    CapTabPane
 }
 
 const install = function (Vue, opts = {}) {

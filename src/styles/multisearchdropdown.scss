@@ -150,6 +150,50 @@
         }
       }
     }
+    ul {
+      all: unset;
+      display: flex;
+      flex-direction: column;
+      background-color: $secondary-color-1;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      border-radius: 6px;
+      margin-bottom: $spacing4;
+      background-color: $secondary-color-1 !important;
+      z-index: 100;
+      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2),
+        0 15px 45px 0 rgba($darkest-color, 0.15);
+      margin-top: 5px;
+      z-index: 10001;
+  
+      li {
+        all: unset;
+        padding: $spacing6;
+        color: $primary-color-4;
+        font-size: rem(18px);
+        line-height: rem(20px);
+        font-weight: normal;
+        cursor: pointer;
+  
+        @include forMobile() {
+          font-size: rem(15px);
+          line-height: rem(15px);
+          padding: $p-3;
+        }
+  
+        &:hover {
+          background-color: rgba($secondary-color-2, 0.5);
+        }
+        &.selected {
+          background-color: rgba($secondary-color-2, 0.5);
+          font-weight: 700;
+        }
+        &:nth-child(1) {
+          margin-top: 8px;
+        }
+      }
+    }
   }
 
   &.error {
@@ -157,50 +201,5 @@
     font-size: 1rem;
     line-height: 1rem;
     margin-top: 5px;
-  }
-
-  ul {
-    all: unset;
-    display: flex;
-    flex-direction: column;
-    background-color: $secondary-color-1;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    border-radius: 6px;
-    margin-bottom: $spacing4;
-    background-color: $secondary-color-1 !important;
-    z-index: 100;
-    box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2),
-      0 15px 45px 0 rgba($darkest-color, 0.15);
-    margin-top: 5px;
-    z-index: 10001;
-
-    li {
-      all: unset;
-      padding: $spacing6;
-      color: $primary-color-4;
-      font-size: rem(18px);
-      line-height: rem(20px);
-      font-weight: normal;
-      cursor: pointer;
-
-      @include forMobile() {
-        font-size: rem(15px);
-        line-height: rem(15px);
-        padding: $p-3;
-      }
-
-      &:hover {
-        background-color: rgba($secondary-color-2, 0.5);
-      }
-	    &.selected {
-        background-color: rgba($secondary-color-2, 0.5);
-        font-weight: 700;
-      }
-      &:nth-child(1) {
-        margin-top: 8px;
-      }
-    }
   }
 }
