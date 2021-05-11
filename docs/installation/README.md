@@ -4,7 +4,7 @@ Add `"@capwellbv/capwell-ui": "^0.1.0"` package as a dependency inside your `pac
 
 ```json
 "dependencies": {
-    "@capwellbv/capwell-ui": "^0.1.4"
+    "@capwellbv/capwell-ui": "^0.1.5"
   }
 ```
 Run install.
