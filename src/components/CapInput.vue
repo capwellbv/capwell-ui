@@ -2,7 +2,7 @@
     <div class="cap-ui cap-input">
       <div class="cap-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
         <input
-          @input="$emit('input', event.target.value)"
+          @input="handleInput"
           type="text"
           :value="value"
           :disabled="disabled"
@@ -42,6 +42,11 @@ export default {
       type: String,
       default: ''
     },
+  },
+  methods: {
+    handleInput(e) {
+      this.$emit('input', e.target.value)
+    }
   }
 };
 </script>

@@ -133,6 +133,7 @@ export default {
       smShowModel: false,
       mdShowModel: false,
       lgShowModel: false,
+      showWizard: false,
       selectdValue: "",
       items: [
         "Dot NET ontwikkelaars",

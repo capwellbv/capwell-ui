@@ -1,0 +1,29 @@
+.#{$scss-prefix} {
+  &.cap-tabs {
+    .tabs-header {
+      &-nav {
+        display: flex;
+        align-items: center;
+        background-color: $secondary-color-7;
+        padding-left: 0px;
+        margin: 0px;
+        &-item {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          list-style: none;
+          padding: $spacing7;
+          &:hover,
+          &.is-active {
+            background-color: $secondary-color-3;
+          }
+        }
+      }
+    }
+    .tabs-footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

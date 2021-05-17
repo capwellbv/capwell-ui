@@ -10,11 +10,8 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
-		background: rgba(0,0,0,0.6);
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
+		background: rgba($secondary-color-2, 0.6);
 		
-	
 		&.modal-hide {
 			display: none;
 		}
@@ -26,14 +23,26 @@
 		.cap-model-inner {
 			position: relative;
 			background-color: $secondary-color-1;
+			box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
 			display: flex;
 			flex-direction: column;
 			margin: 5% 1rem;
-			border-radius: $p-1;
+			border-radius: 6px;
 			overflow-y: auto;
 	
 			&.lg {
 				width: 80%;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 50px;
+						height: 50px;
+						.close-icon {
+						border: 2px solid transparent;
+						font-size: 20px;
+
+						}
+					}
+				}
 	
 				@include forMobile() {
 					width: 90%;
@@ -41,6 +50,17 @@
 			}
 			&.md {
 				width: 60%;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 40px;
+						height: 40px;
+						.close-icon {
+							border: 2px solid transparent;
+							font-size: 18px;
+		
+								}
+					}
+				}
 	
 				@include forIpadPro() {
 					width: 70%;
@@ -52,6 +72,17 @@
 			}
 			&.sm {
 				width: 300px;
+				.cap-model-header {
+					.icon-circle {
+						min-width: 30px;
+						height: 30px;
+						.close-icon {
+							border:none;
+							font-size: 16px;
+								}
+					}
+				}
+
 	
 				@include forSmall() {
 					width: 95%;
@@ -60,22 +91,42 @@
 			}
 	
 			.cap-model-header {
+				position: relative;
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
 				padding: 0.6rem 1rem;
+
+				.icon-circle {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					right: 8px;
+					top: 8px;
+					background-color: $secondary-color-2;
+					color: $secondary-color-4;
+					border: 2px solid $secondary-color-2;
+					border-radius: 100%;
+					&:hover {
+						border: 2px solid $primary-color-2;
+						background-color: $secondary-color-1;
+						box-shadow: 0 2px 5px 0 rgba($darkest-color, 0.05), 0 15px 45px 0 rgba($darkest-color, 0.15);
+					
+					}
+					
+				}
+				
 				.close-icon {
-					border: 2px solid transparent;
 					border-radius: 100%;
 					padding: $p-1;
 					cursor: pointer;
-					background-color: $secondary-color-3;
-					color: $secondary-color-5;
-	
+					background-color: inherit;
+					color: $secondary-color-4;
 					&:hover {
-						border: 2px solid $primary-color-2;
 						color: $primary-color-2;
 					}
+					
 				}
 			}
 			.cap-model-body {

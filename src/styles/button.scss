@@ -74,14 +74,13 @@
   
   &.cap-secondary-btn {
     background-color: $secondary-color-1;
-    border: 1px solid $secondary-color-3;
-    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+    border: 0px;
+    box-shadow: 0 0 0 1px $secondary-color-3, 0 4px 11px 0 rgba($darkest-color, .08);
     color: $secondary-color-5;
     transition: ease-in 0.1s all;
   
     &:hover {
-      box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-      border: 2px solid $primary-color-2;
+      box-shadow: 0 0 0 2px $primary-color-2,0 4px 7px 0 rgba($primary-color-2, .2),0 17px 47px 0 rgba($darkest-color, .15);
     }
   
     &:focus {
