@@ -2,7 +2,6 @@
   <cap-on-click-away :do="hide">
     <div class="cap-ui cap-select">
       <button
-        :class="size"
         @click="show"
         aria-haspopup="listbox"
         @keyup.tab="show"
@@ -13,12 +12,12 @@
         <span :class="{ chosen: currentValue }" class="text">
           {{ this.buttonText }}
         </span>
-        <chevron-down-icon size="1.5x" class="icon"></chevron-down-icon>
+        <chevron-down-icon size="20" class="icon"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li>
           <span>{{ this.placeholder }}</span>
-          <chevron-up-icon @click="hide" size="1.5x" class="icon"></chevron-up-icon>
+          <chevron-up-icon @click="hide" size="20" class="icon"></chevron-up-icon>
         </li>
         <li
           @keyup.enter="select(i)"
@@ -58,10 +57,6 @@ export default {
     label: {
       type: String,
       required: true,
-    },
-    size: {
-      type: String,
-      default: "medium",
     },
   },
   data() {

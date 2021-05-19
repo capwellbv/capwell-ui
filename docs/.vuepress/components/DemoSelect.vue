@@ -5,24 +5,6 @@
       v-model="selectdValue"
       :options="items"
       label="Search skills"
-      size="large"
-    >
-    </cap-select>
-
-    <cap-select
-      style="margin-top: 20px"
-      v-model="selectdValue"
-      :options="items"
-      label="Search skills"
-    >
-    </cap-select>
-
-    <cap-select
-      style="margin-top: 20px"
-      v-model="selectdValue"
-      :options="items"
-      label="Search skills"
-      size="small"
     >
     </cap-select>
   </div>

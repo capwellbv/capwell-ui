@@ -2,7 +2,7 @@
   <div class="cap-ui cap-multi-search-dropdown">
     <cap-on-click-away :do="hide">
       <div class="searchable-select" :class="{ active: showOptions }">
-        <div class="select-container" :class="[size, { rounded }]">
+        <div class="select-container" :class="{ rounded }">
           <div class="select-items">
             <span v-for="value in values" :key="value"
               >{{ value }}
@@ -45,6 +45,7 @@
           >
             {{ option }}
           </li>
+          <p v-if="filteredOptions.length <= 0" class="no-reults-found">No results found</p>
         </ul>
       </div>
     </cap-on-click-away>
@@ -81,10 +82,6 @@ export default {
     placeholder: {
       type: String,
       required: true,
-    },
-    size: {
-      type: String,
-      default: "medium",
     },
     rounded: {
       type: [Boolean, String],

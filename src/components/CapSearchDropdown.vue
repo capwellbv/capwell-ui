@@ -2,7 +2,7 @@
   <div class="cap-ui cap-search-dropdown">
     <cap-on-click-away :do="hide">
       <div class="searchable-select" :class="{ active: showOptions }">
-        <div class="select-container" :class="[size, { rounded }]">
+        <div class="select-container" :class="{ rounded, 'active': showOptions }">
           <input
             type="text"
             v-model="searchQuery"
@@ -17,13 +17,13 @@
           <chevron-down-icon
             v-if="!showOptions"
             @click="show"
-            size="1.5x"
+            size="20"
             class="icon"
           ></chevron-down-icon>
           <chevron-up-icon
             v-if="showOptions"
             @click="hide"
-            size="1.5x"
+            size="20"
             class="icon"
           ></chevron-up-icon>
         </div>
@@ -36,6 +36,7 @@
           >
             {{ option }}
           </li>
+          <p v-if="filteredOptions.length <= 0" class="no-reults-found">No results found</p>
         </ul>
       </div>
     </cap-on-click-away>
@@ -63,10 +64,6 @@ export default {
     placeholder: {
       type: String,
       required: true,
-    },
-    size: {
-      type: String,
-      default: "medium",
     },
     rounded: {
       type: [Boolean, String],

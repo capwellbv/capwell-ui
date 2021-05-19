@@ -32,7 +32,6 @@
                   v-model="functions"
                   :options="items"
                   placeholder="Search for functions"
-                  size="large"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -43,7 +42,6 @@
                   v-model="level"
                   :options="items"
                   placeholder="Choose level of IT specialist"
-                  size="large"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -55,7 +53,6 @@
                   :options="items"
                   placeholder="Years of experience"
                   label="Years of experience"
-                  size="large"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -67,7 +64,6 @@
                   :options="items"
                   placeholder="Duration of hiring"
                   label="Duration of hiring"
-                  size="large"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -79,7 +75,6 @@
                   :options="items"
                   placeholder="Deployment per week"
                   label="Deployment per week"
-                  size="large"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -97,7 +92,6 @@
               <cap-text font="bold" size="7" class="label">Remarks</cap-text>
               <div class="content-right">
                 <cap-textarea
-                  class="content-textarea"
                   v-model="remarks"
                   placeholder="Explanation or question"
                 ></cap-textarea>
@@ -215,9 +209,6 @@ export default {
   flex-direction: row;
   margin-bottom: 10px;
   margin-top: 0;
-}
-.content-right .content-textarea {
-  width: fill-available;
 }
 .request-template {
   color: #0094cd;

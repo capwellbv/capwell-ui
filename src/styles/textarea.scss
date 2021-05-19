@@ -1,29 +1,41 @@
 .#{$scss-prefix} {
-  &.cap-textarea {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    outline: none;
-    border-radius: 6px;
-    background-color: $secondary-color-1;
-    border: 1px solid $secondary-color-3;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
-    padding: 1rem;
-    font-size: $font-size-10;
-   
-  
-    &:focus-within {
-      box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
-        0 17px 47px 0 rgba(0, 0, 0, 0.15);
-    }
-  
-    &.disabled {
-      cursor: not-allowed;
-      box-shadow: none;
+  &.cap-textarea-container{
+    .cap-textarea {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      outline: none;
+      border-radius: 6px;
+      background-color: $secondary-color-1;
       border: 1px solid $secondary-color-3;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+      padding: 1rem;
+      font-size: $font-size-10;
+      width: stretch;
+      &:focus-within {
+        box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
+          0 17px 47px 0 rgba(0, 0, 0, 0.15);
+      }
+      &.disabled {
+        cursor: not-allowed;
+        box-shadow: none;
+        border: 1px solid $secondary-color-3;
+      }
+      &::placeholder {
+        color: $secondary-color-4;
+        font-weight: normal;
+      }
     }
-    &::placeholder {
-      color: $secondary-color-4;
-      font-weight: normal;
+    &.has-error {
+      .cap-textarea {
+        box-shadow: 0 0 0 1px $theme-color-2;
+      }
+      .error {
+        color: $theme-color-2;
+        font-size: $font-size-12;
+        line-height: $line-height-11;
+        margin-top: 5px;
+        font-family: $secondary-fontfamily;
+      }
     }
-  }  
+  }
 }

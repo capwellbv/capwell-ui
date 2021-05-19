@@ -86,7 +86,6 @@
               :options="items"
               placeholder="Search skills"
               label="Search skills"
-              size="small"
             >
             </cap-select>
           </cap-form-row>
@@ -98,14 +97,13 @@
               :options="items"
               placeholder="Search skills"
               label="Search skills"
-              size="small"
             >
             </cap-select>
           </cap-form-row>
           <cap-form-row>
             <cap-title type="subheading" size="3">Remarks</cap-title>
             <cap-textarea
-              style="width: 57%"
+              style="width: 60%"
               v-model="textarea"
               placeholder="Explain a question?"
             >

@@ -11,7 +11,6 @@
       v-model="selectdValue"
       :options="items"
       placeholder="Search skills"
-      size=""
       rounded=""
     >
     </cap-search-dropdown>

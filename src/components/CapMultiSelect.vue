@@ -2,12 +2,12 @@
   <cap-on-click-away :do="hide">
     <div class="cap-multi-select cap-ui">
       <button
-        :class="size"
         @click="toggle"
         aria-haspopup="listbox"
         @keyup.tab="show"
         @keydown.tab="hide"
         @keyup.esc="hide"
+        :class="{'active': showOptions}"
       >
         <div class="label">
           <span class="text" v-if="!values.length">{{placeholder}}</span>
@@ -16,8 +16,8 @@
             <x-icon @click="select(item)" size="14" class="cross-icon"></x-icon>
           </span>
         </div>
-        <chevron-up-icon v-if="showOptions" size="1.5x" class="icon"></chevron-up-icon>
-        <chevron-down-icon v-else  size="1.5x" class="icon"></chevron-down-icon>
+        <chevron-up-icon v-if="showOptions" size="20" class="icon"></chevron-up-icon>
+        <chevron-down-icon v-else  size="20" class="icon"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li></li>
@@ -73,10 +73,6 @@ export default {
       type: String,
       required: true,
     },
-    size: {
-      type: String,
-      default: "medium",
-    }
   },
   components: {
     ChevronUpIcon,
