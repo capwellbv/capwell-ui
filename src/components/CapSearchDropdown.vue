@@ -16,13 +16,13 @@
           />
           <chevron-down-icon
             v-if="!showOptions"
-            @click="showOptions != showOptions"
+            @click="show"
             size="1.5x"
             class="icon"
           ></chevron-down-icon>
           <chevron-up-icon
             v-if="showOptions"
-            @click="showOptions != showOptions"
+            @click="hide"
             size="1.5x"
             class="icon"
           ></chevron-up-icon>

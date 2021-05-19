@@ -18,12 +18,24 @@
       background-color: $secondary-color-1;
   
       &.large {
+        .text {
+          font-size: $font-size-10;
+          line-height: $line-height-9;
+        }
         padding: $spacing6;
       }
       &.medium {
+        .text {
+          font-size: $font-size-11;
+          line-height: $line-height-10;
+        }
         padding: $spacing7 $spacing6;
       }
       &.small {
+        .text {
+          font-size: $font-size-12;
+          line-height: $line-height-11;
+        }
         padding: $spacing8 $spacing6;
       }
       &:focus {
@@ -58,8 +70,6 @@
       }
   
       .text {
-        font-size: 1.125rem;
-        line-height: 1.25rem;
         color: $secondary-color-4;
   
         &.chosen {
