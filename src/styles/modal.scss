@@ -1,3 +1,18 @@
+@mixin modal-mobile-view {
+	max-width: 100%;
+	margin: 110px 0 0 0;
+	.cap-model-header {
+		.icon-circle {
+			top: -70px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			background-color: $secondary-color-1;
+			height: 50px;
+			width: 50px;
+		}
+	}
+}
 .#{$scss-prefix} {
 	&.cap-modal {
 		width: 100%;
@@ -5,13 +20,13 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: 100000;
+		z-index: 1000000;
 		display: flex;
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
-		background: rgba($secondary-color-2, 0.6);
-		
+		background: rgba($secondary-color-2, 0.9);
+		overflow-y: auto;
 		&.modal-hide {
 			display: none;
 		}
@@ -28,66 +43,61 @@
 			flex-direction: column;
 			margin: 5% 1rem;
 			border-radius: 6px;
-			overflow-y: auto;
-	
+			overflow-y: visible;
+			width: 100%;
 			&.lg {
-				width: 80%;
+				max-width: 80%;
 				.cap-model-header {
 					.icon-circle {
-						min-width: 50px;
+						width: 50px;
 						height: 50px;
 						.close-icon {
-						border: 2px solid transparent;
-						font-size: 20px;
-
+							border: 2px solid transparent;
+							font-size: 20px;
 						}
 					}
 				}
-	
-				@include forMobile() {
-					width: 90%;
-				}
 			}
 			&.md {
-				width: 60%;
+				max-width: 60%;
 				.cap-model-header {
 					.icon-circle {
-						min-width: 40px;
+						width: 40px;
 						height: 40px;
 						.close-icon {
 							border: 2px solid transparent;
 							font-size: 18px;
-		
-								}
+						}
 					}
 				}
 	
 				@include forIpadPro() {
-					width: 70%;
-				}
-	
-				@include forMobile() {
-					width: 90%;
+					max-width: 70%;
 				}
 			}
 			&.sm {
-				width: 300px;
+				max-width: 300px;
 				.cap-model-header {
 					.icon-circle {
-						min-width: 30px;
+						width: 30px;
 						height: 30px;
 						.close-icon {
 							border:none;
 							font-size: 16px;
-								}
+						}
 					}
 				}
-
 	
 				@include forSmall() {
-					width: 95%;
+					@include modal-mobile-view;
 				}
-	
+			}
+
+			&.lg,
+			&.md {
+				@include forMobile() {
+					@include modal-mobile-view;
+				}
 			}
 	
 			.cap-model-header {
@@ -134,4 +144,7 @@
 			}
 		}
 	}	
+}
+body.cap-modal-open {
+	overflow-y: hidden;
 }

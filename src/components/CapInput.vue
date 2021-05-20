@@ -1,9 +1,11 @@
 <template>
-    <div class="cap-ui cap-input">
+    <div :class="['cap-ui', 'cap-input', {'has-error': error}]">
       <div class="cap-input-container" :class="[{'disabled': disabled, 'rounded': rounded}, size]">
         <input
           @input="handleInput"
-          type="text"
+          @focus="focus"
+          @blur="blur"
+          :type="type"
           :value="value"
           :disabled="disabled"
           class="input-field"
@@ -12,6 +14,9 @@
           :placeholder="placeholder"
         />
         <slot name="icon"></slot>
+      </div>
+      <div v-if="error">
+        <span class="error">{{ error }}</span>
       </div>
     </div>
 </template>
@@ -42,11 +47,22 @@ export default {
       type: String,
       default: ''
     },
+    type: {
+      type: String,
+      default: "text"
+    },
+    error: String
   },
   methods: {
     handleInput(e) {
       this.$emit('input', e.target.value)
-    }
+    },
+    focus() {
+      this.$emit("focus");
+    },
+    blur() {
+      this.$emit("blur");
+    },
   }
 };
 </script>

@@ -5,25 +5,6 @@
       v-model="skills"
       :options="items"
       placeholder="Search skills"
-      size="large"
-    >
-    </cap-multi-search-dropdown>
-
-    <cap-multi-search-dropdown
-      style="margin-top: 20px"
-      v-model="skills"
-      :options="items"
-      placeholder="Search skills"
-      rounded="true"
-    >
-    </cap-multi-search-dropdown>
-
-    <cap-multi-search-dropdown
-      style="margin-top: 20px"
-      v-model="preSelectedSkills"
-      :options="items"
-      placeholder="Search skills"
-      size="small"
     >
     </cap-multi-search-dropdown>
   </div>
