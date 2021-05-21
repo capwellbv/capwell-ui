@@ -8,38 +8,9 @@
       class="btn circle left"
       style="margin-left: auto"
     >
-      <chevron-left-icon size="1.5x" class="navigation-icon"></chevron-left-icon>
+      <chevron-left-icon size="2x" class=""></chevron-left-icon>
     </button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
-      <cap-card
-        :bordered="true"
-        :nopadding="true"
-        class="panel"
-        v-for="(job, index) in items"
-        :key="job.title + index"
-        @click.native="changeRoute(routeName, job.slug)"
-      >
-        <template #body>
-          <cap-title
-            type="subheading"
-            size="4"
-            transform="uppercase"
-            font="bold"
-            class="slider-title"
-            >{{job.title}}</cap-title
-          >
-          <cap-title
-            type="heading"
-            size="7"
-            font="medium"
-            class="slider-description"
-            >{{job.description}}</cap-title
-          >
-        </template>
-        <template #footer>
-          <arrow-right-icon size="1.2x" class="footer-icon"></arrow-right-icon>
-        </template>
-      </cap-card>
       <slot></slot>
     </div>
     <button
@@ -49,7 +20,7 @@
       type="button"
       class="btn circle right"
     >
-      <chevron-right-icon size="1.5x" class="navigation-icon"></chevron-right-icon>
+      <chevron-right-icon size="2x" class=""></chevron-right-icon>
     </button>
   </div>
 </template>
@@ -69,9 +40,6 @@ export default {
     items: {
       type: [Array, Object],
     },
-    routeName: {
-      type: String,
-    }
   },
 
   data() {
@@ -104,11 +72,6 @@ export default {
   },
 
   methods: {
-    changeRoute(name, slug) {
-      if (name && slug) {
-        this.$router.push({ name, params: { slug } })
-      }
-    },
     enableButton() {
       const slider = this.$refs.slider;
 
