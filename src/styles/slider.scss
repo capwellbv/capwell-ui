@@ -14,7 +14,6 @@
       scroll-padding: $spacing5 - 1;
       margin-left: -30px;
       width: calc(100% + 60px);
-      pointer-events: none;
   
       &::before {
         content: "";
@@ -27,69 +26,70 @@
       }
   
       .panel {
-        pointer-events: auto;
-        flex: calc(25% - 37px) 1 0;
-        height: auto !important;
-        scroll-snap-align: start;
-  
+        flex: calc(25% - 37px) 1 0 ;
+        min-height: 240px ;
+        min-width: 330px ;
+        width: auto ;
+        background: $secondary-color-1 ;
+        border: 2px solid transparent ;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08) ;
+        border-radius: 6px ;
+        color: $darkest-color ;
+        cursor: pointer ;
+        opacity: 1 ;
+        transition: all 0.3s ease-in-out ;
+
+        &:hover {
+          border: 2px solid $primary-color-2 ;
+          box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
+            0 15px 45px 0 rgba(0, 0, 0, 0.15) ;
+
+          .footer {
+            .footer-icon {
+              color: $primary-color-2 ;
+            }
+          }
+        }
+
+        .card-body {
+          padding: 40px 30px;
+
+          .slider-title {
+          color: $primary-color-2;
+          }
+
+          .slider-description {
+            margin-top: 0.6rem;
+            max-height: 70px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+
+        .footer {
+          .footer-icon {
+            padding-right: $spacing7;
+            padding-bottom: $spacing7;
+          }
+        }
+
         @media (max-width: 1900px) {
-          flex: calc(33% - 35px) 1 0;
-  
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          background: $secondary-color-1;
-          border: 2px solid transparent;
-          box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
-          border-radius: 6px;
-          color: $darkest-color;
-          width: 300px;
-          cursor: pointer;
-          opacity: 1;
-          transition: all 0.3s ease-in-out;
-  
-          &:hover {
-            border: 2px solid $primary-color-2;
-            box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
-              0 15px 45px 0 rgba(0, 0, 0, 0.15);
-  
-            .actions {
-              a {
-                .next-arrow {
-                  color: $primary-color-2;
-                }
-              }
-            }
-          }
-  
-          .actions {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-  
-            a {
-              color: $secondary-color-4;
-            }
-          }
+          flex: calc(33% - 35px) 1 0 ;
         }
       }
     }
   
     .btn {
-      min-width: 275px;
-      max-width: 500px;
       cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+
+      .navigation-icon {
+        stroke-width: 3px;
+      }
 
       &.circle {
-        border-radius: 50%;
-        padding: 0px;
-        min-width:50px;
-        height: 50px;
         color: $primary-color-2 !important;
         border: 1px solid $secondary-color-4 !important;
         background-color: $secondary-color-1 !important;
@@ -146,12 +146,6 @@
         &::after {
           content: "";
           border-left: $spacing6 solid transparent;
-        }
-  
-        .panel {
-          flex: unset;
-          flex-shrink: 0;
-          scroll-snap-align: center;
         }
       }
   
