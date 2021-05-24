@@ -5,7 +5,7 @@
       @click="slideLeft"
       :disabled="disableLeft"
       type="button"
-      class="btn circle left"
+      class="navigation-btn left"
       style="margin-left: auto"
     >
       <chevron-left-icon size="1.5x" class="navigation-icon"></chevron-left-icon>
@@ -47,7 +47,7 @@
       :disabled="disableRight"
       @click="slideRight"
       type="button"
-      class="btn circle right"
+      class="navigation-btn right"
     >
       <chevron-right-icon size="1.5x" class="navigation-icon"></chevron-right-icon>
     </button>

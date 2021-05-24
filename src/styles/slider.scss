@@ -38,7 +38,7 @@
         cursor: pointer ;
         opacity: 1 ;
         transition: all 0.3s ease-in-out ;
-
+        scroll-snap-align: start;
         &:hover {
           border: 2px solid $primary-color-2 ;
           box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
@@ -68,8 +68,9 @@
 
         .footer {
           .footer-icon {
-            padding-right: $spacing7;
-            padding-bottom: $spacing7;
+            color: $secondary-color-4;
+            margin-bottom: $spacing7;
+            margin-right: $spacing7;
           }
         }
 
@@ -79,27 +80,27 @@
       }
     }
   
-    .btn {
+    .navigation-btn {
       cursor: pointer;
       width: 50px;
       height: 50px;
       border-radius: 25px;
+      color: $primary-color-2 !important;
+      border: 1px solid $secondary-color-4 !important;
+      background-color: $secondary-color-1 !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover {
+        border: 2px solid $primary-color-2 !important;
+      }
 
       .navigation-icon {
         stroke-width: 3px;
       }
-
-      &.circle {
-        color: $primary-color-2 !important;
-        border: 1px solid $secondary-color-4 !important;
-        background-color: $secondary-color-1 !important;
-        
-        &:hover {
-          border: 2px solid $primary-color-2 !important;
-        }
-      }
     }
-    .btn[disabled] {
+    .navigation-btn[disabled] {
       opacity: 1;
       border: none !important;
       color: $secondary-color-3 !important;
@@ -107,10 +108,8 @@
       transition: all 0.3s ease-in-out;
       cursor: not-allowed;
 
-      &.circle {
-        &:hover {
-          border: none !important;
-        }
+      &:hover {
+        border: none !important;
       }
     }
     .left {
@@ -149,7 +148,7 @@
         }
       }
   
-      .btn {
+      .navigation-btn {
         display: none;
       }
   
