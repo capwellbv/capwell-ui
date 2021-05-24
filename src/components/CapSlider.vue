@@ -15,9 +15,9 @@
         :bordered="true"
         :nopadding="true"
         class="panel"
-        v-for="(job, index) in items"
-        :key="job.title + index"
-        @click.native="changeRoute(routeName, job.slug)"
+        v-for="(item, index) in items"
+        :key="item.title + index"
+        @click.native="$emit('onItemClick', item)"
       >
         <template #body>
           <cap-title
@@ -26,14 +26,14 @@
             transform="uppercase"
             font="bold"
             class="slider-title"
-            >{{job.title}}</cap-title
+            >{{item.title}}</cap-title
           >
           <cap-title
             type="heading"
             size="7"
             font="medium"
             class="slider-description"
-            >{{job.description}}</cap-title
+            >{{item.description}}</cap-title
           >
         </template>
         <template #footer>
@@ -73,7 +73,6 @@ export default {
       type: String,
     }
   },
-
   data() {
     return {
       disableLeft: true,
@@ -102,13 +101,7 @@ export default {
       this.selectSlides();
     }
   },
-
   methods: {
-    changeRoute(name, slug) {
-      if (name && slug) {
-        this.$router.push({ name, params: { slug } })
-      }
-    },
     enableButton() {
       const slider = this.$refs.slider;
 
