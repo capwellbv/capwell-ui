@@ -8,9 +8,38 @@
       class="btn circle left"
       style="margin-left: auto"
     >
-      <chevron-left-icon size="2x" class=""></chevron-left-icon>
+      <chevron-left-icon size="1.5x" class="navigation-icon"></chevron-left-icon>
     </button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
+      <cap-card
+        :bordered="true"
+        :nopadding="true"
+        class="panel"
+        v-for="(item, index) in items"
+        :key="item.title + index"
+        @click.native="$emit('onItemClick', item)"
+      >
+        <template #body>
+          <cap-title
+            type="subheading"
+            size="4"
+            transform="uppercase"
+            font="bold"
+            class="slider-title"
+            >{{item.title}}</cap-title
+          >
+          <cap-title
+            type="heading"
+            size="7"
+            font="medium"
+            class="slider-description"
+            >{{item.description}}</cap-title
+          >
+        </template>
+        <template #footer>
+          <arrow-right-icon size="1.2x" class="footer-icon"></arrow-right-icon>
+        </template>
+      </cap-card>
       <slot></slot>
     </div>
     <button
@@ -20,7 +49,7 @@
       type="button"
       class="btn circle right"
     >
-      <chevron-right-icon size="2x" class=""></chevron-right-icon>
+      <chevron-right-icon size="1.5x" class="navigation-icon"></chevron-right-icon>
     </button>
   </div>
 </template>
@@ -40,8 +69,10 @@ export default {
     items: {
       type: [Array, Object],
     },
+    routeName: {
+      type: String,
+    }
   },
-
   data() {
     return {
       disableLeft: true,
@@ -70,7 +101,6 @@ export default {
       this.selectSlides();
     }
   },
-
   methods: {
     enableButton() {
       const slider = this.$refs.slider;
