@@ -14,6 +14,7 @@
 				`${transform}`,
 				`${font}`
 		]"
+		v-bind="$attrs"
 		@click="clickHandler"
 	>
 		<slot/>
@@ -26,6 +27,7 @@
 <script>
 export default {
 	name: 'CapButton',
+	inheritAttrs: false,
 	data() {
 		return {};
 	},
