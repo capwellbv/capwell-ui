@@ -2,32 +2,31 @@
   <div>
     <cap-button varient="secondary"
         size="sm"
-        font="bold" @click="showSuccess = true">Show success dialog</cap-button>
-    <cap-dialog
-      :showDialog="showSuccess"
+        font="bold" @click="showSuccess = true">Show success dialog
+    </cap-button>
+    <cap-info-dialog
+      :show="showSuccess"
       @close="showSuccess = false"
-      type="success"
       message="Dankjewel voor je bericht, een van onze specialisten neemt zo spoedig mogelijk contact met je op!"
     >
-    </cap-dialog>
+    </cap-info-dialog>
     <cap-button varient="secondary"
         size="sm"
-        font="bold" @click="showError = true">Show error dialog</cap-button>
-    <cap-dialog
-      :showDialog="showError"
+        font="bold" @click="showError = true">
+        Show error dialog
+    </cap-button>
+    <cap-danger-dialog
+      :show="showError"
       @close="showError = false"
-      type="error"
-      :message="['The given data was invalid.']"
+      message="The given data was invalid."
     >
-    </cap-dialog>
+    </cap-danger-dialog>
   </div>
 </template>
 
 <script>
-import CapDialog from '../../../src/components/CapDialog.vue'
 export default {
   name: 'DemoDialog',
-  components: { CapDialog },
   data() {
     return {
       showSuccess: false,

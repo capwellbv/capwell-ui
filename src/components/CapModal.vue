@@ -47,6 +47,8 @@ export default {
 			handler(val) {
 				if (val) {
 					document.body.classList.add("cap-modal-open")
+				} else {
+					document.body.classList.remove("cap-modal-open")
 				}
 			}
 		}
@@ -66,7 +68,6 @@ export default {
 
 	methods: {
 		dismiss() {
-			document.body.classList.remove("cap-modal-open")
 			this.$emit('close');
 		},
 	},

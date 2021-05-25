@@ -7,6 +7,8 @@ import CapNavBarNav from './components/CapNavBarNav.vue'
 import CapColumn from './components/CapColumn.vue'
 import CapNavItem from './components/CapNavItem.vue'
 import CapDialog from './components/CapDialog.vue'
+import CapInfoDialog from './components/CapInfoDialog.vue'
+import CapDangerDialog from './components/CapDangerDialog.vue'
 import CapNavbarBrand from './components/CapNavbarBrand.vue'
 import CapDropdown from './components/CapDropdown.vue'
 import CapOnClickAway from './components/CapOnClickAway.vue'
@@ -43,6 +45,8 @@ const components = {
     CapColumn,
     CapNavItem,
     CapDialog,
+    CapInfoDialog,
+    CapDangerDialog,
     CapNavbarBrand,
     CapDropdown,
     CapOnClickAway,
