@@ -4,6 +4,7 @@
     size="md"
     :show="showDialog"
     :header="false"
+		ref="dialogModal"
   >
     <div v-if="type === 'success'" class="modal-success-msg" :class="classes">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="success-icon">
@@ -101,6 +102,7 @@ export default {
   },
   methods: {
     close() {
+			this.$refs.dialogModal.dismiss();
       this.$emit('close')
     },
   },

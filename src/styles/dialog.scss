@@ -9,6 +9,7 @@
       width: 100px;
     }
     .cap-model-inner.md {
+      max-width: 640px;
       @include forMobile {
         max-width: 90%;
         margin-top: 0px;

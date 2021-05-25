@@ -12,7 +12,8 @@
 				: 'btn-sm',
 				{'muted': muted},
 				`${transform}`,
-				`${font}`
+				`${font}`,
+				{'btn-outline': outline}
 		]"
 		v-bind="$attrs"
 		@click="clickHandler"
@@ -48,6 +49,10 @@ export default {
 		font: {
 			type: String,
 			default: 'bold'
+		},
+		outline: {
+			type: Boolean,
+			default: false
 		}
 	},
 	methods: {
