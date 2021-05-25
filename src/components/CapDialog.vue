@@ -1,44 +1,108 @@
 <template>
-	<div class="cap-ui cap-dialog">
-    <cap-button @click="showDialog = true" varient="secondary" size="lg">{{buttonText}}</cap-button>
-		<transition name="fade" appear>
-			<div
-				class="dialog-overlay"
-				v-if="showDialog"
-				@click="showDialog = false"
-			></div>
-		</transition>
-		<transition name="pop" appear>
-			<div class="dialog" v-if="showDialog" :class="role">
-        <slot></slot>
-        <cap-button @click="showDialog= false" varient="secondary" size="md">Yes</cap-button>
-        <cap-button @click="showDialog= false" varient="secondary" size="md">No</cap-button>
-			</div>
-		</transition>
-	</div>
+  <cap-modal
+    class="cap-dialog-modal"
+    size="md"
+    :show="showDialog"
+    :header="false"
+  >
+    <div v-if="type === 'success'" class="modal-success-msg" :class="classes">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="success-icon">
+        <path
+          d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm84-143.4c-20.8 25-51.5 39.4-84 39.4s-63.2-14.3-84-39.4c-8.5-10.2-23.6-11.5-33.8-3.1-10.2 8.5-11.5 23.6-3.1 33.8 30 36 74.1 56.6 120.9 56.6s90.9-20.6 120.9-56.6c8.5-10.2 7.1-25.3-3.1-33.8-10.2-8.4-25.3-7.1-33.8 3.1zM136.5 211c7.7-13.7 19.2-21.6 31.5-21.6s23.8 7.9 31.5 21.6l9.5 17c2.1 3.7 6.2 4.7 9.3 3.7 3.6-1.1 6-4.5 5.7-8.3-3.3-42.1-32.2-71.4-56-71.4s-52.7 29.3-56 71.4c-.3 3.7 2.1 7.2 5.7 8.3 3.4 1.1 7.4-.5 9.3-3.7l9.5-17zM328 152c-23.8 0-52.7 29.3-56 71.4-.3 3.7 2.1 7.2 5.7 8.3 3.5 1.1 7.4-.5 9.3-3.7l9.5-17c7.7-13.7 19.2-21.6 31.5-21.6s23.8 7.9 31.5 21.6l9.5 17c2.1 3.7 6.2 4.7 9.3 3.7 3.6-1.1 6-4.5 5.7-8.3-3.3-42.1-32.2-71.4-56-71.4z"
+        />
+      </svg>
+      <cap-title class="heading" type="heading" font="bold" size="4">
+        Dankjewel!
+      </cap-title>
+      <cap-text class="message" size="6">{{ message }}</cap-text>
+      <cap-button
+        class="dialog-close-button"
+        varient="secondary"
+        size="xl"
+        font="bold"
+        @click.prevent="close"
+      >
+        {{ homeButtonText }}
+      </cap-button>
+    </div>
+
+    <div v-else class="modal-error-msg">
+      <svg
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="far"
+        data-icon="frown"
+        role="img"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 496 512"
+        class="error-icon"
+      >
+        <path
+          d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 448c-110.3 0-200-89.7-200-200S137.7 56 248 56s200 89.7 200 200-89.7 200-200 200zm-80-216c17.7 0 32-14.3 32-32s-14.3-32-32-32-32 14.3-32 32 14.3 32 32 32zm160-64c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zm-80 128c-40.2 0-78 17.7-103.8 48.6-8.5 10.2-7.1 25.3 3.1 33.8 10.2 8.4 25.3 7.1 33.8-3.1 16.6-19.9 41-31.4 66.9-31.4s50.3 11.4 66.9 31.4c8.1 9.7 23.1 11.9 33.8 3.1 10.2-8.5 11.5-23.6 3.1-33.8C326 321.7 288.2 304 248 304z"
+        ></path>
+      </svg>
+
+      <cap-title class="heading" type="heading" size="4" font="bold">
+        Oeps!
+      </cap-title>
+      <template v-if="message.length">
+        <cap-text
+          class="message"
+          v-for="(error, i) in message"
+          :key="i"
+          size="6"
+        >
+          {{ error }}
+        </cap-text>
+      </template>
+      <cap-text class="message" v-else size="6">
+        Er is iets fout gegaan.
+      </cap-text>
+      <cap-button
+        class="dialog-close-button"
+        varient="secondary"
+        size="xl"
+        font="bold"
+        @click.prevent="close"
+      >
+        {{ backButtonText }}
+      </cap-button>
+    </div>
+  </cap-modal>
 </template>
 
 <script>
-import CapButton from "./CapButton.vue"
+import CapButton from './CapButton.vue'
 export default {
-	name: 'CapDialog',
-	data() {
-		return {
-			showDialog: false,
-		};
-	},
-  components: {
-    CapButton
-  },
+  components: { CapButton },
+  name: 'CapDialog',
   props: {
-    buttonText: {
-      type: String,
-      default: 'Model Open'
+    classes: {
+      default: '',
     },
-    role: {
+    type: {
       type: String,
-      default: 'info'
-    }
-  }
-};
+    },
+    message: {
+      type: String | Array,
+    },
+    showDialog: {
+      type: Boolean,
+      default: false,
+    },
+		backButtonText: {
+			type: String,
+			default: 'Terug'
+		},
+		homeButtonText: {
+			type: String,
+			default: 'Terug naar homepage'
+		}
+  },
+  methods: {
+    close() {
+      this.$emit('close')
+    },
+  },
+}
 </script>

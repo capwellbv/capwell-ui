@@ -43,10 +43,11 @@
 			flex-direction: column;
 			margin: 5% 1rem;
 			border-radius: 6px;
+			border: 1px solid $secondary-color-3;
 			overflow-y: visible;
 			width: 100%;
 			&.lg {
-				max-width: 80%;
+				max-width: 80ch;
 				.cap-model-header {
 					.icon-circle {
 						width: 50px;
@@ -118,25 +119,19 @@
 					color: $secondary-color-4;
 					border: 2px solid $secondary-color-2;
 					border-radius: 100%;
+					cursor: pointer;
 					&:hover {
 						border: 2px solid $primary-color-2;
 						background-color: $secondary-color-1;
 						box-shadow: 0 2px 5px 0 rgba($darkest-color, 0.05), 0 15px 45px 0 rgba($darkest-color, 0.15);
-					
+						.close-icon {
+							color: $primary-color-2;
+						}
+					}					
+					.close-icon {
+						color: $secondary-color-4;
+						border: none;
 					}
-					
-				}
-				
-				.close-icon {
-					border-radius: 100%;
-					padding: $p-1;
-					cursor: pointer;
-					background-color: inherit;
-					color: $secondary-color-4;
-					&:hover {
-						color: $primary-color-2;
-					}
-					
 				}
 			}
 			.cap-model-body {
