@@ -1,73 +1,59 @@
 .#{$scss-prefix} {
   &.cap-dialog {
-    font-family: "Mulish", sans-serif;
-    font-weight: 500;
-    .dialog {
-      position: absolute;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: auto;
-      text-align: center;
-      width: fit-content;
-      height: fit-content;
-      max-width: 22em;
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-      background: $secondary-color-1;
-      z-index: 999;
-      transform: none;
-      font-size: 1.3rem;
-
-      &.info {
-        color: $primary-color-2;
-      }
-      &.success {
-        color: $secondary-color-6;
-      }
-      &.error {
-        color: $theme-color-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .dialog-icon {
+      height: 100px;
+      width: 100px;
+    }
+    .cap-model-inner.md {
+      max-width: 640px;
+      @include forMobile {
+        max-width: 90%;
+        margin-top: 0px;
       }
     }
-
-    .dialog-overlay {
-      content: "";
-      position: absolute;
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 998;
-      background: $secondary-color-6;
-      opacity: 0.6;
-      cursor: pointer;
+    .footer {
+      @include forMobile() {
+        padding: 18px 30px;
+        font-size: 15px;
+        line-height: 15px;
+        height: 50px;
+      }
     }
-
-    /* ---------------------------------- */
-    .fade-enter-active,
-    .fade-leave-active {
-      transition: opacity 0.4s linear;
+    .dialog-content {
+      padding: $spacing2 $spacing4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .heading {
+        color: $primary-color-4;
+        margin: 40px auto 10px auto;
+        @include forMobile() {
+          font-size: $font-size-7;
+          line-height: $line-height-8;
+        }
+      }
+      .message {
+        text-align: center;
+        font-weight: 200;
+        margin-bottom: 40px;
+        color: rgba($darkest-color, 0.8);
+        @include forMobile() {
+          font-size: $font-size-10;
+          line-height: $line-height-9;
+        }
+      }
     }
-
-    .fade-enter,
-    .fade-leave-to {
-      opacity: 0;
-    }
-
-    .pop-enter-active,
-    .pop-leave-active {
-      transition: transform 0.4s cubic-bezier(0.5, 0, 0.5, 1),
-        opacity 0.4s linear;
-    }
-
-    .pop-enter,
-    .pop-leave-to {
-      opacity: 0;
-      transform: scale(0.3) translateY(-50%);
+    .dialog-content {
+      .success-icon {
+        fill: $primary-color-2;
+      }
+      .error-icon {
+        fill: $theme-color-3;
+      }
     }
   }
 }

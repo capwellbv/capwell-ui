@@ -1,27 +1,37 @@
 <template>
   <div>
-    <cap-dialog buttonText="Model Open" role="info" style="margin-top: 20px">
-      <div>
-        <p>Are you sure to want to delete it</p>
-      </div>
-    </cap-dialog>
-    <cap-dialog buttonText="Model Open" role="success" style="margin-top: 20px">
-      <div>
-        <p>Are you sure to want to delete it</p>
-      </div>
-    </cap-dialog>
-    <cap-dialog buttonText="Model Open" role="error" style="margin-top: 20px">
-      <div>
-        <p>Are you sure to want to delete it</p>
-      </div>
-    </cap-dialog>
+    <cap-button varient="secondary"
+        size="sm"
+        font="bold" @click="showSuccess = true">Show success dialog
+    </cap-button>
+    <cap-info-dialog
+      :show="showSuccess"
+      @close="showSuccess = false"
+      message="Dankjewel voor je bericht, een van onze specialisten neemt zo spoedig mogelijk contact met je op!"
+    >
+    </cap-info-dialog>
+    <cap-button varient="secondary"
+        size="sm"
+        font="bold" @click="showError = true">
+        Show error dialog
+    </cap-button>
+    <cap-danger-dialog
+      :show="showError"
+      @close="showError = false"
+      message="The given data was invalid."
+    >
+    </cap-danger-dialog>
   </div>
 </template>
 
 <script>
-import CapDialog from '../../../src/components/CapDialog.vue'
 export default {
-  components: { CapDialog },
-  name: 'DemoDialog'
+  name: 'DemoDialog',
+  data() {
+    return {
+      showSuccess: false,
+      showError: false
+    }
+  }
 }
 </script>

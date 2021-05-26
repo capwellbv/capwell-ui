@@ -6,19 +6,18 @@ Examples:
 
 <demo-button></demo-button>
 
-<!-- <cap-button varient="primary" size="xl">Primary</cap-button>
-<cap-button varient="secondary" size="xl">Secondary</cap-button>
-<cap-button varient="disabled" size="lg">disabled</cap-button>
-<cap-button varient="disabled" size="md">disabled</cap-button>
-<cap-button varient="disabled" size="sm">disabled</cap-button> -->
-
 ::: details Preview the code
 ```vue
+<template>
+  <div>
     <cap-button varient="primary" size="xl" font="bold">Primary</cap-button>
     <cap-button varient="secondary" size="xl" font="bold">Secondary</cap-button>
-    <cap-button disabled size="lg" transform="uppercase" font="normal">disabled</cap-button>
-    <cap-button disabled size="md" varient="secondary" transform="lowercase">disabled</cap-button>
+    <cap-button varient="primary" outline size="lg">Outlined primary</cap-button>
+    <cap-button varient="secondary" outline size="lg">Outlined secondary</cap-button>
+    <cap-button varient="secondary" disabled size="md" transform="lowercase">disabled</cap-button>
     <cap-button disabled size="sm" transform="capitalize">disabled</cap-button>
+  </div>
+</template>
 
 ```
 :::
