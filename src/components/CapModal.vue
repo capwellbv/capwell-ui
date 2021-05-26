@@ -43,7 +43,6 @@ export default {
 
 	watch: {
 		show: {
-			immediate: true,
 			handler(val) {
 				if (val) {
 					document.body.classList.add("cap-modal-open")
