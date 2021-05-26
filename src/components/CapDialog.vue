@@ -25,7 +25,6 @@
       </div>
      <div class="message">
         <slot>
-          <cap-text size="6">{{ message }}</cap-text>
         </slot>
      </div>
       <div class="footer">
