@@ -108,11 +108,10 @@ export default {
 
   watch: {
     searchQuery(value) {
-      if (!value) return;
-
-      if (value === this.value) return;
-
-      if (!this.showOptions) this.show();
+      if (!value) return
+      if (value === this.value) return
+      if (!this.showOptions) this.show()
+      this.$emit('onFilterChange', value)
     },
   },
 
