@@ -2,7 +2,7 @@
   <div>
     <cap-search-dropdown
       style="margin-top: 20px"
-      v-model="skill"
+      v-model="selectdSkill"
       :options="items"
       placeholder="Search skills"
     >
@@ -11,14 +11,11 @@
 </template>
 
 <script>
-import CapSearchDropdown from '../../../src/components/CapSearchDropdown.vue';
 export default {
-  components: { CapSearchDropdown },
   name: "DemoSearchDropdown",
   data() {
     return {
-      skill: "",
-      selectdSkill: "Dot NET ontwikkelaars",
+      selectdSkill: null,
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

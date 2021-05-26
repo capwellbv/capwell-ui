@@ -14,6 +14,12 @@
             @keydown.tab="hide"
             @keyup.esc="hide"
           />
+          <x-icon 
+            v-show="value && showRemoveIcon" 
+            class="icon remove-icon"
+            @click="remove" size="1.5x"
+          >
+          </x-icon>
           <chevron-down-icon
             v-if="!showOptions"
             @click="show"
@@ -44,23 +50,30 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
+import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
 import CapOnClickAway from "./CapOnClickAway.vue";
 
 export default {
   name: "CapSearchDropdown",
   components: {
+    XIcon,
     ChevronDownIcon,
     ChevronUpIcon,
     CapOnClickAway,
   },
-
+  model: {
+    prop: 'value',
+    event: 'change'
+  },
   props: {
     options: {
       type: Array,
       required: true,
     },
-    value: String,
+    value: {
+      type: String,
+      default: null
+    },
     placeholder: {
       type: String,
       required: true,
@@ -69,6 +82,10 @@ export default {
       type: [Boolean, String],
       default: false,
     },
+    showRemoveIcon : {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
@@ -117,9 +134,14 @@ export default {
 
     select(option) {
       this.searchQuery = option;
-      this.$emit("input", option.value);
+      this.$emit("change", option);
       this.hide();
     },
+
+    remove() {
+      this.searchQuery = null
+      this.$emit('change', null)
+    }
   },
 };
 </script>

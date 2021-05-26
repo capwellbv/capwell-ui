@@ -23,7 +23,12 @@
 			}
 			.icon {
 				color: $primary-color-2 !important;
+
+				&.remove-icon {
+					cursor: pointer;
+				}
 			}
+
 			&.rounded {
 				border-radius: 30px;
 			}
