@@ -8,8 +8,8 @@
         @keydown.tab="hide"
         @keyup.esc="hide"
       >
-        <span v-if="currentValue" class="label">{{ this.label }}</span>
-        <span :class="{ chosen: currentValue }" class="text">
+        <span v-if="value" class="label">{{ this.label }}</span>
+        <span :class="{ chosen: value }" class="text">
           {{ this.buttonText }}
         </span>
         <chevron-down-icon size="20" class="icon"></chevron-down-icon>
@@ -61,7 +61,6 @@ export default {
   },
   data() {
     return {
-      currentValue: null,
       showOptions: false,
     };
   },
@@ -71,15 +70,14 @@ export default {
     CapOnClickAway,
   },
   mounted() {
-    if (this.value !== null) {
-      this.currentValue = this.options[this.value];
-      this.$el.querySelectorAll("li")[this.value + 1].classList.add("selected");
-    }
+    if (!this.value) return;
+    const index = this.options.findIndex(option => option === this.value);
+    this.$el.querySelectorAll("li")[index + 1].classList.add("selected");
   },
   computed: {
     buttonText() {
-      if (this.currentValue) {
-        return this.currentValue;
+      if (this.value) {
+        return this.value;
       }
       return this.placeholder;
     },
@@ -92,12 +90,12 @@ export default {
       this.showOptions = false;
     },
     select(i) {
-      this.currentValue = this.options[i];
+      const value = this.options[i];
       if (this.$el.querySelector(".selected")) {
         this.$el.querySelector(".selected").classList.remove("selected");
       }
       this.$el.querySelectorAll("li")[i + 1].classList.add("selected");
-      this.$emit("change", this.currentValue);
+      this.$emit("change", value);
       this.hide();
     },
   },
