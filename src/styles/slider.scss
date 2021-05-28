@@ -17,7 +17,7 @@
   
       &::before {
         content: "";
-        border-right: $spacing5 solid transparent;
+        border-right: 1px solid transparent;
       }
   
       &::after {
