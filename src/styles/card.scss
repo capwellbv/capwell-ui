@@ -8,12 +8,19 @@
   justify-content: space-between;
   padding: $p-4;
   transition: ease-in-out 0.1s border;
+  border: 2px solid transparent;
 
   @content;
 
   &.bordered:hover,
   &.bordered:focus {
     border: 2px solid $primary-color-2;
+    .footer {
+      color: $primary-color-2;
+    }
+  }
+  &.bordered:focus-visible {
+    outline: none;
   }
 
   &.image {
