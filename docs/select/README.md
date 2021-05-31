@@ -1,5 +1,7 @@
 #  Select
 
+## Usage
+
 <demo-select></demo-select>
 
 ::: details Preview the code
@@ -38,3 +40,16 @@ export default {
 ```
 
 :::
+
+## Options
+
+| Option        | Type's        | Default      | Description                 |
+| ------------- |:----:| ---------------:| ----------------------------------------------------:|
+| options     | Array  | ''              | Select options to show in dropdown.                  |
+| placeholder | String | 'Select option' | Select placeholder                                   |
+| label       | String | ''              | Toggling label display inside select for mobile size |
+
+## Events
+| Event          | Params  | Description                   |
+| --------------- |:-------:| ----------------------------:|
+| @change         | String  | Emits on value select.       |

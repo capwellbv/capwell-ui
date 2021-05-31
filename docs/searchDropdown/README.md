@@ -1,5 +1,7 @@
 # Search Dropdown
 
+## Usage
+
 <demo-search-dropdown></demo-search-dropdown>
 
 ::: details Preview the code
@@ -38,3 +40,16 @@ export default {
 ```
 
 :::
+
+## Options
+| Option         | Type's  | Default         | Description                               |
+| -------------- |:-------:| ---------------:| -----------------------------------------:|
+| options        | Array   | ''              | Select options to show in dropdown.       |
+| placeholder    | String  | 'Select option' | Dropdown placeholder.                     |
+| showRemoveIcon | Boolean | true            | Show remove icon to remove selected item. |
+
+## Events
+| Event          | Params  | Description                   |
+| --------------- |:-------:| ----------------------------:|
+| @change         | String  | Emits on value select.       |
+| @onFilterChange | String  | Emits on input value change. |
