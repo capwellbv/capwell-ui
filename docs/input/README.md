@@ -183,6 +183,36 @@ export default {
   }
 };
 </script>
+
+```
+
+:::
+
+Input With Label:
+
+ <demo-input-label></demo-input-label>
+
+::: details Preview the code
+
+```vue
+<template>
+  <cap-input-label
+    v-model="value"
+    placeholder="Input Label"
+  ></cap-input-label>
+</template>
+
+<script>
+export default {
+  name: "DemoInputLabel",
+  data() {
+    return {
+      value: "",
+    };
+  },
+};
+</script>
+
 ```
 
 :::
