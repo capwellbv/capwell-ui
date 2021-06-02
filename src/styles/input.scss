@@ -7,15 +7,75 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .outer-label {
+      position: relative;
+      margin-bottom: $p-4;
+      font-family: $secondary-fontfamily;
+      .input-label {
         display: block;
-        width: 25%;
-        font-size: 1.125rem;
-        line-height: 1.75rem;
-        color: #000;
+        width: 30%;
+        font-size: $font-size-10;
+        line-height: $line-height-9;
+        color: $darkest-color;
         font-weight: 700;
         @include forMobile() {
-          display: none;
+          display: block;
+          position: absolute;
+          top: 34%;
+          left: 5%;
+          z-index: 99;
+          font-size: .9375rem;
+          line-height: .9375rem;
+          font-weight: 400;
+          color: $secondary-color-4;
+        }
+        &.active {
+          @include forMobile() {
+            top: 14%;
+            font-size: 11px;
+            line-height: $line-height-14;
+          }
+        }
+      }
+
+      .label-input {
+        width: 65%;
+        &.has-value {
+          .cap-input-container {
+            input {
+              @include forMobile() {
+                padding: $spacing5 0px 14px 0px;
+                font-size: .9375rem;
+                line-height: .9375rem;
+                font-weight: 400;
+              }
+            }
+          }
+
+        }
+        .cap-input-container {
+          input {
+            font-size: $font-size-10;
+            line-height: $line-height-11;
+            font-family: $secondary-fontfamily;
+            @include forMobile() {
+              &:focus-within,
+              &.value,
+              &.prefiled {
+                padding: $spacing5 0px 14px 0px;
+                font-size: .9375rem;
+                line-height: .9375rem;
+                font-weight: 400;
+              }
+            }
+            &::placeholder {
+              @include forMobile(){
+                color: white;
+              }
+            }
+          }
+        }
+        @include forMobile() {
+          width: 100%;
         }
       }
     }
@@ -117,190 +177,8 @@
         margin-top: 5px;
         font-family: $secondary-fontfamily;
       }
-    }
-    .input-container-wrapper {
-      width: 65%;
-      @include forMobile() {
-        width: 100%;
-      }
-    }
-    .cap-input-label-container {
-      width: stretch;
-      display: flex;
-      align-items: center;
-      border-radius: 6px;
-      background-color: $secondary-color-1;
-      box-shadow: 0 0 0 1px $secondary-color-3;
-      z-index: 1;
-      position: relative;
-      padding: 0 1rem;
-      &:focus-within {
-        box-shadow: 0 0 0 2px $primary-color-2, 0 4px 12px 0 rgba($primary-color-2, 0.2), 0 17px 47px 0 rgba($darkest-color, 0.15);
-  
-        .icon {
-          color: $primary-color-2;
-        }
-      }
       .input-label {
-        @include forMobile() {
-        margin-top: -5px;
-        margin-left: 8px;
-        font-size: .9375rem;
-        line-height: .9375rem;
-        font-weight: 500;
-        font-family: $secondary-fontfamily;
-          &::placeholder {
-            color: white;
-          }
-        }
-      }
-      
-      input {
-        font-family: $base-fontfamily;
-        padding: 0px 2px;
-        border:none;
-        display: flex;
-        flex-grow: 1;
-        height: 100%;
-        background: transparent;
-        &:focus {
-          outline: none;
-        }
-          @include forMobile() {
-            box-shadow: none;
-            width: 100%;
-            font-size: .9375rem !important;
-            line-height: .9375rem !important;
-            &.input-label {
-            padding: $spacing5 $spacing6 14px $spacing6;
-          }
-        }
-      }
-      &.large {
-        height: 60px;
-        input {
-          font-size: $font-size-10;
-          line-height: $line-height-9;
-        }
-      }
-      &.medium {
-        height: 50px;
-        input {
-          font-size: $font-size-11;
-          line-height: $line-height-10;
-        }
-      }
-      &.small {
-        height: 40px;
-        input {
-          font-size: 11px;
-          line-height: $line-height-11;
-        }
-      }
-      &.rounded {
-        border-radius: 30px;
-      }
-      &.disabled {
-        cursor: not-allowed;
-        box-shadow: none;
-        border: 1px solid $secondary-color-3;
-  
-        .icon {
-          color: $secondary-color-3;
-        }
-      }
-      .input-field {
-        outline: none;
-  
-        &:disabled {
-          background-color: transparent;
-        } 
-      }
-    
-      &.full {
-        .control {
-          width: 100%;
-        }
-      }
-    
-      // @include forMobile() {
-      //   margin-bottom: 18px;
-      // }
-    
-      label{
-        display: none;
-        @include forMobile() {
-          display: inline;
-          position: absolute;
-          top: 17px;
-          left: 20px;
-          width: 10%;
-          display: block;
-          font-weight: 400;
-          color: #aba195;
-          font-size: .6875rem;
-          line-height: .75rem;
-      }
-      }
-      .control {
-        width: 65%;
-    
-        &.full {
-          width: 100%;
-        }
-      }
-    
-      .input-group {
-        width: 65%;
-    
-        .control {
-          width: 100%;
-        }
-      }
-    
-      &.error {
-        .control {
-          box-shadow: 0 0 0 1px red !important;
-    
-          @include forMobile() {
-            box-shadow: none !important;
-            border: 1px solid red !important;
-          }
-        }
-    
-        .error {
-          color: red;
-          font-size: rem(14px);
-          line-height: rem(20px);
-          margin-top: 5px;
-        }
-      }
-    
-      @include forMobile() {
-        flex-direction: column;
-        label {
-          margin-bottom: 5px;
-          font-size: rem(15px);
-          line-height: rem(15px);
-
-          &.label {
-            position: absolute;
-            top: 17px;
-            left: $spacing6;
-            z-index: 1;
-            width: max-content;
-            transition: all 0.1s ease-in-out;
-            font-weight: normal;
-            color: grey;
-            padding: 0;
-    
-            &.active {
-              font-size: rem(11px);
-              line-height: rem(12px);
-              top: 12px;
-            }
-          }
-        }
+        top: 25%;
       }
     }
   }

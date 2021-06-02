@@ -2,48 +2,21 @@
   <div :class="['cap-ui', 'cap-input cap-label-input', { 'has-error': error }]">
     <label
       v-if="label"
-      class="outer-label"
+      class="input-label"
       :class="{ active: focused || prefiled }"
     >
       {{ label }}
     </label>
-    <div class="input-container-wrapper">
-      <div
-        class="cap-input-label-container"
-        :class="[{ disabled: disabled, rounded: rounded }, size]"
-      >
-        <label
-          v-if="label"
-          class="label"
-          :class="{ active: focused || prefiled }"
-        >
-          {{ label }}
-        </label>
-        <input
-          @input="handleInput"
-          @focus="focus"
-          @blur="blur"
-          :type="type"
-          :value="value"
-          :disabled="disabled"
-          class="input-label"
-          v-bind="$attrs"
-          ref="input"
-          :placeholder="placeholder"
-        />
-        <slot name="icon"></slot>
-      </div>
-      <template v-if="error">
-        <span class="error">{{ error }}</span>
-      </template>
-    </div>
+    <cap-input :class="['label-input', { 'has-value': prefiled}]" :type="type" :value="value" :error="error" @focus="focus" @blur="blur" @input="handleInput" v-bind="$attrs"></cap-input>
   </div>
 </template>
 
 <script>
+import CapInput from './CapInput.vue';
 export default {
-  name: "CapInputLabel",
   inheritAttrs: false,
+  name: "CapInputLabel",
+  components: { CapInput },
   props: {
     placeholder: {
       type: String,
@@ -78,8 +51,8 @@ export default {
     };
   },
   methods: {
-    handleInput(e) {
-      this.$emit("input", e.target.value);
+    handleInput(val) {
+      this.$emit("input", val);
     },
     focus() {
       this.focused = true;
