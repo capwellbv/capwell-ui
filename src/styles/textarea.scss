@@ -1,5 +1,42 @@
 .#{$scss-prefix} {
+    &.cap-label-textarea{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      .label-textarea {
+        width: 65%;
+        .cap-textarea {
+          &.has-value {
+            color: yellow;
+          }
+          &::placeholder {
+            color: white;
+          }
+        }
+        @include forMobile() {
+          width: 100%;
+        }
+      }
+      .label {
+        @include forMobile() {
+          position: absolute;
+          top: 14%;
+          left: 6%;
+        }
+        &.active {
+          @include forMobile() {
+            top: 6%;
+            font-size: .6875rem;
+            line-height: .75rem;
+            font-weight: 400;
+          }
+        }
+      }
+    }
   &.cap-textarea-container{
+
     .cap-textarea {
       font-family: "Montserrat", sans-serif;
       font-weight: 500;
@@ -11,6 +48,10 @@
       padding: 1rem;
       font-size: $font-size-10;
       width: stretch;
+        @include forMobile() {
+          font-size: .9375rem;
+          line-height: .9375rem;
+        }
       &:focus-within {
         box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
           0 17px 47px 0 rgba(0, 0, 0, 0.15);
