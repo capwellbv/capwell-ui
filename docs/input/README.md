@@ -190,21 +190,21 @@ export default {
 
 Input With Label:
 
- <demo-input-label></demo-input-label>
+ <demo-floating-label-input></demo-floating-label-input>
 
 ::: details Preview the code
 
 ```vue
 <template>
-  <cap-input-label
+  <cap-floating-label-input
     v-model="value"
-    placeholder="Input Label"
-  ></cap-input-label>
+    placeholder="Floating Input Label"
+  ></cap-floating-label-input>
 </template>
 
 <script>
 export default {
-  name: "DemoInputLabel",
+  name: "DemoFloatingLabelInput",
   data() {
     return {
       value: "",

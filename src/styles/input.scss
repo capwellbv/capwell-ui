@@ -3,14 +3,14 @@
     font-family: $base-fontfamily;
     font-weight: 300;
 
-    &.cap-label-input {
+    &.cap-floating-label-input {
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
       margin-bottom: $p-4;
       font-family: $secondary-fontfamily;
-      .input-label {
+      .floating-input-label {
         display: block;
         width: 30%;
         font-size: $font-size-10;
@@ -37,7 +37,7 @@
         }
       }
 
-      .label-input {
+      .floating-label-input {
         width: 65%;
         &.has-value {
           .cap-input-container {
@@ -177,7 +177,7 @@
         margin-top: 5px;
         font-family: $secondary-fontfamily;
       }
-      .input-label {
+      .floating-input-label {
         top: 25%;
       }
     }

@@ -1,11 +1,11 @@
 .#{$scss-prefix} {
-    &.cap-label-textarea{
+    &.cap-floating-label-textarea{
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: relative;
 
-      .label-textarea {
+      .floating-label-textarea {
         width: 65%;
         .cap-textarea {
           &.has-value {
@@ -19,7 +19,7 @@
           width: 100%;
         }
       }
-      .label {
+      .floating-label {
         @include forMobile() {
           position: absolute;
           top: 14%;

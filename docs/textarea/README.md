@@ -10,7 +10,6 @@ Textarea:
   <cap-textarea
     v-model="value"
     placeholder="placeholder"
-    rows="3"
   ></cap-textarea>
 </template>
 
@@ -32,24 +31,23 @@ export default {
 :::
 Textarea with Label :
 
-<demo-textarea-label></demo-textarea-label>
+<demo-floating-label-textarea></demo-floating-label-textarea>
 
 ::: details Preview the code
 
 ```vue
 <template>
-   <cap-textarea-label
+   <demo-floating-label-textarea
     v-model="value"
     placeholder="placeholder"
-    label="Textarea label"
-  ></cap-textarea-label>
+    label="Floating Textarea label"
+  ></demo-floating-label-textarea>
 </template>
 
 <script>
-import CapTextareaLabel from '../../../src/components/CapTextareaLabel.vue';
 export default {
-  name: "DemoTextareaLabel",
-  components: { CapTextareaLabel },
+  name: "DemoFloatingLabelTextarea",
+  components: { CapFloatingLabelTextarea },
   data() {
     return {
       value: "",

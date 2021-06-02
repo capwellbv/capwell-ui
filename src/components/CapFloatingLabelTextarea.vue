@@ -1,12 +1,12 @@
 <template>
-  <div :class="['cap-ui', 'cap-label-textarea', { 'has-error': error }]">
+  <div :class="['cap-ui', 'cap-floating-label-textarea', { 'has-error': error }]">
     <label
-      class="label"
+      class="floating-label"
       :class="{ active: focused || prefiled }"
     >
       {{ label }}
     </label>
-    <cap-textarea :class="['label-textarea', { 'has-value': prefiled}]" :error="error" :value="value" @focus="focus" @blur="blur" @input="handleInput" v-bind="$attrs"></cap-textarea>
+    <cap-textarea :class="['floating-label-textarea', { 'has-value': prefiled}]" :error="error" :value="value" @focus="focus" @blur="blur" @input="handleInput" v-bind="$attrs"></cap-textarea>
   </div>
 </template>
 
@@ -14,7 +14,7 @@
 import CapTextarea from './CapTextarea.vue';
 export default {
   inheritAttrs: false,
-  name: "CapTextareaLabel",
+  name: "CapFloatingLabelTextarea",
   components: { CapTextarea },
   props: {
     placeholder: {
