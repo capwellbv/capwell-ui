@@ -1,13 +1,12 @@
 <template>
-  <div class="cap-ui cap-tab-pane" v-show="isActive">
-    <slot>
-    </slot>
+  <div class="cap-ui cap-tab-content" v-show="isActive">
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'CapTabPane',
+  name: 'CapTabContent',
   props: {
     name: { required: true },
     selected: { default: false },

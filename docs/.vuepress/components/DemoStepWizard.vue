@@ -1,5 +1,5 @@
 <template>
-  <div class="multistep-wizard">
+  <div class="multistep-wizard" style="margin-top: 20px">
     <CapButton varient="secondary" size="xl" @click="showModel = true">
       Show modal
     </CapButton>
@@ -15,7 +15,7 @@
             REQUEST HOURLY RATE - STEP {{ activeIndex + 1 }}/{{ totalTabs }}
           </cap-text>
         </template>
-        <cap-tab-pane class="padding-0" name="Step one" :selected="true">
+        <cap-tab-content class="padding-0" name="Step one" :selected="true">
           <cap-form>
             <cap-title
               type="heading"
@@ -98,8 +98,8 @@
               </div>
             </cap-form-row>
           </cap-form>
-        </cap-tab-pane>
-        <cap-tab-pane class="padding-0" name="Step two">
+        </cap-tab-content>
+        <cap-tab-content class="padding-0" name="Step two">
           <cap-form>
             <cap-title type="heading" size="3" font="bold" class="modal-heading">
               How can we reach you?
@@ -159,7 +159,7 @@
               </div>
             </cap-form-row>
           </cap-form>
-        </cap-tab-pane>
+        </cap-tab-content>
       </cap-tabs>
     </CapModal>
   </div>

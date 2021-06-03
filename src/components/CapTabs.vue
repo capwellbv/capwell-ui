@@ -8,7 +8,7 @@
             v-for="(tab, index) in tabs"
             :class="{ 'is-active': tab.isActive }"
             :key="tab.name"
-            @click="changeTab(index)"
+            @click="switchTab(index)"
           >
             {{ tab.name }}
           </li>
@@ -20,7 +20,7 @@
     </div>
     <div class="tabs-footer" v-if="footer">
       <div class="tabs-footer-left">
-        <span @click="prevTab" v-if="currentActive > 0">
+        <span @click="prevTab" v-if="currentTab > 0">
           <slot name="prev" v-bind="slotProps">
             <cap-button varient="secondary" size="lg">
               {{ prevButtonText }}
@@ -60,6 +60,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    validateSteps: {
+      type: Boolean,
+      default: false
+    },
     nextButtonText: {
       type: String,
       default: 'Next',
@@ -79,11 +83,10 @@ export default {
       removeTab: this.removeTab
     }
   },
-
   data() {
     return {
       tabs: [],
-      currentActive: 0,
+      currentTab: 0,
     }
   },
   computed: {
@@ -93,16 +96,19 @@ export default {
         prevTab: this.prevTab,
         nextTab: this.nextTab,
         isLastTab: this.isLastTab,
-        activeIndex: this.currentActive,
+        activeIndex: this.currentTab,
         totalTabs: this.totalTabs
       }
     },
     isLastTab() {
-      return this.currentActive === this.totalTabs - 1
+      return this.currentTab === this.tabLastIndex
+    },
+    tabLastIndex() {
+      return this.totalTabs - 1
     },
     totalTabs() {
       return this.tabs.length
-    },
+    }
   },
   methods: {
     addTab(tab) {
@@ -112,39 +118,57 @@ export default {
     removeTab(tab) {
       const tabs = this.tabs
       const index = tabs.indexOf(tab)
-      if (index > -1) {
-        if (index === this.currentActive) {
-          this.changeTab(this.currentActive - 1)
-        }
-        if (index < this.currentActive) {
-          this.currentActive = this.currentActive - 1
-        }
-        tabs.splice(index, 1)
+      if (index === -1) return
+      if (index === this.currentTab) {
+        this.changeTab(this.currentTab - 1)
       }
+      if (index < this.currentTab) {
+        this.currentTab = this.currentTab - 1
+      }
+      tabs.splice(index, 1)
     },
     prevTab() {
-      this.currentActive--
-      this.changeTab(this.currentActive)
+      if (!this.validateSteps) {
+        this.changeTab(this.currentTab - 1)
+      }
+      this.$emit("onPreviousStep");
     },
     nextTab() {
-      if (this.currentActive < this.totalTabs - 1) {
-        this.currentActive++
-        this.changeTab(this.currentActive)
-      } else {
-        this.$emit('complete')
+      if (this.currentTab < this.tabLastIndex) {
+        if (!this.validateSteps) {
+          this.changeTab(this.currentTab + 1)
+        }
+
+        this.$emit("validateTab", {
+          tabIndex: this.currentTab + 1,
+          eventName: "onNextStep"
+        });
       }
+
+      if (this.currentTab === this.tabLastIndex) {
+        this.$emit("validateTab", {
+          tabIndex: this.currentTab + 1,
+          eventName: "onComplete"
+        });
+      }
+
+      this.$emit("onNextStep");
+    },
+    switchTab(index) {
+      if (this.validateSteps) return
+      this.changeTab(index)
+    },
+    validTab(index) {
+      return index >= 0 && index < this.totalTabs
     },
     changeTab(index) {
-      if (index >= 0 && index < this.totalTabs) {
-        this.tabs.forEach((tab) => {
-          tab.isActive = false
-        })
-        this.tabs[index].isActive = true
-        this.currentActive = index
-      } else {
-        return
-      }
-    },
+      if (!this.validTab(index)) return
+      this.tabs.forEach((tab) => {
+        tab.isActive = false
+      })
+      this.tabs[index].isActive = true
+      this.currentTab = index
+    }
   },
 }
 </script>

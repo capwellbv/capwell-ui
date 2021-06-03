@@ -1,6 +1,6 @@
 #  Select
 
-## Usage
+### Usage
 
 <demo-select></demo-select>
 
@@ -41,7 +41,7 @@ export default {
 
 :::
 
-## Options
+### Options
 
 | Option        | Type's        | Default      | Description                 |
 | ------------- |:----:| ---------------:| ----------------------------------------------------:|
@@ -49,7 +49,7 @@ export default {
 | placeholder | String | 'Select option' | Select placeholder                                   |
 | label       | String | ''              | Toggling label display inside select for mobile size |
 
-## Events
+### Events
 | Event          | Params  | Description                   |
 | --------------- |:-------:| ----------------------------:|
 | @change         | String  | Emits on value select.       |
