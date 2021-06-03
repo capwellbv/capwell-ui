@@ -7,7 +7,7 @@
     >
       {{ label }}
     </label>
-    <cap-input :class="['floating-label-input', { 'has-value': prefiled}]" :type="type" :value="value" :error="error" @focus="focus" @blur="blur" @input="handleInput" v-bind="$attrs"></cap-input>
+    <cap-input :class="['floating-label-input', { 'has-value': prefiled}]" :value="value" :error="error" @focus="focus" @blur="blur" @input="handleInput" v-bind="$attrs"></cap-input>
   </div>
 </template>
 
@@ -18,29 +18,9 @@ export default {
   name: "CapFloatingLabelInput",
   components: { CapInput },
   props: {
-    placeholder: {
-      type: String,
-      default: "Type value...",
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    rounded: {
-      type: Boolean,
-      default: false,
-    },
-    size: {
-      type: String,
-      default: "medium",
-    },
     value: {
       type: String,
       default: "",
-    },
-    type: {
-      type: String,
-      default: "text",
     },
     error: String,
     label: String,

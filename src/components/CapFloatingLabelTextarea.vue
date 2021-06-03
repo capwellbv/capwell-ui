@@ -17,14 +17,6 @@ export default {
   name: "CapFloatingLabelTextarea",
   components: { CapTextarea },
   props: {
-    placeholder: {
-      type: String,
-      default: "Type value...",
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
     label: {
       type: String,
       default: "Textarea Label"
