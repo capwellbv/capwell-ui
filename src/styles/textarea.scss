@@ -8,11 +8,10 @@
       .floating-label-textarea {
         width: 65%;
         .cap-textarea {
-          &.has-value {
-            color: yellow;
-          }
-          &::placeholder {
-            color: white;
+          @include forMobile() {
+            &::placeholder {
+              color: white;
+            }
           }
         }
         @include forMobile() {
@@ -22,12 +21,13 @@
       .floating-label {
         @include forMobile() {
           position: absolute;
-          top: 14%;
-          left: 6%;
+          top: 14px;
+          left: 14px;
+          color: $secondary-color-4;
         }
         &.active {
           @include forMobile() {
-            top: 6%;
+            top: 6px;
             font-size: .6875rem;
             line-height: .75rem;
             font-weight: 400;
