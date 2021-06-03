@@ -2,6 +2,83 @@
   &.cap-input {
     font-family: $base-fontfamily;
     font-weight: 300;
+
+    &.cap-floating-label-input {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      margin-bottom: $p-4;
+      font-family: $secondary-fontfamily;
+      .floating-input-label {
+        display: block;
+        width: 30%;
+        font-size: $font-size-10;
+        line-height: $line-height-9;
+        color: $darkest-color;
+        font-weight: 700;
+        @include forMobile() {
+          display: block;
+          position: absolute;
+          top: 34%;
+          left: 5%;
+          z-index: 99;
+          font-size: .9375rem;
+          line-height: .9375rem;
+          font-weight: 400;
+          color: $secondary-color-4;
+        }
+        &.active {
+          @include forMobile() {
+            top: 14%;
+            font-size: 11px;
+            line-height: $line-height-14;
+          }
+        }
+      }
+
+      .floating-label-input {
+        width: 65%;
+        &.has-value {
+          .cap-input-container {
+            input {
+              @include forMobile() {
+                padding: $spacing5 0px 14px 0px;
+                font-size: .9375rem;
+                line-height: .9375rem;
+                font-weight: 400;
+              }
+            }
+          }
+
+        }
+        .cap-input-container {
+          input {
+            font-size: $font-size-10;
+            line-height: $line-height-11;
+            font-family: $secondary-fontfamily;
+            @include forMobile() {
+              &:focus-within,
+              &.value,
+              &.prefiled {
+                padding: $spacing5 0px 14px 0px;
+                font-size: .9375rem;
+                line-height: .9375rem;
+                font-weight: 400;
+              }
+            }
+            &::placeholder {
+              @include forMobile(){
+                color: white;
+              }
+            }
+          }
+        }
+        @include forMobile() {
+          width: 100%;
+        }
+      }
+    }
     
     .cap-input-container {
       display: flex;
@@ -84,6 +161,12 @@
   
     }
     &.has-error {
+      .cap-input-label-container {
+        box-shadow: 0 0 0 1px $theme-color-2;
+        &:focus-within {
+          box-shadow: 0 0 0 1px $theme-color-2;
+        }
+      }
       .cap-input-container {
         box-shadow: 0 0 0 1px $theme-color-2;
       }
@@ -93,6 +176,9 @@
         line-height: $line-height-11;
         margin-top: 5px;
         font-family: $secondary-fontfamily;
+      }
+      .floating-input-label {
+        top: 25%;
       }
     }
   }

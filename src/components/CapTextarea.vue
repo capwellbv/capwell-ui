@@ -1,7 +1,7 @@
 <template>
   <div :class="['cap-ui', 'cap-textarea-container', {'has-error': error}]">
     <textarea
-      v-model="textarea"
+      :value="value"
       :placeholder="placeholder"
       @input="handleInput"
       @focus="focus"
@@ -20,9 +20,7 @@ export default {
   name: "CapTextarea",
   inheritAttrs: false,
   data() {
-    return {
-      textarea: "",
-    };
+    return {};
   },
   props: {
     placeholder: {
@@ -33,11 +31,15 @@ export default {
       type: Boolean,
       default: false,
     },
+    value: {
+      type: String,
+      default: ''
+    },
     error: String
   },
   methods: {
     handleInput(e) {
-      this.$emit("input", this.textarea);
+      this.$emit("input", e.target.value);
     },
     focus() {
       this.$emit("focus");

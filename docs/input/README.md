@@ -183,6 +183,36 @@ export default {
   }
 };
 </script>
+
+```
+
+:::
+
+Input With Label:
+
+ <demo-floating-label-input></demo-floating-label-input>
+
+::: details Preview the code
+
+```vue
+<template>
+  <cap-floating-label-input
+    v-model="value"
+    placeholder="Floating Input Label"
+  ></cap-floating-label-input>
+</template>
+
+<script>
+export default {
+  name: "DemoFloatingLabelInput",
+  data() {
+    return {
+      value: "",
+    };
+  },
+};
+</script>
+
 ```
 
 :::
