@@ -1,4 +1,25 @@
 .#{$scss-prefix} {
+  //  @include forMobile() {
+  //   .cap-floating-label-input {
+  //     .floating-input-label {
+  //       z-index: 1 !important;
+  //       width: max-content !important;
+  //       transition: all 0.1s ease-in-out;
+  //     }
+  //     .floating-label-input {
+  //       background-color: white;
+  //       border-radius: 6px;
+  //       .cap-input-container {
+  //         background-color: transparent;
+  //         input {
+  //           &::placeholder {
+  //             color: transparent !important;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
   &.cap-input {
     font-family: $base-fontfamily;
     font-weight: 300;
@@ -22,7 +43,9 @@
           position: absolute;
           top: 34%;
           left: 5%;
-          z-index: 99;
+          z-index: 1;
+          width: max-content;
+          transition: all 0.1s ease-in-out;
           font-size: .9375rem;
           line-height: .9375rem;
           font-weight: 400;
@@ -53,6 +76,9 @@
 
         }
         .cap-input-container {
+          @include forMobile() {
+            background-color: transparent;
+          }
           input {
             font-size: $font-size-10;
             line-height: $line-height-11;
@@ -69,13 +95,15 @@
             }
             &::placeholder {
               @include forMobile(){
-                color: white;
+                color: transparent;
               }
             }
           }
         }
         @include forMobile() {
           width: 100%;
+          background-color: white;
+          border-radius: 6px;
         }
       }
     }
