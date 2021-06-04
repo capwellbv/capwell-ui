@@ -1,25 +1,4 @@
 .#{$scss-prefix} {
-  //  @include forMobile() {
-  //   .cap-floating-label-input {
-  //     .floating-input-label {
-  //       z-index: 1 !important;
-  //       width: max-content !important;
-  //       transition: all 0.1s ease-in-out;
-  //     }
-  //     .floating-label-input {
-  //       background-color: white;
-  //       border-radius: 6px;
-  //       .cap-input-container {
-  //         background-color: transparent;
-  //         input {
-  //           &::placeholder {
-  //             color: transparent !important;
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
   &.cap-input {
     font-family: $base-fontfamily;
     font-weight: 300;

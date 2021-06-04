@@ -1,37 +1,50 @@
 <template>
 	<div class="cap-ui cap-radio" :class="mode">
-		<div v-for="(item, index) in items" :key="index" class="cap-radio-wrapper">
-			<input
+		<label class="radio-wrapper">
+			<input class="radio-input"
 				type="radio"
-				:value="item.value"
 				@change="handleChange"
-				v-model="checked"
+				:checked="isChecked"
+				:value="value"
+				v-bind="$attrs"
 			/>
-			<label>{{ item.label }}</label>
-		</div>
+			<span class="radio-label">{{ label }}</span>
+		</label>
 	</div>
 </template>
 
 <script>
 export default {
 	name: 'CapRadio',
-	data() {
-		return {
-			checked: null,
-		};
-	},
-	props: {
-		items: {
-			type: [Array, Object],
-		},
-    mode: {
+	inheritAttrs: false,
+	model: {
+    prop: 'modelValue',
+    event: 'change'
+  },
+  props: {
+    label: { 
+			type: String, 
+			default: ""
+			},
+    modelValue: {
+			default: ""
+			},
+    value: {
+			default: undefined
+			},
+		 mode: {
       type: String,
-      default: 'horizantal'
+      default: 'horizontal'
     }
-	},
+  },
+  computed: {
+    isChecked() {
+      return this.modelValue == this.value
+    }
+  },
 	methods: {
 		handleChange(e) {
-			this.$emit('input', this.checked);
+      this.$emit('change', e.target.value)
 		},
 	},
 };
