@@ -7,7 +7,25 @@
 ```vue
 <template>
   <div>
-    <cap-slider :items="items" routerName="router name"></cap-slider>
+    <cap-slider :items="items" routerName="router name">
+      <template v-slot:content="{item}">
+        <cap-title
+          type="subheading"
+          size="4"
+          transform="uppercase"
+          font="bold"
+          class="slider-title"
+          >{{ item.title }}</cap-title
+        >
+        <cap-title
+          type="heading"
+          size="7"
+          font="medium"
+          class="slider-description"
+          >{{ item.description }}</cap-title
+        >
+      </template></cap-slider
+    >
   </div>
 </template>
 

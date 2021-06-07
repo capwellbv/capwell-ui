@@ -20,24 +20,28 @@
         @click.native="$emit('onItemClick', item)"
       >
         <template #body>
-          <cap-title
-            type="subheading"
-            size="4"
-            transform="uppercase"
-            font="bold"
-            class="slider-title"
-            >{{item.title}}</cap-title
-          >
-          <cap-title
-            type="heading"
-            size="7"
-            font="medium"
-            class="slider-description"
-            >{{item.description}}</cap-title
-          >
+          <slot name="content" v-bind:item="item">
+            <cap-title
+              type="subheading"
+              size="4"
+              transform="uppercase"
+              font="bold"
+              class="slider-title"
+              >{{item.title}}</cap-title
+            >
+            <cap-title
+              type="heading"
+              size="7"
+              font="medium"
+              class="slider-description"
+              >{{item.description}}</cap-title
+            >
+          </slot>
         </template>
         <template #footer>
-          <arrow-right-icon size="1.2x" class="footer-icon"></arrow-right-icon>
+          <slot name="cardFooter" v-bind:item="item">
+            <arrow-right-icon size="1.2x" class="footer-icon"></arrow-right-icon>
+          </slot>
         </template>
       </cap-card>
       <slot></slot>
