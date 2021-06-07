@@ -1,14 +1,14 @@
-# Radio buttons
+# Radio group button
 
-<demo-radio></demo-radio>
+<demo-radio-group></demo-radio-group>
 
 ::: details Preview the code
 
 ```vue
 <template>
 	<div>
-		<cap-radio v-model="checked" :items="items" mode="vertical"></cap-radio>
-		<cap-radio v-model="checked" :items="items" ></cap-radio>
+		<cap-radio-group v-model="checked" :items="items" mode="vertical"></cap-radio-group>
+		<cap-radio-group v-model="checked" :items="items" ></cap-radio-group>
 	</div>
 </template>
 
@@ -25,6 +25,32 @@
 	},
 </script>
 
+```
+
+:::
+# Radio buttons
+
+<demo-radio></demo-radio>
+
+::: details Preview the code
+
+```vue
+<template>
+		<div>
+      <cap-radio label="Foo" value="foo" v-model="checked"></cap-radio>
+    </div>
+</template>
+
+<script>
+export default {
+	name: 'DemoRadio',
+	data() {
+		return {
+			checked: '',
+		};
+	},
+};
+</script>
 ```
 
 :::

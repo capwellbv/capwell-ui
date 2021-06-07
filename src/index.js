@@ -13,6 +13,7 @@ import CapNavbarBrand from './components/CapNavbarBrand.vue'
 import CapDropdown from './components/CapDropdown.vue'
 import CapOnClickAway from './components/CapOnClickAway.vue'
 import CapDropdownItem from './components/CapDropdownItem.vue'
+import CapRadioGroup from './components/CapRadioGroup.vue'
 import CapRadio from './components/CapRadio.vue'
 import CapFooter from './components/CapFooter.vue'
 import CapSearchDropdown from './components/CapSearchDropdown.vue'
@@ -53,6 +54,7 @@ const components = {
     CapDropdown,
     CapOnClickAway,
     CapDropdownItem,
+    CapRadioGroup,
     CapRadio,
     CapFooter,
     CapSearchDropdown,
