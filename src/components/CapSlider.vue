@@ -1,9 +1,8 @@
 <template>
   <div class="cap-ui cap-slider">
     <button
-      v-if="items.length > 3"
+      v-show="items.length > 3 && !disableLeft"
       @click="slideLeft"
-      :disabled="disableLeft"
       type="button"
       class="navigation-btn left"
       style="margin-left: auto"
@@ -47,8 +46,7 @@
       <slot></slot>
     </div>
     <button
-      v-if="items.length > 3"
-      :disabled="disableRight"
+      v-if="items.length > 3 && !disableRight"
       @click="slideRight"
       type="button"
       class="navigation-btn right"
@@ -73,13 +71,10 @@ export default {
     items: {
       type: [Array, Object],
     },
-    routeName: {
-      type: String,
-    }
   },
   data() {
     return {
-      disableLeft: true,
+      disableLeft: false,
       disableRight: false,
       slides: 3,
       currentSlide: 0,
@@ -135,14 +130,14 @@ export default {
       const panels = document.querySelectorAll(".panel");
       this.currentSlide--;
       panels[this.currentSlide].classList.remove("transparent");
-      panels[this.currentSlide + this.slides].classList.add("transparent");
+      panels[this.currentSlide + this.slides]?.classList.add("transparent");
     },
 
     slideRight() {
       this.$refs.slider.scrollLeft += 400;
       const panels = document.querySelectorAll(".panel");
       panels[this.currentSlide].classList.add("transparent");
-      panels[this.currentSlide + this.slides].classList.remove("transparent");
+      panels[this.currentSlide + this.slides]?.classList.remove("transparent");
       this.currentSlide++;
     },
 
