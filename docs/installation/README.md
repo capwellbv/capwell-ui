@@ -1,10 +1,10 @@
 # Installation
 
-Add `"@capwellbv/capwell-ui": "^0.1.0"` package as a dependency inside your `package.json` file.
+Add package as a dependency inside your `package.json` file.
 
 ```json
 "dependencies": {
-    "@capwellbv/capwell-ui": "^0.1.18"
+    "@capwellbv/capwell-ui": "^0.1.19"
   }
 ```
 Run install.
