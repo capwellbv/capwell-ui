@@ -113,6 +113,9 @@ export default {
       if (!this.showOptions) this.show()
       this.$emit('onFilterChange', value)
     },
+    value(val) {
+      this.values = val
+    },
   },
 
   computed: {

@@ -82,7 +82,7 @@ export default {
   },
 
   created() {
-    this.values = this.values;
+    this.values = this.value;
   },
 
   methods: {

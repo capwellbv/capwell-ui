@@ -97,8 +97,7 @@ export default {
 
   created() {
     if (this.value) {
-      const item = this.options.find((option) => option === this.value);
-      if (item) this.searchQuery = item;
+      this.searchQuery = this.value;
     }
   },
 
