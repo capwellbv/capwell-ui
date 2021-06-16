@@ -128,30 +128,18 @@ export default {
       tabs.splice(index, 1)
     },
     prevTab() {
-      if (!this.validateSteps) {
-        this.changeTab(this.currentTab - 1)
-      }
+      this.changeTab(this.currentTab - 1)
       this.$emit("onPreviousStep");
     },
     nextTab() {
-      if (this.currentTab < this.tabLastIndex) {
-        if (!this.validateSteps) {
-          this.changeTab(this.currentTab + 1)
-        }
-
+      if (!this.validateSteps) {
+        this.changeTab(this.currentTab + 1);
+      } else {
         this.$emit("validateTab", {
           tabIndex: this.currentTab + 1,
-          eventName: "onNextStep"
+          eventName: this.currentTab == this.tabLastIndex ? "onComplete" : "onNextStep",
         });
       }
-
-      if (this.currentTab === this.tabLastIndex) {
-        this.$emit("validateTab", {
-          tabIndex: this.currentTab + 1,
-          eventName: "onComplete"
-        });
-      }
-
       this.$emit("onNextStep");
     },
     switchTab(index) {
