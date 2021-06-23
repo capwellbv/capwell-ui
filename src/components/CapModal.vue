@@ -1,5 +1,5 @@
 <template>
-	<div :class="['cap-modal', 'cap-ui', { 'modal-hide': !show, 'modal-show': show }]">
+	<div :class="['cap-modal', 'cap-ui', 'hide-scrollbar', { 'modal-hide': !show, 'modal-show': show }]">
 		<div class="cap-model-inner" :class="size">
 			<div v-if="header" class="cap-model-header">
 				<span>{{ title }}</span>
