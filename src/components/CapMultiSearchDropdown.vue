@@ -9,6 +9,7 @@
               <x-icon @click="select(value)" size="1.2x" class="icon"></x-icon
             ></span>
             <input
+              ref="searchInput"
               type="text"
               v-model="searchQuery"
               :placeholder="placeholder"
@@ -142,6 +143,8 @@ export default {
     select(option) {
       this.addSelected(option);
       this.$emit("change", this.values);
+      this.searchQuery = "";
+      this.$refs.searchInput.focus();
     },
 
     addSelected(value) {
