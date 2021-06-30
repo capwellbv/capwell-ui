@@ -9,6 +9,8 @@
         width: 65%;
         .cap-textarea {
           @include forMobile() {
+            padding-top: 28px;
+            padding-left: 13px;
             &::placeholder {
               color: white;
             }
@@ -24,10 +26,12 @@
           top: 14px;
           left: 14px;
           color: $secondary-color-4;
+          font-family: $secondary-fontfamily;
+          transition: all 0.1s ease-in-out;
         }
         &.active {
           @include forMobile() {
-            top: 6px;
+            top: 10px;
             font-size: .6875rem;
             line-height: .75rem;
             font-weight: 400;
@@ -43,8 +47,8 @@
       outline: none;
       border-radius: 6px;
       background-color: $secondary-color-1;
-      border: 1px solid $secondary-color-3;
-      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+      border: none;
+      box-shadow: 0 0 0 1px #e1ddd0;
       padding: 1rem;
       font-size: $font-size-10;
       width: stretch;
@@ -53,7 +57,7 @@
           line-height: .9375rem;
         }
       &:focus-within {
-        box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0, 148, 205, 0.2),
+          box-shadow: 0 0 0 2px $primary-color-2, 0 4px 12px 0 rgba(0, 148, 205, 0.2),
           0 17px 47px 0 rgba(0, 0, 0, 0.15);
       }
       &.disabled {
