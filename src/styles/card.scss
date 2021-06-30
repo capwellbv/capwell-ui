@@ -1,7 +1,7 @@
 @mixin card {
   border-radius: 6px;
   background-color: $secondary-color-1;
-  box-shadow: 0 0 0 1px #e1ddd0;
+  box-shadow: 0 0 0 1px $secondary-color-2, 0 6px 11px 0 rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -15,7 +15,6 @@
   &.bordered:hover,
   &.bordered:focus {
     border: 2px solid $primary-color-2;
-    box-shadow: none;
     .footer {
       color: $primary-color-2;
     }
