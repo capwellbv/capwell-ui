@@ -7,7 +7,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: $p-4;
-  transition: ease-in-out 0.1s border;
+  transition: ease-in-out 0.3s border;
   border: 2px solid transparent;
 
   @content;
