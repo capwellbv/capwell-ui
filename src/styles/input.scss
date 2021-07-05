@@ -10,6 +10,19 @@
       position: relative;
       margin-bottom: $p-4;
       font-family: $secondary-fontfamily;
+      &.has-error {
+        .floating-input-label {
+        top: 24%;
+        &.active {
+          @include forMobile() {
+            top: 16%;
+            font-size: 11px;
+            line-height: $line-height-14;
+          }
+        }
+
+        }
+        }
       .floating-input-label {
         display: block;
         width: 30%;
@@ -20,8 +33,7 @@
         @include forMobile() {
           display: block;
           position: absolute;
-          top: 34%;
-          left: 5%;
+          left: 16px;
           z-index: 1;
           width: max-content;
           transition: all 0.1s ease-in-out;
@@ -32,7 +44,7 @@
         }
         &.active {
           @include forMobile() {
-            top: 14%;
+            top: 22%;
             font-size: 11px;
             line-height: $line-height-14;
           }
@@ -45,7 +57,7 @@
           .cap-input-container {
             input {
               @include forMobile() {
-                padding: $spacing5 0px 14px 0px;
+                padding: $spacing5 0px 17px 0px;
                 font-size: .9375rem;
                 line-height: .9375rem;
                 font-weight: 400;
@@ -66,7 +78,7 @@
               &:focus-within,
               &.value,
               &.prefiled {
-                padding: $spacing5 0px 14px 0px;
+                padding: $spacing5 0px 17px 0px;
                 font-size: .9375rem;
                 line-height: .9375rem;
                 font-weight: 400;
@@ -183,9 +195,6 @@
         line-height: $line-height-11;
         margin-top: 5px;
         font-family: $secondary-fontfamily;
-      }
-      .floating-input-label {
-        top: 25%;
       }
     }
   }
