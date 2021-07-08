@@ -1,13 +1,13 @@
-# Header
+# Navbar
 
-<demo-header></demo-header>
+<demo-navbar></demo-navbar>
 
 ::: details Preview the code
 
 ```vue
 <template>
 	<div>
-		<cap-header>
+		<cap-navbar>
 			<cap-navbar-brand>logo</cap-navbar-brand>
 			<template #logo>
 				<cap-navbar-brand>logo</cap-navbar-brand>
@@ -20,7 +20,7 @@
 			<template #action>
 				<cap-button varient="primary">Registered</cap-button>
 			</template>
-		</cap-header>
+		</cap-navbar>
 	</div>
 </template>
 
@@ -30,7 +30,7 @@ import CapNavbarBrand from '../../../src/components/CapNavbarBrand.vue';
 import CapNavItem from '../../../src/components/CapNavItem.vue';
 import CapNavBarNav from '../../../src/components/CapNavBarNav.vue';
 export default {
-	name: 'Header',
+	name: 'Navbar',
 	components: {
 		CapButton,
 		CapNavbarBrand,

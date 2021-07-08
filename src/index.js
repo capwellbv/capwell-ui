@@ -27,7 +27,7 @@ import CapForm from './components/CapForm.vue'
 import CapSubFooter from './components/CapSubFooter.vue'
 import CapFormRow from './components/CapFormRow.vue'
 import CapText from './components/CapText.vue'
-import CapHeader from './components/CapHeader.vue'
+import CapNavbar from './components/CapNavbar.vue'
 import CapTextarea from './components/CapTextarea.vue'
 import CapInput from './components/CapInput.vue'
 import CapTitle from './components/CapTitle.vue'
@@ -68,7 +68,7 @@ const components = {
     CapSubFooter,
     CapFormRow,
     CapText,
-    CapHeader,
+    CapNavbar,
     CapTextarea,
     CapInput,
     CapTitle,

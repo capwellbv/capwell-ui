@@ -7,6 +7,65 @@
     flex-wrap: wrap;
     background-color: $primary-color-4;
     color: $secondary-color-1;
-    padding-bottom: 1rem;
+    padding: 2rem;
+
+    .cap-text {
+      color: rgba(255, 255, 255, 0.5);
+      font-weight: 100;
+      font-size: 20px;
+      line-height: 32px;
+    }
+    .footer-items {
+      
+      .custom-class, a {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        margin-bottom: 20px;
+        position: relative;
+        font-family: "Mulish";
+        font-weight: 300;
+        color: #FFFFFF;
+      }
+    }
+    .footer-item-contact {
+      .custom-class, a {
+
+        word-break: break-word;
+        margin-left: 10px;
+        line-height: 1.25rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .cap-column {
+      width: 100%;
+    }
+    .col {
+      padding-right: 30%;
+      display: flex;
+      justify-content: space-between;
+      .items-container {
+        margin-top: 30px;
+      }
+    }
+    .cap-footer-list {
+      .cap-title {
+        color: #FFFFFF;
+        margin-top: 20px;
+        margin-left: 6px;
+        position: relative;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 28px;
+        font-family: "Montserrat", sans-serif;
+      }
+    }
+    .cap-sub-footer {
+      span {
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
   }
 }

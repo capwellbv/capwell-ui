@@ -2,8 +2,17 @@
 	&.cap-nav-item {
 		a {
 			color: $darkest-color;
+			    padding-bottom: 4px;
+			&.active {
+				color: #0094CD;
+				border-bottom: 2px solid #0094CD !important;
+				&:hover {
+					border-bottom-color: #0094CD;
+				}
+			}
 			&:hover {
 				text-decoration: none;
+				// color: #0094CD;
 			}
 		}
 	}

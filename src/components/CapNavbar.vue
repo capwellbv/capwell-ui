@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-ui cap-header" :class="{ down: hasScrolled, shadow: showShadow }">
+  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow }">
     <div class="cap-grid-container">
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
@@ -19,7 +19,7 @@
 import { AlignJustifyIcon, XIcon } from 'vue-feather-icons'
 
 export default {
-  name: 'CapHeader',
+  name: 'CapNavbar',
   data() {
     return {
       closed: false,

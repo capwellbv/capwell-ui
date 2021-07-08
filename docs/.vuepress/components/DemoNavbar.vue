@@ -1,14 +1,16 @@
 <template>
   <div>
-    <cap-header>
+    <cap-navbar>
       <template #logo>
-        <cap-navbar-brand>logo</cap-navbar-brand>
+        <cap-navbar-brand>
+          <img src="https://beta.capwell.nl/img/logo.56bf7503.svg" alt="Capwell Logo">
+        </cap-navbar-brand>
       </template>
       <cap-nav-item  v-for="(item, index) in items" :key="index">
-        <a :href="item.slug" class="link">{{item.name}}</a>
+        <a :href="item.slug" class="link" :class="{'active': item.name === activeItem}" @click="activeItem = item.name">{{item.name}}</a>
       </cap-nav-item>
-      <cap-button varient="primary">Registered</cap-button>
-    </cap-header>
+      <cap-button varient="secondary" size="md">Registered</cap-button>
+    </cap-navbar>
   </div>
 </template>
 
@@ -18,7 +20,7 @@ import CapNavbarBrand from '../../../src/components/CapNavbarBrand.vue';
 import CapNavItem from '../../../src/components/CapNavItem.vue';
 import CapNavBarNav from '../../../src/components/CapNavBarNav.vue';
 export default {
-  name: 'DemoHeader',
+  name: 'DemoNavbar',
   components: {
     CapButton,
     CapNavbarBrand,
@@ -27,11 +29,12 @@ export default {
   },
   data() {
     return {
+      activeItem: 'home',
       items: [
-        {name: 'Home', slug: '#'},
-        {name: 'About', slug: '#'},
-        {name: 'Contact', slug: '#'},
-        {name: 'Serviecs', slug: '#'}
+        {name: 'home', slug: '#'},
+        {name: 'about', slug: '#'},
+        {name: 'contact', slug: '#'},
+        {name: 'services', slug: '#'}
       ]
     }
   }
