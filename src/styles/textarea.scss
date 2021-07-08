@@ -9,8 +9,8 @@
         width: 65%;
         .cap-textarea {
           @include forMobile() {
-            padding-top: 28px;
-            padding-left: 13px;
+            padding-top: 26px;
+            padding-left: 16px;
             &::placeholder {
               color: white;
             }
@@ -24,14 +24,14 @@
         @include forMobile() {
           position: absolute;
           top: 14px;
-          left: 14px;
+          left: 16px;
           color: $secondary-color-4;
           font-family: $secondary-fontfamily;
           transition: all 0.1s ease-in-out;
         }
         &.active {
           @include forMobile() {
-            top: 10px;
+            top: 12px;
             font-size: .6875rem;
             line-height: .75rem;
             font-weight: 400;
