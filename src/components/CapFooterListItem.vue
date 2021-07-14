@@ -1,11 +1,11 @@
 <template>
-	<div class="cap-nav-bar-nav cap-ui">
+	<li class="cap-ui cap-footer-list-item">
 		<slot></slot>
-	</div>
+	</li>
 </template>
 
 <script>
 export default {
-	name: 'CapNavBarNav',
+	name: 'CapFooterListItem',
 };
 </script>

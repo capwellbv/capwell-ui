@@ -1,70 +1,102 @@
 .#{$scss-prefix} {
   &.cap-footer {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 500;
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    background-color: $primary-color-4;
-    color: $secondary-color-1;
-    padding: 2rem;
-
-    .cap-text {
-      color: rgba(255, 255, 255, 0.5);
-      font-weight: 100;
-      font-size: 20px;
-      line-height: 32px;
-    }
-    .footer-items {
-      
-      .custom-class, a {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        margin-bottom: 20px;
-        position: relative;
-        font-family: "Mulish";
-        font-weight: 300;
-        color: #FFFFFF;
+    padding: 120px 0 60px 0;
+    &-primary {
+      background-color: $primary-color-4;
+      .icon {
+        color: $secondary-color-1;
       }
     }
-    .footer-item-contact {
-      .custom-class, a {
-
-        word-break: break-word;
-        margin-left: 10px;
-        line-height: 1.25rem;
-        color: rgba(255, 255, 255, 0.5);
+    &-secondary {
+      background-color: rgba($darkest-color, 0.9);
+      .icon {
+        color: #821a74;
       }
     }
-    .cap-column {
-      width: 100%;
+    .link {
+      color: $secondary-color-1;
+      text-decoration: none;
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+        color: rgba($secondary-color-1, 0.5);
+      }
     }
-    .col {
-      padding-right: 30%;
+    .icon {
+      min-width: 20px;
+      margin-right: $spacing8;
+      margin-top: 2px;
+    }
+    .cap-footer-info {
+      grid-column: 1/span 5;
+      margin-bottom: $spacing7;
+      .footer-logo {
+        margin-bottom: $spacing4;
+      }
+      .footer-lead-text {
+        color: rgba($secondary-color-1, 0.5);
+        a {
+          color: $secondary-color-1;
+          margin: 0;
+          font-weight: 700;
+          cursor: pointer;
+          text-decoration: none;
+          padding-bottom: 3px;
+          &:hover {
+            border-bottom: 2px solid rgba($secondary-color-1, 0.1);
+            color: rgba($secondary-color-1, 0.5);
+          }
+        }
+      }
+    }
+    .footer-trademark {
+      grid-column: span 12;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      .items-container {
-        margin-top: 30px;
+      .trademark-text {
+        color: $secondary-color-1;
+        .link {
+          font-weight: 700;
+        }
       }
     }
-    .cap-footer-list {
-      .cap-title {
-        color: #FFFFFF;
-        margin-top: 20px;
-        margin-left: 6px;
-        position: relative;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        font-family: "Montserrat", sans-serif;
+    @include forLaptop() {
+      .cap-footer-info {
+        grid-column: span 12;
+        margin-bottom: $spacing3;
+      }
+      .cap-footer-list {
+        grid-column: span 6;
       }
     }
-    .cap-sub-footer {
-      span {
-        font-weight: 700;
-        letter-spacing: 1px;
-        font-size: 12px;
-        line-height: 16px;
+    @include forIpadPro {
+      .cap-footer-info {
+        margin-bottom: $spacing4;
+      }
+      .cap-seprator {
+        margin: $spacing4 0;
+      }
+    }
+    @include forMobile {
+      .footer-trademark {
+        flex-direction: column;
+        align-items: flex-start;
+        .trademark-text {
+          font-size: .625rem;
+          line-height: .75rem;
+          &:last-child {
+            margin-top: 10px;
+            a {
+              color: rgba($secondary-color-1, 0.5);
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      .cap-footer-list {
+        grid-column: span 12;
       }
     }
   }

@@ -1,10 +1,26 @@
 .#{$scss-prefix} {
   &.cap-footer-list {
-    font-family: "Mulish", sans-serif;
-    .cap-title {
+    grid-column: span 3;
+    padding-bottom: 50px;
+    .list-title {
+      color: #fff;
+      margin-top: $spacing6;
+      position: relative;
+      &::before {
+        content: "";
+        width: 18px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        top: -20px;
+        left: 0;
+      }
+    }
+    .list {
+      padding-top: 30px;
+      padding-left: 0px;
+      list-style: none;
       margin: 0;
-      font-size: 1.2rem;
-      font-weight: 700;
     }
   }
 }

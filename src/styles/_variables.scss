@@ -38,3 +38,7 @@ $p-1: 5px !default;
 $p-2: 10px !default;
 $p-3: 15px !default;
 $p-4: 20px !default;
+
+:export {
+  scssPrefix: $scss-prefix;
+}

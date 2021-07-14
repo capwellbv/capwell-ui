@@ -3,7 +3,6 @@ import CapMultiSearchDropdown from './components/CapMultiSearchDropdown.vue'
 import CapButton from './components/CapButton.vue'
 import CapMultiSelect from './components/CapMultiSelect.vue'
 import CapCard from './components/CapCard.vue'
-import CapNavBarNav from './components/CapNavBarNav.vue'
 import CapColumn from './components/CapColumn.vue'
 import CapNavItem from './components/CapNavItem.vue'
 import CapDialog from './components/CapDialog.vue'
@@ -19,7 +18,7 @@ import CapFooter from './components/CapFooter.vue'
 import CapSearchDropdown from './components/CapSearchDropdown.vue'
 import CapFooterBrand from './components/CapFooterBrand.vue'
 import CapSelect from './components/CapSelect.vue'
-import CapFooterItem from './components/CapFooterItem.vue'
+import CapFooterListItem from './components/CapFooterListItem.vue'
 import CapSeprator from './components/CapSeprator.vue'
 import CapFooterList from './components/CapFooterList.vue'
 import CapSlider from './components/CapSlider.vue'
@@ -37,6 +36,7 @@ import CapTabs from './components/CapTabs.vue'
 import CapTabContent from './components/CapTabContent.vue'
 import CapFloatingLabelInput from './components/CapFloatingLabelInput.vue'
 import CapFloatingLabelTextarea from './components/CapFloatingLabelTextarea.vue'
+import CapContainer from './components/CapContainer.vue'
 
 const components = {
     CapBox,
@@ -44,7 +44,6 @@ const components = {
     CapButton,
     CapMultiSelect,
     CapCard,
-    CapNavBarNav,
     CapColumn,
     CapNavItem,
     CapDialog,
@@ -60,7 +59,7 @@ const components = {
     CapSearchDropdown,
     CapFooterBrand,
     CapSelect,
-    CapFooterItem,
+    CapFooterListItem,
     CapSeprator,
     CapFooterList,
     CapSlider,
@@ -77,7 +76,8 @@ const components = {
     CapTabs,
     CapTabContent,
     CapFloatingLabelInput,
-    CapFloatingLabelTextarea
+    CapFloatingLabelTextarea,
+    CapContainer
 }
 
 const install = function (Vue, opts = {}) {

@@ -28,14 +28,12 @@
 import CapButton from '../../../src/components/CapButton.vue';
 import CapNavbarBrand from '../../../src/components/CapNavbarBrand.vue';
 import CapNavItem from '../../../src/components/CapNavItem.vue';
-import CapNavBarNav from '../../../src/components/CapNavBarNav.vue';
 export default {
 	name: 'Navbar',
 	components: {
 		CapButton,
 		CapNavbarBrand,
 		CapNavItem,
-		CapNavBarNav,
 	},
 	data() {
 		return {
