@@ -1,267 +1,149 @@
 .#{$scss-prefix} {
-	&.cap-navbar {
+  &.cap-navbar {
+    position: fixed;
     width: 100%;
-    z-index: 9;
-    transition: all 0.1s ease-in-out;
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
-    background-color: $secondary-color-1;
-    font-family: "Montserrat";
-    margin-bottom: 500px;
-    .nav-grid-container {
+    top: 0;
+    z-index: 100001;
+    transition: all .1s ease-in-out;
+    &.shadow {
+      box-shadow: $navbar-shadow;
+      background-color: $secondary-color-1;
+    }
+    &.down {
       top: -85px;
     }
-    .cap-grid-container {
-      background-color: white;
-      box-shadow: 0 9px 16px 0 rgba(0, 0, 0, 0.08);
-      position: fixed;
-      width: 60%;
-      top: 30%;
-      z-index: 9;
-      &.shadow {
-        box-shadow: 0 9px 16px 0 rgba(0, 0, 0, 0.08);
-        background-color: white;
+    nav {
+      grid-column: 1/-1;
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      .cap-navbar-brand {
+        img {
+          max-width: 100%;
+        }
       }
-      &.down {
-        top: -85px;
+      .cap-navbar-nav {
+        margin-left: auto;
       }
-      nav {
-        grid-column: 1 / -1;
+      .cap-navbar-links {
+        all: unset;
+        font-family: $secondary-fontfamily;
+        list-style-type: none;
+        margin-left: auto;
         display: flex;
         align-items: center;
-        padding: $spacing6 $spacing7;
+      }
+      .toggle-btn {
+        display: none;
+      }
+      .nav-btn {
+        font-size: 16px;
+        line-height: 18px;
+      }
+      .cap-navbar-contact {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        padding: 0;
+        margin: 0 0 40px 0;
+        list-style-type: none;
+        justify-content: center;
+      }
+    }
+    &.collapse {
+      box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
+      background-color: $secondary-color-1;
+      .cap-container {
+        margin: 0;
+        padding: 0 5%;
+      }
+      .toggle-btn {
+        display: flex;
+        align-items: center;
+      }
+      nav {
+        padding-bottom: 0px;
+        flex-direction: column;
         .cap-nav-container {
-          .menu-icon {
-            cursor: pointer;
-          }
-          .close-icon {
-            display: none;
-          }
-        }
-        .cap-nav-item-list {
-          font-family: "Montserrat";
-          all: unset;
-          list-style-type: none;
-          margin-left: auto;
           display: flex;
-          align-items: center;
-          margin-bottom: 1px;
-          .cap-nav-item {
-            font-family: "Montserrat";
-            all: unset;
-            margin-right: $spacing5;
-            width: 100%;
-            line-height: 1.25rem;
-            cursor: pointer;
-            color: $darkest-color;
-            padding: 5px 0 !important;
-            font-weight: 700;
-            font-size: 1rem;
-            line-height: 1rem;
-            border-bottom: 2px solid transparent;
-            text-transform: capitalize;
+          justify-content: space-between;
+          width: 100%;
+          padding-bottom: 20px;
+        }
+        .cap-navbar-nav {
+          overflow: hidden;
+          max-height: 0;
+          transition: all .3s ease-in-out;
+          box-shadow: inset 0 4px 0 0 $secondary-color-2;
+          width: 100%;
+          text-align: center;
+          margin: 0;
+        }
+        .cap-navbar-links {
+          flex-direction: column;
+        }
+        .nav-btn {
+          margin-bottom: 30px;
+          font-size: 18px;
+          line-height: 24px;
+          padding: 0;
+          height: fit-content;
+          border: none;
+          box-shadow: none;
+          font-weight: normal;
+          color: $darkest-color;
+          padding: 3px 0;
+          border-bottom: 2px solid transparent;
+          border-radius: 0px;
+          &.router-link-exact-active,
+          &.active {
+            color: $primary-color-3;
+            border-bottom-color: $primary-color-3;
             &:hover {
-              color: #0094CD !important;
-              border-bottom-color: #E1DDD0;
-              text-decoration: none;
-            }
-            &::before {
-              all: unset;
-            }
-            a:hover {
-              text-decoration: none;
-            }
-            &.active {
-              color: #0076A4 !important;
-              border-bottom-color: #0076A4 !important;
+              border-bottom-color: $primary-color-3;
             }
           }
-          .icon-list {
-            display: none;
+          &:hover {
+            border-bottom-color: $secondary-color-3;
+          }
+          &:hover,
+          &:active,
+          &:focus {
+            box-shadow: none;
+            outline: none;
           }
         }
-      }
-      @include forLaptop() {
-        .cap-grid-container {
-          margin: 0 20px;
-          .cap-nav-item-list .cap-nav-item {
-            margin-right: $spacing4;
+        &.open {
+          .cap-navbar-nav {
+            max-height: 100%;
           }
-        }
-      }
-      @media (max-width: 1560px) {
-        .cap-grid-container {
-          .cap-nav-item-list .cap-nav-item {
-            margin-right: $spacing5;
-          }
-        }
-        &.down {
-          top: -70px;
         }
       }
     }
-    @media (max-width: 1125px) {
-      height: 70px;
-      box-shadow: none !important;
-      .cap-grid-container {
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
-        background-color: $secondary-color-1;
-        margin: 0;
-        @include forMobile() {
-          width: 88%;
-          padding: 0;
-        }
-        .cap-nav-container {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .close-icon {
-            display: block !important;
-            cursor: pointer;
-          }
-        }
-        nav {
-          flex-direction: column;
-          &.open {
-            .cap-nav-container {
-              box-shadow: inset 0 -4px 0 0 $secondary-color-2;
-              padding-bottom: $spacing6;
-            }
-            .cap-btn-nav {
-              display: inherit;
-            }
-          }
-          .cap-nav-container {
-            align-self: stretch;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            img {
-              max-width: 123px;
-            }
-            i {
-              cursor: pointer;
-              display: initial;
-              margin-top: -3px;
-            }
-          }
-          .cap-nav-item-list {
-            margin: 0;
-            padding: 0;
-            flex-direction: column;
-            margin-left: 0;
-            width: 100%;
-            text-align: center;
-            max-height: 0;
-            overflow: hidden;
-            opacity: 0;
-            transition: all 0.3s ease-in-out;
-            li {
-              margin-right: 0;
-              margin-bottom: $spacing5;
-              a {
-                margin-right: 0;
-                font-size: rem(18px);
-                line-height: rem(24px);
-              }
-              &:last-child {
-                margin-bottom: 0;
-              }
-            }
-            &.shown {
-              opacity: 1;
-              margin-top: $spacing5;
-              margin-bottom: $spacing5 !important;
-              max-height: 500px;
-            }
-            .cap-nav-item {
-              margin-bottom: 30px;
-              margin-right: 0;
-              width: auto;
-            }
-            .cap-secondary-btn {
-              width: auto;
-              border: none;
-              border-radius: 0%;
-              box-shadow: none;
-              cursor: pointer;
-              color: #000000;
-              margin-top: -4px;
-              font-weight: 500;
-              font-size: 1rem;
-              line-height: 1rem;
-              border-bottom: 2px solid transparent;
-              font-family: "Montserrat";
-              &:hover {
-                color: #0094CD !important;
-                border-bottom-color: #0094CD;
-                text-decoration: none;
-              }
-            }
-          }
-          .cap-btn-nav {
-            background-color: transparent;
-            box-shadow: none;
-            padding: 0px;
-            height: auto;
-            display: none;
-            color: #000;
-            font-size: 1.125rem;
-            line-height: 1.5rem;
-            font-weight: 500;
-            font-family: $base-fontfamily;
-            margin-bottom: 40px;
-          }
-          .icon-list {
-            all: unset;
-            display: flex;
-            align-items: center;
-            align-self: center;
-            padding: 0;
-            margin-bottom: $spacing6;
-
-            li {
-              all: unset;
-              margin-right: $spacing6;
-              margin-bottom: 0;
-              border-radius: 9999px;;
-              height: 50px;
-              width: 50px;
-              background-color: white;
-              box-shadow: 0 0 0 2px $secondary-color-2, 0 5px 12px 0 rgba(0,0,0,0.08);
-              cursor: pointer;
-              transition: all 0.3s ease-in-out;
-              position: relative;
-              &:last-child {
-                margin-right: 0;
-              }
-              a {
-                all: unset;
-                margin: auto;
-                i {
-                  left: 50%;
-                  top: 50%;
-                  transform: translate(-50%,-50%);
-                  margin: 0 !important;
-                  color: $secondary-color-4;
-                  &::before {
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                  }
-                }
-              }
-              &:hover {
-                box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba(0,0,0,0.05), 0 17px 47px 0 rgba(0,0,0,0.15);
-                i {
-                  color: $primary-color-2;
-                }
-              }
-            }
-          }
+    @media (max-width: 1560px) {
+      .cap-container {
+        margin: 0 30px;
+      }
+    }
+    @media (max-width: 1200px) {
+      nav {
+        .nav-btn {
+          font-size: 15px;
+          line-height: 15px;
         }
       }
-		}
-	}
+    }
+    @media (max-width: 1100px) {
+      nav {
+        .nav-btn {
+          height: 45px;
+          padding: 0 25px;
+          font-size: 14px;
+        }
+      }
+      .cap-navbar-brand {
+        max-width: 130px;
+      }
+    }
+  }
 }

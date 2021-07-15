@@ -8,7 +8,6 @@ import CapNavItem from './components/CapNavItem.vue'
 import CapDialog from './components/CapDialog.vue'
 import CapInfoDialog from './components/CapInfoDialog.vue'
 import CapDangerDialog from './components/CapDangerDialog.vue'
-import CapNavbarBrand from './components/CapNavbarBrand.vue'
 import CapDropdown from './components/CapDropdown.vue'
 import CapOnClickAway from './components/CapOnClickAway.vue'
 import CapDropdownItem from './components/CapDropdownItem.vue'
@@ -37,6 +36,7 @@ import CapTabContent from './components/CapTabContent.vue'
 import CapFloatingLabelInput from './components/CapFloatingLabelInput.vue'
 import CapFloatingLabelTextarea from './components/CapFloatingLabelTextarea.vue'
 import CapContainer from './components/CapContainer.vue'
+import CapNavContactItem from './components/CapNavContactItem.vue'
 
 const components = {
     CapBox,
@@ -49,7 +49,6 @@ const components = {
     CapDialog,
     CapInfoDialog,
     CapDangerDialog,
-    CapNavbarBrand,
     CapDropdown,
     CapOnClickAway,
     CapDropdownItem,
@@ -77,7 +76,8 @@ const components = {
     CapTabContent,
     CapFloatingLabelInput,
     CapFloatingLabelTextarea,
-    CapContainer
+    CapContainer,
+    CapNavContactItem
 }
 
 const install = function (Vue, opts = {}) {

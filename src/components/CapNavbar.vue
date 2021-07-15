@@ -1,34 +1,60 @@
 <template>
-  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow }">
-    <div class="cap-grid-container">
+  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapse, shown: !closed }">
+    <cap-container>
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
-          <slot name="logo"></slot>
-          <align-justify-icon size="1.3x" v-if="closed" @click.prevent="toggleMenu" class="menu-icon"></align-justify-icon>
-          <x-icon size="1.3x" v-else @click.prevent="toggleMenu" class="close-icon"></x-icon>
+          <div class="cap-navbar-brand">
+            <slot name="brand" v-bind="{ logo }">
+              <img :src="logo" alt="logo">
+            </slot>
+          </div>
+          <div class="toggle-btn">
+            <slot name="toggle" v-bind="{ toggleMenu, closed }">
+              <align-justify-icon size="25" v-if="closed" @click.prevent="toggleMenu" class="menu-icon"></align-justify-icon>
+              <x-icon size="25" v-else @click.prevent="toggleMenu" class="close-icon"></x-icon>
+            </slot>
+          </div>
         </div>
-        <ul class="cap-nav-item-list" :class="{ shown: !closed }">
-         <slot />
-        </ul>
+        <div class="cap-navbar-nav" :class="{ shown: !closed }">
+          <ul class="cap-navbar-links">
+            <slot />
+          </ul>
+          <ul v-if="isCollapse" class="cap-navbar-contact">
+            <slot name="contact"></slot>
+          </ul>
+        </div>
       </nav>
-    </div>
+    </cap-container>
   </div>
 </template>
 
 <script>
-import { AlignJustifyIcon, XIcon } from 'vue-feather-icons'
+import { AlignJustifyIcon, XIcon } from 'vue-feather-icons';
+import CapContainer from './CapContainer.vue';
 
 export default {
   name: 'CapNavbar',
+  props: {
+    logo: {
+      type: String,
+      default: null
+    },
+    collapse: {
+      type: String | Number,
+      default: 1040
+    },
+  },
   data() {
     return {
       closed: false,
       hasScrolled: false,
       showShadow: false,
-      prevScrollTop: 85
+      prevScrollTop: 85,
+      isCollapse: false
     };
   },
   components: {
+    CapContainer,
     AlignJustifyIcon,
     XIcon
   },
@@ -45,7 +71,13 @@ export default {
     },
 
     checkMedia() {
-      let mql = window.matchMedia("(max-width: 1040px)");
+      let mql = window.matchMedia(`(max-width: ${this.collapse}px)`);
+
+      if (mql.matches) {
+        this.isCollapse = true
+      } else {
+        this.isCollapse = false
+      }
 
       if (mql.matches && !this.closed) {
         this.closed = true;

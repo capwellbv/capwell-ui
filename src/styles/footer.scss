@@ -4,7 +4,17 @@
     &-primary {
       background-color: $primary-color-4;
       .icon {
-        color: $secondary-color-1;
+        color: $primary-color-2;
+      }
+      .link,
+      .link.inline-link {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        &.router-link-exact-active {
+          border-bottom: 2px solid $primary-color-2;
+        }
       }
     }
     &-secondary {
@@ -12,15 +22,48 @@
       .icon {
         color: #821a74;
       }
+      .link,
+      .link.inline-link {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active,
+        &.router-link-exact-active  {
+          border-bottom: 2px solid #821a74;
+        }
+      }
+      .cap-footer-list {
+        @include forMobile {
+          &.contact {
+            .list {
+              .cap-footer-list-item {
+                &:hover,
+                &:active,
+                &.active,
+                &:focus {
+                  border-color: #821a74;
+                  box-shadow: 0 0px 0px 1px #821a74;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     .link {
       color: $secondary-color-1;
       text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      &.inline-link {
+        border-bottom: 2px solid rgba($secondary-color-1, 0.1);
+      }
       &:hover,
       &:focus,
-      &:active {
+      &:active,
+      &.active,
+      &.router-link-exact-active {
         text-decoration: none;
-        color: rgba($secondary-color-1, 0.5);
       }
     }
     .icon {
@@ -41,12 +84,6 @@
           margin: 0;
           font-weight: 700;
           cursor: pointer;
-          text-decoration: none;
-          padding-bottom: 3px;
-          &:hover {
-            border-bottom: 2px solid rgba($secondary-color-1, 0.1);
-            color: rgba($secondary-color-1, 0.5);
-          }
         }
       }
     }
@@ -89,7 +126,6 @@
           &:last-child {
             margin-top: 10px;
             a {
-              color: rgba($secondary-color-1, 0.5);
               font-weight: 400;
             }
           }

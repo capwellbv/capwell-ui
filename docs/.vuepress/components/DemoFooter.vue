@@ -6,6 +6,10 @@
 			lead-text="Het is onze drive om de juiste ICT-specialist op de juiste plek te krijgen. En dat lukt ons keer op keer. Niet zelden krijgen we positieve reacties van onze klanten over de perfecte match."
 			trademark-text="Copyright 1999-2021, Capwell B.V."
 		>
+			<template #leadText="{ leadText }">
+				{{ leadText }}
+				<a class="link inline-link" href="#">this is a test link</a>
+			</template>
 			<cap-footer-list title="Voor werkgevers" class="links-list">
 				<cap-footer-list-item v-for="item in items" :key="item.text">
 					<chevron-right-icon size="18" class="icon"></chevron-right-icon>
@@ -14,27 +18,27 @@
 			</cap-footer-list>
 			<cap-footer-list title="Contact" class="contact">
 				<cap-footer-list-item>
+					<home-icon size="18" class="icon"></home-icon>
 					<a class="link" href="#">
-						<home-icon size="18" class="icon"></home-icon>
-						Havenstraat 30 3115 HD Schiedam
+						<span class="text">Havenstraat 30 3115 HD Schiedam</span>
 					</a>
 				</cap-footer-list-item>
 				<cap-footer-list-item>
+					<mail-icon size="18" class="icon"></mail-icon>
 					<a class="link" href="#">
-						<mail-icon size="18" class="icon"></mail-icon>
-						info@capwell.nl
+						<span class="text">info@capwell.nl</span>
 					</a>
 				</cap-footer-list-item>
 				<cap-footer-list-item>
+					<phone-icon size="18" class="icon"></phone-icon>
 					<a class="link" href="#">
-						<phone-icon size="18" class="icon"></phone-icon>
-						010-475 55 83
+						<span class="text">010-475 55 83</span>
 					</a>
 				</cap-footer-list-item>
 				<cap-footer-list-item>
+					<linkedin-icon size="18" class="icon"></linkedin-icon>
 					<a class="link" href="#">
-						<linkedin-icon size="18" class="icon"></linkedin-icon>
-						LinkedIn
+						<span class="text">LinkedIn</span>
 					</a>
 				</cap-footer-list-item>
 			</cap-footer-list>
@@ -77,11 +81,6 @@ export default {
 
 <style lang="scss">
 .cap-footer {
-	.contact {
-		.link {
-			color: rgba(255, 255, 255, 0.5);
-		}
-	}
 	.links-list {
 		grid-column: 7/span 3;
 	}
