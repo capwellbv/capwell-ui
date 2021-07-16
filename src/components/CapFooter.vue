@@ -43,7 +43,6 @@
 <script>
 import { scssPrefix } from '../styles/_variables.scss';
 import CapContainer from './CapContainer.vue';
-import CapSeprator from './CapSeprator.vue';
 
 export default {
 	name: 'CapFooter',

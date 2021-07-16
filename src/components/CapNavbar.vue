@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapse, shown: !closed }">
+  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapsed, shown: !closed }">
     <cap-container>
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
@@ -10,8 +10,8 @@
           </div>
           <div class="toggle-btn">
             <slot name="toggle" v-bind="{ toggleMenu, closed }">
-              <align-justify-icon size="25" v-if="closed" @click.prevent="toggleMenu" class="menu-icon"></align-justify-icon>
-              <x-icon size="25" v-else @click.prevent="toggleMenu" class="close-icon"></x-icon>
+              <align-justify-icon size="25" v-if="closed" @click.prevent="toggleMenu" class="toggle-icon"></align-justify-icon>
+              <x-icon size="25" v-else @click.prevent="toggleMenu" class="toggle-icon"></x-icon>
             </slot>
           </div>
         </div>
@@ -19,7 +19,7 @@
           <ul class="cap-navbar-links">
             <slot />
           </ul>
-          <ul v-if="isCollapse" class="cap-navbar-contact">
+          <ul v-if="isCollapsed" class="cap-navbar-contact">
             <slot name="contact"></slot>
           </ul>
         </div>
@@ -50,7 +50,7 @@ export default {
       hasScrolled: false,
       showShadow: false,
       prevScrollTop: 85,
-      isCollapse: false
+      isCollapsed: false
     };
   },
   components: {
@@ -61,8 +61,12 @@ export default {
 
   mounted() {
     this.checkMedia();
-    window.onresize = this.checkMedia;
+    window.addEventListener("resize", this.checkMedia);
     window.addEventListener("scroll", this.showNavbar);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.checkMedia);
+    window.removeEventListener("scroll", this.showNavbar);
   },
 
   methods: {
@@ -74,9 +78,9 @@ export default {
       let mql = window.matchMedia(`(max-width: ${this.collapse}px)`);
 
       if (mql.matches) {
-        this.isCollapse = true
+        this.isCollapsed = true
       } else {
-        this.isCollapse = false
+        this.isCollapsed = false
       }
 
       if (mql.matches && !this.closed) {

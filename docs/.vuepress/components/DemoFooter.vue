@@ -11,9 +11,12 @@
 				<a class="link inline-link" href="#">this is a test link</a>
 			</template>
 			<cap-footer-list title="Voor werkgevers" class="links-list">
-				<cap-footer-list-item v-for="item in items" :key="item.text">
-					<chevron-right-icon size="18" class="icon"></chevron-right-icon>
-					<a class="link" href="#">{{ item.text }}</a>
+				<cap-footer-list-item
+					v-for="item in items"
+					:key="item.text"
+					:text="item.text"
+					href="#"
+				>
 				</cap-footer-list-item>
 			</cap-footer-list>
 			<cap-footer-list title="Contact" class="contact">
@@ -53,7 +56,7 @@
 import CapFooter from '../../../src/components/CapFooter.vue';
 import CapFooterListItem from '../../../src/components/CapFooterListItem.vue';
 import CapFooterList from '../../../src/components/CapFooterList.vue';
-import { ChevronRightIcon, MailIcon, PhoneIcon, LinkedinIcon, HomeIcon } from 'vue-feather-icons';
+import { MailIcon, PhoneIcon, LinkedinIcon, HomeIcon } from 'vue-feather-icons';
 
 export default {
 	name: 'DemoFooter',
@@ -70,7 +73,6 @@ export default {
 		CapFooter,
 		CapFooterList,
 		CapFooterListItem,
-		ChevronRightIcon,
 		MailIcon,
 		PhoneIcon,
 		LinkedinIcon,
