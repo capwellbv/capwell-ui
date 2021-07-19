@@ -1,0 +1,158 @@
+.#{$scss-prefix} {
+	&.cap-header {
+		width: 100%;
+		z-index: 100001;
+		transition: all 0.1s ease-in-out;
+		box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+		background-color: $secondary-color-1;
+		font-family: 'Mulish', sans-serif;
+	
+		.cap-grid-container {
+			nav {
+				grid-column: 1 / -1;
+				display: flex;
+				align-items: center;
+				padding: $spacing6 $spacing7;
+	
+				.cap-nav-container {
+					.menu-icon {
+						cursor: pointer;
+					}
+					.close-icon {
+						display: none;
+					}
+				}
+	
+				.cap-nav-item-list {
+					all: unset;
+					list-style-type: none;
+					margin-left: auto;
+					display: flex;
+					align-items: center;
+					margin-bottom: 1px;
+	
+					.cap-nav-item {
+						all: unset;
+						margin-right: $spacing5;
+						width: 100%;
+						line-height: 2;
+						cursor: pointer;
+						color: $darkest-color;
+						padding: 3px 0;
+						font-weight: 700;
+						font-size: 1rem;
+						line-height: 1rem;
+						border-bottom: 2px solid transparent;
+	
+						&:hover {
+							border-bottom-color: $primary-color-4;
+						}
+	
+						&::before {
+							all: unset;
+						}
+					}
+				}
+	
+				.icon-list {
+					display: none;
+				}
+			}
+		}
+		@include forLaptop() {
+			.cap-grid-container {
+				margin: 0 20px;
+	
+				.cap-nav-item-list .cap-nav-item {
+					margin-right: $spacing4;
+				}
+			}
+		}
+	
+		@media (max-width: 1560px) {
+			.cap-grid-container {
+				.cap-nav-item-list .cap-nav-item {
+					margin-right: $spacing5;
+	
+				}
+			}
+		}
+	
+		@media (max-width: 1040px) {
+			height: 70px;
+			box-shadow: none;
+	
+			.cap-grid-container {
+				box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08);
+				background-color: $secondary-color-1;
+				margin: 0;
+	
+				@include forMobile() {
+					padding: 0 20px;
+				}
+	
+				nav {
+					flex-direction: column;
+	
+					&.open {
+						.cap-nav-container {
+							box-shadow: inset 0 -4px 0 0 #f5f2ed;
+							padding-bottom: $spacing6;
+						}
+	
+						.btn-nav {
+							display: inherit;
+						}
+					}
+	
+					.cap-nav-container {
+						align-self: stretch;
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+	
+						.close-icon {
+							cursor: pointer;
+							display: initial;
+						}
+					}
+	
+					.cap-nav-item-list {
+						margin: 0;
+						padding: 0;
+						flex-direction: column;
+						margin-left: 0;
+						width: 100%;
+						text-align: center;
+						max-height: 0;
+						overflow: hidden;
+						opacity: 0;
+						transition: all 0.3s ease-in-out;
+	
+						.cap-nav-item {
+							margin-right: 0;
+							font-weight: 700;
+							font-size: 1rem;
+							line-height: 2;
+	
+							&:hover {
+								background-color: $secondary-color-4;
+								color: $secondary-color-1;
+								border: none;
+							}
+							&:last-child {
+								margin-bottom: 0;
+							}
+						}
+	
+						&.shown {
+							opacity: 1;
+							margin: $spacing7 0;
+							max-height: 500px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -42,7 +42,7 @@ module.exports = {
           '/multiSearchDropdown/',
           '/radio/',
           '/dialog/',
-          '/navbar/',
+          '/header/',
           '/footer/',
           '/slider/',
           '/tabs/',

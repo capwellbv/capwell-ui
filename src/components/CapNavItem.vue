@@ -1,7 +1,7 @@
 <template>
-	<li class="cap-nav-item cap-ui">
+	<div class="cap-nav-item cap-ui">
 		<slot></slot>
-	</li>
+	</div>
 </template>
 
 <script>

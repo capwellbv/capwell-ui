@@ -38,9 +38,3 @@ $p-1: 5px !default;
 $p-2: 10px !default;
 $p-3: 15px !default;
 $p-4: 20px !default;
-
-$navbar-shadow: 0 9px 16px 0 rgba($darkest-color, 0.08) !default;
-
-:export {
-  scssPrefix: $scss-prefix;
-}

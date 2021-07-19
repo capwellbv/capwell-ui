@@ -1,11 +1,11 @@
 <template>
-	<div class="cap-ui cap-container">
+	<div class="cap-nav-bar-nav cap-ui">
 		<slot></slot>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'CapContainer',
+	name: 'CapNavBarNav',
 };
 </script>

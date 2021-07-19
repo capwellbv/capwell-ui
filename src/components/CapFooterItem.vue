@@ -1,11 +1,11 @@
 <template>
-	<div class="cap-ui cap-footer">
+	<div class="cap-ui cap-footer-item">
 		<slot></slot>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'CapFooter',
+	name: 'CapFooterItem',
 };
 </script>
