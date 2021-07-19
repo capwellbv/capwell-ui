@@ -1,9 +1,53 @@
 .#{$scss-prefix} {
 	&.cap-nav-item {
+		margin-right: 50px;
+		display: flex;
+		align-items: center;
 		a {
+			font-size: 16px;
+			line-height: 20px;
+			font-weight: normal;
 			color: $darkest-color;
+			padding: 3px 0;
+			border-bottom: 2px solid transparent;
+			&.router-link-exact-active {
+				color: $primary-color-3;
+				border-bottom-color: $primary-color-3;
+				&:hover {
+					border-bottom-color: $primary-color-3;
+				}
+			}
 			&:hover {
+				border-bottom-color: $secondary-color-3;
+			}
+			&:hover,
+			&:active,
+			&:focus {
 				text-decoration: none;
+			}
+		}
+		@media (max-width: 1200px) {
+      margin-right: 40px;
+    }
+		@media (max-width: 1100px) {
+      a {
+				font-size: 14px;
+			}
+    }
+	}
+}
+
+.cap-navbar.collapse {
+	.#{$scss-prefix} {
+		&.cap-nav-item {
+			margin-top: 30px;
+			margin-right: 0px;
+			&:last-of-type {
+				margin-bottom: 30px;
+			}
+			a {
+				font-size: 18px;
+				line-height: 24px;
 			}
 		}
 	}

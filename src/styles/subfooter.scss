@@ -1,20 +1,2 @@
 .#{$scss-prefix} {
-	&.cap-sub-footer {
-		font-family: 'Montserrat', sans-serif;
-		margin: 0 1rem;
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-	
-		span {
-			font-weight: 500;
-			font-size: 0.8rem;
-			text-transform: uppercase;
-		}
-		@include forMobile() {
-			span {
-				font-size: 0.7rem;
-			}
-		}
-	}
 }
