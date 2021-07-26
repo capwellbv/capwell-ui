@@ -21,8 +21,7 @@ jobs:
           docker push ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
 
       - name: Deploy to cluster
-        uses: steebchen/kubectl@master
+        uses: steebchen/kubectl@v2.0.0
         env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          args: -n docs set image --record deployment/capwell-ui capwell-ui=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
+          config: ${{ secrets.KUBE_CONFIG_DATA }}
+          command: set image -n docs --record deployment/capwell-ui capwell-ui=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
