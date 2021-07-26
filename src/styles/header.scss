@@ -1,0 +1,36 @@
+.#{$scss-prefix} {
+  &.cap-header {
+    min-height: 560px;
+    padding-top: 85px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    .content-container {
+      grid-column: 1/-1;
+    }
+    .header-title {
+      color: $primary-color-4;
+      word-break: break-word;
+      margin-bottom: $spacing4;
+      .underscore {
+        color: $theme-color-1;
+      }
+    }
+    @include forMobile {
+      text-align: center;
+      padding-top: 65px;
+      min-height: 490px;
+      .header-title {
+        margin-bottom: $spacing5;
+        font-size: $font-size-5;
+        line-height: $line-height-6;
+      }
+      .header-lead-text {
+        font-size: $font-size-9;
+        line-height: $line-height-7;
+      }
+    }
+  }
+}
