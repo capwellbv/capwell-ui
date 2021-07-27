@@ -22,6 +22,6 @@ jobs:
 
       - name: Deploy to cluster
         uses: steebchen/kubectl@v2.0.0
-        env:
+        with:
           config: ${{ secrets.KUBE_CONFIG_DATA }}
           command: set image -n docs --record deployment/capwell-ui capwell-ui=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
