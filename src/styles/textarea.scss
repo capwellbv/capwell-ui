@@ -42,14 +42,14 @@
   &.cap-textarea-container{
 
     .cap-textarea {
-      font-family: "Montserrat", sans-serif;
+      font-family: $secondary-fontfamily;
       font-weight: 500;
       outline: none;
       border-radius: 6px;
       background-color: $secondary-color-1;
       border: none;
       box-shadow: 0 0 0 1px #e1ddd0;
-      padding: 1rem;
+      padding: 1.25rem;
       font-size: $font-size-10;
       width: stretch;
         @include forMobile() {

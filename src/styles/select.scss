@@ -29,7 +29,7 @@
       }
   
       @include forMobile() {
-        padding: $spacing5 $spacing6 14px $spacing6;
+        padding: $spacing5 $spacing6 16px $spacing6;
       }
   
       .label {
@@ -53,6 +53,7 @@
         color: $secondary-color-4;
         font-size: $font-size-10;
         line-height: $line-height-11;
+        font-family: $secondary-fontfamily;
         &.chosen {
           color: $primary-color-4;
           font-weight: 700;
