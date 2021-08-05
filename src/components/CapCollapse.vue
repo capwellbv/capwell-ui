@@ -1,16 +1,18 @@
 <template>
-  <div :class="['cap-ui cap-collapse', { 'shown': isActive }]">
-    <div @click="toggle" class="collapse-header">
-      <slot name="header">
-        <cap-title
-          type="heading"
-          size="8"
-          font="bold"
-          class="collapse-title"
-          >{{ title }}</cap-title
-        >
-        <chevron-down-icon size="30" class="collapse-icon"></chevron-down-icon>
-      </slot>
+  <div :id="id" :class="['cap-ui cap-collapse', { 'shown': isActive }]">
+    <div class="collapse-header-wrapper">
+      <div @click="toggle" class="collapse-header">
+        <slot name="header">
+          <cap-title
+            type="heading"
+            size="8"
+            font="bold"
+            class="collapse-title"
+            >{{ title }}</cap-title
+          >
+          <chevron-down-icon size="25" class="collapse-icon"></chevron-down-icon>
+        </slot>
+      </div>
     </div>
     <transition
       name="collapse"
@@ -33,6 +35,11 @@ import CapTitle from "./CapTitle.vue";
 export default {
 	name: 'CapCollapse',
 	props: {
+		id: {
+			type: String,
+      default: null,
+      required: true
+		},
 		title: {
 			type: String,
 			default: null,
@@ -58,7 +65,21 @@ export default {
   },
   methods: {
     toggle() {
-      this.isActive = !this.isActive
+      if (
+        this.$parent &&
+        !this.$parent.multiple &&
+        this.$parent.$el.classList.contains('cap-accordian')
+      ) {
+        this.$parent.$children.forEach((item, index) => {
+          if (this.id == item.id) {
+            this.isActive = !this.isActive
+          } else {
+            item.isActive = false
+          }
+        }) 
+      } else {
+        this.isActive = !this.isActive
+      }
     },
     startTransition(el) {
       el.style.height = el.scrollHeight + 'px'

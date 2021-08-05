@@ -48,7 +48,8 @@ module.exports = {
           '/tabs/',
           '/textarea/',
           '/header/',
-          '/collapse/'
+          '/collapse/',
+          '/accordian/'
         ]
       }
     ]

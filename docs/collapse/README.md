@@ -6,13 +6,13 @@
 
 ```vue
 <template>
-  <cap-collapse title="Collapse title">
+  <cap-collapse id="collapse-example" title="Collapse title">
     <p>this is a demo collapse</p>
   </cap-collapse>
 </template>
 
 <script>
-import CapCollapse from '../../../src/components/CapCollapse.vue';
+import CapCollapse from 'CapCollapse.vue';
 export default {
   name: 'DemoCollapse',
   components: {

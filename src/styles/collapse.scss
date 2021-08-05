@@ -2,16 +2,18 @@
   &.cap-collapse {
     border-radius: 5px;
     border: 1px solid #ebe7de;
-    .collapse-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .collapse-header-wrapper {
       background: $secondary-color-2;
       padding: 26px 30px;
-      cursor: pointer;
-      .collapse-icon {
-        transition: transform 0.2s ease;
-        color: $primary-color-2;
+      .collapse-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        .collapse-icon {
+          transition: transform 0.2s ease;
+          color: $primary-color-2;
+        }
       }
     }
     .collapse-content {
