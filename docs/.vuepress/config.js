@@ -47,7 +47,8 @@ module.exports = {
           '/slider/',
           '/tabs/',
           '/textarea/',
-          '/header/'
+          '/header/',
+          '/collapse/'
         ]
       }
     ]
