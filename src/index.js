@@ -38,6 +38,8 @@ import CapFloatingLabelTextarea from './components/CapFloatingLabelTextarea.vue'
 import CapContainer from './components/CapContainer.vue'
 import CapNavContactItem from './components/CapNavContactItem.vue'
 import CapHeader from './components/CapHeader.vue'
+import CapCollapse from './components/CapCollapse.vue'
+import CapAccordian from './components/CapAccordian.vue'
 
 const components = {
     CapBox,
@@ -79,7 +81,9 @@ const components = {
     CapFloatingLabelTextarea,
     CapContainer,
     CapNavContactItem,
-    CapHeader
+    CapHeader,
+    CapCollapse,
+    CapAccordian
 }
 
 const install = function (Vue, opts = {}) {
