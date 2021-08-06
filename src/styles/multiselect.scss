@@ -18,8 +18,11 @@
       position: relative;
       background-color: $secondary-color-1;
       height: max-content;
-      padding: 0 $p-3 0 $p-2;
+      padding: 0 $p-3 0 $p-4;
       min-height: 60px;
+      @include forMobile() {
+        padding: $spacing6 $spacing6 14px $spacing6;
+      }
       &.active,
       &:focus,
       &:focus-visible {
@@ -56,8 +59,11 @@
       }
   
       .text {
+        color: $secondary-color-4;
         font-size: $font-size-10;
-        line-height: $line-height-13;
+        line-height: $line-height-11;
+        // font-size: $font-size-10;
+        // line-height: $line-height-13;
         width: 100%;
         text-align: left;
         outline: none;

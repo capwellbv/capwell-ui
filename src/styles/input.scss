@@ -107,7 +107,7 @@
       box-shadow: 0 0 0 1px $secondary-color-3;
       z-index: 1;
       position: relative;
-      padding: 0 1rem;
+      padding: 0 1.25rem;
   
       &:focus-within {
         box-shadow: 0 0 0 2px $primary-color-2, 0 4px 12px 0 rgba($primary-color-2, 0.2), 0 17px 47px 0 rgba($darkest-color, 0.15);
@@ -160,13 +160,16 @@
       }
   
       input {
-        font-family: $base-fontfamily;
-        padding: 0px 2px;
+        font-family: $secondary-fontfamily;
+        // padding: 0px 6px;
         border:none;
         display: flex;
         flex-grow: 1;
         height: 100%;
         background: transparent;
+        @include forMobile() {
+          font-size: 14px !important; 
+        }
   
         &::placeholder {
           color: $secondary-color-4;

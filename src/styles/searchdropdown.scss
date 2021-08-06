@@ -1,7 +1,8 @@
 .#{$scss-prefix} {
 	&.cap-search-dropdown{
 		position: relative;
-		font-family: 'Montserrat', sans-serif;
+		// font-family: 'Montserrat', sans-serif;
+		font-family: $secondary-fontfamily;
 		font-weight: 300;
 	
 		@include forMobile() {
@@ -41,8 +42,12 @@
 				background-color: transparent;
 				height: 100%;
 				font-size: $font-size-10;
+				font-family: $secondary-fontfamily;
 				color: $primary-color-4;
-        font-weight: 700;
+        font-weight: 500;
+				@include forMobile() {
+					font-size: 15px;
+				}
 				&::placeholder {
 					color: $secondary-color-4;
 					font-weight: 500;
