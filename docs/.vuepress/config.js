@@ -49,7 +49,8 @@ module.exports = {
           '/textarea/',
           '/header/',
           '/collapse/',
-          '/accordian/'
+          '/accordian/',
+          '/carousel/'
         ]
       }
     ]

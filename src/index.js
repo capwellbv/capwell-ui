@@ -40,6 +40,7 @@ import CapNavContactItem from './components/CapNavContactItem.vue'
 import CapHeader from './components/CapHeader.vue'
 import CapCollapse from './components/CapCollapse.vue'
 import CapAccordian from './components/CapAccordian.vue'
+import CapCarousel from './components/CapCarousel.vue'
 
 const components = {
     CapBox,
@@ -83,7 +84,8 @@ const components = {
     CapNavContactItem,
     CapHeader,
     CapCollapse,
-    CapAccordian
+    CapAccordian,
+    CapCarousel
 }
 
 const install = function (Vue, opts = {}) {
