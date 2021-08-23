@@ -1,12 +1,22 @@
 .#{$scss-prefix} {
   &.cap-nav-contact-item {
     margin-right: 20px;
+    margin-bottom: 0px;
     &:last-child {
       margin: 0;
     }
-    .cap-btn {
+    .nav-contact-link {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 100%;
+      transition: all .3s ease-in-out;
       box-shadow: 0 3px 10px rgba($darkest-color, 0.08);
       border: 2px solid transparent;
+      cursor: pointer;
       .icon {
         color: $primary-color-4;
         transition: all .3s ease-in-out;

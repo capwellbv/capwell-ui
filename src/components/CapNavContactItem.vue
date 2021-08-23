@@ -3,10 +3,9 @@
 		<a
       :href="href"
       v-bind="$attrs"
+      class="nav-contact-link"
     >
-      <cap-button varient="circle" size="lg" >
-        <slot />
-      </cap-button>
+      <slot />
     </a>
 	</li>
 </template>
