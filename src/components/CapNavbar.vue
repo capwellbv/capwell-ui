@@ -59,6 +59,14 @@ export default {
     XIcon
   },
 
+  watch: {
+    $route: {
+      handler() {
+        this.closed = true;
+      }
+    }
+  },
+
   mounted() {
     this.checkMedia();
     window.addEventListener("resize", this.checkMedia);

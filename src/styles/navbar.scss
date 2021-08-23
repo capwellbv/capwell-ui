@@ -8,6 +8,7 @@
     &.shadow {
       box-shadow: $navbar-shadow;
       background-color: $secondary-color-1;
+      z-index: 999999;
     }
     &.down {
       top: -85px;

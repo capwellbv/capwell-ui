@@ -65,6 +65,10 @@
       &.router-link-exact-active {
         text-decoration: none;
       }
+      &::after,
+      &::before {
+        display: none;
+      }
     }
     .icon {
       min-width: 20px;

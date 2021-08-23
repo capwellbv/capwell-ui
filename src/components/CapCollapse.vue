@@ -63,6 +63,9 @@ export default {
       this.isActive = val
     }
   },
+  mounted() {
+    this.isActive = this.active
+  },
   methods: {
     toggle() {
       if (
