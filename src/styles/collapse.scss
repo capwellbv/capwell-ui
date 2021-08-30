@@ -1,9 +1,9 @@
 .#{$scss-prefix} {
   &.cap-collapse {
-    border-radius: 5px;
+    border-radius: 6px;
     border: 1px solid #ebe7de;
     .collapse-header-wrapper {
-      background: $secondary-color-2;
+      background: #ebe7de;
       padding: 26px 30px;
       .collapse-header {
         display: flex;
@@ -19,11 +19,14 @@
     .collapse-content {
       padding: 0 30px;
       overflow: hidden;
-      background-color: rgba($secondary-color-2, 0.7);
+      background-color: $secondary-color-2;
     }
     &.shown {
       .collapse-icon {
         transform: rotate(180deg);
+      }
+      .collapse-header-wrapper {
+        background-color: $secondary-color-2;
       }
     }
     .collapse-enter-active,
