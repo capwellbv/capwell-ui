@@ -1,4 +1,5 @@
 .#{$scss-prefix} {
+  &.cap-radio-group {
     &.vertical {
       display: flex;
       flex-direction: column;
@@ -11,7 +12,7 @@
       display: flex;
       @include forMobile() {
         flex-direction: column;
-       
+        
         .radio-wrapper {
           margin-bottom: $p-1;
         }
@@ -19,35 +20,68 @@
       .radio-wrapper {
         margin-right: $p-2;
       }
-    }
-  &.cap-radio {  
+    } 
+  }
+  &.cap-radio {
     .radio-wrapper {
       display: flex;
       align-items: center;
+      width: fit-content;
     }
-  }
+    .radio-label {
+      font-family: $secondary-fontfamily;
+      font-weight: normal;
+      font-size: $font-size-9;
+      line-height: $line-height-8;
+      color: $darkest-color;
+    }
     .radio-input {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px !important;
-      margin: 0;
-      cursor: pointer;
-        &:checked ~ * { 
-          font-weight: 700;
-          color: #002c3d;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      margin: 0 15px 0 0;
+      &::before {
+        content: '';
+        width: 32px;
+        height: 32px;
+        position: absolute;
+        background: $secondary-color-1;
+        border: 1px solid $secondary-color-3;
+        border-radius: 100%;
+        box-sizing: border-box;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+        left: 0;
+        top: 0;
       }
-        &:focus {
-          outline: 0 none;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border-radius: 100%;
+        box-sizing: border-box;
+        background: $primary-color-2;
+        box-shadow: 0px 2px 5px rgba(0, 148, 205, 0.2), 0px 15px 45px rgba(0, 0, 0, 0.15);
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+      }
+      &:checked {
+        &::after {
+          opacity: 1;
+        }
+        &::before {
+          border: 2px solid #0094CD;
+          box-shadow: 0px 2px 5px rgba(0, 148, 205, 0.2), 0px 15px 45px rgba(0, 0, 0, 0.15);
+        }
+        &+ .radio-label {
+          font-weight: $font-bold;
+          color: $primary-color-4;
         }
       }
-    .radio-label {
-      font-size: .875rem;
-      line-height: 2.5rem;
-      font-family: Mulish;
-      color: #aba195;
-      &:checked {
-        font-weight: 700;
-        color: #002c3d;
-      }
     }
   }
+}
