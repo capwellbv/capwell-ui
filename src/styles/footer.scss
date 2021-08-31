@@ -1,8 +1,8 @@
 .#{$scss-prefix} {
   &.cap-footer {
     padding: 120px 0 60px 0;
+    background-color: rgba($darkest-color, 0.9);
     &-primary {
-      background-color: $primary-color-4;
       .icon {
         color: $primary-color-2;
       }
@@ -18,7 +18,6 @@
       }
     }
     &-secondary {
-      background-color: rgba($darkest-color, 0.9);
       .icon {
         color: #821a74;
       }
@@ -56,7 +55,7 @@
       padding-bottom: 3px;
       border-bottom: 2px solid transparent;
       &.inline-link {
-        border-bottom: 2px solid rgba($secondary-color-1, 0.1);
+        border-bottom: 2px solid rgba($secondary-color-1, 0.2);
       }
       &:hover,
       &:focus,
