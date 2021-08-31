@@ -12,8 +12,8 @@
             :placeholder="placeholder"
             class="input"
             aria-haspopup="listbox"
-            @click="show"
-            @keyup.tab="show"
+            @click="handleFocus"
+            @keyup.tab="handleFocus"
             @keydown.tab="hide"
             @keyup.esc="hide"
           />
@@ -23,22 +23,10 @@
             @click="remove" size="20"
           >
           </x-icon>
-          <template v-if="chevron">
-            <chevron-down-icon
-              v-if="!showOptions"
-              @click="show"
-              size="20"
-              class="icon"
-            ></chevron-down-icon>
-            <chevron-up-icon
-              v-if="showOptions"
-              @click="hide"
-              size="20"
-              class="icon"
-            ></chevron-up-icon>
-          </template>
-          <div class="append" v-if="$slots.append || append">
-            <slot name="append">{{ append }}</slot>
+          <div class="append" v-if="$slots.append || iconRight">
+            <slot name="append" v-bind="{ showOptions, hide }">
+              <search-icon size="20" class="search-icon icon"></search-icon>
+            </slot>
           </div>
         </div>
         <ul role="listbox" tabindex="-1" v-if="showOptions">
@@ -62,15 +50,14 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
+import { XIcon, SearchIcon } from "vue-feather-icons";
 import CapOnClickAway from "./CapOnClickAway.vue";
 
 export default {
   name: "CapSearchDropdown",
   components: {
     XIcon,
-    ChevronDownIcon,
-    ChevronUpIcon,
+    SearchIcon,
     CapOnClickAway,
   },
   model: {
@@ -98,7 +85,7 @@ export default {
       type: Boolean,
       default: true
     },
-    chevron : {
+    iconRight : {
       type: Boolean,
       default: true
     },
@@ -109,6 +96,10 @@ export default {
     append: {
       type: String,
       default: null
+    },
+    showOnFocus: {
+      type: Boolean,
+      default: true
     }
   },
 
@@ -153,6 +144,11 @@ export default {
     },
     show() {
       this.showOptions = true;
+    },
+    handleFocus() {
+      if (this.showOnFocus) {
+        this.show();
+      }
     },
 
     hide() {

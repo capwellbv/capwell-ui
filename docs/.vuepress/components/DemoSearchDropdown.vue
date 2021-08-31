@@ -18,7 +18,8 @@
     <cap-search-dropdown
       v-model="selectdSkill1"
       :options="items"
-      :chevron="false"
+      :icon-right="false"
+      :show-on-focus="false"
       class="filter-jobs-options"
       placeholder="Search skills"
     >
