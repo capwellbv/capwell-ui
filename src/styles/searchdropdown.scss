@@ -8,6 +8,17 @@
 		@include forMobile() {
 			width: 100%;
 		}
+		.searchable-select {
+			&.rounded {
+				.select-container {
+					border-radius: 30px;
+				}
+				ul {
+					border-top-left-radius: 30px;
+					border-top-right-radius: 30px;
+				}
+			}
+		}
 		.select-container {
 			display: flex;
 			align-items: center;
@@ -39,12 +50,7 @@
 				&.remove-icon {
 					cursor: pointer;
 				}
-			}
-
-			&.rounded {
-				border-radius: 30px;
-			}
-	
+			}	
 			.input {
 				width: 100%;
 				height: auto;
@@ -96,7 +102,10 @@
 			padding-top: 55px;
 			width: 100%;
       z-index: -1;
-		
+			&.scrollable {
+				max-height: 370px;
+				overflow-y: auto;
+			}
 			li {
 				all: unset;
 				padding: $spacing6;

@@ -1,7 +1,7 @@
 <template>
   <div class="cap-ui cap-search-dropdown">
     <cap-on-click-away :do="hide">
-      <div class="searchable-select" :class="{ active: showOptions }">
+      <div class="searchable-select" :class="{ rounded, active: showOptions }">
         <div class="select-container" :class="{ rounded, 'active': showOptions }">
           <div class="prepend" v-if="$slots.prepend || prepend">
             <slot name="prepend">{{ prepend }}</slot>
@@ -29,11 +29,11 @@
             </slot>
           </div>
         </div>
-        <ul role="listbox" tabindex="-1" v-if="showOptions">
+        <ul role="listbox" tabindex="-1" v-if="showOptions" :class="{ scrollable }">
           <li
             role="option"
             @click="select(option)"
-            v-for="(option, i) in filteredOptions"
+            v-for="(option, i) in filteredOptions.slice(0, maxItems || filteredOptions.length)"
             :key="i"
           >
             <slot name="listitem" v-bind="{ option, searchQuery }">
@@ -100,6 +100,14 @@ export default {
     showOnFocus: {
       type: Boolean,
       default: true
+    },
+    maxItems: {
+      type: Number,
+      default: null
+    },
+    scrollable: {
+      type: Boolean,
+      default: false
     }
   },
 
