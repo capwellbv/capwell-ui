@@ -6,7 +6,7 @@
           <div class="select-items">
             <span v-for="value in values" :key="value"
               >{{ value }}
-              <x-icon @click="select(value)" size="1.2x" class="icon"></x-icon
+              <x-icon @click="select(value)" size="16" class="icon"></x-icon
             ></span>
             <input
               ref="searchInput"
@@ -21,20 +21,12 @@
               @keyup.esc="hide"
             />
           </div>
-          <div>
-            <chevron-down-icon
-              v-if="!showOptions"
-              @click="show"
-              size="20"
-              class="icon-feather"
-            ></chevron-down-icon>
-            <chevron-up-icon
-              v-if="showOptions"
-              @click="hide"
-              size="20"
-              class="icon-feather"
-            ></chevron-up-icon>
-          </div>
+          <chevron-down-icon
+            @click="showOptions = !showOptions"
+            size="20"
+            class="icon-feather"
+          >
+          </chevron-down-icon>
         </div>
         <ul role="listbox" tabindex="-1" v-if="showOptions">
           <li
@@ -54,14 +46,13 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
+import { ChevronDownIcon, XIcon } from "vue-feather-icons";
 import CapOnClickAway from "./CapOnClickAway.vue";
 
 export default {
   name: "CapMultiSearchDropdown",
   components: {
     ChevronDownIcon,
-    ChevronUpIcon,
     CapOnClickAway,
     XIcon,
   },
@@ -150,11 +141,10 @@ export default {
     addSelected(value) {
       if (!this.values.includes(value)) {
         this.values.push(value);
-		return;
+	    	return;
       }
-
-	  let index = this.values.indexOf(value);
-	  this.values.splice(index, 1);
+      let index = this.values.indexOf(value);
+      this.values.splice(index, 1);
     },
   },
 };

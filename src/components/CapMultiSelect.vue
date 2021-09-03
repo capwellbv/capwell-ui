@@ -13,11 +13,11 @@
           <span class="text" v-if="!values.length">{{placeholder}}</span>
           <span class="select-item" v-for="(item, index) in values" :key="index">
             {{item}}
-            <x-icon @click="select(item)" size="14" class="cross-icon"></x-icon>
+            <x-icon @click="select(item)" size="16" class="cross-icon"></x-icon>
           </span>
         </div>
-        <chevron-up-icon v-if="showOptions" size="20" class="icon"></chevron-up-icon>
-        <chevron-down-icon v-else  size="20" class="icon"></chevron-down-icon>
+        <chevron-down-icon @click="toggle" size="20" class="icon">
+        </chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li></li>
