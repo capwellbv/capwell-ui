@@ -30,8 +30,10 @@
 			height: 60px;
 			box-sizing: border-box;
 			&.active {
-				box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
-				border: 2px solid $primary-color-2;
+				// box-shadow: 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+				// border: 2px solid $primary-color-2;
+				border-color: $primary-color-2;
+        box-shadow: inset 0 0 0 1px $primary-color-2, 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
 			}
 			.prepend,
 			.append {
@@ -67,7 +69,8 @@
 				}
 				&::placeholder {
 					color: $secondary-color-4;
-					font-weight: 500;
+					font-family: $secondary-fontfamily;
+					font-weight: normal;
 				}
 	
 				&:focus {
@@ -93,11 +96,11 @@
 			position: absolute;
 			left: 0;
 			top: 0;
-			border: 1px solid #E1DDD0;
+			border: 1px solid $secondary-color-3;
 			box-sizing: border-box;
       background-color: $secondary-color-1;
 			box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
-			border-radius: 0 0 6px 6px;
+			border-radius: 6px;
       margin-bottom: $spacing4;
 			padding-top: 55px;
 			width: 100%;
@@ -130,7 +133,7 @@
 				}
 		
 				&:nth-child(1) {
-					margin-top: 8px;
+					margin-top: 5px;
 				}
 			}
 		}

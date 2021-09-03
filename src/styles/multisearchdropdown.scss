@@ -10,7 +10,9 @@
     .searchable-select {
       &.active {
         .select-container {
-          box-shadow: 0 0 0 2px $primary-color-2, 0 4px 7px 0 rgba($primary-color-2, 0.2), 0 17px 47px 0 rgba($darkest-color, 0.15);
+        border-color: $primary-color-2;
+        box-shadow: inset 0 0 0 1px $primary-color-2, 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
+        outline: none;
         }
         .select-container {
           .icon-feather {
@@ -20,19 +22,25 @@
       }
     }
     .select-container {
+      position: relative;
+      z-index: 1002;
       display: flex;
       align-items: center;
       border-radius: 6px;
       justify-content: space-between;
-      padding: 0px $p-4 0 $p-2;
-      box-shadow: 0 0 0 1px $secondary-color-3, 0 4px 11px 0 rgba($darkest-color, 0.08);
+      padding: 0px $p-3 0 $p-2;
+      border: 1px solid #e1ddd0;
+      background-color: $secondary-color-1;
+      box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
       min-height: 60px;
       box-sizing: border-box;
-      .icon-feather {
-        color: $primary-color-2;
-        transition: 0.1s ease-in-out;
+      .icon-wrapper {
+        display: flex;
+        .icon-feather {
+          color: $primary-color-2;
+          transition: 0.1s ease-in-out;
+        }
       }
-
       .select-items {
 		    width: 100%;
         display: flex;
@@ -86,13 +94,13 @@
         flex-grow: 1;
 		    font-family: $secondary-fontfamily;
         color: $primary-color-4;
-        padding: 18px $p-2;
+        padding: 16px $p-2;
         @include forMobile() {
           font-size: 15px;
         }
         &::placeholder {
 					color: $secondary-color-4;
-					font-weight: 500;
+					font-weight: 400;
 				}
         &:focus {
           outline: none;
@@ -118,14 +126,15 @@
       width: 100%;
       position: absolute;
       left: 0;
-      border-radius: 6px;
       margin-bottom: $spacing4;
       background-color: $secondary-color-1 !important;
       z-index: 100;
-      border: 2px solid $primary-color-2;
-      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
-      margin-top: 5px;
-      z-index: 10001;
+      margin-top: -20px;
+      padding-top: 20px;
+      border: 1px solid $secondary-color-3;
+      box-sizing: border-box;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 0 0 6px 6px;
   
       li {
         all: unset;

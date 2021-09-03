@@ -12,15 +12,16 @@
         <div class="label">
           <span class="text" v-if="!values.length">{{placeholder}}</span>
           <span class="select-item" v-for="(item, index) in values" :key="index">
-            {{item}}
+            <span>{{item}}</span>
             <x-icon @click="select(item)" size="16" class="cross-icon"></x-icon>
           </span>
         </div>
-        <chevron-down-icon @click="toggle" size="20" class="icon">
-        </chevron-down-icon>
+        <div class="icon-wrapper">
+          <chevron-down-icon @click="toggle" size="20" class="icon">
+          </chevron-down-icon>
+        </div>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
-        <li></li>
         <li
           @keyup.enter="select(option)"
           v-for="(option, i) in options"
@@ -107,8 +108,7 @@ export default {
         this.values.splice(index, 1)
       }
       this.$emit("change", this.values);
-    },
-    
+    }
   },
 };
 </script>

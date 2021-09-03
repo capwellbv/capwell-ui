@@ -21,12 +21,14 @@
               @keyup.esc="hide"
             />
           </div>
-          <chevron-down-icon
-            @click="showOptions = !showOptions"
-            size="20"
-            class="icon-feather"
-          >
-          </chevron-down-icon>
+          <div class="icon-wrapper">
+            <chevron-down-icon
+              @click="showOptions = !showOptions"
+              size="20"
+              class="icon-feather"
+            >
+            </chevron-down-icon>
+          </div>
         </div>
         <ul role="listbox" tabindex="-1" v-if="showOptions">
           <li
@@ -36,7 +38,7 @@
             :key="i"
             :class="{'selected': values.includes(option)}"
           >
-            {{ option }}
+            <div v-html="getHtml(option)"></div>
           </li>
           <p v-if="filteredOptions.length <= 0" class="no-reults-found">No results found</p>
         </ul>
@@ -117,7 +119,6 @@ export default {
           option.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
       }
-
       return this.options;
     },
   },
@@ -145,6 +146,10 @@ export default {
       }
       let index = this.values.indexOf(value);
       this.values.splice(index, 1);
+    },
+    getHtml(option) {
+      if (!this.searchQuery) return option
+      return option.replace(new RegExp(`(\)(${this.searchQuery})(\)`,'gi'), '$1<b>$2</b>$3');
     },
   },
 };
