@@ -1,7 +1,6 @@
 <template>
   <div>
     <cap-multi-search-dropdown
-      style="margin-top: 20px"
       v-model="skills"
       :options="items"
       placeholder="Search skills"

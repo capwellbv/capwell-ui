@@ -1,7 +1,5 @@
 # Search Dropdown
 
-### Usage
-
 <demo-search-dropdown></demo-search-dropdown>
 
 ::: details Preview the code

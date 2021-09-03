@@ -1,6 +1,5 @@
 <template>
   <div>
-    </br>
     <cap-search-dropdown
       v-model="selectdSkill"
       :options="items"
