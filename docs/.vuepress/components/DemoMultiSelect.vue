@@ -1,7 +1,6 @@
 <template>
   <div>
     <cap-multi-select
-      style="margin-top: 20px"
       v-model="skills"
       :options="items"
       label="Search skills"

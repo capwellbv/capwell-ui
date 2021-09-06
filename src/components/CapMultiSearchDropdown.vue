@@ -6,7 +6,7 @@
           <div class="select-items">
             <span v-for="value in values" :key="value"
               >{{ value }}
-              <x-icon @click="select(value)" size="1.2x" class="icon"></x-icon
+              <x-icon @click="select(value)" size="16" class="icon"></x-icon
             ></span>
             <input
               ref="searchInput"
@@ -21,19 +21,13 @@
               @keyup.esc="hide"
             />
           </div>
-          <div>
+          <div class="icon-wrapper">
             <chevron-down-icon
-              v-if="!showOptions"
-              @click="show"
+              @click="showOptions = !showOptions"
               size="20"
               class="icon-feather"
-            ></chevron-down-icon>
-            <chevron-up-icon
-              v-if="showOptions"
-              @click="hide"
-              size="20"
-              class="icon-feather"
-            ></chevron-up-icon>
+            >
+            </chevron-down-icon>
           </div>
         </div>
         <ul role="listbox" tabindex="-1" v-if="showOptions">
@@ -44,7 +38,7 @@
             :key="i"
             :class="{'selected': values.includes(option)}"
           >
-            {{ option }}
+            <div v-html="getHtml(option)"></div>
           </li>
           <p v-if="filteredOptions.length <= 0" class="no-reults-found">No results found</p>
         </ul>
@@ -54,14 +48,13 @@
 </template>
 
 <script>
-import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
+import { ChevronDownIcon, XIcon } from "vue-feather-icons";
 import CapOnClickAway from "./CapOnClickAway.vue";
 
 export default {
   name: "CapMultiSearchDropdown",
   components: {
     ChevronDownIcon,
-    ChevronUpIcon,
     CapOnClickAway,
     XIcon,
   },
@@ -126,7 +119,6 @@ export default {
           option.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
       }
-
       return this.options;
     },
   },
@@ -150,11 +142,14 @@ export default {
     addSelected(value) {
       if (!this.values.includes(value)) {
         this.values.push(value);
-		return;
+	    	return;
       }
-
-	  let index = this.values.indexOf(value);
-	  this.values.splice(index, 1);
+      let index = this.values.indexOf(value);
+      this.values.splice(index, 1);
+    },
+    getHtml(option) {
+      if (!this.searchQuery) return option
+      return option.replace(new RegExp(`(\)(${this.searchQuery})(\)`,'gi'), '$1<b>$2</b>$3');
     },
   },
 };

@@ -1,14 +1,15 @@
 <template>
   <div class="cap-ui cap-slider">
-    <button
+    <cap-button
       v-show="items.length > 3 && !disableLeft"
       @click="slideLeft"
-      type="button"
+      varient="circle"
+      size="lg"
       class="navigation-btn left"
       style="margin-left: auto"
     >
-      <chevron-left-icon size="1.5x" class="navigation-icon"></chevron-left-icon>
-    </button>
+      <chevron-left-icon size="25" class="navigation-icon icon"></chevron-left-icon>
+    </cap-button>
     <div ref="slider" class="cap-panel-slider hide-scrollbar">
       <cap-card
         :bordered="true"
@@ -45,14 +46,23 @@
       </cap-card>
       <slot></slot>
     </div>
-    <button
+    <cap-button
+      v-if="items.length > 3 && !disableRight"
+      @click="slideRight"
+      varient="circle"
+      size="lg"
+      type="button"
+      class="navigation-btn right"
+    >
+    <!-- <button
       v-if="items.length > 3 && !disableRight"
       @click="slideRight"
       type="button"
       class="navigation-btn right"
-    >
-      <chevron-right-icon size="1.5x" class="navigation-icon"></chevron-right-icon>
-    </button>
+    > -->
+      <chevron-right-icon size="25" class="navigation-icon icon"></chevron-right-icon>
+    <!-- </button> -->
+    </cap-button>
   </div>
 </template>
 

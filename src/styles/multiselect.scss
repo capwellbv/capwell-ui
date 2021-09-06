@@ -1,7 +1,7 @@
 .#{$scss-prefix} {
   &.cap-multi-select {
     position: relative;
-    font-family: $base-fontfamily;
+    font-family: $secondary-fontfamily;
     font-weight: 300;
     height: max-content;
   
@@ -14,61 +14,70 @@
       box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
       border-radius: 6px;
       white-space: nowrap;
+      z-index: 1006;
       cursor: pointer;
       position: relative;
       background-color: $secondary-color-1;
       height: max-content;
-      padding: 0 $p-3 0 $p-4;
+      padding: 0 $p-3 0 $p-2;
       min-height: 60px;
-      @include forMobile() {
-        padding: $spacing6 $spacing6 14px $spacing6;
-      }
-      &.active,
-      &:focus,
-      &:focus-visible {
-        border: 1px solid $primary-color-2;
-        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba($darkest-color, 0.08);
+      &.active {
+        border-color: $primary-color-2;
+        box-shadow: inset 0 0 0 1px $primary-color-2, 0 2px 5px 0 rgba(0,148,205,0.2), 0 15px 45px 0 rgba(0,0,0,0.15);
         outline: none;
-        @include forMobile() {
-          box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
-          border: 1px solid $primary-color-2;
+      }
+      &.active {
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+      .icon-wrapper {
+        display: flex;
+        .icon {
+          transition: 0.2s ease-in-out;
         }
       }
       .label {
         display: flex;
         flex-wrap: wrap;
         .select-item {
-          font-size: 14px;
-          padding: $p-2 $p-3;
-          border-radius: 18px;
-          background-color: $primary-color-3;
-          margin: 5px 10px 5px 0;
           display: flex;
           align-items: center;
-          color: $secondary-color-1;
+          font-size: 14px;
+          font-weight: $font-bold;
+          font-family: $secondary-fontfamily;
+          color: $darkest-color;
+          padding: 0 $p-3 0 $p-4;
+          height: 40px;
+          margin: 5px 10px 5px 0;
+          box-sizing: border-box;
+          border: 1px solid $secondary-color-3;
+          border-radius: 20px;
+          background-color: $secondary-color-1;
           .cross-icon {
             margin-left: $spacing8;
             cursor: pointer;
-            opacity: 0.7;
-  
-            &:hover {
-              opacity: 1;
+            color: $secondary-color-4;
+          }
+          &:hover {
+            box-shadow: 0 3px 10px 0 rgba(0,0,0,0.08);
+            .cross-icon {
+              color: #0089be;
             }
           }
         }
       }
   
       .text {
+        font-family: $secondary-fontfamily;
         color: $secondary-color-4;
         font-size: $font-size-10;
         line-height: $line-height-11;
-        // font-size: $font-size-10;
-        // line-height: $line-height-13;
         width: 100%;
         text-align: left;
         outline: none;
         border: none;
-  
+        padding-left: $p-2;
         &.chosen {
           color: $primary-color-4;
         }
@@ -97,73 +106,36 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      border: 2px solid $primary-color-2;
       background-color: $secondary-color-1;
-      width: calc(100% - 4px);
-      border-radius: 6px;
-      margin-bottom: $spacing4;
-      background-color: $secondary-color-1 !important;
+      width: 100%;
       z-index: 1005;
-      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
-      margin-top: 5px;
-  
-      @include forMobile() {
-        border: 1px solid $primary-color-2;
-        width: calc(100% - 2px);
-      }
-      
+      margin-top: -20px;
+      padding-top: 20px;
+      border: 1px solid $secondary-color-3;
+      box-sizing: border-box;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 0 0 6px 6px;
       li {
         all: unset;
         padding: $spacing6;
         color: $primary-color-4;
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 18px;
+        line-height: 20px;
         font-weight: normal;
         cursor: pointer;
-  
-        
         &.selected {
-          background-color: rgba($secondary-color-2, 0.5);
           font-weight: 700;
         }
-  
+        
         @include forMobile() {
           font-size: 15px;
           line-height: 15px;
           padding: 15px $spacing6;
         }
-  
+        
+        &.selected,
         &:hover {
           background-color: rgba($secondary-color-2, 0.5);
-        }
-  
-        &:nth-child(1) {
-          cursor: auto;
-          color: $secondary-color-4;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-radius: 6px;
-          font-weight: normal;
-          padding: 0;
-          padding-left: $spacing6;
-  
-          .icon {
-            color: $primary-color-2 !important;
-            font-size: 20px !important;
-            line-height: 20px !important;
-            margin-right: 1px;
-            cursor: pointer;
-            padding: $spacing6;
-  
-            @include forMobile() {
-              padding: 15px $spacing6;
-            }
-          }
-  
-          &:hover {
-            background-color: $secondary-color-1;
-          }
         }
       }
     }

@@ -1,7 +1,7 @@
 .#{$scss-prefix} {
   &.cap-select {
     position: relative;
-    font-family: $base-fontfamily;
+    font-family: $secondary-fontfamily;
     font-weight: 300;
   
     button {
@@ -16,18 +16,9 @@
       cursor: pointer;
       position: relative;
       background-color: $secondary-color-1;
-      padding: $spacing6;
-
-      &:focus {
-        border: 1px solid $primary-color-2;
-        box-shadow: 0 0 0 1px $primary-color-2, 0 5px 12px 0 rgba($darkest-color, 0.08);
-  
-        @include forMobile() {
-          box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
-          border: 1px solid $primary-color-2;
-        }
-      }
-  
+      padding: 0 $spacing6;
+      box-sizing: border-box;
+      height: 60px;
       @include forMobile() {
         padding: $spacing5 $spacing6 16px $spacing6;
       }
@@ -105,16 +96,17 @@
   
       li {
         all: unset;
-        padding: $spacing6;
+        padding: 19px $spacing6;
         color: $primary-color-4;
-        font-size: 1.25rem;
-        line-height: 1.25rem;
+        font-size: 18px;
+        line-height: 20px;
         font-weight: normal;
         cursor: pointer;
   
         &.selected {
           color: $darkest-color;
           background-color: rgba($secondary-color-2, 0.5);
+          font-weight: $font-bold;
         }
   
         @include forMobile() {
@@ -135,18 +127,15 @@
           align-items: center;
           border-radius: 6px;
           font-weight: normal;
-          padding: 0;
-          padding-left: $spacing6;
-  
+          padding: 0 19px;
+          height: 60px;
+          span {
+            margin-top: -3px;
+          }
           .icon {
+            margin-top: -3px;
             color: $primary-color-2 !important;
-            font-size: 16px !important;
-            line-height: 16px !important;
-            margin-right: $spacing8;
-            margin-bottom: $spacing8;
             cursor: pointer;
-            padding: $spacing8;
-  
             @include forMobile() {
               padding: $spacing7 $spacing6;
             }

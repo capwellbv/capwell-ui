@@ -70,6 +70,7 @@ Examples:
 <cap-button varient="circle" size="lg" ><span class="icon">></span></cap-button>
 <cap-button varient="circle" size="md" ><span class="icon">></span></cap-button>
 <cap-button varient="circle" size="sm" ><span class="icon">></span></cap-button>
+<cap-button varient="circle" size="lg" disabled ><span class="icon">></span></cap-button>
 
 ::: details Preview the code
 ```vue

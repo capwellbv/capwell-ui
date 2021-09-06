@@ -1,28 +1,21 @@
 <template>
-	<div class="cap-ui cap-link">
-		<a :class="size" v-bind="$attrs" class="link">
-			<slot />
-		</a>
-		<div v-if="$slots.icon" class="link link-icon">
-			<slot name="icon"></slot>
-		</div>
-	</div>
+	<a v-bind="$attrs" :class="['cap-ui cap-link', { inline }]">
+		<slot />
+	</a>
 </template>
 
 <script>
 export default {
 	name: 'CapLink',
 	inheritAttrs: false,
-	data() {
-		return {
-			hover: false,
-		};
-	},
 	props: {
-		size: {
-			type: String,
-			default: 'medium',
-		},
+		inline: {
+			type: Boolean,
+			default: false
+		}
+	},
+	data() {
+		return {};
 	}
 };
 </script>
