@@ -43,7 +43,7 @@ export default {
   data() {
     return {
       selectdSkill1: null,
-      selectdSkill: null,
+      selectdSkill: "Dot NET ontwikkelaars",
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",

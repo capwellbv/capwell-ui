@@ -16,14 +16,17 @@
             @keyup.tab="handleFocus"
             @keydown.tab="hide"
             @keyup.esc="hide"
+            @keyup.enter="handleEnter"
+            @keydown.down.prevent="handleArrowDown"
+            @keydown.up.prevent="handleArrowUp"
           />
           <x-icon 
-            v-show="value && showRemoveIcon" 
+            v-show="searchQuery && showRemoveIcon"
             class="icon remove-icon"
             @click="remove" size="20"
           >
           </x-icon>
-          <div class="append" v-if="$slots.append || iconRight">
+          <div class="append" v-if="($slots.append || iconRight) && (!searchQuery || !showRemoveIcon)">
             <slot name="append" v-bind="{ showOptions, hide }">
               <search-icon size="20" class="search-icon icon"></search-icon>
             </slot>
@@ -35,6 +38,7 @@
             @click="select(option)"
             v-for="(option, i) in filteredOptions.slice(0, maxItems || filteredOptions.length)"
             :key="i"
+            :class="{ 'active': activeItemIndex === i }"
           >
             <slot name="listitem" v-bind="{ option, searchQuery }">
               <div v-html="getHtml(option)"></div>
@@ -115,6 +119,7 @@ export default {
     return {
       searchQuery: null,
       showOptions: false,
+      activeItemIndex: 0,
     };
   },
 
@@ -172,7 +177,25 @@ export default {
     remove() {
       this.searchQuery = null
       this.$emit('change', null)
-    }
+    },
+    handleEnter() {
+      if (!this.filteredOptions.length) return
+      this.select(this.filteredOptions[this.activeItemIndex]);
+    },
+    handleArrowDown() {
+      if (this.activeItemIndex >= this.filteredOptions.length - 1) {
+        this.activeItemIndex = 0
+      } else {
+        this.activeItemIndex += 1
+      }
+    },
+    handleArrowUp() {
+      if (this.activeItemIndex === 0) {
+        this.activeItemIndex = this.filteredOptions.length - 1
+      } else {
+        this.activeItemIndex -= 1
+      }
+    },
   },
 };
 </script>
