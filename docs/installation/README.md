@@ -4,7 +4,7 @@ Add package as a dependency inside your `package.json` file.
 
 ```json
 "dependencies": {
-    "@capwellbv/capwell-ui": "^1.0.3"
+    "@capwellbv/capwell-ui": "^1.0.4"
   }
 ```
 Run install.
