@@ -19,13 +19,23 @@
               @keyup.tab="show"
               @keydown.tab="hide"
               @keyup.esc="hide"
+              @keydown.enter.prevent="handleEnter"
+              @keydown.down.prevent="handleArrowDown"
+              @keydown.up.prevent="handleArrowUp"
             />
           </div>
           <div class="icon-wrapper">
+            <x-icon
+              v-if="values.length"
+              class="icon remove-icon"
+              @click="clear" size="20"
+            >
+            </x-icon>
             <chevron-down-icon
+              v-else
               @click="showOptions = !showOptions"
               size="20"
-              class="icon-feather"
+              class="icon icon-feather"
             >
             </chevron-down-icon>
           </div>
@@ -36,7 +46,7 @@
             @click="select(option)"
             v-for="(option, i) in filteredOptions"
             :key="i"
-            :class="{'selected': values.includes(option)}"
+            :class="{'selected': values.includes(option), 'active': activeItemIndex === i }"
           >
             <div v-html="getHtml(option)"></div>
           </li>
@@ -88,6 +98,7 @@ export default {
       searchQuery: null,
       showOptions: false,
       values: [],
+      activeItemIndex: 0
     };
   },
 
@@ -103,6 +114,7 @@ export default {
   watch: {
     searchQuery(value) {
       if (!value) return
+      this.activeItemIndex = 0
       if (value === this.value) return
       if (!this.showOptions) this.show()
       this.$emit('onFilterChange', value)
@@ -130,6 +142,7 @@ export default {
 
     hide() {
       this.showOptions = false;
+      this.activeItemIndex = 0;
     },
 
     select(option) {
@@ -151,6 +164,30 @@ export default {
       if (!this.searchQuery) return option
       return option.replace(new RegExp(`(\)(${this.searchQuery})(\)`,'gi'), '$1<b>$2</b>$3');
     },
+    handleEnter() {
+      if (!this.filteredOptions.length || !this.showOptions || !this.filteredOptions[this.activeItemIndex]) return
+      this.select(this.filteredOptions[this.activeItemIndex]);
+    },
+    handleArrowDown() {
+      if (!this.filteredOptions.length || !this.showOptions) return
+      if (this.activeItemIndex >= this.filteredOptions.length - 1) {
+        this.activeItemIndex = 0
+      } else {
+        this.activeItemIndex += 1
+      }
+    },
+    handleArrowUp() {
+      if (!this.filteredOptions.length || !this.showOptions) return
+      if (this.activeItemIndex === 0) {
+        this.activeItemIndex = this.filteredOptions.length - 1
+      } else {
+        this.activeItemIndex -= 1
+      }
+    },
+    clear() {
+      this.values = []
+      this.$emit("change", this.values);
+    }
   },
 };
 </script>

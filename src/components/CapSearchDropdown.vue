@@ -132,6 +132,7 @@ export default {
   watch: {
     searchQuery(value) {
       if (!value) return
+      this.activeItemIndex = 0
       if (value === this.value) return
       if (!this.showOptions) this.show()
       this.$emit('onFilterChange', value)
@@ -166,6 +167,7 @@ export default {
 
     hide() {
       this.showOptions = false;
+      this.activeItemIndex = 0;
     },
 
     select(option) {
@@ -179,7 +181,7 @@ export default {
       this.$emit('change', null)
     },
     handleEnter() {
-      if (!this.filteredOptions.length || !this.showOptions) return
+      if (!this.filteredOptions.length || !this.showOptions || !this.filteredOptions[this.activeItemIndex]) return
       this.select(this.filteredOptions[this.activeItemIndex]);
     },
     handleArrowDown() {

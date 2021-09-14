@@ -106,6 +106,7 @@ export default {
     },
     hide() {
       this.showOptions = false;
+      this.activeItemIndex = 0;
     },
     toggle() {
       this.showOptions = !this.showOptions
