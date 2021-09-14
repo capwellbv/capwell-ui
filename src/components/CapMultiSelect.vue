@@ -90,15 +90,12 @@ export default {
     show() {
       this.showOptions = true;
     },
-
     hide() {
       this.showOptions = false;
     },
     toggle() {
       this.showOptions = !this.showOptions
-
     },
-
     select(option) {  
       this.currentValue = option;
       if(!this.values.includes(this.currentValue)) {

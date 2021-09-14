@@ -1,5 +1,9 @@
 <template>
   <div>
+    <h3 id="default">
+      <a href="#default" class="header-anchor">#</a>
+      Default
+    </h3>
     <cap-search-dropdown
       v-model="selectdSkill"
       :options="items"
@@ -43,7 +47,7 @@ export default {
   data() {
     return {
       selectdSkill1: null,
-      selectdSkill: "Dot NET ontwikkelaars",
+      selectdSkill: null,
       items: [
         "Dot NET ontwikkelaars",
         "Biztalk Consultants",
@@ -60,7 +64,8 @@ export default {
 .cap-ui {
   &.cap-search-dropdown {
     &.filter-jobs-options {
-      .search-icon {
+      .search-icon,
+      .remove-icon {
         stroke-width: 3px;
       }
     }

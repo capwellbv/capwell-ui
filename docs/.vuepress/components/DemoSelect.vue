@@ -4,7 +4,7 @@
       style="margin-top: 20px"
       v-model="selectdValue"
       :options="items"
-      label="Search skills"
+      label="Select skills"
     >
     </cap-select>
   </div>

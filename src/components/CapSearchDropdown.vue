@@ -20,7 +20,7 @@
             @keydown.down.prevent="handleArrowDown"
             @keydown.up.prevent="handleArrowUp"
           />
-          <x-icon 
+          <x-icon
             v-show="searchQuery && showRemoveIcon"
             class="icon remove-icon"
             @click="remove" size="20"
@@ -179,10 +179,11 @@ export default {
       this.$emit('change', null)
     },
     handleEnter() {
-      if (!this.filteredOptions.length) return
+      if (!this.filteredOptions.length || !this.showOptions) return
       this.select(this.filteredOptions[this.activeItemIndex]);
     },
     handleArrowDown() {
+      if (!this.filteredOptions.length || !this.showOptions) return
       if (this.activeItemIndex >= this.filteredOptions.length - 1) {
         this.activeItemIndex = 0
       } else {
@@ -190,6 +191,7 @@ export default {
       }
     },
     handleArrowUp() {
+      if (!this.filteredOptions.length || !this.showOptions) return
       if (this.activeItemIndex === 0) {
         this.activeItemIndex = this.filteredOptions.length - 1
       } else {
