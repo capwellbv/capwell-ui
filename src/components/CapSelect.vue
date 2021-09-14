@@ -120,7 +120,6 @@ export default {
     },
     handleEnter() {
       if (!this.options.length || !this.showOptions) return
-      console.log('enter', this.showOptions)
       this.select(this.activeItemIndex);
     },
     handleArrowDown() {

@@ -7,6 +7,9 @@
         @keyup.tab="show"
         @keydown.tab="hide"
         @keyup.esc="hide"
+        @keydown.enter.prevent="handleEnter"
+        @keydown.down.prevent="handleArrowDown"
+        @keydown.up.prevent="handleArrowUp"
         :class="{'active': showOptions}"
       >
         <div class="label">
@@ -17,7 +20,13 @@
           </span>
         </div>
         <div class="icon-wrapper">
-          <chevron-down-icon @click="toggle" size="20" class="icon">
+          <x-icon
+            v-if="values.length"
+            class="icon remove-icon"
+            @click="clear" size="20"
+          >
+          </x-icon>
+          <chevron-down-icon v-else @click="toggle" size="20" class="icon chevron">
           </chevron-down-icon>
         </div>
       </button>
@@ -28,7 +37,7 @@
           :key="`${option}-${i}`"
           @click="select(option)"
           role="option"
-          :class="{'selected': values.includes(option)}"
+          :class="{'selected': values.includes(option), 'active': activeItemIndex === i}"
         >
           {{ option }}
         </li>
@@ -47,6 +56,7 @@ export default {
     return {
       currentValue: null,
       showOptions: false,
+      activeItemIndex: 0,
       values: []
     };
   },
@@ -87,6 +97,10 @@ export default {
   },
 
   methods: {
+    clear() {
+      this.values = []
+      this.$emit("change", this.values);
+    },
     show() {
       this.showOptions = true;
     },
@@ -105,7 +119,27 @@ export default {
         this.values.splice(index, 1)
       }
       this.$emit("change", this.values);
-    }
+    },
+    handleEnter() {
+      if (!this.options.length || !this.showOptions) return
+      this.select(this.options[this.activeItemIndex]);
+    },
+    handleArrowDown() {
+      if (!this.options.length || !this.showOptions) return
+      if (this.activeItemIndex >= this.options.length - 1) {
+        this.activeItemIndex = 0
+      } else {
+        this.activeItemIndex += 1
+      }
+    },
+    handleArrowUp() {
+      if (!this.options.length || !this.showOptions) return
+      if (this.activeItemIndex === 0) {
+        this.activeItemIndex = this.options.length - 1
+      } else {
+        this.activeItemIndex -= 1
+      }
+    },
   },
 };
 </script>
