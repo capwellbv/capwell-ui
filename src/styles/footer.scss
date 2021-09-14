@@ -81,11 +81,11 @@
         margin-bottom: $spacing4;
       }
       .footer-lead-text {
-        color: rgba($secondary-color-1, 0.5);
+        color: rgba($secondary-color-1, 0.7);
         a {
           color: $secondary-color-1;
           margin: 0;
-          font-weight: 700;
+          font-weight: 400;
           cursor: pointer;
         }
       }
@@ -98,7 +98,7 @@
       .trademark-text {
         color: $secondary-color-1;
         .link {
-          font-weight: 700;
+          font-weight: 500;
         }
       }
     }

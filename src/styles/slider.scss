@@ -1,8 +1,8 @@
 .#{$scss-prefix} {
   &.cap-slider {
     position: relative;
-  
     .cap-panel-slider {
+      padding-top: 30px;
       grid-column: 1/-1;
       overflow-x: hidden;
       scroll-behavior: smooth;
@@ -30,20 +30,13 @@
         min-height: 240px ;
         min-width: 330px ;
         width: auto ;
-        background: $secondary-color-1 ;
-        border: 2px solid transparent ;
-        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.08) ;
+        background: $secondary-color-1;
         border-radius: 6px ;
         color: $darkest-color ;
         cursor: pointer ;
         opacity: 1 ;
-        transition: all 0.3s ease-in-out ;
         scroll-snap-align: start;
         &:hover {
-          border: 2px solid $primary-color-2 ;
-          box-shadow: 0 2px 5px 0 rgba(0, 148, 205, 0.2),
-            0 15px 45px 0 rgba(0, 0, 0, 0.15) ;
-
           .footer {
             .footer-icon {
               color: $primary-color-2 ;
