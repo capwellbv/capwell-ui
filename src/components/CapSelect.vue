@@ -7,16 +7,25 @@
         @keyup.tab="show"
         @keydown.tab="hide"
         @keyup.esc="hide"
+        @keydown.enter.prevent="handleEnter"
+        @keydown.down.prevent="handleArrowDown"
+        @keydown.up.prevent="handleArrowUp"
       >
-        <span v-if="value" class="label">{{ this.label }}</span>
+        <span v-if="value" class="label">{{ label }}</span>
         <span :class="{ chosen: value }" class="text">
-          {{ this.buttonText }}
+          {{ buttonText }}
         </span>
-        <chevron-down-icon size="20" class="icon"></chevron-down-icon>
+        <x-icon
+          v-if="value"
+          class="icon remove-icon"
+          @click="remove" size="16"
+        >
+        </x-icon>
+        <chevron-down-icon v-else size="20" class="icon"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1">
         <li>
-          <span>{{ this.placeholder }}</span>
+          <span>{{ placeholder }}</span>
           <chevron-up-icon @click="hide" size="20" class="icon"></chevron-up-icon>
         </li>
         <li
@@ -24,6 +33,7 @@
           v-for="(option, i) in options"
           :key="i"
           @click="select(i)"
+          :class="{ 'active': i === activeItemIndex, 'selected': selectedIndex === i }"
           role="option"
         >
           {{ option }}
@@ -35,7 +45,7 @@
 
 <script>
 import CapOnClickAway from "./CapOnClickAway";
-import { ChevronDownIcon, ChevronUpIcon } from "vue-feather-icons";
+import { ChevronDownIcon, ChevronUpIcon, XIcon } from "vue-feather-icons";
 export default {
   name: "CapSelect",
   model: {
@@ -62,17 +72,20 @@ export default {
   data() {
     return {
       showOptions: false,
+      activeItemIndex: 0,
+      selectedIndex: null
     };
   },
   components: {
     ChevronUpIcon,
     ChevronDownIcon,
     CapOnClickAway,
+    XIcon
   },
   mounted() {
     if (!this.value) return;
     const index = this.options.findIndex(option => option === this.value);
-    this.$el.querySelectorAll("li")[index + 1].classList.add("selected");
+    this.selectedIndex = index
   },
   computed: {
     buttonText() {
@@ -83,20 +96,47 @@ export default {
     },
   },
   methods: {
+    remove() {
+      this.selectedIndex = null;
+      this.$emit("change", null)
+    },
     show() {
       this.showOptions = true;
     },
     hide() {
       this.showOptions = false;
+      this.activeItemIndex = 0;
     },
     select(i) {
-      const value = this.options[i];
-      if (this.$el.querySelector(".selected")) {
-        this.$el.querySelector(".selected").classList.remove("selected");
+      let value = this.options[i];
+      if (this.selectedIndex === i) {
+        this.selectedIndex = null
+        value = null
+      } else {
+        this.selectedIndex = i
       }
-      this.$el.querySelectorAll("li")[i + 1].classList.add("selected");
       this.$emit("change", value);
       this.hide();
+    },
+    handleEnter() {
+      if (!this.options.length || !this.showOptions) return
+      this.select(this.activeItemIndex);
+    },
+    handleArrowDown() {
+      if (!this.options.length || !this.showOptions) return
+      if (this.activeItemIndex >= this.options.length - 1) {
+        this.activeItemIndex = 0
+      } else {
+        this.activeItemIndex += 1
+      }
+    },
+    handleArrowUp() {
+      if (!this.options.length || !this.showOptions) return
+      if (this.activeItemIndex === 0) {
+        this.activeItemIndex = this.options.length - 1
+      } else {
+        this.activeItemIndex -= 1
+      }
     },
   },
 };

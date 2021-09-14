@@ -56,7 +56,8 @@ export default {
 .cap-ui {
   &.cap-search-dropdown {
     &.filter-jobs-options {
-      .search-icon {
+      .search-icon,
+      .remove-icon {
         stroke-width: 3px;
       }
     }

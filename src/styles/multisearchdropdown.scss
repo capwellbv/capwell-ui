@@ -36,8 +36,10 @@
       box-sizing: border-box;
       .icon-wrapper {
         display: flex;
-        .icon-feather {
+        .icon {
           color: $primary-color-2;
+        }
+        .icon-feather {
           transition: 0.1s ease-in-out;
         }
       }
@@ -150,7 +152,7 @@
           line-height: rem(15px);
           padding: $p-3;
         }
-  
+        &.active,
         &:hover {
           background-color: rgba($secondary-color-2, 0.5);
         }

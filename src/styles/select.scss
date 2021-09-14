@@ -19,6 +19,9 @@
       padding: 0 $spacing6;
       box-sizing: border-box;
       height: 60px;
+      &:focus-visible {
+        outline: none;
+      }
       @include forMobile() {
         padding: $spacing5 $spacing6 16px $spacing6;
       }
@@ -115,6 +118,7 @@
           padding: 15px $spacing6;
         }
   
+        &.active,
         &:hover {
           background-color: rgba($secondary-color-2, 0.5);
         }
@@ -129,6 +133,9 @@
           font-weight: normal;
           padding: 0 19px;
           height: 60px;
+          @include forMobile() {
+            border: 1px solid transparent;
+          }
           span {
             margin-top: -3px;
           }
@@ -136,9 +143,6 @@
             margin-top: -3px;
             color: $primary-color-2 !important;
             cursor: pointer;
-            @include forMobile() {
-              padding: $spacing7 $spacing6;
-            }
           }
   
           &:hover {

@@ -4,7 +4,7 @@
 			<div class="cap-footer-info">
 				<slot name="info" v-bind="{ altText, logo, leadText }">
 					<img :src="logo" :alt="altText" class="footer-logo">
-					<cap-text size="6" font="thin" class="footer-lead-text">
+					<cap-text size="6" font="normal" class="footer-lead-text">
 						<slot name="leadText" v-bind="{ leadText }">
           		{{ leadText }}
 						</slot>

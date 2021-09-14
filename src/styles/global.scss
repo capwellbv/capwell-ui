@@ -35,3 +35,25 @@
     margin: 0 $spacing6;
   }
 }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $secondary-fontfamily;
+  font-weight: 200;
+  font-size: 20px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  &.modal-opened, &.message-opened {
+    overflow: hidden;
+  }
+  @include forMobile() {
+    font-size: 16px;
+  }
+}
+a {
+  text-decoration: none;
+}
+button {
+  background: none;
+  border: none;
+}
