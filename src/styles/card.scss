@@ -8,13 +8,13 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: $p-4;
-  transition: ease-in-out 0.3s border-color, box-shadow;
+  transition: all 0.3s ease-in-out;
   box-sizing: border-box;
   @content;
   &.bordered:hover,
   &.bordered:focus {
-    box-shadow: 0 0 0 2px $primary-color-2, 0px 2px 5px rgba(0, 148, 205, 0.2), 0px 15px 45px rgba(0, 0, 0, 0.15);
-    border-color: transparent;
+    box-shadow: 0 0 0 1px $primary-color-2, 0px 2px 5px rgba(0, 148, 205, 0.2), 0px 15px 45px rgba(0, 0, 0, 0.15);
+    border-color: $primary-color-2;
     .footer {
       color: $primary-color-2;
     }

@@ -50,7 +50,8 @@ module.exports = {
           '/header/',
           '/collapse/',
           '/accordian/',
-          '/carousel/'
+          '/carousel/',
+          '/cookieConsent/'
         ]
       }
     ]
