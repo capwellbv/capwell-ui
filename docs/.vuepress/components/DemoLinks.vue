@@ -8,11 +8,7 @@
 </template>
 
 <script>
-import { ArrowRightIcon } from 'vue-feather-icons';
 export default {
 	name: 'DemoLinks',
-	components: {
-		ArrowRightIcon,
-	},
 };
 </script>

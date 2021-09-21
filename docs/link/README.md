@@ -7,36 +7,10 @@
 ```vue
 <template>
 	<div>
-		<cap-link size="small" src="#">
-			Small link
-		</cap-link>
-		<cap-link size="medium" src="#">
-			Medium link
-		</cap-link>
-		<cap-link size="large" src="#">
-			Large link
-		</cap-link>
-		
-		<cap-link size="large" src="#">
-			Link with icon
-			<template #icon>
-				<arrow-right-icon size="1.2x" class="link-icon"></arrow-right-icon>
-			</template>
-		</cap-link>
+		<cap-link class="test" src="#">This is demo link</cap-link>
+		<cap-link inline class="test" src="#">This is demo inline-link</cap-link>
 	</div>
 </template>
-
-<script>
-import { CapLink } from 'capwell-ui';
-import { ArrowRightIcon } from 'vue-feather-icons';
-export default {
-	components: {
-		CapLink,
-		ArrowRightIcon,
-	},
-};
-</script>
-
 ```
 
 :::

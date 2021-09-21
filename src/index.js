@@ -41,6 +41,7 @@ import CapHeader from './components/CapHeader.vue'
 import CapCollapse from './components/CapCollapse.vue'
 import CapAccordian from './components/CapAccordian.vue'
 import CapCarousel from './components/CapCarousel.vue'
+import CapCookieConsentNotice from './components/CapCookieConsentNotice.vue'
 
 const components = {
     CapBox,
@@ -85,7 +86,8 @@ const components = {
     CapHeader,
     CapCollapse,
     CapAccordian,
-    CapCarousel
+    CapCarousel,
+    CapCookieConsentNotice
 }
 
 const install = function (Vue, opts = {}) {
