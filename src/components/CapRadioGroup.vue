@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-ui cap-radio-group" :class="mode">
+	<div :class="['cap-ui cap-radio-group', mode]">
 		<div v-for="(item, index) in items" :key="index" class="cap-radio-wrapper">
 			<cap-radio :label="item.label" v-bind="$attrs" :value="item.value" @change="handleChange"></cap-radio>
 		</div>
@@ -10,18 +10,14 @@
 export default {
 	name: 'CapRadioGroup',
 	inheritAttrs: false,
-	data() {
-		return {
-			checked: null,
-		};
-	},
 	model: {
     prop: 'modelValue',
     event: 'change'
   },
 	props: {
 		items: {
-			type: [Array, Object],
+			type: Array,
+			required: true
 		},
     mode: {
       type: String,

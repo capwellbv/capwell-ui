@@ -14,6 +14,9 @@
         line-height: 32px;
         color: $secondary-color-1;
         border-color: rgba($secondary-color-1, 0.2);
+        &:hover {
+          border-color: $primary-color-2;
+        }
       }
     }
   }
@@ -35,7 +38,21 @@
     }
     .button-wrapper {
       .cap-btn {
+        height: 50px;
         margin: 0 auto 30px;
+        padding: 0 35px;
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+    .content{
+      .cap-text-wrapper {
+        font-size: 18px;
+        line-height: 28px;
+        .cap-link {
+          font-size: 18px;
+          line-height: 28px;
+        }
       }
     }
   }
