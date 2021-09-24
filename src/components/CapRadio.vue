@@ -1,5 +1,5 @@
 <template>
-	<div class="cap-ui cap-radio" :class="mode">
+	<div class="cap-ui cap-radio">
 		<label class="radio-wrapper">
 			<input class="radio-input"
 				type="radio"
@@ -25,17 +25,14 @@ export default {
     label: { 
 			type: String, 
 			default: ""
-			},
+		},
     modelValue: {
 			default: ""
-			},
+		},
     value: {
-			default: undefined
-			},
-		 mode: {
-      type: String,
-      default: 'horizontal'
-    }
+			default: undefined,
+			required: true
+		}
   },
   computed: {
     isChecked() {

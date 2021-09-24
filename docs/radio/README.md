@@ -7,22 +7,27 @@
 ```vue
 <template>
 	<div>
-		<cap-radio-group v-model="checked" :items="items" mode="vertical"></cap-radio-group>
-		<cap-radio-group v-model="checked" :items="items" ></cap-radio-group>
+		<p>Vertical</p>
+		<cap-radio-group v-model="checked1" :items="items" mode="vertical"></cap-radio-group>
+		<p>Horizantal</p>
+		<cap-radio-group v-model="checked2" :items="items"></cap-radio-group>
 	</div>
 </template>
 
 <script>
-  data() {
+export default {
+	data() {
 		return {
-			checked: '',
+			checked1: 1,
+			checked2: 1,
 			items: [
-				{ value: 1, label: 'one' },
-				{ value: 2, label: 'two' },
-				{ value: 3, label: 'three' },
+				{ value: 1, label: 'Radio one' },
+				{ value: 2, label: 'Radio two' },
+				{ value: 3, label: 'Radio three' },
 			],
 		};
 	},
+};
 </script>
 
 ```
@@ -36,17 +41,18 @@
 
 ```vue
 <template>
-		<div>
-      <cap-radio label="Foo" value="foo" v-model="checked"></cap-radio>
-    </div>
+	<cap-radio
+		label="Radio"
+		value="1"
+		v-model="checked"
+	></cap-radio>
 </template>
 
 <script>
 export default {
-	name: 'DemoRadio',
 	data() {
 		return {
-			checked: '',
+			checked: 1,
 		};
 	},
 };
