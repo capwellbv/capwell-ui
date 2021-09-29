@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapsed, shown: !closed }">
+  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapsed }">
     <cap-container>
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
@@ -15,7 +15,7 @@
             </slot>
           </div>
         </div>
-        <div class="cap-navbar-nav" :class="{ shown: !closed }">
+        <div class="cap-navbar-nav">
           <ul class="cap-navbar-links">
             <slot />
           </ul>
@@ -43,14 +43,20 @@ export default {
       type: String | Number,
       default: 1040
     },
+    deltaScroll: {
+      type: Number,
+      default: 40
+    },
   },
   data() {
     return {
       closed: false,
       hasScrolled: false,
       showShadow: false,
-      prevScrollTop: 85,
-      isCollapsed: false
+      isCollapsed: false,
+      prevTop: 0,
+      interval: null,
+      didScroll: false
     };
   },
   components: {
@@ -69,12 +75,19 @@ export default {
 
   mounted() {
     this.checkMedia();
+    this.interval = setInterval(() => {
+      if (this.didScroll) {
+        this.handleScroll();
+        this.didScroll = false;
+      }
+    }, 250);
     window.addEventListener("resize", this.checkMedia);
     window.addEventListener("scroll", this.showNavbar);
   },
   beforeDestroy() {
     window.removeEventListener("resize", this.checkMedia);
     window.removeEventListener("scroll", this.showNavbar);
+    clearInterval(this.interval);
   },
 
   methods: {
@@ -93,37 +106,31 @@ export default {
 
       if (mql.matches && !this.closed) {
         this.closed = true;
-        this.prevScrollTop = 65;
       } else if (!mql.matches && this.closed) {
         this.closed = false;
-        this.prevScrollTop = 85;
       }
+    },
+    handleScroll() {
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+      const navHeight = document.querySelector(".cap-ui.cap-navbar")
+        .clientHeight;
+      if (st < 1) {
+        this.hasScrolled = false;
+        this.showShadow = false;
+        return;
+      }
+      if (Math.abs(this.prevTop - st) <= this.deltaScroll) return;
+      if (st > this.prevTop && st > navHeight - 10) {
+        this.hasScrolled = true;
+      } else {
+        this.showShadow = true;
+        this.hasScrolled = false;
+      }
+      this.prevTop = st;
     },
 
     showNavbar() {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      if (scrollTop < 1) {
-        this.hasScrolled = false;
-        this.showShadow = false;
-        return;
-      }
-
-      if (scrollTop < 85) {
-        this.prevScrollTop = 85;
-        return;
-      }
-
-      if (scrollTop > this.prevScrollTop) {
-        this.hasScrolled = true;
-        this.showShadow = false;
-      } else {
-        this.hasScrolled = false;
-        this.showShadow = true;
-      }
-
-      this.prevScrollTop = scrollTop;
+      this.didScroll = true;
     }
   }
 };
