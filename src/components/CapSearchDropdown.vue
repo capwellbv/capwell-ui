@@ -12,11 +12,12 @@
             :placeholder="placeholder"
             class="input"
             aria-haspopup="listbox"
-            @click="handleFocus"
-            @keyup.tab="handleFocus"
-            @keydown.tab="hide"
-            @keyup.esc="hide"
-            @keyup.enter="handleEnter"
+            @click.prevent="handleFocus"
+            @input.prevent="show"
+            @keyup.tab.prevent="handleFocus"
+            @keydown.tab.prevent="hide"
+            @keyup.esc.prevent="hide"
+            @keyup.enter.prevent="handleEnter"
             @keydown.down.prevent="handleArrowDown"
             @keydown.up.prevent="handleArrowUp"
           />
@@ -131,11 +132,9 @@ export default {
 
   watch: {
     searchQuery(value) {
+      this.$emit('onFilterChange', value)
       if (!value) return
       this.activeItemIndex = 0
-      if (value === this.value) return
-      if (!this.showOptions) this.show()
-      this.$emit('onFilterChange', value)
     },
   },
 
@@ -154,7 +153,9 @@ export default {
   methods: {
     getHtml(option) {
       if (!this.searchQuery) return option
-      return option.replace(new RegExp(`(\)(${this.searchQuery})(\)`,'gi'), '$1<b>$2</b>$3');
+      const escapeRegexCharacters = s => s.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      const regex = new RegExp(this.searchQuery.replace(/[^a-z\s\d]/gi, '').split().map(escapeRegexCharacters).join('[^a-z\s\d]*'), "gi");
+      return option.replace(regex, "<b>$&</b>");
     },
     show() {
       this.showOptions = true;
