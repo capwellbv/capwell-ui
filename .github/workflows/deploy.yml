@@ -1,27 +1,59 @@
-name: Build and Deploy
+name: Build and Deploy to GKE
 
 on:
   push:
     branches:
       - master
 
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: prod-cluster
+  GKE_ZONE: europe-west4
+  CONTAINER_NAME: app
+  IMAGE: ${{ github.repository }}
+  NAMESPACE: website
+  DEPLOYMENT_NAME: ui
+
 jobs:
-  push_to_registry:
-    name: Push Docker image to GitHub Packages
+  setup-build-publish-deploy:
+    name: Setup, Build, Publish, and Deploy
     runs-on: ubuntu-latest
+    environment: production
+
     steps:
-      - name: Check out the repo
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build and push image
-        run: |
-          echo ${{ secrets.SECRET_TOKEN }} | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
-          docker pull ghcr.io/$GITHUB_REPOSITORY:latest
-          docker build . --tag ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA --cache-from ghcr.io/$GITHUB_REPOSITORY:latest
-          docker push ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
-
-      - name: Deploy to cluster
-        uses: steebchen/kubectl@v2.0.0
+      # Setup gcloud CLI
+      - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
         with:
-          config: ${{ secrets.KUBE_CONFIG_DATA }}
-          command: set image -n docs --record deployment/capwell-ui capwell-ui=ghcr.io/$GITHUB_REPOSITORY:$GITHUB_SHA
+          service_account_key: ${{ secrets.GKE_SA_KEY }}
+          project_id: ${{ secrets.GKE_PROJECT }}
+
+      # Configure Docker to use the gcloud command-line tool as a credential
+      # helper for authentication
+      - run: |-
+          gcloud --quiet auth configure-docker
+      # Get the GKE credentials so we can deploy to the cluster
+      - uses: google-github-actions/get-gke-credentials@fb08709ba27618c31c09e014e1d8364b02e5042e
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+          credentials: ${{ secrets.GKE_SA_KEY }}
+
+      # Build the Docker image
+      - name: Build
+        run: |-
+          docker build . -t "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" --cache-from "gcr.io/$PROJECT_ID/$IMAGE:latest"
+          docker tag "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA" "gcr.io/$PROJECT_ID/$IMAGE:latest"
+      # Push the Docker image to Google Container Registry
+      - name: Publish
+        run: |-
+          docker push "gcr.io/$PROJECT_ID/$IMAGE:latest"
+          docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
+      # Deploy the Docker image to the GKE cluster
+      - name: Deploy
+        run: |-
+          kubectl set image -n $NAMESPACE --record deployment/$DEPLOYMENT_NAME $CONTAINER_NAME=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+          kubectl rollout restart deployment/$DEPLOYMENT_NAME -n $NAMESPACE
+          kubectl describe deployment/$DEPLOYMENT_NAME -n $NAMESPACE
