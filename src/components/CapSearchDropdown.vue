@@ -187,7 +187,7 @@ export default {
     },
     handleArrowDown() {
       if (!this.filteredOptions.length || !this.showOptions) return
-      if (this.activeItemIndex >= this.filteredOptions.length - 1) {
+      if (this.activeItemIndex >= this.filteredOptions.length - 1 || (this.maxItems && this.activeItemIndex >= this.maxItems - 1)) {
         this.activeItemIndex = 0
       } else {
         this.activeItemIndex += 1
@@ -196,7 +196,7 @@ export default {
     handleArrowUp() {
       if (!this.filteredOptions.length || !this.showOptions) return
       if (this.activeItemIndex === 0) {
-        this.activeItemIndex = this.filteredOptions.length - 1
+        this.activeItemIndex = (this.maxItems && this.filteredOptions.length >= this.maxItems) ? this.maxItems - 1 : this.filteredOptions.length - 1
       } else {
         this.activeItemIndex -= 1
       }
