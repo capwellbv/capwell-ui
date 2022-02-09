@@ -33,7 +33,7 @@
             </slot>
           </div>
         </div>
-        <ul role="listbox" tabindex="-1" v-if="showOptions" :class="{ scrollable }">
+        <ul role="listbox" tabindex="-1" v-if="showOptions" :class="{ scrollable }" :style="`max-height: ${maxHeight}px;`">
           <li
             role="option"
             @click="select(option)"
@@ -113,7 +113,11 @@ export default {
     scrollable: {
       type: Boolean,
       default: false
-    }
+    },
+    maxHeight: {
+      type: [String, Number],
+      default: '385'
+    },
   },
 
   data() {

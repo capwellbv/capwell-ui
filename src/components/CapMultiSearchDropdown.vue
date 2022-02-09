@@ -41,7 +41,7 @@
             </chevron-down-icon>
           </div>
         </div>
-        <ul role="listbox" tabindex="-1" v-if="showOptions">
+        <ul role="listbox" tabindex="-1" v-if="showOptions" :style="`max-height: ${maxHeight}px;`">
           <li
             role="option"
             @click="select(option)"
@@ -91,6 +91,10 @@ export default {
     rounded: {
       type: [Boolean, String],
       default: false,
+    },
+    maxHeight: {
+      type: [String, Number],
+      default: '385'
     },
   },
 

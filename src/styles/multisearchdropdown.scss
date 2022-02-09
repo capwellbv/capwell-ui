@@ -131,13 +131,13 @@
       margin-bottom: $spacing4;
       background-color: $secondary-color-1 !important;
       z-index: 100;
-      margin-top: -20px;
-      padding-top: 20px;
+      margin-top: -15px;
+      padding-top: 15px;
       border: 1px solid $secondary-color-3;
       box-sizing: border-box;
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.08);
       border-radius: 0 0 6px 6px;
-  
+      overflow-y: auto;
       li {
         all: unset;
         padding: $spacing6;

@@ -21,6 +21,11 @@ export default {
         "Ruby On Rails Developers",
         "Javascript Specialisten",
         "Vue Specialistens",
+        "Dot NET ontwikkelaars",
+        "Biztalk Consultants",
+        "Ruby On Rails Developers",
+        "Javascript Specialisten",
+        "Vue Specialistens",
       ],
     };
   },

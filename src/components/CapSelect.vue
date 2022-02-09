@@ -1,6 +1,6 @@
 <template>
   <cap-on-click-away :do="hide">
-    <div class="cap-ui cap-select">
+    <div :class="['cap-ui cap-select', { active: showOptions }]">
       <button
         @click="show"
         aria-haspopup="listbox"
@@ -16,18 +16,14 @@
           {{ buttonText }}
         </span>
         <x-icon
-          v-if="value"
+          v-if="value && clearable"
           class="icon remove-icon"
           @click="remove" size="16"
         >
         </x-icon>
         <chevron-down-icon v-else size="20" class="icon"></chevron-down-icon>
       </button>
-      <ul v-show="showOptions" role="listbox" tabindex="-1">
-        <li>
-          <span>{{ placeholder }}</span>
-          <chevron-up-icon @click="hide" size="20" class="icon"></chevron-up-icon>
-        </li>
+      <ul v-show="showOptions" role="listbox" tabindex="-1" :style="`max-height: ${maxHeight}px;`">
         <li
           @keyup.enter="select(i)"
           v-for="(option, i) in options"
@@ -67,6 +63,14 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    maxHeight: {
+      type: [String, Number],
+      default: '385'
     },
   },
   data() {
@@ -109,12 +113,7 @@ export default {
     },
     select(i) {
       let value = this.options[i];
-      if (this.selectedIndex === i) {
-        this.selectedIndex = null
-        value = null
-      } else {
-        this.selectedIndex = i
-      }
+      this.selectedIndex = i
       this.$emit("change", value);
       this.hide();
     },

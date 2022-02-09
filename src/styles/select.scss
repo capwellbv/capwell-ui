@@ -3,14 +3,26 @@
     position: relative;
     font-family: $secondary-fontfamily;
     font-weight: 300;
-  
+    &.active {
+      box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
+      button {
+        border-color: $primary-color-2;
+        box-shadow: none;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        .icon {
+          transform: rotate(180deg);
+        }
+      }
+    }
     button {
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid $secondary-color-3;
-      box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
+      border: 2px solid transparent;
+      border-bottom: 0px;
+      box-shadow: 0 0 0 1px $secondary-color-3, 0 3px 10px 0 rgba($darkest-color, 0.08);
       border-radius: 6px;
       white-space: nowrap;
       cursor: pointer;
@@ -19,8 +31,12 @@
       padding: 0 $spacing6;
       box-sizing: border-box;
       height: 60px;
+      z-index: 1006;
       &:focus-visible {
         outline: none;
+      }
+      .icon {
+        transition: all 0.2s ease-in-out;
       }
       @include forMobile() {
         padding: $spacing5 $spacing6 16px $spacing6;
@@ -81,17 +97,20 @@
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 0;
+      top: 60px;
       left: 0;
       border: 2px solid $primary-color-2;
+      border-top: 0px;
       background-color: $secondary-color-1;
       width: calc(100% - 4px);
       border-radius: 6px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
       margin-bottom: $spacing4;
       background-color: $secondary-color-1 !important;
       z-index: 1005;
       box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
-  
+      overflow-y: auto;
       @include forMobile() {
         border: 1px solid $primary-color-2;
         width: calc(100% - 2px);
@@ -123,32 +142,32 @@
           background-color: rgba($secondary-color-2, 0.5);
         }
   
-        &:nth-child(1) {
-          cursor: auto;
-          color: $secondary-color-4;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          border-radius: 6px;
-          font-weight: normal;
-          padding: 0 19px;
-          height: 60px;
-          @include forMobile() {
-            border: 1px solid transparent;
-          }
-          span {
-            margin-top: -3px;
-          }
-          .icon {
-            margin-top: -3px;
-            color: $primary-color-2 !important;
-            cursor: pointer;
-          }
+        // &:nth-child(1) {
+        //   cursor: auto;
+        //   color: $secondary-color-4;
+        //   display: flex;
+        //   justify-content: space-between;
+        //   align-items: center;
+        //   border-radius: 6px;
+        //   font-weight: normal;
+        //   padding: 0 19px;
+        //   height: 60px;
+        //   @include forMobile() {
+        //     border: 1px solid transparent;
+        //   }
+        //   span {
+        //     margin-top: -3px;
+        //   }
+        //   .icon {
+        //     margin-top: -3px;
+        //     color: $primary-color-2 !important;
+        //     cursor: pointer;
+        //   }
   
-          &:hover {
-            background-color: $secondary-color-1;
-          }
-        }
+        //   &:hover {
+        //     background-color: $secondary-color-1;
+        //   }
+        // }
       }
     }
   }

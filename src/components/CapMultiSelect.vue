@@ -30,7 +30,7 @@
           </chevron-down-icon>
         </div>
       </button>
-      <ul v-show="showOptions" role="listbox" tabindex="-1">
+      <ul v-show="showOptions" role="listbox" tabindex="-1" :style="`max-height: ${maxHeight}px;`">
         <li
           @keyup.enter="select(option)"
           v-for="(option, i) in options"
@@ -83,6 +83,11 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+
+    maxHeight: {
+      type: [String, Number],
+      default: '385'
     },
   },
   components: {
