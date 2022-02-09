@@ -30,7 +30,7 @@
           </chevron-down-icon>
         </div>
       </button>
-      <ul v-show="showOptions" role="listbox" tabindex="-1" :style="{maxHeight: `${maxHeight}px`}">
+      <ul ref="list" v-show="showOptions" role="listbox" tabindex="-1" :style="{maxHeight: `${maxHeight}px`}">
         <li
           @keyup.enter="select(option)"
           v-for="(option, i) in options"
@@ -106,7 +106,14 @@ export default {
       this.values = []
       this.$emit("change", this.values);
     },
+    resetScroll() {
+      const list = this.$refs.list
+      if (list) {
+        list.scrollTop = 0
+      }
+    },
     show() {
+      this.resetScroll()
       this.showOptions = true;
     },
     hide() {

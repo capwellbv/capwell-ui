@@ -90,6 +90,7 @@ export default {
     if (!this.value) return;
     const index = this.options.findIndex(option => option === this.value);
     this.selectedIndex = index
+    this.activeItemIndex = index;
   },
   computed: {
     buttonText() {
@@ -109,11 +110,12 @@ export default {
     },
     hide() {
       this.showOptions = false;
-      this.activeItemIndex = 0;
+      this.activeItemIndex = this.selectedIndex;
     },
     select(i) {
       let value = this.options[i];
       this.selectedIndex = i
+      this.activeItemIndex = i;
       this.$emit("change", value);
       this.hide();
     },

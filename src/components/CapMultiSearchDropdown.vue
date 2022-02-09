@@ -41,7 +41,7 @@
             </chevron-down-icon>
           </div>
         </div>
-        <ul role="listbox" tabindex="-1" v-if="showOptions" :style="{maxHeight: `${maxHeight}px`}">
+        <ul ref="list" role="listbox" tabindex="-1" v-if="showOptions" :style="{maxHeight: `${maxHeight}px`}">
           <li
             role="option"
             @click="select(option)"
@@ -139,7 +139,14 @@ export default {
   },
 
   methods: {
+    resetScroll() {
+      const list = this.$refs.list
+      if (list) {
+        list.scrollTop = 0
+      }
+    },
     show() {
+      this.resetScroll()
       this.showOptions = true;
     },
 
