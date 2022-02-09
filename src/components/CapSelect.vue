@@ -23,7 +23,7 @@
         </x-icon>
         <chevron-down-icon v-else size="20" class="icon"></chevron-down-icon>
       </button>
-      <ul v-show="showOptions" role="listbox" tabindex="-1" :style="`max-height: ${maxHeight}px;`">
+      <ul v-show="showOptions" role="listbox" tabindex="-1" :style="{maxHeight: `${maxHeight}px`}">
         <li
           @keyup.enter="select(i)"
           v-for="(option, i) in options"

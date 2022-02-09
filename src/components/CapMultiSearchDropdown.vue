@@ -41,7 +41,7 @@
             </chevron-down-icon>
           </div>
         </div>
-        <ul role="listbox" tabindex="-1" v-if="showOptions" :style="`max-height: ${maxHeight}px;`">
+        <ul role="listbox" tabindex="-1" v-if="showOptions" :style="{maxHeight: `${maxHeight}px`}">
           <li
             role="option"
             @click="select(option)"
