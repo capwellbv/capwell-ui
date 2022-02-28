@@ -20,6 +20,28 @@ $secondary-color-6: #2c3e50 !default;
 $secondary-color-7: #eee !default;
 $secondary-color-8: #f8f6f2 !default;
 
+$colors: (
+  dark-blue: $primary-color-4,
+  yellow: $theme-color-1,
+  capwell-blue: $primary-color-2,
+  capwell-blue-alt: $primary-color-3,
+  black: $darkest-color,
+  off-black: $secondary-color-5,
+  dark-bronze: $secondary-color-4,
+  medium-bronze: $secondary-color-3,
+  light-bronze: $secondary-color-2,
+  white: $secondary-color-1,
+);
+
+@each $key, $val in $colors {
+  .text-#{$key} {
+    color: $val !important;
+  }
+  .bg-#{$key} {
+    color: $val !important;
+  }
+}
+
 $base-fontfamily: 'Montserrat', sans-serif !default;
 $secondary-fontfamily: 'Mulish' !default;
 
