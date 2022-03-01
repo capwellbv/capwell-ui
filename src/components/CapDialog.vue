@@ -18,7 +18,7 @@
       </div>
       <div class="heading">
         <slot name="header">
-          <cap-title type="heading" font="bold" size="4">
+          <cap-title tag="h3" font="700" class="mb-0">
             Dankjewel!
           </cap-title>
         </slot>

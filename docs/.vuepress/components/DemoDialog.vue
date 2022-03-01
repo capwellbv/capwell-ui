@@ -1,7 +1,7 @@
 <template>
   <div>
     <cap-button varient="secondary"
-        size="sm"
+        size="lg"
         font="bold" @click="showSuccess = true">Show success dialog
     </cap-button>
     <cap-info-dialog
@@ -11,7 +11,7 @@
     >
     </cap-info-dialog>
     <cap-button varient="secondary"
-        size="sm"
+        size="lg"
         font="bold" @click="showError = true">
         Show error dialog
     </cap-button>

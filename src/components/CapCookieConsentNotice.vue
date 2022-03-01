@@ -3,7 +3,7 @@
     <cap-container>
       <div class="content">
         <slot name="content">
-          <cap-text size="6">
+          <cap-text size="6" font="300">
             By clicking “Accept All Cookies”, you agree to the storing of cookies
             on your device to enhance site navigation, analyze site usage, and
             assist in our marketing efforts.

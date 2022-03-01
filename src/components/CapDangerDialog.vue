@@ -18,12 +18,12 @@
             </svg>
         </template>
         <template #header>
-            <cap-title type="heading" font="bold" size="4">
+            <cap-title tag="h3" font="700" class="mb-0">
                 fout!
             </cap-title>
         </template>
         <slot name="content">
-            <cap-text size="6">
+            <cap-text size="6" font="300">
                 {{ message }}
             </cap-text>
         </slot>

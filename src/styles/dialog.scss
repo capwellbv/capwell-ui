@@ -48,11 +48,9 @@
       }
     }
     .dialog-content {
+      .error-icon,
       .success-icon {
         fill: $primary-color-2;
-      }
-      .error-icon {
-        fill: $theme-color-3;
       }
     }
   }

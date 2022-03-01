@@ -4,10 +4,9 @@
       <div @click="toggle" class="collapse-header">
         <slot name="header">
           <cap-title
-            type="heading"
-            size="8"
-            font="bold"
-            class="collapse-title"
+            tag="h5"
+            font="700"
+            class="mb-0 collapse-title"
             >{{ title }}</cap-title
           >
           <chevron-down-icon size="25" class="collapse-icon"></chevron-down-icon>

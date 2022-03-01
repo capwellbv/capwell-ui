@@ -50,26 +50,26 @@ Small
 
 Different sizes of Subtitle:
 <div>
-  <cap-title type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
-  <cap-title type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
+  <cap-title tag="h6" type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
 </div>
 
 Small:
 <div>
-  <cap-title type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
-  <cap-title type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
 </div>
 ::: details Preview the code
 ```vue
 <div>
-  <cap-title type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
-  <cap-title type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
+  <cap-title tag="h6" type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
 </div>
 
 Small:
 <div>
-  <cap-title type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
-  <cap-title type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
 </div>
 ```
 :::

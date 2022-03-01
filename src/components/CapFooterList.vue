@@ -1,6 +1,6 @@
 <template>
 	<div class="cap-ui cap-footer-list">
-		<cap-title type="heading" size="8" font="medium" class="list-title">
+		<cap-title tag="h5" font="500" class="mb-0 list-title">
 			{{ title }}
 		</cap-title>
 		<ul class="list">

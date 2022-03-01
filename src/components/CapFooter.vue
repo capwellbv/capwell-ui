@@ -4,7 +4,7 @@
 			<div class="cap-footer-info">
 				<slot name="info" v-bind="{ altText, logo, leadText }">
 					<img :src="logo" :alt="altText" class="footer-logo">
-					<cap-text size="6" font="normal" class="footer-lead-text">
+					<cap-text size="6" font="300" class="footer-lead-text">
 						<slot name="leadText" v-bind="{ leadText }">
           		{{ leadText }}
 						</slot>
@@ -16,20 +16,22 @@
 			<div class="footer-trademark">
 				<slot name="trademark">
 					<cap-title
+						tag="h6"
 						type="subheading"
-						size="4"
-						font="bold"
+						size="2"
+						font="700"
 						transform="uppercase"
-						class="trademark-text"
+						class="mb-0 trademark-text"
 					>
 						{{ trademarkText }}
 					</cap-title>
 					<cap-title
+						tag="h6"
 						type="subheading"
-						size="4"
-						font="bold"
+						size="2"
+						font="700"
 						transform="uppercase"
-						class="trademark-text"
+						class="mb-0 trademark-text"
 					>
 						<slot name="privacy">
 						</slot>

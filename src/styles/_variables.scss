@@ -34,10 +34,10 @@ $colors: (
 );
 
 @each $key, $val in $colors {
-  .text-#{$key} {
+  .text-#{"" + $key} {
     color: $val !important;
   }
-  .bg-#{$key} {
+  .bg-#{"" + $key} {
     color: $val !important;
   }
 }
