@@ -22,18 +22,18 @@
         <template #body>
           <slot name="content" v-bind:item="item">
             <cap-title
+              tag="h6"
               type="subheading"
-              size="4"
+              size="2"
               transform="uppercase"
-              font="bold"
+              font="700"
               class="slider-title"
               >{{item.title}}</cap-title
             >
             <cap-title
-              type="heading"
-              size="7"
-              font="medium"
-              class="slider-description"
+              tag="p"
+              font="500"
+              class="h4 slider-description"
               >{{item.description}}</cap-title
             >
           </slot>

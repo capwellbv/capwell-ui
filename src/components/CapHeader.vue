@@ -3,10 +3,10 @@
     <cap-container>
       <div class="content-container">
         <slot v-bind="{ title, subTitle }">
-          <cap-title type="heading" font="bold" size="1" class="header-title">
+          <cap-title tag="h1" type="heading" font="bold" size="1" class="header-title">
             {{ title }}<span class="underscore">_</span>
           </cap-title>
-          <cap-text size="3" font="normal" class="header-lead-text">
+          <cap-text size="lead" font="300" class="header-lead-text">
             {{ subTitle }}
           </cap-text>
         </slot>

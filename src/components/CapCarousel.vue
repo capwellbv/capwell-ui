@@ -13,14 +13,15 @@
           <slot v-bind="{ item, selectedIndex, index: i }">
             <img :src="item.logo" alt="Client logo" />
             <cap-title
+              tag="h6"
               type="subheading"
-              font="bold"
-              size="4"
+              font="700"
+              size="2"
               class="subtitle-2"
             >
               {{ item.info }}
             </cap-title>
-            <cap-text size="6" font="medium" class="lead-text">
+            <cap-text size="6" font="500" class="lead-text">
               {{ item.text }}
             </cap-text>
           </slot>

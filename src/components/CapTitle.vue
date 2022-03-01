@@ -1,7 +1,7 @@
 <template>
-  <div class="cap-ui cap-heading-wrapper" :class="[`cap-${type}-${size}`, `${transform}`, `${font}`]" >
+  <component :is="tag" class="cap-ui cap-title" :class="[textVariant, textTransform, fontWeight, fontStyle]" >
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <script>
@@ -10,7 +10,7 @@ export default {
   props: {
     type:{
       type: String,
-      default: 'title'
+      default: null
     },
     size: {
       type: String,
@@ -22,7 +22,29 @@ export default {
     },
     font: {
       type: String,
-      default: 'medium'
+      default: '700'
+    },
+    textStyle: {
+      type: String,
+      default: 'normal'
+    },
+    tag: {
+      type: String,
+      default: 'h3',
+    }
+  },
+  computed: {
+    textVariant() {
+      return this.type && `cap-${this.type}-${this.size}` || ''
+    },
+    textTransform() {
+      return this.transform && `transform-${this.transform}` || ''
+    },
+    fontWeight() {
+      return this.font && `font-${this.font}` || ''
+    },
+    fontStyle() {
+      return this.textStyle && `font-style-${this.textStyle}` || ''
     }
   }
 }

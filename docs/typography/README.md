@@ -2,43 +2,75 @@
 
 ## Headings
 
-Different sizes of heading:
+h1 to h6:
 
-<cap-title type="heading" size="1" font="normal">Header Title 1</cap-title>
-<cap-title type="heading" size="2" font="medium">Header Title 2</cap-title>
-<cap-title type="heading" size="3" font="bold">Header Title 3</cap-title>
-<cap-title type="heading" size="4">Header Title 4</cap-title>
-<cap-title type="heading" size="5">Header Title 5</cap-title>
-<cap-title type="heading" size="6">Header Title 6</cap-title>
-<cap-title type="heading" size="7">Header Title 7</cap-title>
-<cap-title type="heading" size="8" transform="uppercase">Header Title 8</cap-title>
+<div>
+  <cap-title tag="h1">Header Title 01</cap-title>
+  <cap-title tag="h2" style="border: none;padding:0;">Header Title 02</cap-title>
+  <cap-title tag="h3">Header Title 03</cap-title>
+  <cap-title tag="h4">Header Title 04</cap-title>
+  <cap-title tag="h5">Header Title 05</cap-title>
+  <cap-title tag="h6">Header Title 06</cap-title>
+</div>
 
+Small
+
+<div>
+  <cap-title tag="h1" class="small">Header Title 01</cap-title>
+  <cap-title tag="h2" class="small">Header Title 02</cap-title>
+  <cap-title tag="h3" class="small">Header Title 03</cap-title>
+  <cap-title tag="h4" class="small">Header Title 04</cap-title>
+  <cap-title tag="h5" class="small">Header Title 05</cap-title>
+  <cap-title tag="h6" class="small">Header Title 06</cap-title>
+</div>
 
 ::: details Preview the code
 ```vue
-<cap-title type="heading" size="1" transform="uppercase">Header Title 1</cap-title>
-<cap-title type="heading" size="2">Header Title 2</cap-title>
-<cap-title type="heading" size="3">Header Title 3</cap-title>
-<cap-title type="heading" size="5">Header Title 4</cap-title>
-<cap-title type="heading" size="5">Header Title 5</cap-title>
-<cap-title type="heading" size="6">Header Title 6</cap-title>
-<cap-title type="heading" size="7">Header Title 7</cap-title>
-<cap-title type="heading" size="8">Header Title 8</cap-title>
+<div>
+  <cap-title tag="h1">Header Title 01</cap-title>
+  <cap-title tag="h2" style="border: none;padding:0;">Header Title 02</cap-title>
+  <cap-title tag="h3">Header Title 03</cap-title>
+  <cap-title tag="h4">Header Title 04</cap-title>
+  <cap-title tag="h5">Header Title 05</cap-title>
+  <cap-title tag="h6">Header Title 06</cap-title>
+</div>
+
+Small
+
+<div>
+  <cap-title tag="h1" class="small">Header Title 01</cap-title>
+  <cap-title tag="h2" class="small">Header Title 02</cap-title>
+  <cap-title tag="h3" class="small">Header Title 03</cap-title>
+  <cap-title tag="h4" class="small">Header Title 04</cap-title>
+  <cap-title tag="h5" class="small">Header Title 05</cap-title>
+  <cap-title tag="h6" class="small">Header Title 06</cap-title>
+</div>
 ```
 :::
 
-Different sizes of sub heading:
+Different sizes of Subtitle:
+<div>
+  <cap-title tag="h6" type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
+</div>
 
-<cap-title type="subheading" size="1" transform="uppercase" font="bold">subtitle 1</cap-title>
-<cap-title type="subheading" size="2" font="medium">subtitle 2</cap-title>
-<cap-title type="subheading" size="3" font="normal">subtitle 3</cap-title>
-
-
+Small:
+<div>
+  <cap-title tag="h6" type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
+</div>
 ::: details Preview the code
 ```vue
-<cap-title type="subheading" size="1" transform="uppercase" font="medium">subtitle 1</cap-title>
-<cap-title type="subheading" size="2">subtitle 2</cap-title>
-<cap-title type="subheading" size="3">subtitle 3</cap-title>
+<div>
+  <cap-title tag="h6" type="subheading" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" size="2" transform="uppercase">Subtitle 02</cap-title>
+</div>
+
+Small:
+<div>
+  <cap-title tag="h6" type="subheading" class="small" size="1" transform="uppercase">Subtitle 01</cap-title>
+  <cap-title tag="h6" type="subheading" class="small" size="2" transform="uppercase">Subtitle 02</cap-title>
+</div>
 ```
 :::
 
@@ -46,29 +78,45 @@ Different sizes of sub heading:
 
 Different sizes of cap-text:
 
-<cap-text size="1" font="thin">Example of a long quote</cap-text>
-<cap-text size="2" transform="uppercase" font="thin">Example of a long quote</cap-text>
+<div>
+  <cap-text size="lead" font="300">Lead paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="para" font="300">Paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="quote" font="200">Example of a long quote</cap-text>
+</div>
 
+Small
 
-<cap-text size="3" >lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
-<cap-text size="4">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
-<cap-text size="5">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
-<cap-text size="6" font="bold">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
+<div>
+  <cap-text size="lead" font="300" class="small">Lead paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="para" font="300" class="small">Paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="quote" font="200" class="small">Example of a long quote</cap-text>
+</div>
 
 
 ::: details Preview the code
 ```vue
 
-<cap-text size="13">Example of a long quote</cap-text>
-<cap-text size="2">Example of a long quote</cap-text>
+<div>
+  <cap-text size="lead" font="300">Lead paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="para" font="300">Paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="quote" font="200">Example of a long quote</cap-text>
+</div>
 
-<cap-text size="3">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
+Small
 
-<cap-text size="4">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
-
-<cap-text size="5">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
-
-<cap-text size="6">lorem ipsum s simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</cap-text>
+<div>
+  <cap-text size="lead" font="300" class="small">Lead paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="para" font="300" class="small">Paragraph text. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.</cap-text>
+  <br />
+  <cap-text size="quote" font="200" class="small">Example of a long quote</cap-text>
+</div>
 
 ```
 :::

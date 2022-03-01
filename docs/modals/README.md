@@ -18,7 +18,7 @@
         title="model title"
         size="sm"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -32,7 +32,7 @@
         title="model title"
         size="md"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -46,7 +46,7 @@
         title="model title"
         size="lg"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -57,16 +57,16 @@
       <CapModal :show="show" @close="show = false" size="lg">
         <cap-form>
           <cap-form-row>
-            <cap-title type="heading" size="8">
+            <cap-title tag="h5" font="500" class="mb-0">
               User Registration Form
             </cap-title>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Search*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Search*</cap-title>
             <cap-input
               style="width: 60%"
-              placeholder="enter value"
-              size="small"
+              placeholder="Enter value"
+              size="large"
             >
               <template #icon>
                 <search-icon size="1.2x" class="icon"></search-icon>
@@ -74,11 +74,11 @@
             </cap-input>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Search*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Search*</cap-title>
             <cap-input
               style="width: 60%"
-              placeholder="enter value"
-              size="small"
+              placeholder="Enter value"
+              size="large"
             >
               <template #icon>
                 <search-icon size="1.2x" class="icon"></search-icon>
@@ -86,7 +86,7 @@
             </cap-input>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Select*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Select*</cap-title>
             <cap-select
               style="width: 60%"
               v-model="selectdValue"
@@ -97,7 +97,7 @@
             </cap-select>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Select*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Select*</cap-title>
             <cap-select
               style="width: 60%"
               v-model="selectdValue"
@@ -106,6 +106,15 @@
               label="Search skills"
             >
             </cap-select>
+          </cap-form-row>
+          <cap-form-row>
+            <cap-title tag="label" type="subheading" size="2" font="500">Remarks</cap-title>
+            <cap-textarea
+              style="width: 60%"
+              v-model="textarea"
+              placeholder="Explain a question?"
+            >
+            </cap-textarea>
           </cap-form-row>
           <cap-form-row style="justify-content: flex-end">
             <cap-button @click="handleSubmit" varient="secondary" size="md"
@@ -121,13 +130,15 @@
 <script>
 import { SearchIcon } from "vue-feather-icons";
 export default {
-  name: "Modal",
+  name: "DemoModal",
   data() {
     return {
+      textarea: '',
       show: false,
       smShowModel: false,
       mdShowModel: false,
       lgShowModel: false,
+      showWizard: false,
       selectdValue: "",
       items: [
         "Dot NET ontwikkelaars",
@@ -160,30 +171,25 @@ Examples:
 ::: details Preview the code
 ```vue
 <template>
-  <div class="multistep-wizard">
+  <div class="multistep-wizard" style="margin-top: 20px">
     <CapButton varient="secondary" size="xl" @click="showModel = true">
       Show modal
     </CapButton>
     <CapModal :show="showModel" @close="showModel = false" size="lg">
       <cap-tabs
         class="tabs-wrapper"
-        prev-button-text="Get on"
-        next-button-text="Get on"
+        prev-button-text="Back"
+        next-button-text="Next"
         finish-button-text="Request hourly rate"
       >
         <template v-slot:header="{ activeIndex, totalTabs }">
-          <cap-text font="bold" class="request-template" size="11">
+          <cap-title tag="h6" font="bold" type="subheading" size="2" class="request-template text-capwell-blue">
             REQUEST HOURLY RATE - STEP {{ activeIndex + 1 }}/{{ totalTabs }}
-          </cap-text>
+          </cap-title>
         </template>
-        <cap-tab-pane class="padding-0" name="Step one" :selected="true">
+        <cap-tab-content class="padding-0" name="Step one" :selected="true">
           <cap-form>
-            <cap-title
-              type="heading"
-              size="3"
-              font="bold"
-              class="modal-heading"
-            >
+            <cap-title class="text-dark-blue modal-heading">
               What kind of profile are you looking for
             </cap-title>
             <cap-form-row class="row-flex">
@@ -193,6 +199,7 @@ Examples:
                   v-model="functions"
                   :options="items"
                   placeholder="Search for functions"
+                  style="z-index: 6;"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -203,6 +210,7 @@ Examples:
                   v-model="level"
                   :options="items"
                   placeholder="Choose level of IT specialist"
+                  style="z-index: 5;"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -214,6 +222,7 @@ Examples:
                   :options="items"
                   placeholder="Years of experience"
                   label="Years of experience"
+                  style="z-index: 4;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -225,6 +234,7 @@ Examples:
                   :options="items"
                   placeholder="Duration of hiring"
                   label="Duration of hiring"
+                  style="z-index: 3;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -236,6 +246,7 @@ Examples:
                   :options="items"
                   placeholder="Deployment per week"
                   label="Deployment per week"
+                  style="z-index: 2;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -245,6 +256,7 @@ Examples:
                 <cap-input
                   placeholder="Place name"
                   v-model="place"
+                  size="large"
                 ></cap-input>
               </div>
             </cap-form-row>
@@ -258,13 +270,13 @@ Examples:
               </div>
             </cap-form-row>
           </cap-form>
-        </cap-tab-pane>
-        <cap-tab-pane class="padding-0" name="Step two">
+        </cap-tab-content>
+        <cap-tab-content class="padding-0" name="Step two">
           <cap-form>
-            <cap-title type="heading" size="3" font="bold" class="modal-heading">
+            <cap-title class="text-dark-blue modal-heading">
               How can we reach you?
             </cap-title>
-            <cap-text size="6" class="modal-sub-heading">
+            <cap-text size="para" class="modal-sub-heading" font="300">
               Sample text of explanation subpart form. Nunc incidunt convallis
               eros, ultrices lacinia tellus mattis a Nunc tincidunt.
             </cap-text>
@@ -319,7 +331,7 @@ Examples:
               </div>
             </cap-form-row>
           </cap-form>
-        </cap-tab-pane>
+        </cap-tab-content>
       </cap-tabs>
     </CapModal>
   </div>
@@ -370,17 +382,10 @@ export default {
   margin-bottom: 10px;
   margin-top: 0;
 }
-.request-template {
-  color: #0094cd;
-  letter-spacing: 1px;
-  font-family: Montserrat;
-}
 .padding-0 {
   padding: 0;
 }
 .modal-heading {
-  color: #002c3d;
-  line-height: 48px;
   margin-bottom: 30px;
 }
 .tabs-wrapper {
@@ -406,16 +411,12 @@ export default {
     margin-bottom: 10px;
   }
   .modal-heading {
-    font-size: 28px;
-    line-height: 32px;
     margin-bottom: 15px;
   }
   .request-template {
     margin-bottom: 5px;
   }
   .modal-sub-heading {
-    font-size: 18px;
-    line-height: 28px;
     margin-bottom: 40px;
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <cap-dialog :show="show" @close="$emit('close')">
-        <cap-text size="6">
+        <cap-text size="6" font="300">
             {{ message }}
         </cap-text>
     </cap-dialog>

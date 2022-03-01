@@ -2,7 +2,7 @@
   &.cap-text-wrapper {
     font-family: $secondary-fontfamily;
     color: $darkest-color;
-
+    margin: 0px;
     &.capitalize {
       text-transform: capitalize;
     }
@@ -75,5 +75,44 @@
   &.cap-text-12 {
     font-size: $font-size-14;
     line-height: $line-height-13;
+  }
+  &.cap-text-para {
+    font-size: $font-size-para;
+    line-height: $line-height-para;
+    &.small {
+      font-size: $font-size-para-small;
+      line-height: $line-height-para-small;
+    }
+  }
+  &.cap-text-lead {
+    font-size: $font-size-lead;
+    line-height: $line-height-lead;
+    &.small {
+      font-size: $font-size-lead-small;
+      line-height: $line-height-lead-small;
+    }
+  }
+  &.cap-text-quote {
+    font-family: $base-fontfamily;
+    font-size: $font-size-quote;
+    line-height: $line-height-quote;
+    &.small {
+      font-size: $font-size-quote-small;
+      line-height: $line-height-quote-small;
+    }
+  }
+  @include forMobile() {
+    &.cap-text-para {
+      font-size: $font-size-para-small;
+      line-height: $line-height-para-small;
+    }
+    &.cap-text-lead {
+      font-size: $font-size-lead-small;
+      line-height: $line-height-lead-small;
+    }
+    &.cap-text-quote {
+      font-size: $font-size-quote-small;
+      line-height: $line-height-quote-small;
+    }
   }
 }

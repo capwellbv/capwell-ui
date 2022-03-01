@@ -6,23 +6,18 @@
     <CapModal :show="showModel" @close="showModel = false" size="lg">
       <cap-tabs
         class="tabs-wrapper"
-        prev-button-text="Get on"
-        next-button-text="Get on"
+        prev-button-text="Back"
+        next-button-text="Next"
         finish-button-text="Request hourly rate"
       >
         <template v-slot:header="{ activeIndex, totalTabs }">
-          <cap-text font="bold" class="request-template" size="11">
+          <cap-title tag="h6" font="bold" type="subheading" size="2" class="request-template text-capwell-blue">
             REQUEST HOURLY RATE - STEP {{ activeIndex + 1 }}/{{ totalTabs }}
-          </cap-text>
+          </cap-title>
         </template>
         <cap-tab-content class="padding-0" name="Step one" :selected="true">
           <cap-form>
-            <cap-title
-              type="heading"
-              size="3"
-              font="bold"
-              class="modal-heading"
-            >
+            <cap-title class="text-dark-blue modal-heading">
               What kind of profile are you looking for
             </cap-title>
             <cap-form-row class="row-flex">
@@ -32,6 +27,7 @@
                   v-model="functions"
                   :options="items"
                   placeholder="Search for functions"
+                  style="z-index: 6;"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -42,6 +38,7 @@
                   v-model="level"
                   :options="items"
                   placeholder="Choose level of IT specialist"
+                  style="z-index: 5;"
                 ></cap-search-dropdown>
               </div>
             </cap-form-row>
@@ -53,6 +50,7 @@
                   :options="items"
                   placeholder="Years of experience"
                   label="Years of experience"
+                  style="z-index: 4;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -64,6 +62,7 @@
                   :options="items"
                   placeholder="Duration of hiring"
                   label="Duration of hiring"
+                  style="z-index: 3;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -75,6 +74,7 @@
                   :options="items"
                   placeholder="Deployment per week"
                   label="Deployment per week"
+                  style="z-index: 2;"
                 ></cap-select>
               </div>
             </cap-form-row>
@@ -101,10 +101,10 @@
         </cap-tab-content>
         <cap-tab-content class="padding-0" name="Step two">
           <cap-form>
-            <cap-title type="heading" size="3" font="bold" class="modal-heading">
+            <cap-title class="text-dark-blue modal-heading">
               How can we reach you?
             </cap-title>
-            <cap-text size="6" class="modal-sub-heading">
+            <cap-text size="para" class="modal-sub-heading" font="300">
               Sample text of explanation subpart form. Nunc incidunt convallis
               eros, ultrices lacinia tellus mattis a Nunc tincidunt.
             </cap-text>
@@ -210,17 +210,10 @@ export default {
   margin-bottom: 10px;
   margin-top: 0;
 }
-.request-template {
-  color: #0094cd;
-  letter-spacing: 1px;
-  font-family: Montserrat;
-}
 .padding-0 {
   padding: 0;
 }
 .modal-heading {
-  color: #002c3d;
-  line-height: 48px;
   margin-bottom: 30px;
 }
 .tabs-wrapper {
@@ -246,16 +239,12 @@ export default {
     margin-bottom: 10px;
   }
   .modal-heading {
-    font-size: 28px;
-    line-height: 32px;
     margin-bottom: 15px;
   }
   .request-template {
     margin-bottom: 5px;
   }
   .modal-sub-heading {
-    font-size: 18px;
-    line-height: 28px;
     margin-bottom: 40px;
   }
 }

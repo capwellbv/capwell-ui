@@ -29,14 +29,14 @@
         </span>
       </div>
       <div class="tabs-footer-right">
-        <span @click="nextTab" v-if="isLastTab">
+        <span @click="nextTab" v-show="isLastTab">
           <slot name="finish" v-bind="slotProps">
             <cap-button varient="primary" size="lg">
               {{ finishButtonText }}
             </cap-button>
           </slot>
         </span>
-        <span @click="nextTab" v-else>
+        <span @click="nextTab" v-show="!isLastTab">
           <slot name="next" v-bind="slotProps">
             <cap-button varient="secondary" size="lg">
               {{ nextButtonText }}

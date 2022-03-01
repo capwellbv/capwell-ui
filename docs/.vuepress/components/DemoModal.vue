@@ -11,7 +11,7 @@
         title="model title"
         size="sm"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -25,7 +25,7 @@
         title="model title"
         size="md"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -39,7 +39,7 @@
         title="model title"
         size="lg"
       >
-        <cap-text size="6">lorem ipsum</cap-text>
+        <cap-text size="6" font="300">lorem ipsum</cap-text>
       </CapModal>
     </div>
     <div>
@@ -50,16 +50,16 @@
       <CapModal :show="show" @close="show = false" size="lg">
         <cap-form>
           <cap-form-row>
-            <cap-title type="heading" size="8">
+            <cap-title tag="h5" font="500" class="mb-0">
               User Registration Form
             </cap-title>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Search*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Search*</cap-title>
             <cap-input
               style="width: 60%"
-              placeholder="enter value"
-              size="small"
+              placeholder="Enter value"
+              size="large"
             >
               <template #icon>
                 <search-icon size="1.2x" class="icon"></search-icon>
@@ -67,11 +67,11 @@
             </cap-input>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Search*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Search*</cap-title>
             <cap-input
               style="width: 60%"
-              placeholder="enter value"
-              size="small"
+              placeholder="Enter value"
+              size="large"
             >
               <template #icon>
                 <search-icon size="1.2x" class="icon"></search-icon>
@@ -79,7 +79,7 @@
             </cap-input>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Select*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Select*</cap-title>
             <cap-select
               style="width: 60%"
               v-model="selectdValue"
@@ -90,7 +90,7 @@
             </cap-select>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Select*</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Select*</cap-title>
             <cap-select
               style="width: 60%"
               v-model="selectdValue"
@@ -101,7 +101,7 @@
             </cap-select>
           </cap-form-row>
           <cap-form-row>
-            <cap-title type="subheading" size="3">Remarks</cap-title>
+            <cap-title tag="label" type="subheading" size="2" font="500">Remarks</cap-title>
             <cap-textarea
               style="width: 60%"
               v-model="textarea"
