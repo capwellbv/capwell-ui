@@ -8,6 +8,7 @@
       .floating-label-textarea {
         width: 65%;
         .cap-textarea {
+          -webkit-appearance: none;
           @include forMobile() {
             padding-top: 26px;
             &::placeholder {
@@ -51,6 +52,7 @@
       padding: 1.25rem;
       font-size: $font-size-10;
       width: stretch;
+      -webkit-appearance: none;
         @include forMobile() {
           font-size: 1rem;
           line-height: 1rem;
