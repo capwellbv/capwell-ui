@@ -98,7 +98,7 @@
         color: $primary-color-4;
         padding: 16px $p-2;
         @include forMobile() {
-          font-size: 15px;
+          font-size: $font-size-11;
         }
         &::placeholder {
 					color: $secondary-color-4;

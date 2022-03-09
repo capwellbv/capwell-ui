@@ -33,12 +33,12 @@
         @include forMobile() {
           display: block;
           position: absolute;
-          left: 16px;
+          left: 20px;
           z-index: 1;
           width: max-content;
           transition: all 0.1s ease-in-out;
-          font-size: .9375rem;
-          line-height: .9375rem;
+          font-size: 1rem;
+          line-height: 1rem;
           font-weight: 400;
           color: $secondary-color-4;
         }
@@ -58,8 +58,8 @@
             input {
               @include forMobile() {
                 padding: $spacing5 0px 17px 0px;
-                font-size: .9375rem;
-                line-height: .9375rem;
+                font-size: 1rem;
+                line-height: 1rem;
                 font-weight: 400;
               }
             }
@@ -80,8 +80,8 @@
               &.value,
               &.prefiled {
                 padding: $spacing5 0px 17px 0px;
-                font-size: .9375rem;
-                line-height: .9375rem;
+                font-size: 1rem;
+                line-height: 1rem;
                 font-weight: 400;
               }
             }
@@ -137,8 +137,8 @@
       &.small {
         height: 40px;
         input {
-          font-size: 14px;
-          line-height: $line-height-11;
+          font-size: $font-size-11;
+          line-height: $line-height-13;
         }
       }
       &.rounded {
@@ -171,7 +171,7 @@
         height: 100%;
         background: transparent;
         @include forMobile() {
-          font-size: 14px !important; 
+          font-size: $font-size-11 !important; 
         }
   
         &::placeholder {

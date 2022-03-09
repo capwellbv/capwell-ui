@@ -111,11 +111,6 @@
       z-index: 1005;
       box-shadow: 0 2px 5px 0 rgba($primary-color-2, 0.2), 0 15px 45px 0 rgba($darkest-color, 0.15);
       overflow-y: auto;
-      @include forMobile() {
-        border: 1px solid $primary-color-2;
-        width: calc(100% - 2px);
-      }
-  
       li {
         all: unset;
         padding: 19px $spacing6;

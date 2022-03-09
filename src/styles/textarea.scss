@@ -10,9 +10,8 @@
         .cap-textarea {
           @include forMobile() {
             padding-top: 26px;
-            padding-left: 16px;
             &::placeholder {
-              color: white;
+              color: $secondary-color-1;
             }
           }
         }
@@ -24,7 +23,7 @@
         @include forMobile() {
           position: absolute;
           top: 14px;
-          left: 16px;
+          left: 20px;
           color: $secondary-color-4;
           font-family: $secondary-fontfamily;
           transition: all 0.1s ease-in-out;
@@ -48,13 +47,13 @@
       border-radius: 6px;
       background-color: $secondary-color-1;
       border: none;
-      box-shadow: 0 0 0 1px #e1ddd0;
+      box-shadow: 0 0 0 1px $secondary-color-3;
       padding: 1.25rem;
       font-size: $font-size-10;
       width: stretch;
         @include forMobile() {
-          font-size: .9375rem;
-          line-height: .9375rem;
+          font-size: 1rem;
+          line-height: 1rem;
         }
       &:focus-within {
           box-shadow: 0 0 0 2px $primary-color-2, 0 4px 12px 0 rgba(0, 148, 205, 0.2),
