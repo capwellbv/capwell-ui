@@ -46,7 +46,7 @@
         line-height: 18px;
       }
       .cap-navbar-contact {
-        display: flex;
+        display: none;
         align-items: center;
         align-self: center;
         padding: 0;
@@ -55,7 +55,7 @@
         justify-content: center;
       }
     }
-    &.collapse {
+    @media(max-width: 1280px) {
       box-shadow: 0 3px 10px 0 rgba($darkest-color, 0.08);
       background-color: $secondary-color-1;
       .cap-container {
@@ -65,13 +65,13 @@
           padding: 0 $p-4;
         }
       }
-      .toggle-btn {
-        display: flex;
-        align-items: center;
-      }
       nav {
         padding-bottom: 0px;
         flex-direction: column;
+        .toggle-btn {
+          display: flex;
+          align-items: center;
+        }
         .cap-nav-container {
           display: flex;
           justify-content: space-between;
@@ -89,6 +89,9 @@
         }
         .cap-navbar-links {
           flex-direction: column;
+        }
+        .cap-navbar-contact {
+          display: flex;
         }
         .nav-btn {
           margin-bottom: 30px;

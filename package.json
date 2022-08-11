@@ -40,7 +40,7 @@
     "package",
     "library"
   ],
-  "license": "CAWWELL-IT",
+  "license": "CAPWELL-MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/capwellbv/capwell-ui.git"

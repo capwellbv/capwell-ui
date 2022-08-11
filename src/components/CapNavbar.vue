@@ -1,5 +1,5 @@
 <template>
-  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow, collapse: isCollapsed }">
+  <div class="cap-ui cap-navbar" :class="{ down: hasScrolled, shadow: showShadow }">
     <cap-container>
       <nav :class="{ open: !closed }">
         <div class="cap-nav-container">
@@ -19,7 +19,7 @@
           <ul class="cap-navbar-links">
             <slot />
           </ul>
-          <ul v-if="isCollapsed" class="cap-navbar-contact">
+          <ul class="cap-navbar-contact">
             <slot name="contact"></slot>
           </ul>
         </div>
@@ -39,10 +39,6 @@ export default {
       type: String,
       default: null
     },
-    collapse: {
-      type: String | Number,
-      default: 1040
-    },
     deltaScroll: {
       type: Number,
       default: 40
@@ -50,10 +46,9 @@ export default {
   },
   data() {
     return {
-      closed: false,
+      closed: true,
       hasScrolled: false,
       showShadow: false,
-      isCollapsed: false,
       prevTop: 0,
       interval: null,
       didScroll: false
@@ -74,18 +69,15 @@ export default {
   },
 
   mounted() {
-    this.checkMedia();
     this.interval = setInterval(() => {
       if (this.didScroll) {
         this.handleScroll();
         this.didScroll = false;
       }
     }, 250);
-    window.addEventListener("resize", this.checkMedia);
     window.addEventListener("scroll", this.showNavbar);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.checkMedia);
     window.removeEventListener("scroll", this.showNavbar);
     clearInterval(this.interval);
   },
@@ -95,21 +87,6 @@ export default {
       this.closed = !this.closed;
     },
 
-    checkMedia() {
-      let mql = window.matchMedia(`(max-width: ${this.collapse}px)`);
-
-      if (mql.matches) {
-        this.isCollapsed = true
-      } else {
-        this.isCollapsed = false
-      }
-
-      if (mql.matches && !this.closed) {
-        this.closed = true;
-      } else if (!mql.matches && this.closed) {
-        this.closed = false;
-      }
-    },
     handleScroll() {
       const st = window.pageYOffset || document.documentElement.scrollTop;
       const navHeight = document.querySelector(".cap-ui.cap-navbar")
