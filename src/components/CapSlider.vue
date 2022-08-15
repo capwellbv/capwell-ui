@@ -7,6 +7,7 @@
       size="lg"
       class="navigation-btn left"
       style="margin-left: auto"
+      aria-label="Move images to left"
     >
       <chevron-left-icon size="25" class="navigation-icon icon"></chevron-left-icon>
     </cap-button>
@@ -53,6 +54,7 @@
       size="lg"
       type="button"
       class="navigation-btn right"
+      aria-label="Move images to right"
     >
     <!-- <button
       v-if="items.length > 3 && !disableRight"
