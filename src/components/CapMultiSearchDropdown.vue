@@ -34,7 +34,7 @@
             </x-icon>
             <chevron-down-icon
               v-else
-              @click="showOptions = !showOptions"
+              @click.native="showOptions = !showOptions"
               size="20"
               class="icon icon-feather"
             >

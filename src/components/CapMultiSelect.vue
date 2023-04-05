@@ -26,7 +26,7 @@
             @click="clear" size="20"
           >
           </x-icon>
-          <chevron-down-icon v-else @click="toggle" size="20" class="icon chevron">
+          <chevron-down-icon v-else @click.native="toggle" size="20" class="icon chevron">
           </chevron-down-icon>
         </div>
       </button>

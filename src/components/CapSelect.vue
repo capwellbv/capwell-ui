@@ -2,7 +2,7 @@
   <cap-on-click-away :do="hide">
     <div :class="['cap-ui cap-select', { active: showOptions }]">
       <button
-        @click="show"
+        @click="toggle"
         aria-haspopup="listbox"
         @keyup.tab="show"
         @keydown.tab="hide"
@@ -21,7 +21,7 @@
           @click="remove" size="16"
         >
         </x-icon>
-        <chevron-down-icon v-else size="20" class="icon"></chevron-down-icon>
+        <chevron-down-icon v-else size="20" class="icon" @click.native="toggle"></chevron-down-icon>
       </button>
       <ul v-show="showOptions" role="listbox" tabindex="-1" :style="{maxHeight: `${maxHeight}px`}">
         <li
@@ -107,6 +107,9 @@ export default {
     },
     show() {
       this.showOptions = true;
+    },
+    toggle() {
+      this.showOptions = !this.showOptions;
     },
     hide() {
       this.showOptions = false;
